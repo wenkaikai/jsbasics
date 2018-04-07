@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+//    var str="Visit W3School!"
+//    document.write(str.search(/w3school/i)) 6//确实是搜索指定字符在一个字符串中出现的位置，如果不存在就返回 -1
+
+
+
+    /*search h和 indexOf 的区别*/
+//    其实区别在于 search 是强制正则的，而 indexOf 只是按字符串匹配的。
+    var str = "123456789.abcde"; // 比刚才多了一个 . 而已
+    console.log( str.search(".") );    // 0  因为正则 . 匹配除\n以外任意字符
+    console.log( str.indexOf("\.") );   // 9  只能匹配字符 .
+    console.log( str.search("\\.") );  // 9  相当于 new RegExp("\\.")
+    console.log( str.indexOf("\\.") ); // -1 匹配字符 \. 所以不存在
+    console.log( str.search(/\./) );   // 9  正则匹配转以后的 . 字符
+    console.log( str.indexOf(/\./) );  // -1 相当于匹配字符串 "/\./" 所以不存在
+    console.log("\9")//9
+//    console.log("\")//Uncaught SyntaxError: Invalid or unexpected token
+
+</script>
+</html>

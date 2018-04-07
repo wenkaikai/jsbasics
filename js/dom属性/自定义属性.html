@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj = document.body;
+
+
+    // 一
+//    obj.data_value="123";//用点的  自定义属性不能用getAttribute 获取
+//    obj.title="haode"
+//
+//
+////    console.log(obj.getAttribute(data_value));// Uncaught ReferenceError: data_value is not defined
+//    console.log(obj.title)//好的
+//
+//    console.log(obj.data_value)//123
+//
+    //二
+
+    obj.setAttribute("data_value","123")
+    console.log(obj.getAttribute("data_value"))//123
+    console.log(obj.data_value)//undefinded
+
+
+
+
+
+
+
+</script>
+</html>

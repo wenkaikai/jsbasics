@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div
+        {
+            border:10px solid black;
+            padding:35px;
+            background-image:url('bg_flower.gif');
+            background-repeat:no-repeat;
+            background-position:left;
+
+        }
+        #div1
+        {
+            background-origin:border-box;
+            /*边框也被背景占用*/
+        }
+        #div2
+        {
+            background-origin:content-box;
+            /*padding 也占用不了*/
+        }
+        #div3{
+            background-origin:padding-box;
+            /*padding 没用但是边框能占用背景*/
+        }
+    </style>
+</head>
+<body>
+<p>background-origin:border-box:</p>
+<div id="div1">
+    这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+</div>
+<p>background-origin:content-box:</p>
+<div id="div2">
+    这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+</div>
+<p>background-origin:padding-box:</p>
+<div id="div3">
+    这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+</div>
+</body>
+</html>

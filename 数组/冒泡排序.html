@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var arry = Array();
+	arry = [5,6,4,7,8,0,12,90,45,44];
+	for(var i = 0;i<arry.length;i++){
+		for(var j = 0;j<arry.length;j++){
+			var temp = arry[j];
+			// if(arry[j]>arry[j+1]){
+			// 	arry[j] = arry[j+1];
+			// 	arry[j+1] = temp;
+			// }//正序的
+			if(arry[j]<arry[j+1]){
+				arry[j]=arry[j+1];
+				arry[j+1] = temp;
+			}//倒序的
+		}
+	}
+	console.log(arry);
+
+</script>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+        面试题一
+     */
+//    function f1(){
+//        var tmp = 1;
+//        this.x = 3;
+//        console.log(tmp);    //1
+//        console.log(this.x)//3
+//    }
+////    var obj = new f1();
+////    console.log(obj.x)     //3
+//    console.log(f1());
+
+    /*
+        二
+        如果CSSer参数是按引用传递的，那么结果应该是"http://www.popcg.com/"，
+        但实际结果却仍是"http://www.csser.com/"。
+        事实是这样的：在函数内部修改了引用类型值的参数，该参数值的原始引用保持不变。
+        我们可以把参数想象成局部变量，当参数被重写时，这个变量引用的就是一个局部变量，
+        局部变量的生存期仅限于函数执行的过程中，函数执行完毕，局部变量即被销毁以释放内存。
+    （补充：内部环境可以通过作用域链访问所有的外部环境中的变量对象，
+    但外部环境无法访问内部环境。每个环境都可以向上搜索作用域链，以查询变量和函数名，
+    反之向下则不能。）
+     */
+//    function changeObjectProperty (o) {
+//        o.siteUrl = "http://www.csser.com/";
+//        o = new Object();//此时的形参的赋值，这个变量就是一个局部变量。函数执行完毕，局部变量既被销毁以释放内存
+//        o.siteUrl = "http://www.popcg.com/";
+//        console.log(o)//{siteUrl: "http://www.popcg.com/"}
+//    }
+//    var CSSer = new Object();
+//    changeObjectProperty(CSSer);
+//    console.log(CSSer.siteUrl); //"http://www.csser.com/"
+
+    /*
+        三
+     */
+
+//    function foo(){
+//        console.log(foo)//foo 表示的是foo函数的这个本身
+//        console.log(this)//this这时表示的是一个对象
+//        foo.a = function(){alert(1)};
+//        this.a = function(){alert(2)};
+//        a = function(){alert(3)};
+//        var a = function(){alert(4)};
+//    };
+//    foo.prototype.a = function(){alert(5)};
+//    foo.a = function(){alert(6)};
+//    foo.a(); //6
+//    var obj = new foo();
+//    obj.a(); //2
+//    foo.a(); //1
+
+    /*
+        四 定义变量的时候加var 和 不加var
+     */
+//    var a = 5;
+//    function test(){
+//        b = 89;
+//         a = 0;
+//         alert(a);//0
+//        alert(this.a); // 5 没有定义 a这个属性
+//        alert(this.b);//89
+//        console.log(this)
+//        var a;
+//        alert(a)
+//    }
+//    test(); // 0, 5, 0
+//    new test(); // 0, undefined, 0 //由于类它自身没有属性a， 所以是undefined
+
+    /*
+        五	声明对象，添加属性，输出属性
+     */
+
+//    var obj = {
+//        name: 'leipeng',
+//        showName: function(){
+//            console.log(this)//对象里面的this 指的是自己
+//            alert(this.name);
+//        }
+//    }
+//    obj.showName();//leipeng
+
+    /*
+        六
+        这样while 陷入了死循环 连setTimeout都无法执行
+     */
+    var t=true;
+    setTimeout(function(){
+        console.log(123);
+        t=false;
+    },1000);
+    while(t){}
+    console.log('end');
+
+</script>
+</body>
+</html>

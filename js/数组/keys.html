@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keys</title>
+</head>
+<body>
+<script>
+    var arry = [5,6,7,8,9];
+    //同 entires 也返回的是一个数组迭代器只是只有键没有值
+    var a = arry.keys();//Array Iterator {}
+    console.log(a)
+    console.log(a.next().value)//0
+    console.log(a.next().value)//1
+    console.log(a.next().value)//2
+</script>
+</body>
+</html>

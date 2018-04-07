@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1赋值单个对象
+//    var obj1={a:1};
+//    var obj2={b:2};
+//    var obj3 = Object.assign(obj2,obj1);//把obj1 赋值到 obj2 此时的obj2 也会改变
+//    console.log(obj3)//Object {b: 2, a: 1}
+//    console.log(obj2)//Object {b: 2, a: 1}
+//    console.log(obj1)//Object {a: 1}
+
+
+    // 2赋值对多个对象
+//    var o1 = { a: 1 };
+//    var o2 = { b: 2 };
+//    var o3 = { c: 3 };
+//
+//    var obj = Object.assign(o1, o2, o3);
+//    console.log(obj); // { a: 1, b: 2, c: 3 }
+//    console.log(o1);  // { a: 1, b: 2, c: 3 }, 注意目标对象自身也会改变
+
+
+
+    //3 继承属性和不可枚举属性是不能拷贝的
+    var obj = Object.create({foo: 1}, { // foo 是个继承属性。
+        bar: {
+            value: 2  // bar 是个不可枚举属性。
+        },
+        baz: {
+            value: 3,
+            enumerable: true  // baz 是个自身可枚举属性。
+        }
+    });
+    var copy = Object.assign({}, obj);
+    console.log(obj); // {baz: 3, bar: 2}
+    console.log(obj.foo); // 1 继承的属性是不在对象里面的显示的
+    console.log(copy); // { baz: 3 }
+
+</script>
+</body>
+</html>

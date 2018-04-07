@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2">添加元素</div>
+    <div id="div3">删除</div>
+
+
+    <script>
+        $("#div1").bind("DOMNodeInserted",function(){//改变了就会打印
+            console.log("ok")
+        })
+        $("#div2").click(function(){
+            $("#div1").text("haode")
+        });
+        $("#div3").click(function(){
+            $("#div1").text("")
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>具名组匹配</title>
+</head>
+<body>
+    <script>
+//        const RE_DATE = /(\d{4})-(\d{2})-(\d{2})/;
+//        const matchObj = RE_DATE.exec('1999-12-31');
+//        const year = matchObj[1]; // 1999
+//        const month = matchObj[2]; // 12
+//        const day = matchObj[3]; // 31
+//        console.log(matchObj);
+        /*
+         0
+         :
+         "1999-12-31"
+         1
+         :
+         "1999"
+         2
+         :
+         "12"
+         3
+         :
+         "31"
+         */
+
+        /*
+            现在具名匹配
+             现在有一个“具名组匹配”（Named Capture Groups）的提案，允许为每一个组匹配指定一个名字，既便于阅读代码，又便于引用。
+         */
+
+const RE_DATE = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;//目前不支持
+
+const matchObj = RE_DATE.exec('1999-12-31');
+const year = matchObj.groups.year; // 1999
+const month = matchObj.groups.month; // 12
+const day = matchObj.groups.day; // 31
+    </script>
+</body>
+</html>

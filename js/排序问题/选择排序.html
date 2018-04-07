@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //选择排序，选择最小的
+    //在时间复杂度上表现最稳定的排序算法之一，
+    // 因为无论什么数据进去都是O(n²)的时间复杂度。。。
+    // 所以用到它的时候，数据规模越小越好。
+    // 唯一的好处可能就是不占用额外的内存空间了吧。
+    var arry = [1,10,45,3,67,8,2,20,0];
+    Array.prototype.unique=function(){
+        var arry = this;
+        var len = this.length;
+        var i,j,minindex,temp;
+        for(i=0;i<len;i++){
+            minindex=i;
+            for(j=i+1;j<len;j++){
+                if(arry[minindex]>arry[j]){
+                    minindex=j
+                }
+            }
+            temp = arry[i];
+            arry[i]=arry[minindex];
+            arry[minindex]=temp;
+        }
+        return arry;
+    }
+    console.time("timer");
+    var a = arry.unique();
+    console.timeEnd("timer")
+    console.log(a);
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="b1" id="b2">
+<script>
+
+
+    /*
+     最简单的箭头函数
+     */
+    console.clear()
+//    var body = document.querySelector(".b1");//ok
+//    var body = document.querySelector("body");//ok
+    var body = document.querySelector("#b2");//ok
+
+
+    console.warn(body)
+
+    var f = v => v;
+    console.info(f(34,56))//34
+    console.dir(f)//返回对象的所有属性
+    console.log(f)//v => v;
+    console.error(f) //相当于throw error
+    console.warn(f)//变成感叹号
+    console.assert(2==2)//断言，测试一条表达式是否为真，不为真时将抛出异常（断言失败）。真的时候什么都没有
+    console.dirxml(body);//输出一个 HTML 或者 XML 元素的结构树，点击结构树上面的节点进入到 HTML 面板。(跟打印选择器一样)
+    console.trace();//输出 Javascript 执行时的堆栈追踪
+    console.count("ok")//输出该行代码被执行的次数，参数 title 将在输出时作为输出结果的前缀使用。ok:1
+    console.profile("xingnneg")
+
+
+</script>
+</body>
+</html>

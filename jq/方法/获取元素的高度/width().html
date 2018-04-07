@@ -1,0 +1,14 @@
+<html>
+<head>
+    <script type="text/javascript" src="../../jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            console.log($("div").width())//不包含border 与padding
+            console.log($("div").outerWidth())//包含border 与padding
+        });
+    </script>
+</head>
+<body>
+<div style="width:200px;padding:20px"></div>
+</body>
+</html>

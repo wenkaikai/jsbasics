@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*
+    用途一 交换变量
+     */
+//    let x = 1;
+//    let y = 2;
+//
+//    [x, y] = [y, x];
+//    console.log(x);//2
+//    console.log(y)//1
+
+    /*
+        二 对象解构取回函数返回的数组和对象的值
+     */
+//            function example() {
+//                return [1, 2, 3];
+//            }
+//            let [a, b, c] = example();
+//            console.log(a);//1
+
+//            function example() {
+//                return {
+//                    foo: 1,
+//                    bar: 2
+//                };
+//            }
+//            let { foo, bar } = example();
+//            console.log(bar)//2
+
+    /*
+        三 提取json 数据
+     */
+
+//    let jsonData = {
+//        id: 42,
+//        status: "OK",
+//        data: [867, 5309]
+//    };
+//
+//    let { id, status, data } = jsonData;
+//
+//    console.log(id, status, data);
+    // 42, "OK", [867, 5309]
+
+    /*四 函数的默认值*/
+
+//    function defaultVlaue (a = 10,b=90){
+//        console.log(a);//89
+//        console.log(b)//90
+//    }
+//    defaultVlaue(89);
+
+//    var aa = (a = 10)=>{
+//      console.log(a);
+//    }
+
+//    aa(20);//20
+//    aa();//10
+    /*四.1 函数默认值是没有顺序的*/
+
+    var bb = ({b,n,m})=>{
+        console.log(b);//900;
+        console.log(n);//300
+        console.log(m);//100
+    }
+    //没有顺序的变量赋值
+    bb({m:100,n:300,b:900});
+</script>
+</body>
+</html>

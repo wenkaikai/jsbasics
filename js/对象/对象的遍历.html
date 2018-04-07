@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的遍历</title>
+</head>
+<body>
+
+</body>
+<script>
+        var obj = {"a":"1","b":"2","c":"3"};
+        var str = JSON.stringify(obj);
+        var obj1 = JSON.parse(str);
+        console.log(obj1);
+
+        /*
+
+            一 ，用for in 循环
+         */
+
+
+    //for(prop in obj){// in 前面的prop 可以随便起
+//        console.log(prop)// a b c
+//        console.log(obj[prop])//1 2 3
+  //      console.log(obj)
+    //}
+//    console.log(Object.keys(obj))//把对象的属性变成数组["a","b","c"]
+//    console.log(Object.values(obj))//把对象的属性的值变成一个数组["1","2","3"]
+
+
+
+
+
+    /*
+        二 用for of循环
+
+
+     for-of循环也可以遍历其它的集合
+
+     for-of循环不仅支持数组，还支持大多数类数组对象，例如DOM NodeList对象。
+
+     for-of循环也支持字符串遍历，它将字符串视为一系列的Unicode字符来进行遍历：
+     与forEach()不同的是，它可以正确响应break、continue和return语句
+     */
+
+//    var array = [1,2,3,4]
+//        for(var aa of array){//遍历数组
+//            console.log(aa)
+//        }
+
+
+
+
+
+    /*三  for of 也能遍历字符串*/
+
+//    var str = "helloworld";
+//    for(var chr of str){
+//        console.log(chr);
+//    }
+
+
+</script>
+</html>

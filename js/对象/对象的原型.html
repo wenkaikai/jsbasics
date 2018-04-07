@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //定义三种不同形式的对象
+    var a ={};
+    var b = new Object();
+    var c = Object.create({});
+    var a_proto = a.constructor.prototype;//一个直接的对象的原型是一个对象，（obj.constructor.prototype）
+    var es5 = Object.getPrototypeOf(a)//获取对象的原型;
+    console.log(es5)
+//    ||
+    console.log(a_proto)
+//    ||
+    console.log(Object.prototype)
+//    console.log(c)
+//    console.log(b.constructor.prototype)
+</script>
+</body>
+</html>

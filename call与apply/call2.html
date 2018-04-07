@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>call</title>
+</head>
+<body>
+	
+</body>
+<script>
+	    function Animal(){    
+            this.name = "Animal";    
+            this.showName = function(){
+                console.log(this)
+                alert(this.name);    
+            }
+            console.log(this)
+        }    
+      
+    function Cat(){    
+        this.name = "Cat";    
+    }    
+       
+    var animal = new Animal();    
+    var cat = new Cat();    
+    // animal.showName() //Animal 
+    //通过call或apply方法，将原本属于Animal对象的showName()方法交给对象cat来使用了。
+
+    //输入结果为"Cat"    
+    animal.showName.call(cat,",");    
+    //animal.showName.apply(cat,[]);   
+</script>
+</html>

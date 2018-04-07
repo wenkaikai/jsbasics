@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <!--<script src="../jquery-1.11.2.min.js">-->
+        <!---->
+    <!--</script>-->
+    <script src="https://apps.bdimg.com/libs/jquery/1.7.2/jquery.js"></script>
+    <!--兼容 1.9以上的-->
+    <!--<script src="${ctx}/adminStyles/js/jquery-migrate-1.2.1.js"></script>-->
+    <script>
+
+        $(document).ready(function(){
+            /*
+             toggle 用法 一
+             */
+//            $("li").toggle(
+//                    function(){$(this).css({"color":"red"});},
+//                    function(){$(this).css({"color":"blue"});},
+//                    function(){$(this).css({"color":"purple"});},
+//                    function(){$(this).css({"color":"turquoise"});
+//                    });
+            //trigger触发不了toggle triggerHandler
+//            $('body').click(function(){$("li").triggerHandler('toggle');console.log('ok')})
+            $('body').click(function(){
+                $("li").toggle(
+                        function(){$(this).css({"color":"red"});},
+                    function(){$(this).css({"color":"blue"});},
+                    function(){$(this).css({"color":"purple"});},
+                    function(){$(this).css({"color":"turquoise"})}
+
+                        )
+                    });
+            console.log($('body').is(":hidden"))
+        });
+    </script>
+</head>
+<body>
+
+<p>多次点击一下列表项目：</p>
+
+<ul>
+    <li>菜鸟教程</li>
+    <li>Google</li>
+</ul>
+
+<div><b>注意:</b> toggle() 方法在 jQuery 版本 1.8 中被废弃，在版本 1.9 中被移除。</div>
+
+</body>
+</html>

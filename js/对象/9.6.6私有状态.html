@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Range(from,to){
+       this.from = function(){return from;}
+       this.to = function(){return to;}
+    }
+
+    Range.prototype = {
+        constructor:Range,
+        includes:function(x){
+            return this.from() <= x && x<=this.to();
+        },
+        foreach:function (f){
+            for (var x = Math.ceil(this.from());x<=this.to();x++) f(x);
+        },
+        toString:function(){return "(" + this.from() + "..."+ this.to()+")";}
+    }
+
+   var r = new Range(1,5);
+    console.log(r.includes(4))//true
+    console.log(r.foreach(console.log))
+    console.log(r.toString())
+    var t = new Range(3,4)
+    console.log(t.includes(4))//true
+    console.log(t.foreach(console.log))
+    console.log(t.toString())
+
+    //
+</script>
+</body>
+</html>

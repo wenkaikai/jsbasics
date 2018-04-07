@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+        函数形参默认值一
+     */
+        //    function log(x, y = 'World') {
+        //        console.log(x, y);
+        //    }
+        //
+        //    log('Hello') // Hello World
+        //    log('Hello', 'China') // Hello China
+        //    log('Hello') // Hello World
+        //    log();//undefined "World"
+
+
+        //    var a,b=10;
+        //    console.log(a,b)//undefined 10
+        //    var a=10,b=20;
+        //    console.log(a,b)//10 20
+    /*
+        函数形参默认值 二
+     */
+//    function Point(x = 0, y = 0) {
+//        this.x = x;
+//        this.y = y;
+//    }
+//    var p = new Point();
+//    console.log(p)//{x:0,y:0}
+
+    /*
+      三  另外，一个容易忽略的地方是，参数默认值不是传值的，而是每次都重新计算默认值表达式的值。也就是说，参数默认值是惰性求值的。
+     */
+//    let x = 99;
+//    function foo(p = x + 1) {
+//        console.log(p);
+//    }
+//    foo() // 100
+//
+//    x = 100;
+//    foo() // 101
+
+
+    /*
+        四 赋值与解构
+     */
+//        function foo({x, y = 5}) {
+//            console.log(x, y);
+//        }
+
+//        foo({}) //undefined,5
+//        foo({x: 1}) //1,5
+//        foo({x: 1, y: 2})//1,2
+//        foo() // Uncaught TypeError: Cannot destructure property `x` of 'undefined' or 'null'
+                //如果形参有解构实参没有解构会报错
+//
+//            function foo(x,y){
+//                console.log(x)//12
+//                console.log(y)//undefined
+//            }
+//            foo(12);
+
+
+    /*
+        五
+     通常情况下，定义了默认值的参数，应该是函数的尾参数。
+     因为这样比较容易看出来，到底省略了哪些参数。如果非尾部的参数设置默认值，实际上这个参数是没法省略的。
+     下面代码中，x参数对应undefined，结果触发了默认值，y参数等于null，就没有触发默认值。
+     */
+//        function f(x = 1, y) {
+//            console.log([x, y])
+//        }
+//
+//        f() // [1, undefined]
+//        f(2) // [2, undefined])
+//        f(1) // 报错
+//        f(undefined, 1) // [1, 1]
+    /*
+       六 函数的length属性(没有什么用)
+
+         指定了默认值以后，函数的length属性，将返回没有指定默认值的参数个数。
+         也就是说，指定了默认值后，length属性将失真。
+     上面代码中，length属性的返回值，等于函数的参数个数减去指定了默认值的参数个数。
+     比如，上面最后一个函数，定义了3个参数，其中有一个参数c指定了默认值，因此length属性等于3减去1，最后得到2。
+     */
+
+    //    console.log((function (a, b, c = 5) {}).length)//2
+    //    console.log((function (a) {}).length );//1
+    //    console.log((function (a = 5) {}).length)//0
+    //            //如果设置了默认值的参数不是尾参数，那么length属性也不再计入后面的参数了。
+    //    (function (a = 0, b, c) {}).length // 0
+    //    (function (a, b = 1, c) {}).length // 1
+
+
+    /*
+        七 形参的作用域
+     一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。
+     等到初始化结束，这个作用域就会消失。这种语法行为，在不设置参数默认值时，是不会出现的。
+     */
+//            var x = 1;
+//            function f(x, y = x) {
+//                console.log(y);
+//            }
+//
+//            f(2) // 2
+
+
+    //下面代码中，函数f调用时，参数y = x形成一个单独的作用域。这个作用域里面，
+    // 变量x本身没有定义，所以指向外层的全局变量x。函数调用时，
+    // 函数体内部的局部变量x影响不到默认值变量x。(也就是说函数形参是个作用域，函数体是一个作用域)
+        var x = 1;
+        function f(y = x) {
+//            console.log(x)
+            let x = 2;
+            console.log(y);
+        }
+        f()//1
+        console.log(x)
+</script>
+</body>
+</html>

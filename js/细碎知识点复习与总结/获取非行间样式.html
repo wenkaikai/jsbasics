@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width:20px;}
+    </style>
+</head>
+<body>
+<script>
+    var obj = document.getElementsByTagName("body")[0];
+    //Uncaught TypeError: Cannot read property 'width' of undefined
+//    console.log(obj.style.width)
+//console.log(obj)
+//    var aa = obj.getComputedStyle("width",false);
+//    console.log(aa)
+    var bb = window.getComputedStyle(obj,null).width;
+    console.log(bb)//445.333px
+
+
+</script>
+</body>
+</html>

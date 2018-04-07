@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" >
+function showImg (oSel) {
+//在此处添加代码
+var str = oSel.value;
+console.log(str)
+document.getElementById("pic").src= str+".jpg";
+}
+</script>
+<img id="pic"src="img1.jpg"width="200″ height="200″ />
+<br />
+<select id="sel" onchange="showImg(this)">
+    <option value="img1">城市生活</option>
+    <option value="img2">都市早报</option>
+    <option value="img3">青山绿水</option>
+</select></body>
+
+</html>

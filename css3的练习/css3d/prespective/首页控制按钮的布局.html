@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>芝麻蕉首页的布局</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" >
+    <script src="../../jquery.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .contol-index{
+            display:flex;
+            width:100%;
+            height:50vh;
+            flex-direction:row;
+            margin:auto;
+
+        }
+        section>article{
+            display:flex;
+            justify-content:center;
+
+        }
+        .contol-index .left{
+            /*background:blue;*/
+            flex-grow:0.6;
+            flex-direction: column;
+            justify-content:center;
+            perspective:1000px;
+            transform-style:preserve-3d;
+        }
+        /*.left:after {*/
+            /*content: '';*/
+            /*display: block;*/
+            /*width:0;*/
+            /*height:100%;*/
+            /*border-right: solid 5px red;*/
+        /*}*/
+        .contol-index .right{
+            /*background:green;*/
+            flex-grow:0.4;
+        }
+        .left .top{
+            background:yellow;
+            flex-grow:0.6;
+            overflow:hidden;
+        }
+
+        .left .bottom{
+            flex-grow:0.4;
+            /*background:purple;*/
+            display:flex;
+            justify-content:center;
+
+        }
+        .bottom aside:nth-child(1){
+            background:pink;
+            flex-grow:0.5;
+
+        }
+        .bottom aside:nth-child(2){
+            width:5px;
+            background:#ccc;
+
+        }
+        .bottom aside:nth-child(3){
+            background:orange;
+            flex-grow:0.5;
+
+        }
+        .right{
+            justify-content:center;
+            flex-direction:column;
+        }
+        .right aside:nth-child(1){
+            flex-grow:0.4;
+            background:brown;
+        }
+        .right aside:nth-child(2){
+            height:5px;
+            background:#ccc;
+        }
+        .right aside:nth-child(3){
+            flex-grow:0.6;
+            background:#8470FF;
+        }
+        section div{
+            height:100%;
+        }
+        .bot-bor{
+            /*transform: translateZ(-100px) translateY(-3%);*/
+            transform: scale(0.8,0.8);
+
+        }
+        .contol-index>.center{
+            width:5px;
+            background:#ccc;
+        }
+        .left>.center{
+            height:5px;
+            background:#ccc;
+        }
+        main{
+            display:flex;
+            height:100vh;
+
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section class="contol-index">
+        <article class="left">
+            <aside class="top tap">
+            </aside>
+            <aside class="center"></aside>
+            <aside class="bottom">
+                <aside class="tap">
+                </aside>
+                <aside>
+                </aside>
+                <aside class="tap">
+                </aside>
+            </aside>
+        </article>
+        <article class="center"></article>
+        <article class="right">
+            <aside class="tap">
+            </aside>
+            <aside>
+            </aside>
+            <aside class="tap">
+            </aside>
+        </article>
+    </section>
+    <script>
+
+        //        $(".tap").on({
+        //            touchstart:function(){
+        //                $(this).addClass("bot-bor")
+        //               var index = $(this).index(this);
+        //                console.log(index)
+        //            },
+        //            touchend:function(){
+        //                $(this).removeClass("bot-bor")
+        //            },
+        //        }
+        //        )
+        $(".tap").each(function(i,j){
+            $(j).on({
+                touchstart:function(){
+                    $(this).addClass("bot-bor")
+                    console.log(i)
+                },
+                touchend:function(){
+                    $(this).removeClass("bot-bor")
+                },
+            })
+        })
+    </script>
+</main>
+
+</body>
+</html>

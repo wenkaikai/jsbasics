@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log(/foo.bar/.test('foo\nbar'));//false 点不能匹配\n
+    //但是可以这样
+    console.log(/foo[^]bar/.test('foo\nbar'));//true
+    /*
+    目前谷歌不支持
+     console.log(/foo.bar/s.test('foo\nbar'))
+
+     */
+
+</script>
+</body>
+</html>

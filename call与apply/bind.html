@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tt()
+    {
+        alert(arguments.callee == tt);
+        alert(this);
+    }
+    var i = "1";
+    var i1 = tt.bind(i);//同call一样指定tt的执行上下文。（此时的tt的this就是字符串1）
+    window.i1();
+</script>
+</body>
+</html>

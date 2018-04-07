@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var ab = getTime = Date.now || function getTime () { return new Date().getTime(); };
+//    var ab = Date.now //function now() { [native code] }
+    var start = Date.now();
+    console.log(ab);//1970 年 1 月 1日午夜与当前日期和时间之间的毫秒数。
+    console.log(start);
+</script>
+</body>
+</html>

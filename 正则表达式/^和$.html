@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>^and$</title>
+</head>
+<body>
+<input type="text" id="text">
+<input type="button" id="but">
+<script>
+//    var pattern = /^\d+$/g
+//    var pattern = /[a-z]+/g;
+//var pattern = /^[a-zA-Z0-9]{6,10}$/;
+
+
+//一种情况
+//var pattern = /[A-Z]+/;
+//    var str = "33";
+//    console.log(pattern.test(str))//false
+
+
+
+
+//    第二种情况
+//    var pattern = /^[A-Za-z0-3_\*\$\@]+$/g;
+//    var str = "AAAdd333fff*$";
+//    console.log(pattern.test(str))//true
+
+
+    /*以$结尾的是匹配整个字符串的*/
+    // 以$结尾的例子
+    var str= 'enter';
+    var str1 = 'eat';
+    var pattern = /t$/;
+    console.log(pattern.test(str));//false
+    console.log(pattern.test(str1));//true
+    document.querySelector("#but").onclick=function(){
+        var str = document.querySelector("#text").value;
+        var pattern = /^[0-9]{1,3}\.[0-9]+$/;
+        console.log(pattern.test(str))
+    }
+
+
+</script>
+</body>
+</html>

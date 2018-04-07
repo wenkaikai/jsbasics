@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="GBK" />
+    <title>回调函数(callback)</title>
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript">
+        var f;
+        function d(){
+            alert("我是Jquery定义的函数d");
+        }
+        var e = function(){
+            alert("我也是Jquery定义的函数e");
+        }
+
+        function a(callback) {
+            alert("我是parent函数a！");
+//            d();
+            if (typeof callback === "function"){
+                //alert(callback);
+                callback();
+            }
+        }
+        function b(){
+            alert("我是回调函数b");
+
+            d();
+            e();
+            f();
+        }
+        function c(){
+            alert("我是回调函数c");
+            d();
+            e();
+            f();
+        }
+        function test1() {
+            a(b);
+        }
+        function test2() {
+            a(c);
+        }
+        $(function(){
+            f = function(){
+                alert("我是回调函数f");
+            }
+        });
+    </script>
+</head>
+<body >
+<h1>学习js回调函数</h1>
+<button onClick=test1()>test a(b)</button>
+<button onClick=test2()>test a(c)</button>
+<p>应该能看到调用了两个回调函数</p>
+<p > </p>
+</body>
+</html>

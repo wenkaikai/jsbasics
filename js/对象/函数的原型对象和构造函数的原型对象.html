@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+     function F(){
+        console.log("ok")
+    };
+
+
+
+//     console.log(typeof F)//类型function
+//    var p = F.prototype;//表示是构造函数的原型同下文的n_f和b1
+//    var c = p.constructor//原型的contructor 属性代表的是此个函数的构造函数
+//     var o = F.constructor
+//     console.log(p)
+//     console.log(o)//function Function() { [native code] }
+//    console.log(c)//function F(){console.log("ok")  }
+
+
+        /*
+            一
+             F.prototype.constructor指向的是F自己
+             Javascript 中的原型函数（prototype）的工作原理，在 javascript 中每次声明新函数的过程中，
+             就会为其创建一个 prototype 的属性。在未加其他附带条件情况下，
+             所有的 prototype 属性都会自动获取 constractor 属性，
+             constructor 内包含一个指向 prototype 属性所属函数的指针（就是说 constructor 回指构造函数本身）。
+         */
+
+//
+//    F.prototype.print=function(){
+//        alert("好的");
+//    }
+//
+//     var f = new F();
+//     console.log(f);
+//     console.log(f.constructor.prototype);
+//     //||
+//     console.log(F.prototype);
+
+//     c===F 对象通常继承的constructor均指代他们的构造函数。由于构造函数是类的“公共标识”，因此这个constructor属性为对象提供了类
+
+    var n_f = new F();
+//     var F_p = F.prototype;
+//     console.log(F_p);
+    console.log(n_f.constructor)//function F(){console.log("ok")  }表示的是构造函数
+
+
+//     var b =n_f.constructor.prototype//表示的n_f这个对象的原型同上文的p和下文的b1
+//    console.log(b)//{constructor: ƒ}
+//    var b1 = Object.getPrototypeOf(n_f)//es5 中获取对象的原型同上文n_f和p
+//    console.log(b1)//{constructor: ƒ}
+
+
+</script>
+</body>
+</html>

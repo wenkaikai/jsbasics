@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function switcher(a){
+		var b = a.length;
+		for(var i = 0;i<b-1;i++){
+			for(var j = i+1;j<b-1;j++){
+				if(a[j]<a[i]){
+					var temp = a[j];
+					a[j]=a[i];
+					a[i] = temp;
+				}
+			}
+		}
+		return a;
+	}
+	var arry = [2,3,4,6,8,13,45,66,7,7,102];
+	var c = switcher(arry);
+	console.log(c);
+</script>
+</html>

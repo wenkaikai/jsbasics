@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <style>
+        div
+        {
+            width:100px;
+            height:75px;
+            background-color:red;
+            border:1px solid black;
+        }
+        div#div2
+        {
+            transform:skew(30deg,20deg);/*x轴如果是正值得话就是第一个和第三个角拉伸，y轴是正值得时候也是第一个和第二个角拉伸*/
+            -ms-transform:skew(30deg,20deg); /* IE 9 */
+            -webkit-transform:skew(30deg,20deg); /* Safari and Chrome */
+        }
+    </style>
+</head>
+<body>
+
+<div>Hello. This is a DIV element.</div>
+
+<div id="div2">Hello. This is a DIV element.</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var total = 30;
+    var msg = passthru`The total is ${total} (${total*1.05} with tax)`;
+
+        //方法 一;
+        //    function passthru(literals) {
+        //        console.log(literals);//(3) ["The total is ", " (", " with tax)", raw: Array(3)] 这样的话只是第一个参数
+        //        console.log(arguments);//(3) [Array(3), 30, 31.5, callee: ƒ, Symbol(Symbol.iterator): ƒ]//arguments 才是所有的参数
+        //        var result = '';
+        //        var i = 0;
+        //        while (i < literals.length) {
+        //            debugger;
+        //            result += literals[i++];
+        //            if (i < arguments.length) {
+        //                result += arguments[i];
+        //            }
+        //        }
+        //        return result;
+        //    }
+        //    console.log(msg);
+        //    msg // "The total is 30 (31.5 with tax)"
+
+
+    //方法 二
+    function passthru(literals, ...values) {//如果有多个参数...values表示的是一个数组
+        console.log(values)//[30, 31.5]为什么要循环变量这个数组 而不是循环常量那个数组
+        var output = "";
+        for (var index = 0; index < values.length; index++) {
+            output += literals[index] + values[index];
+        }
+
+        output += literals[index]
+        return output;
+    }
+    console.log(msg);
+</script>
+</body>
+</html>

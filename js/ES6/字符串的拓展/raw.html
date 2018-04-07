@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * 上面代码中，console.log接受的参数，实际上是一个数组。该数组有一个raw属性，保存的是转义后的原字符串。*/
+//    console.log`123`
+    // ["123", raw: Array[1]]
+
+
+//
+//    tag`First line\nSecond line`;
+//
+//        function tag(strings) {
+//            console.log(strings);
+//            console.log(strings.raw[0]);
+//            // strings.raw[0] 为 "First line\\nSecond line"
+//            // 打印输出 "First line\nSecond line"
+//        }
+
+
+//    var str= `Hi\n${2+3}!`;
+//    var str1 = String.raw(str);
+//    // "Hi\\n5!"
+//    console.log(str);
+//    console.log(str1);
+
+    var str = String.raw({ raw: 'test' }, 0, 1, 2);
+    // 等同于
+
+    //String.raw({ raw: ['t','e','s','t'] }, 0, 1, 2);
+//    `t${a}`
+    console.log(typeof str);//t0e1s2t
+</script>
+</body>
+</html>

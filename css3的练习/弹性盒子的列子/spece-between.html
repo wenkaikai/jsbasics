@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>菜鸟教程(runoob.com)</title>
+    <style>
+        .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            /*子盒子均匀分布边缘两边没有空隙*/
+            /*-webkit-justify-content: space-between;*/
+            justify-content: space-between;
+
+            /*两边有空隙但是要比中间的要小*/
+            /*-webkit-justify-content: space-around;*/
+            /*justify-content: space-around;*/
+            /*所有的内容都居中了*/
+            /*flex-wrap:wrap;*/
+            /*justify-content:space-around;*/
+            /*侧轴上的对齐方式*/
+            /*align-items:stretch;*/
+            /*align-items:flex-start;*/
+            /*相对于父元素居中的*/
+            /*align-items:center;*/
+            /*align-items:baseline;*/
+            width: 400px;
+            height: 250px;
+            background-color: lightgrey;
+        }
+
+        .flex-item {
+            background-color: cornflowerblue;
+            /*width: 100px;*/
+            /*height: 100px;*/
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex</div>
+    <!--<div class="flex-item">flex item 1</div>-->
+    <!--<div class="flex-item">flex item 2</div>-->
+    <!--<div class="flex-item">flex item 3</div>-->
+</div>
+
+</body>
+</html>

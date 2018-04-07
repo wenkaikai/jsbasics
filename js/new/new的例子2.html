@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //Javascript规定，每一个构造函数都有一个prototype属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承
+    function Animal(name){
+        this.name = name;
+    }
+//    console.log(Animal.prototype)
+    Animal.color = "black";//定义了一个静态属性。
+    Animal.prototype.say = function(){//在函数原型对象prototype上定义了一个方法，每一个函数都有一个prototype属性
+        console.log("I'm " + this.name);
+        console.log(this)//指向的是构造函数这个对象{name:cat}
+    };
+
+    var cat = new Animal("cat");
+
+//     console.log(
+//                  cat.name,  //cat
+//                   cat.height //undefined
+//        );
+         cat.say(); //I'm cat
+
+
+
+//         console.log(
+//                 typeof(Animal),//函数的执行上下文。
+//                    Animal.name, //Animal 这个name是函数的内置属性，不是我们自己定义的，所以就是函数的名字。
+//                   Animal.color //back
+//         );
+//         Animal.say(); //Animal.say is not a function
+</script>
+</html>

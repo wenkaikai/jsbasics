@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>qqqq</title>
+    <script type="text/javascript" src="../../jquery-1.11.2.min.js"></script>
+
+    <script type="text/javascript" src="extend.js"></script>
+
+</head>
+<body>
+<p>ok</p>
+<div>haode</div>
+
+<script>
+$("div").click(function(){
+    $(this).abc();
+});
+//ab();
+
+//jQuery.extend({
+//    getHtml:function(url,params,callback){
+//        $.ajax({
+//            url:url,type:"POST",dataType:"html",data:params,
+//            success : function(html) {
+//                if(typeof callback == "function") callback(html);
+//            },
+//            error : function(data) {failMsg("请求失败：" + url);}
+//        });
+//    }
+//})
+////jq extends 为什么写在本页面可以，写在其他的js里就不行
+console.log($.adddd(3,4))
+//    function fn(a,b){
+//        console.log(a);
+//        console.log(b)
+//    }
+//
+//    function ab(){
+//        console.log("lo");
+//    }
+//    function aa(){
+//        for(var a = 1;a<10;a++){
+//            if(a==5){
+//                return
+//            }
+//            console.log("buxing")
+//
+//        }
+//
+//    };
+//
+//var bb = aa()
+</script>
+</body>
+</html>

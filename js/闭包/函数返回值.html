@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f1(){
+        return function(){
+            alert("ok")
+        }
+    }
+    var re = f1();
+    console.log(re())
+</script>
+</body>
+</html>

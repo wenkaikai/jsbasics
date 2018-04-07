@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var myFunction = new Function('users', 'salary', 'return users * salary');
+    console.log(myFunction);
+    let a = myFunction(20,30);
+    console.log(a)//600
+</script>
+</body>
+</html>

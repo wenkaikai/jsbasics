@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.broder{
+				border:2px solid red;
+				
+			}
+			.bg{
+				width:200px;
+				height:200px;
+				background:blue;
+				
+			}
+			.color{
+				color:#f60;
+			}
+		</style>
+		<script src="../jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div id="div1">
+			<div>222</div>
+			<div>333</div>
+		</div>
+		<div>444</div>
+		<div>555</div>
+	</body>
+	<script>
+	//找到#div1 下所有的div
+//		$("#div1 div").addClass("broder color bg");
+//		$(document).click(function(){
+//			$("#div1 div").removeClass("broder");
+//			}
+//			
+//		)
+		// 找div1下div只是父子关系
+		
+//		$("#div1>div").addClass("broder color bg");
+//		$(document).click(function(){
+//			$("#div1>div").removeClass("broder");
+//			}
+//			
+//		)
+		//div1+div//表示紧跟着div1后的div(只是一个div)
+		
+//		$("#div1+div").addClass("broder color bg");
+//		$(document).click(function(){
+//			$("#div1+div").removeClass("broder");
+//			}
+//			
+//		)
+		//div1~//表示紧跟着div1后的所有兄弟元素
+		$("#div1~").addClass("broder color bg");
+		$(document).click(function(){
+			$("#div1~div").removeClass("broder");
+			}
+			
+		)
+	</script>
+</html>

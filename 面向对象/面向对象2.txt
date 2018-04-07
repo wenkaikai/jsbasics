@@ -1,0 +1,164 @@
+4.对象的组成
+
+  方法   函数：过程、动态的
+  属性   变量：状态、静态的
+
+5.this       当前的方法属于谁就是谁
+
+  例如点击事件里的this，其实就是触发事件的那个dom对象的onclick方法里的this，当然是人家自己咯
+
+   再比如说一个函数里的this，这个函数都属于window的一个方法，当然里面的this也是window咯
+
+  还有哦，不要在系统对象上面添加属性和方法，这样不太好
+
+  那么在谁身上加呢？在object这个对象身上，别的date呀array呀，这些对象都是有一些个好玩的功能的，
+
+  object也就自己最强大的一个功能就是，没有功能~~~~ 这样咱们就可以随意给他加属性和方法而不用去想会不会覆盖了
+
+6.创建对象的方法
+
+     1.基础创建
+
+var obj=new Object();
+obj.name='allen';
+obj.qq='983357618';
+
+obj.showName=function() {
+   alert(this.name)
+}
+
+但是这样又会有问题，比如说，我要创造一百个，就要这么写一百次，太麻烦了
+
+   2.工厂方式 通过构造函数
+
+function createPerson(name,qq){
+   // 原料
+   var obj=new Object();
+   // 加工
+   obj.name=name;
+   obj.qq=qq;
+   obj.showName=function() {
+      alert(this.name)
+   }
+   // 出厂
+   return obj;
+}
+var obj1=createPerson("allen",'985629856')
+var obj2=createPerson("john",'9829856');
+
+这样也没问题哦，但是有个情况啦，注意
+alert(obj1.showName)//function(){alert(this.name)}
+alert(obj2.showName)//function(){alert(this.name)}
+
+结过都一样哦，但是
+
+alert(obj1.showName==obj2.showName) //false
+
+这里居然是不一样！！我的天，这样的话那我一百个对象就有一百个不一样的方法要占用内充~~~~
+
+也就说会有两种问题：1.  创建对象没有用到new  感觉心里空落落的  2. 方法都不一样的话太占据空间了~~~~
+
+安啦，去解决！！
+
+function createPerson(name,qq){
+   // 原料   系统偷偷摸摸做的
+   // var this=new Object();
+   // 加工
+   this.name=name;
+   this.qq=qq;
+   this.showName=function() {
+      alert(this.name)
+   }
+   // 出厂   系统偷偷摸摸做的
+   // return this;
+}
+
+var obj1=new createPerson("allen",'985629856')
+var obj2=new createPerson("john",'9829856');
+
+这样的话代码又少了很多，很爽，而且还有new了，其实就是利用了一个概念，任何函数都可以new一下
+
+比如
+
+function aa(){};alert(new aa())
+
+结果就是object哦
+
+那它就变成对象啦，那它里面的this就是它new出来的自己啦~~~~
+
+但是这样还是有一个问题，
+
+alert(obj1.showName==obj2.showName) //false
+
+这里还是false，还是占用很多空间.........
+
+没关系，再去解决，这里，就用到下个概念了
+
+7.prototype 原型~~~
+
+先来看个例子，比如说有两个人A、B去买了同样的手机，A买完手机后又买了个手机壳，那么B看见人家有手机壳就不干了，去找卖手机的理论，为什么他
+
+有我没有，这就不讲道理了吧，毕竟人家那个壳子是A自己花钱又买的，B当然没有了，但是如果说买手机的时候送手机壳的话，这样B就不用去买了，AB
+
+都有了呢，皆大欢喜。
+
+var arr1=[1,2,3];
+var arr2=[4,5,6];
+arr1.sum=function(){
+   var result=0;
+   for(var i=0;i<this.length;i++){
+      result+=this[i]
+   }
+   return result;
+}
+alert(arr1.sum()) //6
+alert(arr2.sum()) //error
+
+就像这个例子，arr2根本没有这个方法嘛，想要的话，只能自己去添加咯，再写一遍
+
+arr2.sum=function(){
+   var result=0;
+   for(var i=0;i<this.length;i++){
+      result+=this[i]
+   }
+   return result;
+}
+
+但是这样就比较繁琐了，每次都写一遍是吧，而且都还要占用空间，那么怎么能改一改呢，能不能把这个方法放到一个他两都能用到的地方呢？？？
+
+大家再想一下哈，在html+css布局里面呢，有十个一样的div，想给他们加一个背景色是黄色，咱们可以给他们的行内都写上style=“background：
+
+yellow；”，但是咱们是不是也可以来创建一个类名为yellow，里面写上背景为黄色，然后给这些个div都加上这个类名就棒棒哒了呢~~
+
+其实这个通用样式的类名放到js里就是原型了呢
+
+var arr1=[1,2,3];
+var arr2=[4,5,6];
+Array.prototype.sum=function(){
+   var result=0;
+   for(var i=0;i<this.length;i++){
+      result+=this[i]
+   }
+   return result;
+}
+
+alert(arr1.sum()) //6
+alert(arr2.sum()) //15
+
+function createPerson(name,qq){
+   this.name=name;
+   this.qq=qq;
+}
+createPerson.prototype.showName=function(){
+   this.showName=function() {
+      alert(this.name)
+   }
+}
+
+那么上一个知识点的那两个问题可就都解决了哦~~~
+
+这样也就发展出一个广泛的一个写法了哦
+
+用构造函数去写自有属性和方法，用原型去写共有的属性和方法，这种方式叫混合方式
+
+那么学到现在呢，其实咱们也就对面向对象有一些了解了，它就是一种模式，一种思想，咱们以前写的还是面向过程的多，但是基本所有的效果和功能都可以用面向对象或者面向过程去写，没有固定的非得用什么，只不过呢，面向对象针对某些情况呢要好一些

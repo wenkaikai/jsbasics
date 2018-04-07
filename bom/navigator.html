@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 新的知识点一定要写注释不然第二次看的时候又是懵逼状态
+    /*
+        一
+        appCodeName 属性是一个只读字符串，声明了浏览器的代码名。
+     */
+   // console.log(navigator.appCodeName)
+
+    /*
+        二
+        再后来，谷歌开发了Chrome浏览器，Chrome使用Webkit作为渲染引擎，和Safari之前一样，它想要那些为Safari编写的页面，于是它伪装成了Safari。于是Chrome使用WebKit，并将自己伪装成Safari，WebKit伪装成KHTML，KHTML伪装成Gecko，最后所有的浏览器都伪装成了Mozilla，这就是为什么所有的浏览器User-Agent里都有Mozilla。Chrome自称为“Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13”。
+     Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+     khtml 一个HTML排版引擎。
+     Safari/537.36 于是它伪装成了Safari。
+     AppleWebKit 浏览器的内核
+    */
+    console.log(navigator.userAgent)
+
+
+    /*
+        三 navigator.appName
+        返回浏览器的名称
+     */
+window.document.write("浏览器的名字是："+navigator.appName)
+</script>
+</html>

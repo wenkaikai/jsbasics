@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //第一种情况
+//    (function (){
+//        var a=b=5;
+//    }())
+//
+//    console.log(b)//此时的b就相当于是个全局变量，但是虽然定义在函数里面但是函数仍然是要执行的
+//    console.log(a)
+
+    (function (){
+        var a=0, b=0, c=0, d=0, e=0;//这个是相当于每个变量都定义了
+    }())
+    console.log(b) //b is not defined
+    console.log(a)
+</script>
+</body>
+</html>

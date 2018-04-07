@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exec</title>
+</head>
+<body>
+<script type="text/javascript">
+//如果 exec() 找到了匹配的文本，则返回一个结果数组。否则，返回 null。
+//exec() 方法还返回两个属性。index 属性声明的是匹配文本的第一个字符的位置。input 属性则存放的是被检索的字符串 string。
+// 我们可以看得出，在调用非全局的 RegExp 对象的 exec() 方法时，返回的数组与调用方法 String.match() 返回的数组是相同的。
+//和 patt.test()执行是一样的
+var str = "Visit W3School, W3School is a place to study web technology.";
+var patt = new RegExp("W3School","g");
+var result;
+console.log(patt.exec(str));//第一次 0："W3School"; index: 6;
+console.log(str.match(patt))// ["W3School", "W3School"];
+
+//console.log(patt.exec(str)[1]);//undefined 所以说index 是属性不是值
+//console.log(patt.exec(str))//第二次 0："w3Schoo;";index:16;
+//console.log(patt.exec(str));//null
+//    while ((result = patt.exec(str)) != null)  {
+//        document.write(result);//W3School
+//        document.write("<br />");
+//        document.write(patt.lastIndex);// 14
+//    }
+</script>
+</body>
+</html>

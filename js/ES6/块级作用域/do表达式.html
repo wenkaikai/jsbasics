@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>do表达式</title>
+</head>
+<body>
+<script>
+    var f = function(){
+        return 2;
+    }
+
+    /*
+
+     {
+     let t = f();
+     t = t * t + 1;
+     }
+     //怎么获取块级作用域里面的值呢；
+     console.log(t)
+     */
+   let x = do {
+        let t = f();
+        t = t*t +1;
+    };
+    console.log(x)
+</script>
+</body>
+</html>

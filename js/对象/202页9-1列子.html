@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function range(from,to){
+        var r =Object.create(range.methods);
+        r.from = from;
+        r.to = to;
+        return r;
+    }
+    range.methods = {
+        includes:function(x){
+            return this.from <= x && x<=this.to;
+        },
+        foreach:function (f){
+            for (var x = Math.ceil(this.from);x<=this.to;x++) f(x);
+        },
+        toString:function(){return "(" + this.from + "..."+ this.to+")";}
+
+    };
+    var g = range(1,3);
+    g.includes(2);
+    g.foreach(console.log)
+    console.log(g)//Object {from: 1, to: 3}
+    console.log(g.toString())//(1..3)
+
+//
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<title>正则表达式</title>
+<head>
+    <meta charset="utf-8">
+</head>
+<script type="text/javascript">
+    //只能输入1-9999正整数
+    function clearInput(obj){
+        obj.value = obj.value.replace(/[^\d]/g,"");
+        obj.value = obj.value.replace(/^0.*$/g,"");
+        obj.value = obj.value.replace(/^([1-9])(\d{3}).*$/,'$1$2'); //只能输入两个小数
+    }
+    function alertMessage(){
+        var value=document.getElementById('digit').value;
+        var regx=/\d{3}/;
+        if (regx.test(value)) {
+            alert("是3位");
+        }else{
+            alert("不是3位");
+        };
+    }
+</script>
+<body>
+四位正整数:<input id="digit" type="text" onkeyup="clearInput(this)" onafterpaste="clearInput(this)">
+<input type="button" onclick="alertMessage()" value="有几位数字">
+</body>
+<html>

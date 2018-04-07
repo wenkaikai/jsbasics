@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title1</title>
+</head>
+<body>
+
+</body>
+<script>
+    var aa="0122"
+    var regex = /^[0]\d+$/;
+//    var regex = /^\d+$/;
+//    console.log(aa.split("."))
+    console.log(regex.test(aa))
+
+
+    //indexOf
+    var b = "123";
+    var c =b.indexOf("123") //0如果找不到就返回-1
+    console.log(c)//0
+    console.log(b.indexOf("23"))//1
+
+
+
+    var d = ~c;//-1(number)
+    if(-2){
+       console.log("ok")//进来了
+    }
+</script>
+</html>

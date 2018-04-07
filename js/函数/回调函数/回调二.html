@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function evalCallFunction(fun,obj){
+        var funType = typeof(fun);
+        if(funType=="function"){
+            fun.call();
+        }else if(funType=="string"){
+            eval(fun);
+        }
+    }
+
+    function isParaNull(obj){
+        console.log(obj)
+        var result = true;
+        var type = typeof(obj);
+        /*undefined or null return false*/
+        if(type == "undefined"
+                || obj == null){
+            result = true;
+        }
+        /*type is string */
+        else if (type == "string"){
+            obj = $.trim(obj);
+            if( obj==""
+                    || obj == "undefined"){
+                result = true;
+            }else {
+                result = false;
+            }
+        }
+        /*other object */
+        else{
+            result = false;
+        }
+        return result;
+    }
+
+
+    var obj={
+        failCall:function(){
+            alert("失败了");
+        }
+    }
+
+
+    function invoke(failCall){
+        console.log(typeof failCall)
+
+            if(!isParaNull(failCall)){
+                evalCallFunction(failCall);
+            }
+
+    };
+
+    invoke(obj.failCall);
+</script>
+</body>
+</html>

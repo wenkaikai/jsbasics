@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>暂时性死区</title>
+</head>
+<body>
+    <script>
+        /*
+         总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）。
+
+         temporal [暂时的、当时的]
+         */
+
+        if (true) {
+            // TDZ开始
+            typeof tm;// typeof 一个没有的变量是不会报错的
+            typeof tmp;// typeof 一个定义过的但是是死区的变量的变量反而会报错
+            tmp = 'abc'; // ReferenceError
+            console.log(tmp); // ReferenceError
+
+            let tmp; // TDZ结束
+            console.log(tmp); // undefined
+
+            tmp = 123;
+            console.log(tmp); // 123
+        }
+        /*
+         在没有let之前，typeof运算符是百分之百安全的，永远不会报错。现在这一点不成立了。这样的设计是为了让大家养成良好的编程习惯，变量一定要在声明之后使用，否则就报错。
+         */
+
+    </script>
+</body>
+</html>

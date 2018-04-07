@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map</title>
+</head>
+<body>
+<script>
+    var data = [1, 2, 3, 4];
+
+    var arrayOfSquares = data.map(function (item,index,array) {
+        console.log(index);
+        console.log(array);
+        return item * item;
+    });
+
+    alert(arrayOfSquares); // 1, 4, 9, 16
+
+
+    //解释
+    /*
+        map(function(value,index,array){},[thisObject])
+
+     */
+</script>
+</body>
+</html>

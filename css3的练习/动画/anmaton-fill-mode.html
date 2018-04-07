@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <style>
+        div
+        {
+            width:100px;
+            height:100px;
+            background:red;
+            position:relative;
+            animation:mymove 3s;
+            animation-iteration-count:2;
+            animation-fill-mode:forwards;/*动画停在200px处不会再进行第二次*/
+
+            /* Safari 和 Chrome */
+            -webkit-animation:mymove 3s;
+            -webkit-animation-iteration-count:2;
+            -webkit-animation-fill-mode:forwards;
+        }
+
+        @keyframes mymove
+        {
+            from {top:0px;}
+            to {top:200px;}
+        }
+
+        @-webkit-keyframes mymove /* Safari 和 Chrome */
+        {
+            from {top:0px;}
+            to {top:200px;}
+        }
+    </style>
+</head>
+<body>
+
+<p><strong>注意：</strong>Internet Explorer 9 及其之前的版本不支持 animation-fill-mode 属性。</p>
+
+<div></div>
+
+</body>
+</html>

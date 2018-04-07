@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<script>
+
+    //pathname 属性是一个可读可写的字符串，可设置或返回当前 URL 的路径部分。(不包含参数部分只是路径部分)
+    var str= window.decodeURI(location.pathname);
+    console.log(str);//同步测试文件夹/bom/location/location的拆分.html
+   var str1 =  str.replace(/[x00-xff]*/g,"");
+    console.log(str1);
+
+
+
+</script>
+
+</body>
+</html>

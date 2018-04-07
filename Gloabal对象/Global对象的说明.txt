@@ -1,0 +1,68 @@
+	1，Global对象是ECMAScript中最特别的对象，因为实际上它根本不存在。
+	2，这里需要理解的主要概念是，在ECMAScript中，不存在独立的函数，所有函数都必须是某个对象的方法。
+	3，如isNaN()、isFinite()、parseInt()和parseFloat()等，看起来都像独立的函数。实际上，它们都是Global对象的方法。
+	4，Global对象不只有方法，它还有属性。还记得那些特殊值undefined、NaN和Infinity吗？它们都是Global对象的属性。
+	此外，所有本地对象的构造函数也都是Global对象的属性。
+	5，undefined Undefined类型的字面量
+6 NaN 非数的专用数值
+7		
+Infinity	
+无穷大值的专用数值
+
+Object	
+Object的构造函数
+
+Array	
+Array的构造函数
+
+Function
+Function的构造函数
+
+Boolean	
+Boolean的构造函数
+
+String	
+String的构造函数
+
+Number	
+Number的构造函数
+
+Date	
+Date的构造函数
+
+RegExp	
+RegExp的构造函数
+
+Error	
+Error的构造函数
+
+EvalError	
+EvalError的构造函数
+
+RangeError	
+RangeError的构造函数
+
+ReferenceError	
+ReferenceError的构造函数
+
+SyntaxError	
+SyntaxError的构造函数
+
+TypeError	
+TypeError的构造函数
+
+URIError
+URIError的构造函
+
+
+
+
+
+
+
+
+
+
+	
+
+URIError的构造函

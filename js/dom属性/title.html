@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>无标题文档</title>
+</head>
+
+<script language="javascript">
+    function showit()
+    {
+//        var exam = document.getElementById("example");
+//        example.style.display="block";
+    }
+    function donotshow()
+    {
+//        var exam = document.getElementById("example");
+//        example.style.display="none";
+    }
+
+    function   set()
+    {
+        var   tmp   =   document.getElementById("answer");
+        var  tmp=document.getElementById("question");
+
+        if   (answer.style.display=="none")
+        {
+
+            answer.style.display="block";
+            question.value="隐藏答案";
+        }
+        else
+        {
+            answer.style.display="none";
+            question.value="显示答案";
+        }
+    }
+</script>
+<body>
+<span ><font color="red ">示例：题目</font><input id="question" title="点击执行" type="button" value="显示答案" onClick="set()"> </input> </span>
+<table id="answer" style= "display:none">
+    <tr>
+        <td>
+            答案
+        </td>
+    </tr>
+</table>
+
+<!--<p>-->
+    <!--<span onmousemove="showit()" onmouseout="donotshow()">鼠标滑过</span>-->
+<!--<table id="example" style= "display:none">-->
+    <!--全部内容-->
+<!--</table>-->
+<!--</p>-->
+
+<p title="显示要提醒的内容" onmousemove="showit()" onmouseout="donotshow()">
+    <span>鼠标停在上面</span>
+</p>
+
+<p>
+    <span ><a title="编辑内容" href="http://www.baidu.com"> title(鼠标停留片刻)</a></span>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    第二个是valueOf(),它的作用是返回它相应的原始值
+     */
+//    var d = new Date();
+//    var c = d.valueOf()
+//    var dc = d.toString();
+//    console.log(dc)
+//    console.log(typeof dc)
+//    console.log(c)
+//    console.log(typeof c)
+    var a =[1,2,{"a":245}];
+    var b = {}
+    var s = a.toString();
+    var n = a.valueOf();//还是a
+    console.log(s)
+    console.log(n)
+    console.log(Object.prototype.toString.call(a))//[object Array]
+</script>
+</html>

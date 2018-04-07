@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this指向固定化</title>
+</head>
+<body>
+<script>
+    /*
+     箭头函数可以让this指向固定化，这种特性很有利于封装回调函数。下面是一个例子，DOM 事件的回调函数封装在一个对象里面。
+     */
+    var PageHandler = {
+
+        id: "123456",
+
+        init: function() {
+            document.addEventListener("click",
+                    (event) => this.doSomething(event.type), false);
+            // event 是形参
+            // 箭头后面是函数体
+            // 如果是一个参数的话 参数加不加括号都一样的;
+        },
+        doSomething: function(type) {
+            console.log("Handling " + type + " for " + this.id);
+        }
+    };
+    PageHandler.init()
+</script>
+</body>
+</html>

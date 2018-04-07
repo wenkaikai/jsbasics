@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                alert($("div").scrollTop()+" px");//相对于容器的滚动位置
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div style="border:1px solid black;width:100px;height:150px;overflow:auto">
+    This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</div><br>
+<button>返回垂直滚动条的位置</button>
+<p>向下移动滚动条,再次单击该按钮。</p>
+
+</body>
+</html>

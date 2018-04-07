@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="MyElement">111</div>
+</body>
+<script>
+    function init() {
+        var el = document.getElementById('MyElement');
+        el.onclick = function () {
+            //……
+            console.log("ok")
+        }
+        try {
+            return el;
+        } finally {
+            el = null;
+        }
+    }
+    init();
+
+
+</script>
+</html>

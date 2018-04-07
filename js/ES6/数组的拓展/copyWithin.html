@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>copyWithin</title>
+</head>
+<body>
+<script>
+    /*
+     数组实例的copyWithin方法，在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），
+     然后返回当前数组。也就是说，使用这个方法，会修改当前数组。
+
+
+         它接受三个参数。
+         target（必需）：从该位置开始替换数据。
+         start（可选）：从该位置开始读取数据，默认为0。如果为负值，表示倒数。
+         end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。
+
+     */
+    console.log([1, 2, 3, 4, 5].copyWithin(0, 3))//(5) [4, 5, 3, 4, 5]
+
+    //倒数第一个数是负一，倒数第二个数是负二
+    console.log([1, 2, 3, 4, 5].copyWithin(0, -2, -1))//(5) [4, 2, 3, 4, 5]
+
+
+</script>
+</body>
+</html>

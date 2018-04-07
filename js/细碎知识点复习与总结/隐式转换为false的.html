@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log([]==0)//true
+    console.log([]==true)//false
+    if([]){
+        //能进来
+        console.log("ok")
+    }
+    if(0){//不能进来
+        console.log("ok0")
+    }
+    if(undefined){//进不来
+        console.log("ok1")
+    }
+    /*
+        转换为布尔值
+        0，空，null,undefined,NaN
+     */
+    //console.log(Boolean(0))//false
+//    console.log(Boolean(null))//false
+//    console.log(Boolean(NaN))//false
+//    console.log(Boolean(''))//false
+//    console.log(Boolean(undefined))//false
+//    console.log(false == undefined);//false
+//    Number(null); // 0
+//    Number(undefined); // NaN
+    //    console.log(Boolean([]))//true
+    //在比较相等性之前，null 没有被转换为其他类型
+    console.log(undefined==0)//false
+    //    null == 0 ; //false
+    console.log(false==null)//false
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+<script type="text/javascript">
+function formSubmit()
+  {
+  document.getElementById("myForm").submit()
+  }
+</script>
+</head>
+
+<body>
+
+<form id="myForm" action="js_form_action.asp" method="get">
+Firstname: <input type="text" name="firstname" size="20"><br />
+Lastname: <input type="text" name="lastname" size="20"><br />
+<br />
+<input type="button" onclick="formSubmit()" value="Submit">
+</form>
+</body>
+
+</html>

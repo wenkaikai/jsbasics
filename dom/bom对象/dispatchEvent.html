@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="obj">111111</div>
+</body>
+<script>
+    //document上绑定自定义事件ondataavailable
+    document.addEventListener('ondataavailable', function (event) {
+        alert(event.eventType);
+    }, false);
+    var obj = document.getElementById("obj");
+    //obj元素上绑定click事件
+    obj.addEventListener('click', function (event) {
+        alert(event.eventType);
+    }, false);
+    //调用document对象的 createEvent 方法得到一个event的对象实例。
+    var event = document.createEvent('HTMLEvents');//创建
+    // initEvent接受3个参数：
+    // 事件类型，是否冒泡，是否阻止浏览器的默认行为
+    //该方法将初始化 Document.createEvent() 方法创建的合成 Event 对象的 type 属性、bubbles 属性和 cancelable 属性。
+    event.initEvent("ondataavailable", true, true);
+    event.eventType = 'message';
+    //触发document上绑定的自定义事件ondataavailable
+    document.dispatchEvent(event);
+</script>
+</html>

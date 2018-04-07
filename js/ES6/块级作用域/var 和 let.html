@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var tmp = 123;
+
+    if (true) {
+        /*
+         只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。
+         */
+        tmp = 'abc'; // ReferenceError          ReferenceError: tmp is not defined
+        let tmp;
+    }
+
+    /*
+
+     ES6明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错
+
+     */
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    //列子一
+    (function test(){
+
+        var a=b=c=5;
+        alert(typeof a);
+        alert(typeof b);
+    })();
+
+
+
+    alert(typeof a);//undefined
+    alert(b);//5
+    alert(c)
+
+
+//    var a=b=c={n:2};
+//    console.log(a.n)
+
+//   列子三
+
+
+//    var a = {n:1};
+//    var b = a; // 此时b的指针就已经指向了{n:1}
+//    a.x = a = {n:2};//此时的a指针已经指向了{n:2}但是对于a.x来说不是不是改变指针而是对.x赋值了
+    //此时的a.x仍然是指向的{n:1}此时应该是这样{n:1,x={n:2}}
+//    console.log(a.x);// --> undefined
+//    console.log(b.x);// --> {n:2}
+//    console.log(a);
+
+
+
+//例子四
+//    var a={n:1};
+//    a={n:2};
+//    a.x=a;
+//    console.log(a.x);//Object {n: 2, x: Object}
+</script>
+</html>

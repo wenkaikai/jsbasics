@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var a = function() {
+        alert(arguments.callee);
+    }
+    var b = function() {
+        a();
+    }
+//    b();
+    a();//返回的是a的本身
+</script>
+</html>

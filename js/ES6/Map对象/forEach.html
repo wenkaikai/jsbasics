@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let map = new Map();//新建一个Map对象
+
+    map.set("key1","小东");
+    map.set("key2","小郭");
+    /*
+     　　forEach(callback , context) 循环执行函数并把键/值对作为参数； context为执行函数的上下文this；
+     */
+    map.forEach(function(i,j){
+        console.log(i);
+        console.log(j)
+    });
+</script>
+</body>
+</html>

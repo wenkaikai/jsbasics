@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.8.3.min.js"></script>
+
+</head>
+<body>
+<ul>
+    <li>list <strong>item 1</strong></li>
+    <li><span>list item 2</span></li>
+    <li>list item 3</li>
+</ul>
+
+<script>
+    $("ul").click(function(event) {
+        var $target = $(event.target);
+        if ( $target.is("li") ) {//判断点击的是不是li
+            $target.css("background-color", "red");
+        }
+    });
+</script>
+
+</body>
+</html>

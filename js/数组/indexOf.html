@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>array.indexOf</title>
+</head>
+<body>
+<script>
+    /*
+        搜索 Array 对象的指定元素并返回该元素的索引。 此函数是静态的，可在不创建对象实例的情况下调用。
+     var indexVar = Array.indexOf(array, item, start);//
+
+     start （可选）指定在数组中搜索的起始元素的索引号
+     */
+
+
+    var a = ['red', 'blue', 'green', 'blue'];
+    var myFirstIndex = a.indexOf( "blue");
+    // View the results: "1"
+    alert("myFirstIndex: " + myFirstIndex);
+//    var mySecondIndex = Array.indexOf(a, "blue", (myFirstIndex + 1) ); //这样不能用
+        var mySecondIndex =a.indexOf( "blue", (myFirstIndex + 1) );
+    // View the results: "3"
+    alert("mySecondIndex: " + mySecondIndex);
+</script>
+</body>
+</html>a

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>offsetHeight</title>
+    <style>
+        body{
+            height:700px;
+        }
+        div{
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+<!--offsetHeight-->
+<!--在IE6，IE7，IE8以及最新的的FF, Chrome中，在元素上都是offsetHeight = clientHeight + 滚动条 + 边框-->
+
+
+<!--scrollHeight-->
+<!--scrollHeight是元素的padding加元素内容的高度。这个高度与滚动条无关，是内容的实际高度。-->
+<!--计算方式 ：scrollHeight = topPadding + bottomPadding + 内容margix box的高度。-->
+<div>
+
+</div>
+</body>
+<script>
+    var body1 = document.getElementsByTagName("body")[0]
+    var div1 = document.getElementsByTagName("div")[0]
+    console.log(body1.offsetHeight)//谷歌是700 没有px
+    console.log(body1.scrollHeight)//谷歌是716 没有px
+    console.log(getComputedStyle(body1).height)//谷歌是700px
+
+    //小div 的
+    console.log(div1.offsetHeight)//谷歌是200 没有px 相当于clientHeight 也就是height 但是要加上滚动条
+    console.log(div1.scrollHeight)//谷歌是200 没有px 是内容的实际高与滚动条无关
+    console.log(getComputedStyle(div1).height)//谷歌是200px
+
+</script>
+</html>

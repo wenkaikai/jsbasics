@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = "我爱中国2.cc/$$rr好的";
+    var pattern = /[^u4e00-u9fa5]/g;
+    //匹配中文把正斜线和字符以及小数点都比配啦
+    console.log(str.replace(/[^u4e00-u9fa5]/g,""));//2ccrr
+</script>
+</body>
+</html>

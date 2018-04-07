@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    列子 一
+    */
+    function add(a,b)
+    {
+        console.log(this)//此时的this就是指向了sub的执行上下文
+        alert(a+b);
+    }
+    function sub(a,b)
+    {
+        alert(a-b);
+    }
+
+    add.call(sub,3,1);//用call 调用
+    add.apply(sub,[3,4]);//7 用apply调用
+
+
+
+    /*
+    列子 二
+     */
+
+//
+//    function Animal(){
+//        this.name = "Animal";
+//        this.showName = function(){
+//            alert(this.name);
+//        }
+//    }
+//
+//    function Cat(){
+//        this.name = "Cat";
+//    }
+//
+//    var animal = new Animal();
+//    var cat = new Cat();
+//
+//    //通过call或apply方法，将原本属于Animal对象的showName()方法交给对象cat来使用了。
+//    //输入结果为"Cat"
+//    animal.showName.call(cat,","); //cat
+//    //animal.showName.apply(cat,[]);
+</script>
+</body>
+</html>

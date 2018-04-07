@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        .active{
+            border-bottom: 3px solid #4b4;
+        }
+        ul{
+            height:80px;
+            border: 1px solid #ddd;
+            font-size:0;
+        }
+        ul li{
+            display: inline-block;
+            height:50px;
+            width:90px;
+            text-align: center;
+            line-height: 50px;
+            color:#333;
+            border-bottom: 3px solid #ccc;
+            margin: 0px;
+            padding: 0px;
+            font-size:16px;
+            font-family: "Microsoft YaHei",sans-serif;
+        }
+    </style>
+    <script>
+        $(function(){
+            var lis=$("li");
+            $.each(lis,function(i){
+                $(lis[i]).mouseenter(function(e){
+                    $(".active").removeClass('active');
+                    $(this).addClass('active');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li class="active">首页</li>
+    <li>第一页</li>
+    <li>第二页</li>
+    <li>第三页</li>
+</ul>
+</body>
+</html>

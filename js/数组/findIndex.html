@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>findIndex</title>
+</head>
+<body>
+<script>
+   //对于数组中的每个元素，findIndex 方法都会调用一次回调函数（采用升序索引顺序），直到有元素返回 true。只要有一个元素返回 true，
+   // findIndex 立即返回该返回 true 的元素的索引值。如果数组中没有任何元素返回 true，则 findIndex 返回 -1。
+   //findIndex 不会改变数组对象。
+   let a1 = [3,3,3].findIndex(function(x) { x > 2; });
+   // Returns an index value of 1.
+   // 这个暂时都是 -1 应该是浏览器的问题;
+    console.log(a1)//-1
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>haode</div>
+    <div>haode</div>
+    <div>haode</div>
+    <div>haode</div>
+    <div>haode</div>
+    <div>haode</div>
+    <div>haode</div>
+</body>
+<script>
+    var div = document.querySelectorAll("div");
+    console.log([...div])//将nodelist数组转换为真正的数组
+    /*
+     上面代码中，querySelectorAll方法返回的是一个nodeList对象。它不是数组，
+     而是一个类似数组的对象。这时，扩展运算符可以将其转为真正的数组，原因就在于NodeList对象实现了 Iterator 。
+     */
+
+
+
+</script>
+</html>

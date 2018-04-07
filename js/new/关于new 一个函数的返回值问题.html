@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+        function vv(){
+        console.log("ok")
+//        return [1,2]
+        var ss = "123"
+        this.name = "123"
+//        return [1.2,3] //如果用return 就返回return，如果没用就返回this.name
+//            return ss; //{}
+//            return 123//{}
+
+    }
+    var o = new vv;//不传参数可以不带括号
+    console.log(o)//vv {name: "123"}
+    // 如果 new 的函数里面 返回的是原始值得话 就会被忽略 而重新返回对象（vv{}空的）
+    // 注 js 的原始 值有五个 undefined,null,boolean,number,str
+</script>
+</body>
+</html>

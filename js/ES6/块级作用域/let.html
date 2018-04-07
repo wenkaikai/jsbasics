@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let</title>
+</head>
+<body>
+    <script>
+
+        /* 列子一
+        {
+        var a = 100;
+        let b = 10;
+            console.log(b)//let 定义的变量只在块级作用域内有作用
+        }
+        console.log(a);//100
+        console.log(b)//Uncaught ReferenceError: b is not defined
+        */
+
+        /* 列子二
+         {{{{
+         {let insane = 'Hello World'}
+         console.log(insane); // 报错 not defined
+         }}}};
+         */
+
+        /* 列子三 在 不同的块级作用域 中可以定义重名的变量
+
+
+         {{{{
+         let insane = 'Hello World';
+         {let insane = 'Hello World'}
+         }}}};
+         */
+
+        /* 列子三 块级作用域的出现，实际上使得获得广泛应用的立即执行函数表达式（IIFE）不再必要了。
+             // IIFE 写法
+             (function () {
+             var tmp = ...;
+             ...
+             }());
+
+             // 块级作用域写法
+             {
+             let tmp = ...;
+             ...
+             }
+
+         */
+
+
+        //变量是否会提升 变量不会提升;
+//        {
+//            console.log(a);
+//            let a = 100;
+//        }
+
+        {
+            let num = 2;
+            var num = 2;
+            console.log(num)
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div" onclick="aa()"></div>
+<script type="text/javascript">
+
+
+            var temp = true;
+                document.onkeydown = function(e){
+                    var keyNum = window.event ? e.keyCode : e.which;
+                    if(keyNum==32){
+                        console.log(temp)
+                        if(temp){
+                            console.log(1);
+                            temp = false;
+                        }else{
+                            console.log(2)
+                            temp=true;
+                        }
+                    }
+
+
+                }
+
+
+
+
+</script>
+</body>
+</html>

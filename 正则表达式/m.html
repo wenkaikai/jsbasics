@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>m</title>
+</head>
+<body>
+<script>
+    var reg = /^\d+/mg;//启用换行模式(修饰符)
+    var reg1 = /^\d+/g;//不启用换行模式
+    var str = '1.baidu\n2.google\n3.bing';
+    var result = str.replace(reg,'#');
+    var result1 = str.replace(reg1,'#');
+//    console.log(str)
+    /*
+     1.baidu
+     2.google
+     3.bing
+     */
+console.log(result);
+    /*
+     #.baidu
+     #.google
+     #.bing
+     */
+    console.log(result1)
+    /*
+     #.baidu
+     2.google
+     3.bing
+     */
+</script>
+</body>
+</html>

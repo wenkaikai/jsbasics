@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>call</title>
+</head>
+<body>
+	
+</body>
+<script>
+function sayColor(sPrefix,sSuffix) {
+    alert(sPrefix + this.color + sSuffix);
+};
+var obj = new Object();
+obj.color = "blue";
+sayColor.call(obj, "The color is ", "a very nice color indeed.");  
+</script>
+</html>

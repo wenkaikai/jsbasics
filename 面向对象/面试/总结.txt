@@ -1,0 +1,234 @@
+1.点击之后怎么拿到省份城市id
+2.ajax
+3.json
+4.js跨域
+5.事件委托
+通俗的讲，事件就是onclick，onmouseover，onmouseout，等就是事件，委托呢，就是让别人来做，这个事件本来是加在某些元素上的，然而你却加到别人身上来做，完成这个事件。
+也就是：利用冒泡的原理，把事件加到父级上，触发执行效果。
+好处呢：提高性能
+6.同源策略
+7.什么是对象？什么是面向对象？
+8.ECMAscript有两种开发模式？
+9.面向对象的特点：
+①封装：不考虑内部实现，只考虑功能使用
+②继承：从已有对象上，继承出新的对象
+③多态：同一个函数调用，会有不同的执行效果
+10.对象的组成：
+①属性：变量，状态，静态的
+②方法：函数，过程，动态的
+11.闭包
+12.闭包的好处
+13.css选择符
+①类型选择符
+②id选择符
+③class选择符
+④通配符
+⑤包含选择符
+⑥群组选择符
+⑦伪类选择符
+⑧伪对象选择符
+
+14.jquery选择器
+很多种，大概归纳为9种。
+①基本
+#id 
+element 
+.class 
+* 
+selector1,selector2,selectorN 
+
+②层次选择器：
+ancestor descendant 
+parent > child 
+prev + next 
+prev ~ siblings 
+
+③基本过滤器选择器
+:first 
+:last 
+:not 
+:even 
+:odd 
+:eq 
+:gt 
+:lt 
+:header 
+:animated 
+
+④内容过滤器选择器
+:contains 
+:empty 
+:has 
+:parent 
+⑤可见性过滤器选择器
+:hidden 
+:visible 
+⑥属性过滤器选择器
+[attribute] 
+[attribute=value] 
+[attribute!=value] 
+[attribute^=value] 
+[attribute$=value] 
+[attribute*=value] 
+[attrSel1][attrSel2][attrSelN] 
+⑦子元素过滤器选择器
+:nth-child 
+:first-child 
+:last-child 
+:only-child 
+
+⑧表单选择器
+:input 
+:text 
+:password 
+:radio 
+:checkbox 
+:submit 
+:image 
+:reset 
+:button 
+:file 
+:hidden 
+
+⑨表单过滤器选择器
+:enabled 
+:disabled 
+:checked 
+:selected
+14-1.jquery选择器优化
+①多用id选择器
+②少直接使用class选择器
+③多用父子关系，少用嵌套关系
+④缓存jquery对象
+
+
+15.选择器优化
+16.数组方法？添加  删除
+17.banner
+18.软件生命周期
+19.http请求
+20.js继承
+21.模块化
+①我们来看看什么是模块化？ 
+模块化是一种将系统分离成独立功能部分的方法，可将系统分割成独立的功能部分，严格定义模块接口、模块间具有透明性。javascript中的模块在一些C、PHP、java中比较常见: 
+
+c中使用include 包含.h文件;php中使用require_once包含.php文件 
+java使用import导入包 
+此中都有模块化的思想。 
+
+②模块化的优缺点： 
+
+a>优点： 
+可维护性 
+1.灵活架构，焦点分离 
+2.方便模块间组合、分解 
+3.方便单个模块功能调试、升级 
+4.多人协作互不干扰 
+可测试性 
+1.可分单元测试 
+
+b>缺点： 
+性能损耗 
+1.系统分层，调用链会很长 
+2.模块间通信,模块间发送消息会很耗性能 
+
+③最近的项目中也有用到模块化，使用的是seajs,但是当引用到jquery,jquery easyui/或者jquery UI组件时,有可能会用到很多jquery插件，那这样要是实现一个很复杂的交互时，模块间的依赖会很多，使用define（）方法引入模块会很多，不知有么有什么好的方法？ 
+
+④附： 
+内聚度 
+内聚度指模块内部实现，它是信息隐藏和局部化概念的自然扩展，它标志着一个模块内部各成分彼此结合的紧密程度。好处也很明显，当把相关的任务分组后去阅读就容易多了。 设计时应该尽可能的提高模块内聚度，从而获得较高的模块独立性。 
+
+耦合度 
+耦合度则是指模块之间的关联程度的度量。耦合度取决于模块之间接口的复杂性，进入或调用模块的位置等。与内聚度相反，在设计时应尽量追求松散耦合的系统。
+22.cookie localstorage  sessionstorage
+23.代码优化
+24.js选择器
+25.js浏览器兼容问题
+① event || window.event 
+② e.cancelBubble=true;  ||   e.stopPropagation();
+③ box.currentStyle.width    window.getComputedStyle(box, null).width
+④ document.body || document.documentElement
+⑤ addEventListener(“click”, function(){}, false);
+   attachEvent(“onclick”, function(){});
+26.js的数据类型？判断基本数据类型的操作符是什么？ 
+number,string,object,Boolean,undefined,null,function    typeof 
+27.事件冒泡和事件捕捉的区别？
+   事件捕获主要是上级找下级对象。确定事件对象。
+   事件冒泡主要是下级对象执行命令，与上级对象环环相扣。即下级执行的命令与上级有关。
+28.例举3种强制类型转换和2种隐式类型转换？
+   强制（parseInt,parseFloat,number）
+   隐式（== - ===）
+29.split() join() 的区别
+   前者是切割成数组的形式，后者是将数组转换成字符串
+30.当一个DOM节点被点击时候，我们希望能够执行一个函数，应该怎么做？
+   直接在DOM里绑定事件：<div onclick=”test()”></div>
+   在JS里通过onclick绑定：xxx.onclick = test
+   通过事件添加进行绑定：addEventListener(xxx, ‘click’, test)
+
+31.Javascript的事件流模型都有什么？
+   “事件冒泡”：事件开始由最具体的元素接受，然后逐级向上传播
+   “事件捕捉”：事件由最不具体的节点先接收，然后逐级向下，一直到最具体的
+   “DOM事件流”：三个阶段：事件捕捉，目标阶段，事件冒泡
+32.瀑布流
+33.如何获取javascript所能表示的最大值和最小值？
+		var a = [3,4,5,6,7,99];
+		alert(Math.min.apply(null,a));
+		alert(Math.max.apply(null,a));
+34.data-属性的作用是什么？
+在HTML5中添加了data-*的方式来自定义属性，所谓data-*实际上上就是data-前缀加上自定义的属性名，使用这样的结构可以进行数据存放。使用data-*可以解决自定义属性混乱无管理的现状。
+35.什么是哈希表？
+散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。
+36.什么是js模块模式？实例？
+①模块模式是JavaScript一种常用的编码模式。
+②JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。
+③它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言。
+④最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17701082719
+微信pingguotaoer
+
+
+163邮箱
+HTML5开发工程师
+
+
+
+岗位要求    职业技能
+20条
+
+
+
+
+
+
+
+
+
+
+
+
+
+

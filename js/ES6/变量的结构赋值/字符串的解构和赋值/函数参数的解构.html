@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数参数的解构</title>
+</head>
+<body>
+<script>
+//    function move({x = 0, y = 0}={}) {
+//        return [x, y];
+//    }
+//
+//    console.log(move({x: 3, y: 8}))    //[3,8]
+//    console.log(move({x: 3}))           //[3,0] 如果没有y 的值就是默认的0
+//    console.log(move({}))//[0,0]
+//    console.log(move())//[0,0] 没有函数上面函数里面的那个空的大括号就会报错;
+
+
+
+    /*
+        和下面的比较
+     */
+    function move({x, y} = { x: 0, y: 0 }) {
+        return [x, y];
+    }
+    console.log(move({x: 3, y: 8}))    //[3,8]
+    console.log(move({x: 3}))           //[3,undefined]
+    console.log(move({}))       //[undefined,undefined]
+    console.log(move())//[0,0]
+
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正前向断言</title>
+</head>
+<body>
+<script>
+    "use strict"
+    /*
+    * 正则 	名称 	描述
+     (?=exp) 	正向前瞻 	匹配exp前面的位置
+     (?!exp) 	负向前瞻 	匹配后面不是exp的位置
+     (?<=exp) 	正向后瞻 	匹配exp后面的位置不支持/(?<=hou)\d/
+     (?<!exp) 	负向后瞻 	匹配前面不是exp的位置不支持
+    *
+    *
+    * */
+//    (?=reg_pattern)：正前向断言
+//
+//    只有当字符串右侧出现匹配reg_pattern的字符时才匹配正则表达式。
+
+//(?!reg_pattern)：负前向断言
+//
+//只有当字符串右侧不出现匹配reg_pattern的字符串时才匹配正则表达式。
+
+//你在期待什么还是在等待什么？你选择了什么还是只想浮徒一生？茫茫人海，真的需要那么回眸一笑。
+//    str = "img1.jpg,img2.jpg,img3.bmp";
+//    reg = /(\w*)(?=\.jpg)/;//\w [a-z0-9_]
+////    arr_m = str.match(reg);//arr_m = ["img1","img1"]
+//    arr_m = reg.exec(str);
+//    console.log(arr_m);
+
+
+    /*列子二*/
+    var str1 = "bedroom";
+    var str2 = "bedding";
+    var reBed = /(bed(?=room))///在我们捕获bed这个字符串时，抢先去看接下来的字符串是不是room
+//    alert(reBed.test(str1));//true
+//    console.log(reBed.exec(str1));//["bed","bed",index:0,input:"bedroom"]
+    console.log(str1.match(reBed));
+    console.log(RegExp)
+    console.log(RegExp.$1)//bed
+    console.log(RegExp.$2)
+    console.log(RegExp.$3)
+    console.log(RegExp.$4)
+//    alert(Re gExp.$2 === "")//true
+//    alert(reBed.test(str2))//false
+//    var str1 = "bedroom";
+//    var str2 = "bedding";
+//    var reBed = /(bed(?!room))/  //要来它后面不能是room
+//    alert(reBed.test(str1))//false
+//    alert(reBed.test(str2))//true
+
+    /*列子三*/ //提取room中的bed 和bad
+//    var str = "bedroom badroom";
+    //var exp = /\bbadroom\b/;//index:8
+//     var exp = /\b\w*room\b/;//badroom
+//    var exp = /\broom\b///null
+//    var exp = /\b\w{3}(?=room)\b/;//null
+//    var exp = /\b\w*(?=room)\w*\b/g //["bedroom", "badroom"]
+//    var exp = /\b\w*(?=room)/g //(2) ["bed", "bad"]
+//    console.log(str.match(exp));
+////    /*列子四*/要匹配p后面不是h的单词
+//    var str = "php python pear";
+    /*    var reg = /\b\w+(?!h)\w+\b/g;//匹配\w后面不是h的单词//为什么加个+就把所有的都匹配出来了
+        因为+能匹配很多的字母，所以正则表达是一定要从前到后的看不能从中间看
+        console.log(str.match(reg))// (3) ["php", "python", "pear"]
+     * */
+     var reg = /\b\w(?!h)\w+\b/g;//匹配\w后面不是h的单词
+     console.log(reg.exec(str));
+    console.log(str.match(reg))// ["python", "pear"]
+
+    // 列子五 要匹配p后面是h的单词
+//        var str = "php python pear";
+//        var reg = /\bp(?=e)\w*\b/g;
+//        console.log(str.match(reg))//["php"]
+
+
+    //列子六 匹配.com之前的
+//        var str = "www.houdunwang.com";
+//        var reg = /.*(?=\.com)/;
+//        console.log(str.match(reg))//["www.houdunwang", index: 0, input: "www.houdunwang.com"]
+
+
+
+    //列子 七
+
+//    var str = "@houdunwang.com@taobao.com@sina.com";
+//    var reg = /(?<=@).*(?=@)/ig;//目前不支持正向后瞻
+//    console.log(str.match(reg));
+</script>
+</body>
+</html>

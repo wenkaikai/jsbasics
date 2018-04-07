@@ -1,0 +1,25 @@
+<html>
+<head>
+    <script type="text/javascript" src="../../jquery-1.8.3.min.js"></script>
+
+</head>
+<body>
+<label class="radio-pretty inline checked"> <input class="radioItem"
+                                                   type="radio" checked="checked" name="radio" value="1"><span>按用车日期查询</span>
+</label> <label class="radio-pretty inline"> <input class="radioItem"
+                                                    type="radio" name="radio" value="2"><span>按租车标记日期查询</span>
+</label>
+</body>
+
+<script type="text/javascript">
+    $(".radioItem").change(
+            function() {
+                var id = $("input[name='radio']:checked").val();
+                if (id == 1) {
+                    alert(1);
+                }else if (id == 2){
+                    alert(2)
+                }
+            });
+</script>
+</html>

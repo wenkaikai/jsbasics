@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+
+/*
+    列子一
+    Javascript事件处理器在线程空闲之前不会运行。
+    4 4 4
+ */
+    for(var i=1;i<=3;i++){
+        setTimeout(function(){
+            console.log(i);
+        },0);
+    };
+
+
+
+    /*
+        列子二
+        把延时定时器传一个参数进去 保留着
+     */
+
+for(var i=1;i<=3;i++){
+    setTimeout((function(a){  //改成立即执行函数
+        console.log(a);
+    })(i),0);
+};
+
+</script>
+</body>
+</html>

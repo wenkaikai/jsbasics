@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+//    for (var i = 0; i < 100000; i++) {
+//        var el = document.createElement('p');
+//        el.innerHTML = i;
+//        document.body.appendChild(el);
+//    }
+    //可以替换为：
+    var frag = document.createDocumentFragment();//创建一个文档碎片
+    for (var i = 0; i < 100000; i++) {
+        var el = document.createElement('p');
+        el.innerHTML = i;
+        frag.appendChild(el);//把要插入的新节点先附加在它上面，然后再一次性添加到document中
+    }
+    document.body.appendChild(frag);
+</script>
+</html>

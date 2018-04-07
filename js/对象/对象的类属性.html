@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var aa = Object.prototype.toString.call(false);
+    console.log(aa)
+    function classof(o){
+        if(o === null) return "null";
+        if(o === undefined) return "Undefined";
+        return Object.prototype.toString.call(o).slice(8,-1)
+    }
+    var re = classof({});
+    console.log(re)
+</script>
+</body>
+</html>

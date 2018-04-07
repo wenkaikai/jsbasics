@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>call</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Class10()  
+    {  
+        this.showSub = function(a,b)  
+        {  
+            alert(a-b);  
+        }  
+    }  
+      
+    function Class11()  
+    {  
+        this.showAdd = function(a,b)  
+        {  
+            alert(a+b);  
+        }  
+    }  
+      
+    function Class2()  
+    {  
+        Class10.call(this);  
+        Class11.call(this);  
+    }  
+</script>
+</html>

@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+    <TITLE>空谷悠悠</TITLE>
+</HEAD>
+<BODY>
+<table>
+    <tr>
+        <td id="john" name="myname">John</td>
+        <td>Doe</td>
+        <td id="jack">Jack</td>
+    </tr>
+</table>
+<script>
+    var d = document.getElementById("john");
+    console.log(d)//td#john
+    alert(d.nodeType)//1
+    alert(d.nodeName)//td(返回元素的标记名大写)
+    alert(d.nodeValue)//null
+</script>
+</BODY>
+</HTML>

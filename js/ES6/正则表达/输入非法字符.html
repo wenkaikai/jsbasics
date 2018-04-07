@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //第 1 个元素是与 RegExpObject 的第 1 个子表达式相匹配的文本（如果有的话）
+    //为了提取匹配的字符串。表达式中有几个（）就有几个对应的匹配字符串
+
+    const TOKEN_Y = /\s*(\+|[0-9]+)\s*/y;
+    const TOKEN_G  = /\s*(\+|[0-9]+)\s*/g;
+    /*
+        圆括号要匹配两次
+     */
+//     console.log(TOKEN_Y.exec('3'))//(2) ["3 ", "3", index: 0, input: "3 + 4"]
+    var a = tokenize(TOKEN_Y, '3 + 4')
+    // [ '3', '+', '4' ]
+//    var b = tokenize(TOKEN_G, '3 + 4')
+    // [ '3', '+', '4' ]
+
+    function tokenize(TOKEN_REGEX, str) {
+        let result = [];
+        let match;
+//        console.log(Boolean (match = TOKEN_REGEX.exec(str)))//true
+//         console.log(TOKEN_REGEX.exec(str));//["3 ", "3", index: 0, input: "3 + 4"]
+        while (match = TOKEN_REGEX.exec(str)) {
+            console.log(match);
+            result.push(match[1]);
+        }
+        return result;
+    }
+//   var a1 =  tokenize(TOKEN_Y, '3x + 4')
+//    // [ '3' ]
+//    var b1 = tokenize(TOKEN_G, '3x + 4')
+    // [ '3', '+', '4' ]
+//    console.log(a);
+//    console.log(b);
+//    console.log(a1);
+//    console.log(b1);
+    //上面代码中，g修饰符会忽略非法字符，而y修饰符不会，这样就很容易发现错误。
+</script>
+</body>
+</html>

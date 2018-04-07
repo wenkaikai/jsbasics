@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>unicode</title>
+</head>
+<body>
+<script>
+    /*
+        列子一
+     目前，有一个提案，引入了一种新的类的写法\p{...}和\P{...}，允许正则表达式匹配符合 Unicode 某种属性的所有字符。
+
+     */
+    const regexGreekSymbol = /\p{Script=Greek}/u;//大大 的不支持
+//    regexGreekSymbol.test('π') // true
+    console.log(regexGreekSymbol.test('π'))
+</script>
+</body>
+</html>

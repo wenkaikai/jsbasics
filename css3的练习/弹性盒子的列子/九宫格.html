@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale = 1.0,user-scalable = no,width=device-width">
+    <title>九宫格</title>
+    <style>
+        div{
+            width:100%;
+            display:flex;
+            flex-direction:column;
+            box-sizing: border-box;
+            height:80vh;
+            padding:2rem;
+            justify-content:space-between;
+        }
+        div ul{
+            /*flex-grow:1;*/
+            background:red;
+            margin:1rem 0;
+            -webkit-flex-basis:300px;
+			flex-basis:300px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><span>伸窗</span></li>
+            <li><span>打开应急灯</span></li>
+            <li><span>关闭应急灯</span></li>
+        </ul>
+        <ul>
+            <li><span>锁车</span></li>
+            <li><span>解锁</span></li>
+            <li><span>切断油路</span></li>
+        </ul>
+        <ul>
+            <li><span>恢复油路</span></li>
+            <li><span>自定义开关 <em>开</em></span></li>
+            <li><span>自定义开关 <em>关</em></span></li>
+        </ul>
+    </div>
+</body>
+</html>

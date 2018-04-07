@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function a(){
+        setTimeout(function(){
+            console.log("setTimeout")
+        },20000);//说明setTimeout会被无视，而直接进行下面的程序
+
+        function oneSecond(){
+            var now = new Date();
+            var exitTime = now.getTime() + 1000;
+            while (true) {//这种while true加return的方法可以借鉴
+                console.log("ok")
+                now = new Date();
+                if (now.getTime() >= exitTime){
+                    console.log("oneSecond")
+                    return;
+                }
+            }
+        }
+        oneSecond();
+        function twoSecond(){
+            var now = new Date();
+            var exitTime = now.getTime() + 2000;
+            while (true) {
+                now = new Date();
+                if (now.getTime() >= exitTime){
+                    console.log("twoSecond")
+                    return;
+                }
+            }
+        }
+        twoSecond();
+        function threeSecond(){
+            var now = new Date();
+            var exitTime = now.getTime() + 3000;
+            while (true) {
+                now = new Date();
+                if (now.getTime() >= exitTime){
+                    console.log("threeSecond")
+                    return;
+                }
+            }
+        }
+        threeSecond();
+    }
+    a();
+</script>
+</html>

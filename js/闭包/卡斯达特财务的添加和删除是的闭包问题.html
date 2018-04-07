@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包3</title>
+    <script>
+        window.onload = function(){
+            var liList = document.getElementsByTagName("li");
+            for(var i = 0; i < liList.length; i++){
+                //没有闭包的常规写法
+//                liList[i].onclick = function(){
+//                    alert(i);//一直是4，因为
+//                }
+
+//                 第一种方式：
+//                debugger;
+                 function fn01(i){
+                  liList[i].onclick = function(){
+                      alert(i);
+                  }
+                 }
+                 var resu = fn01(i);
+                 console.log(resu)//undefined
+//                console.log(i)
+
+
+                // 第二种方式：
+//                 (function(i){
+//                  liList[i].onclick = function(){
+//                      alert(i);
+//                  }
+//                 })(i);
+
+
+                // 第三种方式：
+//                liList[i].onclick = (function(i){
+//                    return function(){
+//                        alert(i);
+//                    }
+//                })(i);
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li>1111111</li>
+    <li>2222222</li>
+    <li>3333333</li>
+    <li>4444444</li>
+</ul>
+</body>
+</html>

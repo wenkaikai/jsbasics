@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function info(){
+            console.log(info)
+    }
+    var ne = new info();
+//    console.log(typeof ne)//object
+//    console.log(typeof info)//functon
+    ne.aa=function(){
+//        var v = "新函数"
+        console.log("xin函数")
+    }
+//    ne.aa()//xin新函数
+    console.log(info.prototype.constructor.prototype)//构造函数的原型又是什么呢
+    console.log(info.prototype)//构造函数的原型又是什么呢
+
+</script>
+</body>
+</html>

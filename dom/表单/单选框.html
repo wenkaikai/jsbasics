@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>（1）发生竣工验收：</td>
+        <td>
+            <input type="radio" name="completeCheckCircs" value="1">一次通过&nbsp;
+            <input type="radio" name="completeCheckCircs" value="0">重新组织验收&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>（2）发生质量通病抽检：</td>
+        <td>
+            <input type="radio" name="qualityProblemCircs" value="1">符合要求&nbsp;
+            <input type="radio" name="qualityProblemCircs" value="0">不合要求&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>（3）发生实体质量抽检：</td>
+        <td>板厚&nbsp;
+            <input type="radio" name="plyDeep" value="1">合格&nbsp;
+            <input type="radio" name="plyDeep" value="0">不合格&nbsp;
+        </td>
+    <tr>
+    <tr>
+        <td></td>
+        <td>回弹&nbsp;
+            <input type="radio" name="returnFlip" value="1">合格&nbsp;
+            <input type="radio" name="returnFlip" value="0">不合格&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>抽芯&nbsp;
+            <input type="radio" name="takeOutCore" value="1">合格&nbsp;
+            <input type="radio" name="takeOutCore" value="0">不合格&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>钢筋&nbsp;
+            <input type="radio" name="reinforcingSteelBar" value="1">合格&nbsp;
+            <input type="radio" name="reinforcingSteelBar" value="0">不合格&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>砌体&nbsp;
+            <input type="radio" name="brickBody" value="1">合格&nbsp;
+            <input type="radio" name="brickBody" value="0">不合格&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>保护层&nbsp;
+            <input type="radio" name="protectLayer" value="1" disabled="true">合格&nbsp;
+            <input type="radio" name="protectLayer" value="0">不合格&nbsp;
+        </td>
+    </tr>
+</table>
+
+<!--设置hidden，用于保存各个单选按钮所选的值:-->
+
+<input type="hidden" name="completeCheckCircsChecked" value="">
+<input type="hidden" name="qualityProblemCircsChecked" value="">
+<input type="hidden" name="plyDeepChecked" value="">
+<input type="hidden" name="returnFlipChecked" value="">
+<input type="hidden" name="takeOutCoreChecked" value="">
+<input type="hidden" name="reinforcingSteelBarChecked" value="">
+<input type="hidden" name="brickBodyChecked" value="">
+<input type="hidden" name="protectLayerChecked" value="">
+
+<!--Script初时化页面：-->
+<script>
+
+function init(){
+//发生竣工验收
+if(document.all['completeCheckCircsChecked'].value=='1'){
+document.all['completeCheckCircs'][0].checked=true;
+}if(document.all['completeCheckCircsChecked'].value=='0'){
+document.all['completeCheckCircs'][1].checked=true;
+}
+//发生质量通病抽检
+if(document.all['qualityProblemCircsChecked'].value=='1'){
+document.all['qualityProblemCircs'][0].checked=true;
+}if(document.all['qualityProblemCircsChecked'].value=='0'){
+document.all['qualityProblemCircs'][1].checked=true;
+}
+//板厚
+if(document.all['plyDeepChecked'].value=='1'){
+document.all['plyDeep'][0].checked=true;
+}if(document.all['plyDeepChecked'].value=='0'){
+document.all['plyDeep'][1].checked=true;
+}
+//回弹
+if(document.all['returnFlipChecked'].value=='1'){
+document.all['returnFlip'][0].checked=true;
+}if(document.all['returnFlipChecked'].value=='0'){
+document.all['returnFlip'][1].checked=true;
+}
+//抽芯
+if(document.all['takeOutCoreChecked'].value=='1'){
+document.all['takeOutCore'][0].checked=true;
+}if(document.all['takeOutCoreChecked'].value=='0'){
+document.all['takeOutCore'][1].checked=true;
+}
+//钢筋
+if(document.all['reinforcingSteelBarChecked'].value=='1'){
+document.all['reinforcingSteelBar'][0].checked=true;
+}if(document.all['reinforcingSteelBarChecked'].value=='0'){
+document.all['reinforcingSteelBar'][1].checked=true;
+}
+//砌体
+if(document.all['brickBodyChecked'].value=='1'){
+document.all['brickBody'][0].checked=true;
+}if(document.all['brickBodyChecked'].value=='0'){
+document.all['brickBody'][1].checked=true;
+}
+//保护层
+if(document.all['protectLayerChecked'].value=='1'){
+document.all['protectLayer'][0].checked=true;
+}if(document.all['protectLayerChecked'].value=='0'){
+document.all['protectLayer'][1].checked=true;
+}
+if('<%=teamMonitorRecordForm.getQualityStreamId()%>'!=''){
+document.all['btnModifyNotice'].disabled=false;
+document.all['btnPeccancy'].disabled=false;
+document.all['btnBadnessDeed'].disabled=false;
+}
+
+}
+
+//Script保存保存所选的单选按钮：
+
+function saveData(){
+if(confirm("确定保存？")){
+//发生竣工验收
+if(document.all['completeCheckCircs'][0].checked){
+document.all['completeCheckCircsChecked'].value=document.all['completeCheckCircs'][0].value;
+}if(document.all['completeCheckCircs'][1].checked){
+document.all['completeCheckCircsChecked'].value=document.all['completeCheckCircs'][1].value;
+}
+//发生质量通病抽检
+if(document.all['qualityProblemCircs'][0].checked){
+document.all['qualityProblemCircsChecked'].value=document.all['qualityProblemCircs'][0].value;
+}if(document.all['qualityProblemCircs'][1].checked){
+document.all['qualityProblemCircsChecked'].value=document.all['qualityProblemCircs'][1].value;
+}
+//板厚
+if(document.all['plyDeep'][0].checked){
+document.all['plyDeepChecked'].value=document.all['plyDeep'][0].value;
+}if(document.all['plyDeep'][1].checked){
+document.all['plyDeepChecked'].value=document.all['plyDeep'][1].value;
+}
+//回弹
+if(document.all['returnFlip'][0].checked){
+document.all['returnFlipChecked'].value=document.all['returnFlip'][0].value;
+}if(document.all['returnFlip'][1].checked){
+document.all['returnFlipChecked'].value=document.all['returnFlip'][1].value;
+}
+//抽芯
+if(document.all['takeOutCore'][0].checked){
+document.all['takeOutCoreChecked'].value=document.all['takeOutCore'][0].value;
+}if(document.all['takeOutCore'][1].checked){
+document.all['takeOutCoreChecked'].value=document.all['takeOutCore'][1].value;
+}
+//钢筋
+if(document.all['reinforcingSteelBar'][0].checked){
+document.all['reinforcingSteelBarChecked'].value=document.all['reinforcingSteelBar'][0].value;
+}if(document.all['reinforcingSteelBar'][1].checked){
+document.all['reinforcingSteelBarChecked'].value=document.all['reinforcingSteelBar'][1].value;
+}
+//砌体
+if(document.all['brickBody'][0].checked){
+document.all['brickBodyChecked'].value=document.all['brickBody'][0].value;
+}if(document.all['brickBody'][1].checked){
+document.all['brickBodyChecked'].value=document.all['brickBody'][1].value;
+}
+//保护层
+if(document.all['protectLayer'][0].checked){
+document.all['protectLayerChecked'].value=document.all['protectLayer'][0].value;
+}if(document.all['protectLayer'][1].checked){
+document.all['protectLayerChecked'].value=document.all['protectLayer'][1].value;
+}
+document.all['action'].value="save";
+document.frmInput.submit();
+}
+}
+
+</script>
+</body>
+</html>

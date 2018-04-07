@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>列表示例：</p>
+<ul id="myList"><li id="item1">Coffee</li>
+    <li id="item2">Tea</li>
+</ul>
+
+<p id="demo">点击按钮来获得首个项目的下一个同胞的 id。</p>
+
+<button onclick="myFunction()">试一下</button>
+
+<script>
+    function myFunction()
+    {
+        var x=document.getElementById("demo");
+//        x.innerHTML=document.getElementById("item1").nextSibling.id;
+        a =document.getElementById("item1").nextSibling//换行与空格都是文本节点
+        console.log(a)
+    }
+</script>
+
+<p><b>注释：</b>元素中的空格被视作文本，而文本被视作文本节点。</p>
+
+<p>请尝试在两个 <li> 元素之间添加空格，结果将是 "undefined"。</p>
+
+</body>
+</html>

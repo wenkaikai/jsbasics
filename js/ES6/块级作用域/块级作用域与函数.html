@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>块级作用域与函数</title>
+</head>
+<body>
+
+<script>
+    function f() { console.log('I am outside!'); }
+
+    (function () {
+        if (false) {
+            // 重复声明一次函数f
+            function f() { console.log('I am inside!'); }
+        }
+
+        f();//f is not a function
+        /*
+        在块级作用域内里面定义函数相当于 函数变量提升到函数的顶部
+        等同与
+        注意 在块级作用域内必须要有大括号
+
+        var f = undefined;
+        if(false){
+            function f(){console.log('I am inside')}
+        }
+         */
+    }());
+
+
+</script>
+</body>
+</html>

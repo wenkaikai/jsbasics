@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math新增17个方法</title>
+</head>
+<body>
+<script>
+    /*
+        一 Math.trunc方法用于去除一个数的小数部分，返回整数部分。
+     */
+//        Math.trunc(4.1) // 4
+//        Math.trunc(4.9) // 4
+//        Math.trunc(-4.1) // -4
+//        Math.trunc(-4.9) // -4
+//        Math.trunc(-0.1234) // -0
+//        console.log(Math.trunc(4.1) )
+//    Math.trunc(NaN);      // NaN
+//    Math.trunc('foo');    // NaN
+//    Math.trunc();         // NaN
+
+    /*
+     二 Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值，会先将其转换为数值。
+     */
+//        Math.sign(-5) // -1
+//        Math.sign(5) // +1
+//        Math.sign(0) // +0
+//        Math.sign(-0) // -0
+//        Math.sign(NaN) // NaN
+//        Math.sign('9'); // +1
+//        Math.sign('foo'); // NaN
+//        Math.sign();      // NaN
+//        console.log(Math.sign(-5))//-1
+//        console.log(Math.sign(5))//1
+//        console.log(Math.sign());//NaN\
+
+
+    /*
+     三  Math.cbrt方法用于计算一个数的立方根。
+     */
+//    Math.cbrt(-1) // -1
+//    Math.cbrt(0)  // 0
+//    Math.cbrt(1)  // 1
+//    Math.cbrt(2)  // 1.2599210498948734
+//    Math.cbrt('8') // 2
+//    Math.cbrt('hello') // NaN
+//    console.log(Math.cbrt('8'));//2
+
+
+    /*
+    四 Math.cbrt('8')
+     JavaScript的整数使用32位二进制形式表示，Math.clz32方法返回一个数的32位无符号整数形式有多少个前导0。
+     */
+//    Math.clz32(0) // 32
+//    Math.clz32(1) // 31
+//    Math.clz32(1000) // 22
+//    Math.clz32(0b01000000000000000000000000000000) // 1
+//    Math.clz32(0b00100000000000000000000000000000) // 2
+//    console.log(Math.clz32(0));//32 返回的是0的个数
+//    console.log(Math.clz32(1));//31
+
+    /*
+     五 Math.fround()
+     Math.fround方法返回一个数的单精度浮点数形式。
+     */
+//    Math.fround(0)     // 0
+//    Math.fround(1)     // 1
+//    Math.fround(1.337) // 1.3370000123977661
+//    Math.fround(1.5)   // 1.5
+//    Math.fround(NaN)   // NaN
+//    console.log(Math.fround(1.337));//1.3370000123977661
+
+
+
+    /*
+     六 Math.hypot() [hypot:平方和平方根]
+     Math.hypot方法返回所有参数的平方和的平方根。
+     上面代码中，3的平方加上4的平方，等于5的平方。
+     如果参数不是数值，Math.hypot方法会将其转为数值。只要有一个参数无法转为数值，就会返回NaN。
+     勾股定理轻松实现
+     */
+//        Math.hypot(3, 4);        // 5
+//        Math.hypot(3, 4, 5);     // 7.0710678118654755
+//        Math.hypot();            // 0
+//        Math.hypot(NaN);         // NaN
+//        Math.hypot(3, 4, 'foo'); // NaN
+//        Math.hypot(3, 4, '5');   // 7.0710678118654755
+//        Math.hypot(-3);          // 3
+//        console.log(Math.hypot(6,'8'));//10
+
+    /*
+     七 Math.log10()
+     Math.log10(x)返回以10为底的x的对数。如果x小于0，则返回NaN。
+     */
+
+//            console.log(Math.log10(10));//1
+    /*
+     Math.log10 = Math.log10 || function(x) {
+     return Math.log(x) / Math.LN10;
+     Math.log(2)//放回以2的自然对数
+     Math.LN10 //放回以10为底的自然对数 Math.LN10 属性表示 10 的自然对数，约为 2.302：
+     };
+     */
+
+    console.log(Math.signbit(2))
+</script>
+</body>
+</html>

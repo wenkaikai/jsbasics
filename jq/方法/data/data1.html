@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script type="text/javascript" src="../../jquery-1.11.2.min.js"></script>
+    <style>
+        div {
+            color:blue;
+        }
+        span {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    存储的值为
+    <span></span>
+    和
+    <span></span>
+</div>
+<script>
+    $(function () {//通过data()函数存取的数据都是临时数据，一旦页面刷新，之前存放的数据都将被移除。
+        var div = $( "div" )[ 0 ];
+        jQuery.data( div, "test", {//存储在哪，以及存储的值
+            first: 16,
+            last: "pizza!"
+        });
+        $( "span:first" ).text( jQuery.data( div, "test" ).first );
+        $( "span:last" ).text( jQuery.data( div, "test" ).last );
+        console.log(jQuery.data( div, "test" ))
+    })
+</script>
+
+</body>
+</html>

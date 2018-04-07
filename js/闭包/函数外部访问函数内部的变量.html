@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function person(name){
+        this.user_name=name;
+        var user_age = 18;
+        this.getAge=function(){
+            return user_age
+        }
+        this.setAge=function(age){
+            user_age=age
+        }
+    }
+    var p1 = new person("郑凯文")
+    p1.setAge(200);
+    console.log(p1.getAge())
+</script>
+</body>
+
+</html>

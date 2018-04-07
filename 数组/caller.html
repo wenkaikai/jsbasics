@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var a = function() {
+        alert(a.caller);//caller 反映出谁引用了a这个函数,即是谁引用了a,a.caller就是谁
+    }
+    var b = function() {
+        a();
+    }
+    b();
+//    b调用了a，那么a.caller返回的是b的引用
+//    a();
+//    如果直接调用a(即a在任何函数中被调用，也就是顶层调用),返回null:
+</script>
+</html>

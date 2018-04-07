@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function array(a,n){
+        return Array.prototype.slice.call(a,n||0)
+    };
+    function partialLeft(f/*,*/){
+        var args = arguments;
+        console.log(args)
+        return function(){
+            var a = array(args,1);//没有其他的意思只是把实参变成正真的数组了
+            console.log(a)
+            a = a.concat(array(arguments));
+            console.log(a)
+            console.log(this)
+            return f.apply(this,a);
+        }
+    }
+//    function c(c,v){
+//        return c+"#"+v
+//    }
+//    var vv = partialLeft(c,c)
+//    console.log(vv(1))
+
+
+var gg = array([1,2,3,4,5])
+    console.log(gg)
+//    function a(b){
+//        console.log(arguments)
+//    }
+//    a(1,2,3,4);
+</script>
+</body>
+</html>

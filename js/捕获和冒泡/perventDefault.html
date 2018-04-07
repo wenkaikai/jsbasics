@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JS阻止链接跳转</title>
+    <script type="text/javascript">
+        function stopDefault( e ) {
+            if ( e && e.preventDefault )
+                e.preventDefault();
+            else
+                window.event.returnValue = false;
+            /*
+            preventDefault和 return false还是有点区别的
+            return false 是阻止所有的js
+            而 preventDefault只是阻止部分的行为比如说跳转页面
+             */
+
+        }
+    </script>
+</head>
+<body>
+<a href="http://www.baidu.com" id="testLink">百度</a>
+<script type="text/javascript">
+    var test = document.getElementById('testLink');
+    test.onclick = function(e) {
+        stopDefault(e);
+
+        alert('我的链接地址是：' + this.href + ', 但是我不会跳转。');
+    }
+</script>
+</body>
+</html>

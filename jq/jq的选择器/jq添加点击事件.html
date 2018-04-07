@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../jquery-1.8.3.min.js"></script>
+
+</head>
+<body>
+<ul id="one" class="level-1" >
+    <li >1</li>
+    <li >2</li>
+    <li >3</li>
+    <li >4</li>
+    <li >5</li>
+</ul>
+<script>
+    <!--绑定多个就用对象绑定单个就用不用对象-->
+    function aa(e){
+//        这个e.data是传递的参数；
+        console.log(e.data)
+    }
+
+    $("ul li").each(function(index,element){
+        var index1 = index+1;
+        $(element).unbind("click").bind("click",{msg:'我是传递的参数'},aa);
+
+//        if(index<=3){
+//            $(element).css({"background":"#fff","color":"#000"})
+//        }
+    })
+
+
+</script>
+</body>
+</html>

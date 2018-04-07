@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板编译</title>
+</head>
+<body>
+<script>
+
+    /*
+    *
+    * 上面代码在模板字符串之中，放置了一个常规模板。该模板使用<%...%>放置JavaScript代码，使用<%= ... %>输出JavaScript表达式。
+
+     怎么编译这个模板字符串呢？
+    * */
+    var template = `
+<ul>
+  <% for(var i=0; i < data.supplies.length; i++) { %>
+    <li><%= data.supplies[i] %></li>
+  <% } %>
+</ul>
+`;
+    (function(){
+        console.log(123);
+        echo 123;
+
+    })();
+</script>
+</body>
+</html>

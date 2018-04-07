@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type='text/javascript'>
+//    3、对var变量和function定义的函数进行“预编译处理”（赋值式函数是不会进行预编译处理的）
+    test();                    //输出Hello World!
+    function test(){
+        alert('hello');　　　　　//声明式函数
+    }
+    test();                    //输出Hello World!
+
+    var test=function(){　　　　//赋值式函数
+        alert('test');
+    }
+    test();                    //输出test
+    function test(){　　　　　　//声明式函数
+        alert('Hello World!');
+    }
+    test();                    //输出test
+</script>
+</body>
+</html>

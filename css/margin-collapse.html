@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="练习">
+    <meta name="keyword" content="面试">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="spm-id" content="a21bo">
+    <meta name="aplus-xplug" content="NONE">
+
+
+</head>
+<body>
+<!--一同级关系取最大值-->
+
+<!--<style type="text/css">-->
+    <!--/*如下，margin合并了是200px*/-->
+    <!--#div1{-->
+        <!--width: 100px;-->
+        <!--height: 100px;-->
+        <!--margin: 100px 0 0 100px;-->
+        <!--margin-bottom:200px;-->
+        <!--background: red;-->
+
+    <!--}-->
+    <!--#div3{-->
+        <!--margin-top:160px;-->
+        <!--width: 50px;-->
+        <!--height: 50px;-->
+        <!--background: green;-->
+    <!--}-->
+<!--</style>-->
+<!--<div id="div1"></div>-->
+<!--<div id="div3"></div>-->
+
+<!--二 父子关系-->
+
+
+<!--<div id="div1">-->
+    <!--<div id="div2"></div>-->
+<!--</div>-->
+<!--<style>-->
+    <!--/*如下，margin-top是100px，若div2的margin-top为120px，则是120px，永远选较大的。两者上部贴合*/-->
+    <!--/*-->
+    <!--子元素的margin-top 作用于父元素的magin-->
+    <!--解决办法-->
+    <!--1，父元素border:1px solid transparent-->
+    <!--2, 父元素padding:1px;-->
+    <!--3，父元素overflow:hidden;-->
+
+     <!--*/-->
+    <!--#div1{-->
+        <!--width: 100px;-->
+        <!--height: 100px;-->
+        <!--/*margin: 100px 0 0 100px;*/-->
+        <!--margin:0;-->
+        <!--margin-bottom:200px;-->
+        <!--background: red;-->
+        <!--/*第一种method*/-->
+        <!--/*border:1px solid transparent;*/-->
+
+        <!--/*第二种method*/-->
+        <!--/*padding:1px;*/-->
+
+        <!---->
+        <!--/*第三种method*/-->
+        <!--overflow:hidden;-->
+
+    <!--}-->
+    <!--#div2{-->
+        <!--width: 50px;-->
+        <!--height: 50px;-->
+        <!--margin-top: 20px;-->
+        <!--margin-left: 20px;-->
+        <!--background: green;-->
+    <!--}-->
+<!--</style>-->
+
+
+<!--三 自身的margin也会重叠-->
+<!--<div style="border:1px solid red; width:100px;">-->
+    <!--<div style="margin-top: 100px;margin-bottom: 50px;background:green;"> </div>-->
+<!--</div>-->
+
+
+<!--四.绝对定位元素，float元素，
+inline-box元素，overflow : hidden不会和垂直方向上的其他元素margin折叠–其实就是可以生成新的BFC-->
+<div style="margin-bottom:50px;width:50px; height:50px; background-color:green;">A</div>
+<div style="margin-top:50px; width:100px; height:100px; background-color:green; float:left;">
+    <div style="margin-top:50px;background-color:gold;">B</div>
+</div>
+</body>
+</html>

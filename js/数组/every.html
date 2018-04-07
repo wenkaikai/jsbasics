@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>every</title>
+</head>
+<body>
+<script>
+    //every方法
+    //该方法用来确保数组中的所有成员是否都满足条件，是的话返回true，否则false
+    //arr.every(callback[, thisArg])
+    //every 方法为数组中的每个元素执行一次 callback 函数，直到它找到一个使 callback 返回 false（表示可转换为布尔值 false 的值）的元素。
+    // 如果发现了一个这样的元素，every 方法将会立即返回 false。否则，callback 为每一个元素返回 true，every 就会返回 true。callback
+    // 只会为那些已经被赋值的索引调用。不会为那些被删除或从来没被赋值的索引调用。
+    var bool  = [1,2,0].every(function(value){ //every 是找false
+        //既是所有的值都小于1 才会返回 true
+       return value<=1
+    })
+    console.log(bool)//false
+</script>
+</body>
+</html>

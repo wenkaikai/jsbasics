@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slice</title>
+</head>
+<body>
+<script>
+    /*
+        方法 一
+    */
+//    var array= [1,2,3,4,5];
+//    console.log(array.slice(1,3));//2 3 从哪里开始到哪里结束不包括结束的点（不改变原数组）
+//    console.log(array.slice)//ƒ slice() { [native code] }
+//    console.log(array.slice())//[1,2,3,4,5]
+
+
+
+
+
+    /*
+     slice 方法可以用来将一个类数组（Array-like）对象/集合转换成一个数组。你只需将该方法绑定到这个对象上。下述代码中 list 函数中的 arguments 就是一个类数组对象。
+     */
+//    function list() {
+//        console.log(arguments)
+//        return Array.prototype.slice.call(arguments);
+//    }
+//
+//    var list1 = list(1, 2, 3); // [1, 2, 3]
+//    console.log(list1)
+
+//    var a = Array.prototype.slice.call([1,2,3]);
+//    console.log(a)//[1,2,3]
+
+
+    //传个对象也能把他变为数组
+    var a = [].slice.call({"0":"毛尖","1":"益达","2":"电脑","length":3})
+    console.log(a);// ["毛尖", "益达", "电脑"]
+</script>
+</body>
+</html>

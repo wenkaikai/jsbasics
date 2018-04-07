@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<script type="text/javascript">uploadCmptLoadComplete=false;</script>-->
+<script src="../jquery-1.8.3.min.js"></script>
+<script>
+    var uploadCmptLoadComplete=false;
+    console.log(uploadCmptLoadComplete)
+    $(document).ready(function () {
+        console.log(uploadCmptLoadComplete)
+        vv()
+// initAfterUploadCmptStart2();
+    })
+
+    function vv(){
+        if(uploadCmptLoadComplete){
+            console.log("ok")
+        }else window.setTimeout(function(){
+            console.log("演示了")
+            vv()
+        },100)
+
+    }
+</script>
+</body>
+</html>
+<script src="../wrap.js"></script>

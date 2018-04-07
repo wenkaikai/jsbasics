@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function not(f){
+        return function(){
+//            console.log(f)//function (x){ return x % 2 === 0; }
+
+
+            var result = f.apply(this,arguments);
+            console.log(arguments)//是在函数调用时才有的如果不传实参就是空数组
+            return !result;
+        }
+    }
+    var even = function(x){
+        return x % 2 === 0;
+    };
+    var odd = not(even);
+    odd()
+//    var istrue = [1,1,3,5,5].every(odd);
+//    console.log(istrue)
+
+
+
+
+
+
+// 关于上面的知识点解释说明
+//function a(x){
+//    return x
+//}
+//    var cc = a();
+//    console.log(cc)//undefined
+</script>
+</body>
+</html>

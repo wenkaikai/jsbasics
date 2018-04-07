@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.8.3.min.js"></script>
+    <<script type="text/javascript">
+    $(document).ready(function(){
+        $(".field").change(function(){
+            $(this).css("background-color","#FFFFCC");
+        });
+        $("button").click(function(){//触发change事件
+            $("input").change();
+        });
+    });
+</script>
+</head>
+<body>
+<button>激活文本域的 change 事件</button>
+<p>Enter your name: <input class="field" type="text" /></p>
+</body>
+</html>

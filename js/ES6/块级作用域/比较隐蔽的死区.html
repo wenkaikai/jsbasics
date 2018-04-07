@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+//           function bar(x = y, y = 2) {
+////            return [x, y];
+//               console.log([x,y])
+//        }
+//
+//        bar(); // 报错
+            bar(13); // [13, 2]
+//        /*
+//         上面代码中，调用bar函数之所以报错（某些实现可能不报错），是因为参数x默认值等于另一个参数y，而此时y还没有声明，属于”死区“。如果y的默认值是x，就不会报错，因为此时x已经声明了。
+//         */
+//
+//        function bar(x = 2, y = x) {
+//            return [x, y];
+//        }
+//        bar(); // [2, 2]
+        /*
+         这个不会报错
+
+         */
+
+// 不报错
+//        var x = x;
+//        console.log(x) //undefined
+
+    // 报错
+    //let x = x;
+    // ReferenceError: x is not defined
+    /*
+
+     上面代码报错，也是因为暂时性死区。使用let声明变量时，只要变量在还没有声明完成前使用，就会报错。上面这行就属于这个情况，在变量x的声明语句还没有执行完成前，就去取x的值，导致报错”x 未定义“。
+     */
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = [];
+    a.push(1,2,3);
+    a.reverse();
+    a.dist=function(){
+        var p1 = this[0];
+        var p2 = this[1];
+        var a = p2.x-p1.x;
+        var b = p2.y-p1.y;
+        return Math.sqrt(a*a+b*b)
+    }
+    var c = a.dist()
+    console.log(c)
+</script>
+</body>
+</html>

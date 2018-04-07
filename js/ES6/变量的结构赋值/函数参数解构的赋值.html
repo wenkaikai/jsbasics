@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var array =  [[1, 2], [3, 4]];
+//   let array1 = array.map(([a, b]) => {return  a + b});
+    //等同于
+    let array1 = array.map(([a,b])=>a+b)//这样不写函数体他直接就返回了加过后的值
+    console.log(array)//(2) [Array(2), Array(2)]还是原来的数组
+    console.log(array1);//(2) [3, 7] 箭头函数不用return 吗
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>\\u</title>
+</head>
+<body>
+<script>
+
+    /*
+    知识补充
+     JavaScript 允许采用\uxxxx形式表示一个字符，其中xxxx表示字符的 Unicode 码点。
+     console.log("\u0061");//a
+     但是，这种表示法只限于码点在\u0000~\uFFFF之间的字符。超出这个范围的字符，必须用两个双字节的形式表示。
+     */
+
+//    console.log("\u20BB7");//₻空格7
+//    console.log("\u0041")//A
+//    console.log("\u{41}")//A 加大括号就不用补前面的0
+//
+//    '\z' === 'z'  // true
+//    '\172' === 'z' // true
+//    '\x7A' === 'z' // true
+//    '\u007A' === 'z' // true
+//    '\u{7A}' === 'z' // true
+
+     /*
+         此修饰符标识能够正确处理大于\uFFFF的Unicode字符。
+         也就是说，会正确处理四个字节的UTF-16编码。
+         此修饰符是ES2015新增，更多正则表达式新特性可以参阅ES2015 正则表达式新增特性一章节。
+     */
+//    console.log(/^\uD842/u.test("\uD842\uDFB7"));//false
+    console.log(/^\uD842/.test("\uD842\uDFB7"));//true
+
+</script>
+</body>
+</html>

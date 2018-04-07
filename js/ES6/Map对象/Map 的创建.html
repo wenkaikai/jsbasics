@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tisfsf</title>
+</head>
+<body>
+<script>
+    // map.set("key1","小东");map.set("key2","小郭");
+    console.log("km");
+/*
+ 扩展运算符内部调用的是数据结构的 Iterator 接口，因此只要具有 Iterator 接口的对象，都可以使用扩展运算符，比如 Map 结构。
+ */
+    var map = new Map([["key1","毛尖"],["key2","益达"]]);
+//    console.log(map)//Map(2) {"key1" => "毛尖", "key2" => "益达"}
+    console.log([...map]);//(2) [Array(2), Array(2)]0: (2) ["key1", "毛尖"]0: "key1"1: "毛尖"length: 2__proto__: Array(0)1: (2) ["key2", "益达"]length: 2__proto__: Array(0)
+    console.log([...map.keys()])//(2) ["key1", "key2"]
+
+</script>
+</body>
+</html>

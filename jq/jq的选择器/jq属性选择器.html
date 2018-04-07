@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .broder{
+            border:2px solid red;
+
+        }
+        .bg{
+            width:200px;
+            height:200px;
+            background:blue;
+
+        }
+        .color{
+            color:#f60;
+        }
+    </style>
+    <script src="../jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div id="div1">
+    <div>222</div>
+    <div>333</div>
+</div>
+<div>444</div>
+<div>555</div>
+<input type="checkbox" name="items">
+</body>
+<script>
+    var a = $("input[type=checkbox][name=items]");//也可以这样
+//    console.log(a);
+$.fn.mylove = function(a){
+    console.log(a);
+    console.log(this) //input 本身
+}
+    $("input[type=checkbox][name=items]").mylove("haode ");
+</script>
+</html>

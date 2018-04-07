@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../jquery-1.8.3.min.js"></script>
+
+</head>
+<body>
+<ul id="one" class="level-1" >
+    <li onclick="aa(1)">1</li>
+    <li onclick="aa(2)">2</li>
+    <li onclick="aa(3)">3</li>
+    <li onclick="aa(4)">4</li>
+    <li onclick="aa(5)">5</li>
+
+
+    <!--<li >1</li>-->
+    <!--<li >2</li>-->
+    <!--<li >3</li>-->
+    <!--<li >4</li>-->
+    <!--<li >5</li>-->
+</ul>
+<script>
+  function aa(a){
+      console.log("ok")
+  }
+//$("ul li").bind("click",function(a){
+//
+//})
+//  var aa = $("ul li:lt(3)");
+//  console.log(aa)
+//  $("ul li:lt(3)").prop("onclick",null).off("click")
+//          .css({color:"#000","background":"#ccc"})
+
+  //button 标签
+//  $("ul li").prop("disable",true)
+//  116.537736,"low":39.923701
+////    $("ul li").unbind("click",aa)
+  $("ul li:lt(3)").each(function(index,element){
+      console.log(index)
+      var index1 = index+1;
+//      $(element).prop("onclick","aa("+index1+")").css({"background":"#fff","color":"#000"})
+      $(element).prop("onclick","1").css({"background":"#fff","color":"#000"})
+
+      var cc = ($(element).prop("onclick"));
+      console.log(cc)
+
+  })
+
+
+</script>
+</body>
+</html>

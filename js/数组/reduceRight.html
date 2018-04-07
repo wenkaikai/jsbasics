@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reduceRight</title>
+</head>
+<body>
+<script>
+    //该方法只是reduce方法的反转
+    var a1 = [1, 2, 3].reduceRight(function(pre, cur){
+        return pre + '-' + cur;
+    })
+    console.log(a1)//3-2-1
+
+    /*
+    该方法另外一个很重要的用法是实现字符串的反转
+     */
+    var a2 = Array.prototype.reduceRight.call('12345', function(pre, cur){//把数组的this对象指向了"12345"
+        return pre + cur;
+    })
+   console.log(a2)//54321
+    console.log(Array.prototype.reduceRight)
+</script>
+</body>
+</html>

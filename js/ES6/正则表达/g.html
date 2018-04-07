@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>\g和\y的区别</title>
+</head>
+<body>
+<script>
+    /*
+     y修饰符的作用与g修饰符类似，也是全局匹配，后一次匹配都从上一次匹配成功的下一个位置开始。
+     不同之处在于，g修饰符只要剩余位置中存在匹配就可，
+     而y修饰符确保匹配必须从剩余的第一个位置开始，这也就是“粘连”的涵义。
+     */
+    var s = 'aaa_aa_a';
+    var r1 = /a+/g;
+    var r2 = /a+/y;//匹配必须从头开始 相当于/^a+/g
+    var a = r1.exec(s) // ["aaa"]
+    var b =r2.exec(s) // ["aaa"]
+    //此时的s 还剩下_aa_a;
+    console.log(r1.lastIndex);//3
+    console.log(r2.lastIndex);//3
+    var a1 = r1.exec(s) // ["aa"]
+    var b1 = r2.exec(s) // null
+    console.log(a);
+    console.log(b);
+    console.log(a1);
+    console.log(b1);
+</script>
+</body>
+</html>

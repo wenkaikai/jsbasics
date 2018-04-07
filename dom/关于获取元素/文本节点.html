@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+    <TITLE>New Document</TITLE>
+</HEAD>
+<BODY>
+<table>
+    <tr>
+        <td id="john" name="myname">John</td>
+        <td>Doe</td>
+        <td id="jack">Jack</td>
+    </tr>
+</table>
+<script>
+    var d = document.getElementsByTagName("td")[0].firstChild;
+    console.log(d)
+    alert(d.nodeType)
+    alert(d.nodeName)
+    alert(d.nodeValue)
+</script>
+</BODY>
+</HTML>

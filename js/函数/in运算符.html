@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+// in 运算符 的作用 如果objectName指向的对象中含有prop这个属性或者键值，in运算符会返回true。
+    var array = [1,2,3,4];
+    console.log(0 in array)
+    Object.prototype.sayhello = "hello";
+    var foo = new Object();
+    console.log(foo);
+    console.log('sayhello' in foo);
+</script>
+</body>
+</html>

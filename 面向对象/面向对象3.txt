@@ -1,0 +1,334 @@
+1.三大对象类型
+     本地对象（非静态对象）：object、function、array、string、boolean、number、date等对象
+     内置对象（静态对象 不能new）：global（跟鬼一样，说的人多，见得人少，其实只是一个概念）、math
+     宿主对象：bom、dom
+
+2.json格式面向对象
+
+呐呐，json这个货也是可以去创建对象的，咱们知道，比如说
+
+var obj={
+   name:"allen",
+   age:16,
+   showName:function(){
+      alert(this.name)
+   }
+}
+
+因为json格式的东东里面有键值对，值可以是任何数据类型的呀~~
+
+这样写很简单嘞，但是有一点不好的地方就是不能复用，只适合与只有一个对象的程序，好尴尬~~
+
+3
+.命名空间
+
+在这一块内容里面还牵扯到这个命名空间，其实概念也很简单了，比如咱们好几个人一起编写一个js文件，其中A写了一个函数是getUser，B也写了一个函
+
+数是getUser，这样就会造成乱七八糟的冲突，那怎么办呢，可以给每个人来一个json对象，然后把他们自己的方法写到那个地方去
+
+var ghb={};
+ghb.getUser=function(){alert(1)}
+ghb.getUser();
+var max={};
+max.getUser=function(){alert(2)}
+max.getUser();
+
+3.继承
+
+继承其实就是继承父级的属性和方法啦~~~
+
+    function A(){
+      this.aaa='abc'
+   }
+   A.prototype.show=function(){
+      alert(this.aaa)
+   }
+   var mA=new A();
+// mA.show()
+   function B(){
+      A.call(this)
+   }
+   B.prototype= A.prototype
+   var mB=new B();
+   mB.show();
+
+先看call，咱们知道哈，如果有个函数A，执行的话就直接写个A（），其实写成
+A.call();也是可以的
+
+function A(){
+   alert(this)
+}
+A.call();
+
+大家看这样的写法，this当然是window咯，就会弹出window，现在我不想让它谈window，来弹个鼻屎吧，那就可以这么来
+
+function A(){
+   alert(this)
+}
+A.call('鼻屎');
+
+现在大家晓得了哇，call里面传的第一个参数就可以冒充为那个函数里面的this呢~~棒棒哒，如果这个函数有形参，当然call后面的参数也可以传咯
+
+function A(a){
+   alert(this+'\n'+a)
+}
+A.call('鼻屎','123');
+
+好，call看完了，再来看那个B继承A的原型的时候的一个问题
+
+function A(){
+   this.aaa='abc'
+}
+A.prototype.show=function(){
+   alert(this.aaa)
+}
+var mA=new A();
+function B(){
+   A.call(this)
+}
+B.prototype= A.prototype;
+B.prototype.fn=function(){
+   alert(123)
+}
+var mB=new B();
+mB.fn();
+mA.fn();
+
+这样mB和mA居然都有这个方法了，明明只给B的原型加了啊，其实这里A和B的原型还是同一个东西，要改变当然都改变咯，参照数组的那个经典案例去理解哦~~~
+
+好吧，有点乱，来整理一下继承的方法，百度上呢有的说有两种，有的说有五种，并且名字还都不一样那到底都是些什么呢，来看看
+
+     1. 使用对象冒充实现继承
+           实现原理:让父类的构造函数成为子类的方法,然后调用该子类的方法,通过this关键字给所有的属性和方法赋值
+
+
+function Parent(firstname)
+{
+   this.fname=firstname;
+   this.age=40;
+   this.sayAge=function()
+   {
+      console.log(this.age);
+   }
+}
+function Child(firstname)
+{
+   this.parent=Parent;
+   this.parent(firstname);
+   delete this.parent;
+   this.saySomeThing=function()
+   {
+      console.log(this.fname);
+      this.sayAge();
+   }
+}
+var mychild=new  Child("李");
+mychild.saySomeThing();
+
+      2.采用call方法改变函数上下文实现继承(该种方式不能继承原型链,若想继承原型链，则采用5混合模式)
+实现原理:改变函数内部的函数上下文this,使它指向传入函数的具体对象
+
+function Parent(firstname)
+{
+   this.fname=firstname;
+   this.age=40;
+   this.sayAge=function()
+   {
+      console.log(this.age);
+   }
+}
+function Child(firstname)
+{
+
+   this.saySomeThing=function()
+   {
+      console.log(this.fname);
+      this.sayAge();
+   }
+   this.getName=function()
+   {
+      return firstname;
+   }
+
+}
+var child=new Child("张");
+Parent.call(child,child.getName());
+child.saySomeThing();
+
+      3.采用Apply方法改变函数上下文实现继承(该种方式不能继承原型链,若想继承原型链，则采用5混合模式)
+实现原理:改变函数内部的函数上下文this,使它指向传入函数的具体对象
+
+
+function Parent(firstname)
+{
+   this.fname=firstname;
+   this.age=40;
+   this.sayAge=function()
+   {
+      console.log(this.age);
+   }
+}
+function Child(firstname)
+{
+
+   this.saySomeThing=function()
+   {
+      console.log(this.fname);
+      this.sayAge();
+   }
+   this.getName=function()
+   {
+      return firstname;
+   }
+
+}
+var child=new Child("张");
+Parent.apply(child,[child.getName()]);
+child.saySomeThing();
+
+      4.采用原型链的方式实现继承
+实现原理:使子类原型对象指向父类的实例以实现继承,即重写类的原型,弊端是不能直接实现多继承
+
+
+function Parent()
+{
+
+   this.sayAge=function()
+   {
+      console.log(this.age);
+   }
+}
+function Child(firstname)
+{
+   this.fname=firstname;
+   this.age=40;
+   this.saySomeThing=function()
+   {
+      console.log(this.fname);
+      this.sayAge();
+   }
+}
+
+Child.prototype=new  Parent();
+var child=new Child("张");
+child.saySomeThing();
+
+      5.采用混合模式实现继承
+
+function Parent()
+{
+
+   this.sayAge=function()
+   {
+      console.log(this.age);
+   }
+}
+
+Parent.prototype.sayParent=function()
+{
+   alert("this is parentmethod!!!");
+}
+
+function Child(firstname)
+{
+   Parent.call(this);
+   this.fname=firstname;
+   this.age=40;
+   this.saySomeThing=function()
+   {
+      console.log(this.fname);
+      this.sayAge();
+   }
+}
+
+Child.prototype=new  Parent();
+var child=new Child("张");
+child.saySomeThing();
+child.sayParent();
+
+那，这里再来一个继承顺序
+本身方法→本身原型→父对象方法→父对象原型→顶层对象原型
+
+Object.prototype.say=function() {
+   alert("我是顶层的方法");
+}
+function person () {
+   this.say=function() {
+      alert("我是父类的方法");
+   }
+}
+person.prototype.say=function() {
+   alert("我是父类原型的方法");
+}
+
+function study () {
+   this.say=function() {
+      alert("本身的方法");
+   }
+}
+study.prototype=new person;
+study.prototype.say=function() {
+   alert("本身原型的方法");
+}
+var zhangsan=new study ();
+alert(zhangsan.say)
+
+4.多态，什么是多态呢
+      多态用途在于做面向对象开发时，需要有一个方法不变，但是它接收的参数类型是变化的，就可以使用多态。
+看这个例子哦
+
+<script>
+ 9 /*多态的基本概念：一个引用类型（变量）在不同情况下的多种状态。
+10 js本身是无态的，天生就支持多态。*/
+11
+12 //Master类
+13 function Master(name){
+14     this.name=name;
+15     //方法[给动物喂食物]
+16 }
+17 //原型法添加成员函数
+18 Master.prototype.feed=function(animal,food){
+19     window.alert("给"+animal.name+"喂"+food.name);
+20 }
+21 //食物类
+22 function Food(name){
+23     this.name=name;
+24 }
+25 //鱼
+26 function Fish(name){
+27     this.food=Food;
+28     this.food(name);
+29 }
+30 //骨头
+31 function Bone(name){
+32     this.food=Food;
+33     this.food(name);
+34 }
+35
+36
+37 //动物类
+38 function Animal(name){
+39     this.name=name;
+40 }
+41 //猫猫
+42 function Cat(name){
+43     this.animal=Animal;
+44     this.animal(name);
+45 }
+46 //狗狗
+47 function Dog(name){
+48     this.animal=Animal;
+49     this.animal(name);
+50 }
+51 var cat=new Cat("大花猫");
+52 var fish=new Fish("黄花鱼");
+53 var dog=new Dog("大花狗");
+54 var bone=new Bone("猪骨头");
+55 //创建一个主人
+56 var master=new Master();
+57 master.feed(cat,fish);
+58 master.feed(dog,bone);
+59
+60 </script>
+
+多态有利于代码的维护和扩展，这里我们可以考虑，如果食物加入桃子，动物加入猴子，可以看到Master的feed函数不需要变化。

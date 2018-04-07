@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <div data-value=oka>点击改变属性</div>
+</body>
+<script>
+    $("div").click(function(){
+        var bb = "123";
+        var aa = $(this).attr("data-value",bb)
+        var cc = $(this).attr("data-value")
+       console.log(cc)
+    })
+</script>
+
+
+</html>

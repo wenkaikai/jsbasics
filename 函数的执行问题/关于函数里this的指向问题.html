@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var User = {
+        count: 1,
+        getCount: function() {
+            return this.count;
+        }
+    };
+    console.log(User.getCount());  // what?
+    var func = User.getCount;
+    console.log(func());  // what?
+
+</script>
+</html>

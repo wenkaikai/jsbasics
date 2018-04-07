@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片预览</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+    <script src="../jquery.js"></script>
+    <style>
+        div.original img{
+            width:200px;
+            height:200px;
+        }
+
+
+        .animated {
+            animation-duration: 0.5s;
+            animation-fill-mode: both;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate3d(0, -100%, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .fadeInDown {
+            animation-name: fadeInDown;
+        }
+        .preview{
+            display:none;
+            height:100vh;
+            width:100%;
+            /*background:red;*/
+            position:absolute;
+            z-index:100;
+            top:0;
+            left:0;
+            background-color: #000;
+        }
+        .preview img{
+            width:100%;
+            height:auto;
+            margin:auto;
+        }
+    </style>
+
+</head>
+<body>
+<div class="original">
+    <img src="timg.jpg" alt="">
+</div>
+<script>
+    var pre = document.querySelector(".preview")
+    var img = $(".original img")
+    console.log(img)
+//
+    img.click(function(){
+        picturePreview(this);
+    })
+//    pre.addEventListener("click",function(){
+//        this.style.display="none"
+//    })
+    function picturePreview(self){
+        var url = self.getAttribute("src")
+        var $1 = $("<div class='preview animated fadeInDown'><img src='' alt=''/></div>")
+        $1.appendTo("html")
+        $1.css("display","flex").click(function(){
+            $1.remove();
+        }).children("img").attr("src",url)
+    }
+
+
+</script>
+</body>
+</html>

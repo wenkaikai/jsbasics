@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的排序</title>
+</head>
+<body>
+<script>
+    /*
+        一 数组的升序排序
+        sort 接受的函数后面大的返回负值
+     */
+    //    sort()方法改变的是原数组的顺序
+//    function compare(value1,value2){
+//        if(value1 < value2){
+//            return -1;
+//        }else if(value1 == value2){
+//            return 0;
+//        }else{
+//            return 1;
+//        }
+//    }
+//    var arr = [10,30,7,9,29];
+//    arr.sort(compare);
+//    console.log(arr);
+
+
+
+    /*
+        sort() 降序排序
+        sort 里面的函数 后面的数如果大就返回的正数
+     */
+
+    function compare1(value1,value2){
+        return value2 - value1;
+    }
+    var arr2 = [19,30,66,55,88,99];
+    arr2.sort(compare1);
+    console.log(arr2);
+</script>
+</body>
+</html>

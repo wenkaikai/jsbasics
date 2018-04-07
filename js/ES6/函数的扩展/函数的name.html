@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    普通的匿名函数
+     */
+//    var f = function (){
+//        console.log("ok");
+//    }
+//    f();//ok
+//    //匿名函数 es5 f.name 是空
+//    // es6 f.name 是  f
+//    //如果具名函数都是一样的
+//    console.log(f.name)//f
+
+    /*
+        Function 构造函数
+        返回的name 是 anonymous
+     */
+//    var na = new Function();
+//    console.log(na) //ƒ anonymous() {}
+//    console.log(na.name) //anonymous
+
+    /*
+        bind 返回的函数
+     bind返回的函数，name属性值会加上bound前缀。
+     */
+    function foo() {};
+    console.log(foo.bind({}).name);//bound foo
+//    foo.bind({}).name // "bound foo"
+
+    (function(){}).bind({}).name // "bound "
+
+</script>
+</body>
+</html>

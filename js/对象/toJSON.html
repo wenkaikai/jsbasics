@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var naem = {a:"haode"}
+    var c = JSON.stringify(naem);
+    console.log(typeof c)//{"a":"haode"}
+    console.log(c)//string
+    var b = new Date();
+    console.log(b)//Sat May 06 2017 17:12:04 GMT+0800 (中国标准时间)
+    console.log(b.toJSON())//2017-05-06T09:10:56.341Z
+    var d = naem.toJSON()//报错，难道toJSON 只能改变的是date对象
+    console.log(d)
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li>这是一</li>
+        <li>这是二</li>
+        <li>这是三</li>
+        <li>这是四</li>
+        <li>这是五</li>
+        <li>这是六</li>
+    </ul>
+</body>
+<script>
+    var lis=document.querySelectorAll('li');
+       for (var i = 0; i < lis.length; i++) {
+            var li = lis[i];
+
+           li.onclick=(function(index){
+
+               return function(){
+                   alert(index);
+               };
+          })(i);
+       }
+</script>
+</html>

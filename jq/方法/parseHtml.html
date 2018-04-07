@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.8.3.min.js"></script>
+
+</head>
+<body>
+<div id="n1"></div>
+
+<script>
+    // "<\/script>"必须通过\将/转义，否则JS会认为已经到了脚本结束的位置
+    var html = 'Hello,<b>CodePlayer</b><script type="text/javascript">alert("执行脚本代码");<\/script>';
+
+
+    var doms = $.parseHTML( html );
+    // 不会执行脚本代码
+    $("#n1").append(doms);
+
+    alert("分割线");
+
+    doms = $.parseHTML( html, true );
+    // 会执行脚本代码
+    $("#n1").append(doms);
+</script>
+
+</body>
+</html>

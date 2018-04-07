@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li>第一个</li>
+        <li>第二个</li>
+        <li>第三个</li>
+        <li>第四个</li>
+        <li>第五个</li>
+    </ul>
+</body>
+<script>
+    //普通的方法实现
+//    var list=document.getElementsByTagName("li");
+//
+//    for(var i=0;i<list.length;i++){
+//        list[i].index=list[i].innerHTML
+//        list[i].onclick=function(){
+//            alert(this.index);
+//        }
+//    }
+    //闭包的实现
+    //闭包实现
+//    var lis=document.querySelectorAll('li');
+//    for (var i = 0; i < lis.length; i++) {
+//        var li = lis[i];
+//
+//        li.onclick=(function(index){
+//
+//            return function(){
+//                alert(index);
+//            };
+//        })(i);
+//    }
+
+    var lis=document.querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onclick=function(){
+                alert(this.innerHTML)
+            }
+        }
+</script>
+</html>

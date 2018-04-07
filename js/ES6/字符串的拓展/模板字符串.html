@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板字符串</title>
+</head>
+<body>
+<script>
+    /*
+    模板字符串用途一
+    * 上面代码中的模板字符串，都是用反引号表示。如果在模板字符串中需要使用反引号，则前面要用反斜杠转义。
+    * */
+//    var greeting = `\`Yo\` World!`;
+//    console.log(greeting);//`Yo` World!
+
+
+
+    /*模板字符串用途二
+     大括号内部可以放入任意的JavaScript表达式，可以进行运算，以及引用对象属性。
+    * */
+//            var x = 1;
+//            var y = 2;
+//
+//            `${x} + ${y} = ${x + y}`
+//         //"1 + 2 = 3"
+//
+//                    `${x} + ${y * 2} = ${x + y * 2}`
+//            // "1 + 4 = 5"
+//
+//            var obj = {x: 1, y: 2};
+//            `${obj.x + obj.y}`
+//             //"3"
+
+
+
+    /*   用途三
+
+    模板字符串调用函数*/
+
+//如果大括号中的值不是字符串，将按照一般的规则转为字符串。比如，大括号中是一个对象，将默认调用对象的toString方法。
+    function gg(){
+        alert("模板字符串调用的方法");
+    }
+//    `${gg()}`
+
+/*说明一
+* 由于模板字符串的大括号内部，就是执行JavaScript代码，因此如果大括号内部是一个字符串，将会原样输出。
+* */
+//var a = 100;
+//    var aa = `Hello ${'World'}`;
+//    console.log(aa)//Hello World
+//console.log(`我是${a}`)//我是100
+
+
+
+    /*用途四 模板的嵌套*/
+    //没看懂
+
+
+
+//        const tmpl = addrs => `
+//          <table>
+//          ${addrs.map(addr => `
+//            <tr><td>${addr.first}</td></tr>
+//            <tr><td>${addr.last}</td></tr>
+//          `).join('')}
+//          </table>
+//    `;
+//        console.log(tmpl);
+
+
+
+    /*用途五 引用模板字符串本身*/
+
+    //写法一
+
+//        var fun = 'return' + '`hellow${name}!`';
+//        let f = new Function("name",fun);
+//        let con = f("世界");//hellow世界!
+//        console.log(con);
+
+
+    //写法二
+//    let str = '(name) => `Hello ${name}!`';
+//    let func = eval.call(null,str);//eval.call里面必须要有null;
+//    let re = func('Jack') // "Hello Jack!"
+//    console.log(re);
+</script>
+</body>
+</html>

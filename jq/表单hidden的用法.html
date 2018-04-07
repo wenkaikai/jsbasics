@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" value="aa" id = "2">
+</body>
+<script>
+    var cc = "haode"
+    var input = document.getElementsByTagName("input")[0];
+
+    input.value = cc;
+    var attr = input.getAttribute("type");
+    console.log(attr);
+
+    input.setAttribute("id", "2")
+    var attr1 = input.getAttribute("id")
+    console.log(attr1);
+    var aa = input.value;//获取value值
+</script>
+<script>
+    console.log(aa)
+</script>
+</html>

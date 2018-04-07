@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    function getInfo() {
+        var info = {
+            message: "message"
+        };
+        return info;
+//        return this;
+    }
+
+    var info1 = getInfo();
+    console.log(info1)//返回的是一个对象 info
+    var info2 = new getInfo();
+
+
+    new getInfo();
+    console.log(new getInfo())
+  console.log(info2)//如果没有return函数返回的就是构造函数，构造函数就是其本身
+//两种情况输出的结果是一致的
+    //首先，函数也是一种对象，是对象肯定就可以实例化（实例化其实就是调用对象的构造函数对对象进行初始化），
+    // 所有第2种情况就是调用getInfo函数对象的构造函数，并接收构造函数初始化的实例（一般都是this），
+    // 而函数有个比较特别的地方就是，如果构造函数有显示返回值，将用该返回值替换this对象返回。
+    // 所以第2中情况new getInfo就是调用构造函数（函数的构造函数就是其定义本身）并接收返回值info。
+
+//    var  cc = new function (){
+//        console.log("ok")
+//    }//new 一个匿名函数好像自己就可以执行
+
+/*
+new Function();
+最后一个参数是函数体
+前面的参数都是参数；
+ */
+
+//var fn = new Function("name","dfsf","console.log(name);console.log(dfsf)");
+//fn("haode","jfklsj");
+//    console.log(fn);
+</script>
+</html>

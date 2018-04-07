@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Pasta(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.toString = function () {
+            return (this.name + ", " + this.age + ", " + this.gender);
+        }
+    }
+    function Pasta1(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.toString = function () {
+            return (this.name + ", " + this.age + ", " + this.gender);
+        }
+    }
+    console.log(Object.keys(Pasta)); //console: []
+    var spaghetti = new Pasta("Tom", 20, "male");
+    var spaghetti1 = new Pasta1("Tom", 20, "male");
+    console.log(spaghetti)//Pasta {name: "Tom", age: 20, gender: "male", toString: ƒ}
+    console.log(Object.keys(spaghetti)); //console: ["name", "age", "gender", "toString"]
+    var arry = [];
+    arry.push(spaghetti);
+    arry.push(spaghetti1);
+    console.log(arry[0].name)
+</script>
+</body>
+</html>

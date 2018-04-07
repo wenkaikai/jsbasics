@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>SVG Draw Arc</title>
+    <style media="screen">
+        .svgs{display: flex; flex-flow:row wrap; justify-content: space-around; width: 620px; margin: 0 auto;}
+        .svgs svg{width:300px; height:200px; background: #F2F2F2; margin-bottom: 10px;}
+    </style>
+</head>
+
+<body>
+<div class="svgs">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 150 0 L 150 200 M 0 100 L 300 100" stroke="#CCC" stroke-width="1" />
+        <path id="path1" d="" stroke="#000" fill="green" fill-opacity="1" />
+    </svg>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 150 0 L 150 200 M 0 100 L 300 100" stroke="#CCC" stroke-width="1" />
+        <path id="path2" d="" stroke="#000" fill="green" fill-opacity="1" />
+    </svg>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 150 0 L 150 200 M 0 100 L 300 100" stroke="#CCC" stroke-width="1" />
+        <path id="path3" d="" stroke="#000" fill="green" fill-opacity="1" />
+    </svg>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 150 0 L 150 200 M 0 100 L 300 100" stroke="#CCC" stroke-width="1" />
+        <path id="path4" d="" stroke="#000" fill="green" fill-opacity="1" />
+    </svg>
+</div>
+</body>
+<script type="text/javascript">
+    function changeArcDeg(path, d){
+        path.setAttribute("d", d);
+    }
+    function drawArcByRadiusDeg(startX, startY, r, deg, clockwise) {
+        var cw = typeof clockwise !== 'undefined' ? clockwise : 1;
+        var x = startX - r + r*Math.cos(deg*Math.PI/180);
+        var y = startY + (1===cw ? 1 : -1)*r*Math.sin(deg*Math.PI/180);
+        var bigOrSmall = deg > 180 ? 1 : 0;
+        var line = " L" + (startX - r) + " " + startY + " L"+startX + " " + startY + "Z";
+        return "M " + startX +" "+ startY + " A "+ r +" " + r + " 0 " + bigOrSmall + " " +cw+ " " + x + " " + y + line;
+    }
+    function run(pid, deg, clockwise){
+        var path = document.getElementById(pid);
+        var x = 200, y = 100, r = 50, add = 0===deg ? true : false;
+        setInterval(function(){
+            if(deg>360) deg -= 360;
+            if(deg<0) deg += 360;
+            path.setAttribute("d", drawArcByRadiusDeg(x, y, r, add ? deg++ : deg--, clockwise)) ;
+        }, 10);
+    }
+    window.onload = function(){
+        run('path1', 0, 1);
+        run('path2', 0, 0);
+        run('path3', 360, 0);
+        run('path4', 360, 1);
+    };
+</script>
+</html>

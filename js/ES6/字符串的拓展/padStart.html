@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = "123";
+    var str1 = str.padEnd(10,"jjjj");//字符串不够在后面加 123jjjjjjj
+    var 石头人 = str.padStart(10,"yyyyy");//yyyyyyy123
+    var  str3 = str.padStart(10)//没有写填充的字符串就默认的补空格
+    console.log(石头人); //
+    console.log(str1);
+    console.log(str3);
+
+    /*padEnd 填充的主要用途一
+    *
+    *padStart的常见用途是为数值补全指定位数。下面代码生成10位的数值字符串。
+    * */
+
+    '1'.padStart(10, '0') // "0000000001"
+    '12'.padStart(10, '0') // "0000000012"
+    '123456'.padStart(10, '0') // "0000123456"
+
+    /*padEnd 填充的主要用途二
+     *
+     *另一个用途是提示字符串格式
+     * */
+
+    '12'.padStart(10, 'YYYY-MM-DD') // "YYYY-MM-12"
+    '09-12'.padStart(10, 'YYYY-MM-DD') // "YYYY-09-12"
+
+
+</script>
+</body>
+</html>

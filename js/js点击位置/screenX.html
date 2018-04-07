@@ -1,0 +1,18 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function show_coords(event)
+        {//相对于屏幕
+            x=event.screenX
+            y=event.screenY
+            alert("X coords: " + x + ", Y coords: " + y)
+        }
+    </script>
+</head>
+<body onmousedown="show_coords(event)">
+
+<p>Click in the document. An alert box will alert
+    the x and y coordinates of the cursor.</p>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嵌套的箭头函数</title>
+</head>
+<body>
+<script>
+    /*
+        一 普通的嵌套函数
+        函数一旦形成嵌套里面的形参就可以共用
+     */
+    function insert(value) {
+        return {into: function (array) {
+//            console.log(value)//函数一旦形成嵌套里面的形参就可以共用 此时的value 的值是2
+            return {after: function (afterValue) {
+                array.splice(array.indexOf(afterValue) + 1, 0, value);
+                return array;
+            }};
+        }};
+    }
+
+    insert(2).into([1, 3]).after(1); //[1, 2, 3]
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>call</title>
+</head>
+<body>
+	
+</body>
+<script>
+	 function add(a,b)  
+    {  
+        alert(a+b);
+        console.log(this)
+    }
+
+
+    function sub(a,b)  
+    {  
+        alert(a-b);  
+    }  
+
+//     add(3,1)//此时打印的this是window 对象
+
+//    add.call(sub,3,1);//此时打印的是sub 的执行上下文
+     add.call("haode",3,1)//此时的this 是 String {"haode"} 再次证明call的第一个参数就是改变它的this指向
+    //改变的是add的this指向
+//     4
+//    function sub(a,b)
+//     {
+//         alert(a-b);
+//     }
+
+
+    /*
+     1 var a={length:2,0:'first',1:'second'};
+     2 Array.prototype.slice.call(a);//  ["first", "second"]
+     */
+     var a={length:2,0:'first',1:'second'};
+      var arry = Array.prototype.slice.call(a);//  ["first", "second"]
+    console.log(arry)
+</script>
+</html>

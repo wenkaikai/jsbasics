@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击松开</title>
+    <script src = ../../jq/jquery-1.8.3.min.js>
+    </script>
+    <style>
+        .wrap{
+            position:relative;
+            transform-style:preserve-3d;
+            perspective: 1000px;
+            height:300px;
+            width:200px;
+        }
+        div#list{
+            width:200px;
+            height:300px;
+            position:absolute;
+
+            background:red;
+
+            /*transform: rotate3d(1, 1, 1, 30deg);*/
+            /*text-align:center;*/
+
+
+        }
+        .small{
+            /*-webkit-transform:scale(0.8,0.8);*/
+            transform: translateZ(-100px)
+        }
+        .nw{
+            transform: rotateX(30deg) rotateY(-30deg);
+        }
+        .ne{
+            transform: rotateX(30deg) rotateY(30deg);
+        }
+        .sw{
+            transform: rotateX(-60deg) rotateY(30deg) rotateZ(30deg);
+        }
+        .se{
+            transform: rotateX(-30deg) rotateY(30deg);
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div id="list">好的好的</div>
+</div>
+<script>
+    var el = $("#list");
+    var w = el.height();
+    var oh = el.outerHeight();
+    var ow = el.outerWidth();
+//    var lt = ow/
+    var ltnw ={
+        x:0,
+        y:0
+    }
+    var ltne ={
+        x:parseInt(ow/2),
+        y:0
+    }
+    var lbsw ={
+        x:0,
+        y:parseInt(oh/3)
+    }
+    var lbse = {
+        x:parseInt(ow/2),
+        x:parseInt(oh/3),
+    }
+
+    var y1 = Math.ceil(oh/3);
+    var y2 = y1*2;
+    var y3 = y1*3;
+    var x1 = Math.ceil(ow/2);
+    var x2 = x1*2;
+    var lt = $("#list").offset().left;
+    var ht = $("#list").offset().top
+    $("#list").click(function(e){
+        var self = $(this);
+//        self.addClass("small")
+//        setTimeout(function(){
+//            self.removeClass("small")
+//        },300)
+        var topx = e.offsetX;
+        var topy = e.offsetY;
+        if(topy>=y2){
+            if(topx>=x1){
+                self.addClass("se")
+                setTimeout(function(){
+                    self.removeClass("se")
+                },300)
+                console.log("se")
+            }else{
+                self.addClass("sw")
+//                setTimeout(function(){
+//                    self.removeClass("sw")
+//                },300)
+                console.log("sw")
+            }
+        }
+        else if(topy>=y1){
+            self.addClass("small")
+//            setTimeout(function(){
+//                self.removeClass("small")
+//            },300)
+            console.log("center")
+        }else{
+            if(topx>=x1){
+                self.addClass("ne")
+                setTimeout(function(){
+                    self.removeClass("ne")
+                },300)
+                console.log("ne")
+            }else{
+        self.addClass("nw")
+        setTimeout(function(){
+            self.removeClass("nw")
+        },300)
+                console.log("nw")
+            }
+        }
+//        if(topx)
+    })
+</script>
+</body>
+</html>

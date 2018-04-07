@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>call</title>
+</head>
+<body>
+	
+</body>
+<script>
+	   function Animal(name){
+        this.name = name;
+        this.showName = function(){
+            console.log(this)
+            alert(this.name);      
+        }      
+    }      
+        
+    function Cat(name){    
+        Animal.call(this, name);
+    }      
+//       console.log(typeof Animal)
+    var cat = new Cat("Black Cat");
+       console.log(cat)
+//    String.showName(); //Black Cat
+
+     // Animal.call(this) 的意思就是使用 Animal对象代替this对象，那么 Cat中不就有Animal的所有属性和方法了吗，Cat对象就能够直接调用Animal的方法以及属性了.   
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Title2</title>
+    <script src="../jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<input type="number" onkeyup="clearNoNum(this)"/>元
+</body>
+<script language="JavaScript" type="text/javascript">
+    function clearNoNum(obj){
+//        obj.value = 333.333;  //清除“数字”和“.”以外的字符
+//        console.log(obj.value)
+        obj.value = obj.value.replace(/[^\d.]/g,"");  //清除“数字”和“.”以外的字符
+        obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个. 清除多余的
+        obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+        obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3');//只能输入两个小数
+        if(obj.value.indexOf(".")< 0 && obj.value !="") {//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额
+            obj.value = parseFloat(obj.value);
+        }
+        if(obj.value.indexOf(".")==0){//如果第一数是.
+            obj.value="";
+        }
+        if(obj.value.length>=10){
+            obj.value = obj.value.slice(0,10)
+        }
+    }
+</script>
+</html>

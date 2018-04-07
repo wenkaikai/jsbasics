@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = "信阳毛尖";
+    console.log(a.length);
+
+    console.log(a.codePointAt(1))//38451 放回的是uncode
+    console.log(typeof a.charCodeAt(1))//38451 number
+
+    var num = a.charCodeAt(1)
+    /*
+    这个方法不能识别Unicode编号大于0xFFFF
+     */
+    console.log(String.fromCharCode(num))//阳
+    /*String.fromCodePoint 能够返回unicode大于0xFFFF的编码*/
+</script>
+</body>
+</html>

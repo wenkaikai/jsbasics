@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function back(ele,event){
+            event = event || window.event;
+            if(event.keyCode==13){
+                event.returnValue = false;//判断为false，则阻止当前事件继续运行 这里是禁止换行
+                ele.value+="{{enter}}"
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<textarea rows="3" cols="40" id="te" onkeypress="back(this,event);"></textarea>
+</body>
+
+</html>

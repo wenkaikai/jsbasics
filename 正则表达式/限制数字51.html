@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!-- 用onkeypress 不能控制第一个数但是可以可以控制第二个以后的数字 -->
+    <input type="number" style="ime-mode:disabled" onkeypress ="return fn(event)">
+    <!-- onkeydown 和onkeypress 还是有区别的这时候用onkeydown return false 以后就不能删除了 而用onkeypress 则可以删除 -->
+	<!-- <input type="number" onkeydown="return fn(event)"> -->
+</body>
+<script>
+	 var fn = function(e){
+        
+        var val = document.getElementsByTagName("input")[0].value;
+     	var val1 = parseInt(val);
+     	// document.getElementsByTagName("input")[0].value = document.getElementsByTagName("input")[0].value.replace(/[^1|2|3|4|5]/g,"");
+      // alert(e.keyCode)
+     
+      // if(e.keyCode==45||e.keyCode==46||e.keyCode>53){
+      //   return false;
+      // } 
+      if(e.keyCode!=49&&e.keyCode!=50&&e.keyCode!=51&&e.keyCode!=52&&e.keyCode!=53){
+        return false;
+      }
+      else if(val !=''){
+        return false;
+      }
+      else if( isNaN(val.charAt(0))){
+           document.getElementsByTagName("input")[0].value="" 
+      }
+      else if(val.charAt(1)){
+        document.getElementsByTagName("input")[0].value=val.charAt(0); 
+      }
+    
+
+    
+           
+    }
+     
+
+</script>
+</html>

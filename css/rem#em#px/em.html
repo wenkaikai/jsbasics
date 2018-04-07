@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        em是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸
+
+    1. em的值并不是固定的；
+    2. em会继承父级元素的字体大小。
+
+        */
+        body{
+            font-size:16px;
+        }
+        div{
+            font-size:30px;
+        }
+        span{
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>
+                   好的
+
+        </span>
+    </div>
+</body>
+</html>

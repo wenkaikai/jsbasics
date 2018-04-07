@@ -1,0 +1,22 @@
+var path = require("path");
+module.exports={
+    entry:{
+        'main':'./src/main.js',
+        'profile':'./src/profile.js'
+    },
+    output:{
+        path:path.resolve(__dirname,'../pack'),
+        filename:'[name].js'
+    },
+    module:{
+        rules:[
+            {
+                test:/\.js$/,
+                loader:"babel-loader",
+                options:{
+                    presets:['env']
+                }
+            }
+        ]
+    }
+}

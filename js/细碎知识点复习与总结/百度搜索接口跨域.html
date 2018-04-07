@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    body{margin: 0;}
+    ul{margin: 0;padding: 0;list-style: none;}
+    a{color:inherit;text-decoration: none;}
+    input{padding: 0;border: 0;}
+    .box{width: 340px;height: 38px;border: 2px solid gray;}
+    .con{overflow: hidden;}
+    .input{float: left;width: 300px;height: 38px;}
+    .search{width: 38px;height: 38px;float: right;background: url('http://sandbox.runjs.cn/uploads/rs/26/ddzmgynp/search.png') 0 -38px;}
+    .list{position: absolute;width: 298px;border: 1px solid #e6e8e9; overflow: hidden;}
+    .in{line-height: 30px;border-bottom: 1px solid lightblue;cursor:pointer;text-indent: 1em;}
+    .list .in:last-child{margin-bottom: -1px;}
+    .in:hover{background-color: #f9f9f9;}
+</style>
+
+<div class="box" id="box">
+    <div class="con">
+        <input class="input" id="search">
+        <a target="_blank" id="btn" href="javascript:;" class="search"></a>
+    </div>
+    <ul class="list" id="list"></ul>
+</div>
+<script>
+    function loadScript(url){
+        loadScript.mark = 'load';
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = url;
+        document.body.appendChild(script);
+    }
+
+    function callback(data){
+        if(data){
+            var arr = data.s;
+            var html = '';
+            for(var i = 0,len = arr.length; i < len; i++){
+                html+= "<li class='in'><a href='https://www.baidu.com/s?wd="+ arr[i]+"' target='_blank' style='display:block'>" + arr[i]+ "</a></li>"
+            }
+            list.innerHTML = html;
+        }
+    }
+
+
+
+    search.onkeyup = function(e){
+        e = e || event;
+        if(e.keyCode == '13'){
+            window.open('https://www.baidu.com/s?wd=' + this.value);
+        }
+        if(this.value){
+            if(search.data != this.value){
+                btn.setAttribute('href','https://www.baidu.com/s?wd=' + this.value);
+                var that = this;
+                loadScript("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=" + that.value + "&&cb=callback");
+            }
+        }else{
+            list.innerHTML = '';
+        }
+        search.data = this.value;
+    }
+    search.onclick = function(e){
+        e = e || event;
+        list.style.display = 'block';
+        if(e.stopPropagation){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble = true;
+        }
+    }
+    document.onclick = function(){
+        list.style.display = 'none';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function F(){
+        console.log("ok")
+    };
+    var p = F.prototype;//表示是构造函数的原型同下文的n_f和b1
+    var c = p.constructor//原型的contructor 属性代表的是此个函数的构造函数
+    var o = F.constructor;
+    //     console.log(o)//function Function() { [native code] }
+    //    console.log(p)
+    //    console.log(c)//function F(){console.log("ok")  }
+    //c===F 对象通常继承的constructor均指代他们的构造函数。由于构造函数是类的“公共标识”，因此这个constructor属性为对象提供了类
+
+
+
+    //修改n_f 的原型对象
+//    F.prototype={
+//        constructor:F,
+//        con:function(){
+//            console.log("修改原型对象方法看看有没有constructor属性")
+//        }
+//    }
+//    var n_f = new F();
+////        console.log(n_f.constructor)//function Object() { [native code] } 这是没有contructor 属性
+////        console.log(n_f.constructor)//function F(){console.log("ok") }这是加了contructor 属性
+//    n_f.con()//修改原型对象方法看看有没有constructor属性
+
+
+
+//    //直接在构造函数的原型上加属性 这样不会破坏原有的原型对象你面的值比如说是constructor
+//    F.prototype.con=function(){
+//        console.log("这是直接加在构造函数的原型对象上的方法，而不是重新写个原型对象")
+//        //这个原型对象是预定义的
+//    }
+//
+//var n_f = new F();
+//    n_f.con()//这是直接加在构造函数的原型对象上的方法，而不是重新写个原型对象
+</script>
+</body>
+</html>

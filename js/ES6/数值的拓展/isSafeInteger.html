@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*JavaScript能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），超过这个范围，无法精确表示这个值。*/
+    //Number.isSafeInteger()则是用来判断一个整数是否落在这个范围之内。 表示的是否是安全的整数
+    console.log(Number.isSafeInteger(9007199254740993));//false
+    console.log(Number.isSafeInteger(9007199254740992));//false
+    console.log(Number.isSafeInteger(9007199254740991));//true;
+    console.log(Math.pow(2,53))//9007199254740992
+    console.log(Number.isSafeInteger(1.2))//false
+
+    /*超出范围的设置
+    * 上面代码中，9007199254740993不是一个安全整数，这是因为，
+    * 这个数超出了精度范围，导致在计算机内部，以9007199254740992的形式储存。
+    *
+    * */
+    console.log(9007199254740993 === 9007199254740992)//true
+
+</script>
+</body>
+</html>

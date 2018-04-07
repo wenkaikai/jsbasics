@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    1 直接给对象添加属性
+//    var obj = {};
+//    obj.x = 10;
+//    console.log(Object.keys(obj))//X
+
+
+
+
+    //2 用Object.defineProperty 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。
+    var o ={};
+    Object.defineProperty(o,"x",{//这是的x必须要加引号
+        value:1,
+        writable:true,
+        enumerable:false,
+        configurable:true
+    })
+ for(var c in o){
+     console.log(o[c])
+ }
+//    console.log(o)//{x: 1}
+
+
+
+//
+//    //修改 对象o 的可写属性
+//    Object.defineProperty(o,"x",{writable:false})
+//    o.x = 2;//虽然是修改了但是没有用，如果在严格模式下回抛出类型异常的错误
+////    console.log(o.x)//1
+//
+//    // 修改value 值来进行属性值得修改
+//    Object.defineProperty(o,"x",{value:2});
+//    console.log(o.x)//2
+//
+//    //defineProperty 只能修改已有的属性，和新建自有属性，不能修改继承属性
+
+</script>
+</body>
+</html>

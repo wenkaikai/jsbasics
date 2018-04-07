@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    [].forEach(function(value,index,array){
+//
+//        //code something
+//
+//    });
+//    var arry=[1,2,3,4];
+//    arry.forEach(function(q,b,c){
+//        console.log(q)//是数组里面的值
+//        console.log(b)//index
+//        console.log(c)
+//    })
+
+    /*forEach 里面的循环return*/
+    var arry = [1,2,3,4];
+    var list = [];
+    arry.forEach(function(c,v,b){
+        return list.push(c);
+    })
+    console.log(list);
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery Validate 插件 - radio（单选按钮）、checkbox（复选按钮）和 select（下拉框）</title>
+
+    <link rel="stylesheet" media="screen" href="//static.runoob.com/assets/jquery-validation-1.14.0/demo/css/screen.css">
+    <script src="https://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+    <script>
+        // 只用于演示
+        $.validator.setDefaults({
+            debug:true,
+            submitHandler: function() {
+                alert("submitted!");
+            }
+        });
+
+        $(document).ready(function() {
+            $("#form1").validate();
+            $("#selecttest").validate();
+        });
+    </script>
+
+    <style>
+        .block { display: block; }
+        form.cmxform label.error { display: none; }
+    </style>
+
+</head>
+<body>
+
+<div id="main">
+
+    <form class="cmxform" id="form1" method="get" action="">
+        <fieldset>
+            <legend>通过 radio（单选按钮）和 checkbox（复选按钮）验证表单</legend>
+            <fieldset>
+                <legend>性别</legend>
+                <label for="gender_male">
+                    <input  type="radio" id="gender_male" value="m" name="gender" required>
+                    男性
+                </label>
+                <label for="gender_female">
+                    <input  type="radio" id="gender_female" value="f" name="gender">
+                    女性
+                </label>
+                <label for="gender" class="error">请选择您的性别。</label>
+            </fieldset>
+            <fieldset>
+                <legend>婚姻状况</legend>
+                <label for="family_single">
+                    <input  type="radio" id="family_single" value="s" name="family" required>
+                    单身
+                </label>
+                <label for="family_married">
+                    <input  type="radio" id="family_married" value="m" name="family">
+                    已婚
+                </label>
+                <label for="family_other">
+                    <input  type="radio" id="family_other" value="o" name="family">
+                    其他
+                </label>
+                <label for="family" class="error">您选择您的婚姻状况。</label>
+            </fieldset>
+            <p>
+                <label for="agree">请同意我们的条款</label>
+                <input type="checkbox" class="checkbox" id="agree" name="agree" required>
+                <br>
+                <label for="agree" class="error block">请同意我们的条款！</label>
+            </p>
+            <fieldset>
+                <legend>垃圾邮件</legend>
+                <label for="spam_email">
+                    <input type="checkbox" class="checkbox" id="spam_email" value="email" name="spam[]" required minlength="2">
+                    垃圾邮件 - E-Mail
+                </label>
+                <label for="spam_phone">
+                    <input type="checkbox" class="checkbox" id="spam_phone" value="phone" name="spam[]">
+                    垃圾邮件 - Phone
+                </label>
+                <label for="spam_mail">
+                    <input type="checkbox" class="checkbox" id="spam_mail" value="mail" name="spam[]">
+                    垃圾邮件 - Mail
+                </label>
+                <label for="spam[]" class="error">请选择至少两种类型的垃圾邮件。</label>
+            </fieldset>
+            <p>
+                <input class="submit" type="submit" value="提交">
+            </p>
+        </fieldset>
+    </form>
+
+    <form id="selecttest">
+        <h2>一些关于 select 的测试</h2>
+        <p>
+            <label for="jungle">请选择一个丛林名词</label><br>
+            <select id="jungle" name="jungle" title="请选择一个丛林名词！" required>
+                <option value=""></option>
+                <option value="1">Buga</option>
+                <option value="2">Baga</option>
+                <option value="3">Oi</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="fruit">请选择至少两种水果</label><br>
+            <select id="fruit" name="fruit" title="请选择至少两种水果！" required minlength="2" multiple="multiple">
+                <option value="b">Banana</option>
+                <option value="a">Apple</option>
+                <option value="p">Peach</option>
+                <option value="t">Turtle</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="vegetables">请选择不超过两种蔬菜</label><br>
+            <select id="vegetables" name="vegetables" title="请选择不超过两种蔬菜！" required maxlength="2" multiple="multiple">
+                <option value="p">Potato</option>
+                <option value="t">Tomato</option>
+                <option value="s">Salad</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="cars">请选择至少两种但不超过三种汽车</label><br>
+            <select id="cars" name="cars" title="请选择至少两种但不超过三种汽车！" required rangelength="[2,3]" multiple="multiple">
+                <option value="m_sl">Mercedes SL</option>
+                <option value="o_c">Opel Corsa</option>
+                <option value="vw_p">VW Polo</option>
+                <option value="t_s">Titanic Skoda</option>
+            </select>
+        </p>
+
+        <p><input type="submit" value="Validate Select 测试"></p>
+    </form>
+
+</div>
+
+
+</body>
+</html>

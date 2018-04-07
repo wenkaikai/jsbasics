@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1 .传入对象返回属性名
+//    var obj = {'a':'123','b':'345'};
+//    console.log(Object.keys(obj))//[a,b] 获取他的键名;
+//    var obj1 = { 100: "a", 2: "b", 7: "c"};
+//    console.log(Object.keys(obj1)); // console: ["2", "7", "100"] 是经过排序的
+
+    //2 . 出入字符串返回的是字符串的索引值，传入数组也是返回索引值
+//    var str = 'ab1234';
+//    console.log(Object.keys(str));  //[0,1,2,3,4,5]
+
+
+
+    //3 .构造函数 返回空数组或者属性名 (普通的函数返回的是空数组，构造函数返回的是属性名)
+
+    function Pasta(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.toString = function () {
+            return (this.name + ", " + this.age + ", " + this.gender);
+        }
+    }
+
+    console.log(Object.keys(Pasta)); //console: []
+
+    var spaghetti = new Pasta("Tom", 20, "male");
+    console.log(spaghetti)//Pasta {name: "Tom", age: 20, gender: "male", toString: ƒ}
+    console.log(Object.keys(spaghetti)); //console: ["name", "age", "gender", "toString"]
+
+
+
+            </script>
+</body>
+</html>

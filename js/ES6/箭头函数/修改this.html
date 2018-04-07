@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改函数的this</title>
+</head>
+<body>
+<script>
+    /*
+        复杂的return函数
+     */
+//    function foo() {
+//        return () => {
+//            return () => {
+//                return () => {
+//                    console.log('id:', this.id);
+//                };
+//            };
+//        };
+//    }
+//
+//    var f = foo.call({id: 1});
+//    var t1 = f.call({id: 2})()(); // id: 1
+//    var t2 = f().call({id: 3})(); // id: 1
+//    var t3 = f()().call({id: 4}); // id: 1
+
+
+    /*
+        简单的return
+     */
+
+//    function foo() {
+//        return () => {
+//            console.log(this)
+//            console.log('id:', this.id);
+//        };
+//    }
+//    var f = foo();
+//
+//    f.call({id:30});
+////    console.log(f)
+
+
+
+
+    /*
+    * 普通函数用call修改this很成功
+    * */
+//    function foo(){
+//        console.log(this);//{id:40}
+//    }
+//    foo.call({id:40})
+
+    /*
+        箭头函数修改call 不管事呀
+     */
+//    var foo = ()=>{
+//        console.log(this);
+//    }
+//    foo.call({"id":30});
+
+    /*
+        箭头函数的bind方法
+     箭头函数没有自己的this，所以bind方法无效，内部的this指向外部的this。
+     bind 绑定会创建一个新的方法;
+
+     */
+
+   var re=  (function() {
+        return [
+            (() => this.x).bind({ x: 'inner' })()
+        ];
+    }).call({ x: 'outer' });
+    console.info(re)//['outer']
+    // ['outer']
+</script>
+</body>
+</html>

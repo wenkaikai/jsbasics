@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分组</title>
+</head>
+<body>
+<script>
+//    var str = 'abc';
+//    var reg =/(a(b(c)))/;
+//    console.log(str.match(reg));//["abc", "abc", "bc", "c", index: 0, input: "abc"]
+//    //exec 有捕获分组的作用
+//    /*第一项是匹配的内容 剩下的是捕获的内容（从外往里捕获）
+//     */
+//    console.log(reg.exec(str))// ["abc", "abc", "bc", "c", index: 0, input: "abc"]
+
+
+    /*
+        为什么转义两下不行\[\]
+     */
+    var str = "\d\w[]";
+    console.log(str)//dw[];
+    var reg = /dw\[]/;
+    var reg1 = /dw\[\]/;
+    console.log(reg.test(str));//true;
+    console.log(reg1.test(str))//true
+</script>
+</body>
+</html>

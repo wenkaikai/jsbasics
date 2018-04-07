@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../../jquery-1.11.2.min.js"></script>
+</head>
+<body>
+<script>
+    /*
+    通过这种方式，我们可以为全局对象jQuery添加新的函数。
+     */
+    $.extend({
+        add:function(a,b){
+            return a+b;
+        }
+    });
+    $.cc=function(a){console.log(a)}
+    $.cc(1);
+    var totle = $.add(3,5);
+    console.log(totle)
+    console.log($)//ƒ (a,b){return new m.fn.init(a,b)}
+    console.log(jQuery)//ƒ (a,b){return new m.fn.init(a,b)}
+    console.log(typeof  jQuery)//function
+</script>
+</body>
+</html>

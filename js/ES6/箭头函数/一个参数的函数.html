@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var reflect = (a,b) => a+b;
+//    console.log(reflect(1,2))//3 不写函数体就相当于有返回值了
+//    console.log(typeof reflect)//funciton 答应出来的是函数就是说箭头就是一个函数
+    // 等同于：
+
+//    var reflect = function(a,b) {
+//        return a+b;
+//    };
+
+
+
+
+
+    //或者是更标准的
+//    var sum = (num1, num2) => { return num1 + num2; }
+//    //等同于：
+//    var sum = function(num1, num2) {
+//        return num1 + num2;
+//    };
+
+
+
+/*
+    最简单的箭头函数
+ */
+
+//var f = v => v;
+//console.clear()
+//console.info(f(34,56))//34
+//    console.dir(f)//返回对象的所有属性
+//    console.log(f)
+
+/*
+    箭头函数返回一个对象
+ 由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号，否则会报错
+
+     // 报错
+     let getTempItem = id => { id: id, name: "Temp" };
+
+     // 不报错
+     let getTempItem = id => ({ id: id, name: "Temp" });
+
+ */
+
+    /*箭头函数简单应用一*/
+//   var bb =  [1,2,3].map(x=>x*x);
+//    console.warn(bb)//[1,4,9]
+
+
+
+    /*
+        箭头函数this 问题 一
+
+     （1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+
+     （2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
+
+     （3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
+
+     （4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。
+     */
+            //    var f = v =>{
+            //        console.log(this)
+            //    }
+            //    window.f();//window 调用了f 所以this就指向了 window;
+
+
+
+
+/* 一 普通函数的this问题 有宿主对象*/
+
+//    var a = {a:function(){
+//        console.warn(this)//{a:f}
+//    }}
+//        a.a();
+
+
+
+// lie zi 二
+//    var a = {a:function(){
+//        (function(){
+//            console.log(this);//widow 此时有宿主对象了还是指向的window
+//        })();
+//        console.warn(this)//{a:f}
+//    }}
+//        a.a();
+
+//    var a = {a:function(){
+//        (()=>{
+//            console.log(this)//{a:f} 如果用箭头函数就此时的this指向的是自己
+//        })()
+//        console.warn(this)//{a:f}
+//    }}
+//        a.a();
+
+
+
+/*
+    二  函数 调用里面的this 问题
+    */
+
+//    var a=function(){
+//        (function(){
+//            console.log(this)// window 原因是都没有宿主对象
+//
+//        })();
+//    }
+//    a();
+
+
+/*
+
+ 箭头函数this 问题 二
+ */
+    //function foo(){
+    //
+    //    ( v =>{
+    //            console.log(this)//window 原因是都没有宿主对象
+    //        })();
+    //}
+    //    foo()
+
+
+/* 箭头函数 this 例子 三 箭头函数中的this是找父亲函数所处的this*/
+
+//    var obj = {
+//        say: function () {
+//            //因为f1定义时所处的函数 中的 this是指的 obj, 所以不管有多层嵌套,都是 obj
+//            var f1 = () => {
+//                console.log(this); // {say: ƒ}
+//                setTimeout(() => {
+//                    console.log(this); // {say: ƒ}
+//            })
+//            }
+//            f1();
+//        }
+//    }
+//    obj.say()
+
+
+
+
+/* 箭头函数 this 例子 四 箭头函数中的this是找父亲函数所处的this*/
+//            var obj = {
+//                say: function () {
+//                        console.log(this) // {say: ƒ}有宿主对象
+//                    var f1 = function () {
+//                        console.log(this);    // window, f1调用时,没有宿主对象,默认是window
+//                        setTimeout(() => {
+//                            console.log(this); // window 因为父函数所处的this就是window
+//                    })
+//                    };
+//                    f1();
+//                }
+//            }
+//            obj.say()
+
+
+
+
+/* 箭头函数列子 应用一 */
+    //    function foo() {
+    //        setTimeout(() => {
+    //            console.log(this)//{id:42}
+    //            console.log('id:', this.id);
+    //    }, 100);
+    //    }
+    //
+    //    var id = 21;
+    //    foo.call({ id: 42 });
+    // id: 42
+
+/*
+* 箭头函数列子 应用二
+*
+* */
+
+
+//    function Timer() {
+//        this.s1 = 0;
+//        this.s2 = 0;
+//        // 箭头函数
+//        setInterval(() => this.s1++, 1000);//此时的this 就是Timer
+//        // 普通函数
+//        setInterval(function () {
+//            console.log(this.s2)//第一次undefind 剩下的就是NaN;此时的this是window;
+//            this.s2++;
+//        }, 1000);
+//    }
+//
+//    var timer = new Timer();
+//
+//    setTimeout(() => console.log('s1: ', timer.s1), 3100);
+//    setTimeout(() => console.log('s2: ', timer.s2), 3100);
+
+    // s1: 3
+    // s2: 0
+
+/*var  一个变量就是一个全局属性*/
+
+//var aa = 2;
+//(function () {
+////    aa = 3;
+//})();
+//console.log(aa)//3
+//console.log(window.aa)//3
+
+
+
+
+/* 列题一  超级经典的一道题关于this指向的问题*/
+//        window.val = 1;
+//        var obj = {
+//            val: 2,
+//            dbl: function () {
+//        //        console.log(this)//当 obj.dbl()调用的时候this是这个对象
+//                //  当 func() 调用的时候this 指向的是window
+//                // console.info(this.val);//2
+//                //console.log(val)//1
+//                this.val *= 2;
+//                val *= 2;
+//                console.log(val);//
+//                console.log(this.val);
+//            }
+//        };
+//        //// 说出下面的输出结果
+//        obj.dbl();//2 4
+//        var func = obj.dbl;//此时的val ==2 ,this.val==4
+//        console.dir(func);//ƒ dbl(){}
+//        //obj.dbl();//4,8
+//        func();//8 8(再次调用的this指向的widow 所以this.val 与val 都指向的是4)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="number" onkeyup="fn(event)">
+</body>
+<script>
+	 var fn = function(e){
+        
+        var val = document.getElementsByTagName("input")[0].value;
+     	var val1 = parseInt(val);
+     	document.getElementsByTagName("input")[0].value = document.getElementsByTagName("input")[0].value.replace(/[^1|2|3|4|5]/g,"");
+     	if(val>10){
+     		document.getElementsByTagName("input")[0].value = document.getElementsByTagName("input")[0].value.charAt(0);
+     		
+     	}
+
+
+           
+    }
+     
+
+</script>
+</html>

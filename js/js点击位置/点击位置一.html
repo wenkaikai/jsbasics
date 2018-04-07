@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>位置</title>
+    <script language="javascript" type="text/javascript">
+        function m(){
+            document.getElementById("area").innerHTML=event.clientX +" , "+event.clientY;
+        }
+
+
+        function c(){
+            var objTop = getOffsetTop(document.getElementById("d"));//对象x位置
+            var objLeft = getOffsetLeft(document.getElementById("d"));//对象y位置
+
+            var mouseX = event.clientX+document.body.scrollLeft;//鼠标x位置
+            var mouseY = event.clientY+document.body.scrollTop;//鼠标y位置
+//计算点击的相对位置
+            var objX = mouseX-objLeft;
+            var objY = mouseY-objTop;
+            clickObjPosition = objX + "," + objY;
+
+            alert(clickObjPosition);
+        }
+
+        function getOffsetTop(obj){
+            var tmp = obj.offsetTop;
+            var val = obj.offsetParent;
+            while(val != null){
+                tmp += val.offsetTop;
+                val = val.offsetParent;
+            }
+            return tmp;
+        }
+        function getOffsetLeft(obj){
+            var tmp = obj.offsetLeft;
+            var val = obj.offsetParent;
+            while(val != null){
+                tmp += val.offsetLeft;
+                val = val.offsetParent;
+            }
+            return tmp;
+        }
+    </script>
+
+</head>
+<body style="margin:0px;" onmousemove="m();">
+<div style="padding:90px;border:1px solid #ccc;font-size:36px;width:800px;height:800px;"> </div>
+<div  id="area"></div>
+<div style="width:1400px;height:300px;border:1px solid red;padding-left:1200px;">
+    <div id="d" style="width:200px;height:200px;border:1px solid green;padding:10px;cursor:hand;" onclick="c()">这里是图片，因为我用div边框1px，所以两个div会有2px的位置偏移，你可以自己调整</div>
+</div>
+</body>
+</html>

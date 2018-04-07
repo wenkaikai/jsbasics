@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    "use strict"
+//    类似于'Hello ${ a + b } world ${ a * b }'.match(/\$\{[^\}]*\}/g)得到["${ a + b }", "${ a * b}"]，然后再转化为template literal，计算出值[15,50]
+//    var str = 'Hello ${ a + b } world ${ a * b }'.match(/\$\{[^\}]*\}/g);//[^\}] 不包含 \}
+//    console.log(str);// ["${ a + b }", "${ a * b }"]
+
+
+/*es5 es6 的差别*/
+//    var reg = new RegExp(/abc/ig,'i').flags;
+//    console.log(reg);//i
+
+
+    var reg = new RegExp(/abc/ig,'i');
+    var str = "abcd";
+    console.log(reg.test(str));//true
+</script>
+</body>
+</html>

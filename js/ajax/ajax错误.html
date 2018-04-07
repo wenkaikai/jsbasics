@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    var xhr =new XMLHttpRequest();
+    $.ajax({
+        url:"php.json",
+        type:"post",
+        data:"",
+        dataType:"json",
+        beforeSend:function(xhr){// xhr 用于创建 XMLHttpRequest 对象的函数。
+            //这是请求前的函数
+
+            /*
+                 发送请求前可修改 XMLHttpRequest 对象的函数，如添加自定义 HTTP 头。
+                 XMLHttpRequest 对象是唯一的参数。
+                 这是一个 Ajax 事件。如果返回 false 可以取消本次 ajax 请求。
+             */
+//            console.log(xhr)
+//            console.log(xhr.status); //undefined;
+//            console.log(xhr.readyState)//0  （未初始化）  还没有调用send()方法
+        },
+        success:function(result,status,xhr){//当请求之后调用。传入返回后的数据，以及包含成功代码的字符串。
+            //fjsj
+            console.log(result)
+            console.log(status)
+            console.log(xhr)
+        },
+        error:function(xhr,status,error){//在请求出错时调用。传入 XMLHttpRequest 对象，描述错误类型的字符串以及一个异常对象（如果有的话）
+//            console.log(xhr)
+//            console.log(xhr.readyState);//4
+//            console.log(xhr.status); //404
+//            console.log(xhr.statusText);//Not Found
+//            console.log(xhr.responseText);//错误响应的页面;
+
+//            console.log(status);
+            //返回值 status de 几种
+            /*
+            * "null" "timeout", "error", "notmodified" 和 "parsererror"。*/
+//            console.log(error) // rugou路径错了是Not Found
+        },
+        dataFilter:function(data,type){//在请求成功之后调用。传入返回的数据以及 "dataType" 参数的值。并且必须返回新的数据（可能是处理过的）传递给 success 回调函数。
+//            console.log("dataFilter")
+           return data;//如果不return data 在success里面就没有数据
+        }
+//        complete:function(){//当请求完成之后调用这个函数，无论成功或失败。传入 XMLHttpRequest 对象，以及一个包含成功或错误代码的字符串。
+////            console.log("complete")
+//        }
+    })
+
+//    setTimeout(function(){console.log("ok")},5000)
+</script>
+</html>

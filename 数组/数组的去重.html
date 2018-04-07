@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡排序</title>
+	<script>
+	//取值逐次比较
+	//两个循环
+	//先定义一个空数组把原来数组的值往空数组里添加，添加的时候比较一下数组里面的值有没有相同则添加，有相同就添加
+//		var arry1 = ["a","b","a","b","c","d","e","f","f","g","a"];
+//		var arry2 = [];
+//
+//
+//		for(var i = 0;i < arry1.length;i++){
+//			var switcher = true;
+//			for(j = 0;j < arry2.length;j++){
+//				if(arry1[i] == arry2[j]){
+//					switcher = false;
+//					break;
+//				}
+//
+//			}
+//			if(switcher == true){
+//				arry2.push(arry1[i]);
+//
+//			}
+//
+//
+//		}
+//
+//		console.log(arry2);
+		
+		// 创建一个对象来解决问题
+//		 var arry1 = ["a","b","a","5b","c","d","1e","fg","f","g","a"];
+//		 var arry2  = [];
+//		 var obj = {};
+//
+//		 for(var i = 0;i < arry1.length;i++){
+//
+//		 	if(!obj[arry1[i]]){
+//
+//		 		arry2.push(arry1[i]);
+//		 		obj[arry1[i]]=1;
+//		 	}
+//		 }
+//		 console.log(arry2);
+//		 console.log(obj)
+
+		// 三原型  这个方法跟第一种方法其实是一样的
+    var arry1 = ["a","b","a","b","c","d","e","f","f","g","a"];
+    Array.prototype.unique = function(){
+        console.log(this);//(11) ["a", "b", "a", "b", "c", "d", "e", "f", "f", "g", "a"]就是 arry1
+        var len = this.length,
+            newArr = [],
+            flag = 1;
+        for(var i = 0; i < len; i++, flag = 1){
+            for(var j = 0; j < i; j++){
+                if(this[i] == this[j]){
+                    flag = 0;        //找到相同的数字后，不执行添加数据
+                }
+            }
+            flag ? newArr.push(this[i]) : '';
+        }
+        return newArr;
+    }
+	var arry2 = arry1.unique();
+    console.log(arry2);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

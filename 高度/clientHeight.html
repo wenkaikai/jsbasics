@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clientHeight</title>
+    <style>
+        body{
+            height:700px;
+        }
+        div{
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+<!--大部分浏览器对 clientHeight 都没有什么异议，都认为是内容可视区域的高度，-->
+<!--也就是说页面浏览器中可以看到内容的这个区域的高度，即然是指可看到内容的区域，滚动条不算在内。-->
+<!--但要注意padding是算在内。-->
+<!--其计算方式为clientHeight = topPadding + bottomPadding+ height - scrollbar.height。-->
+<div></div>
+</body>
+<script>
+    var body1 = document.getElementsByTagName("body")[0]
+    var div1 = document.getElementsByTagName("div")[0]
+    console.log(body1.clientHeight)//谷歌是700这个是内容的高度是由内容的高度决定的
+    console.log(div1.clientHeight)//谷歌是200  就是真实的div高度
+    console.log(document.documentElement.clientHeight)//615 是真实的视窗宽度
+
+    console.log(getComputedStyle(body1).height)//谷歌是700px
+
+</script>
+</html>

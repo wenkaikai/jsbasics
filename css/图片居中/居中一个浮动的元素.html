@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            这个方法居中浮动元素可行
+         */
+        .div1{
+            width:200px;
+            height:300px;
+            background:red;
+            position:relative;
+            display:flex;
+        }
+        .div2{
+            width:20px;
+            height:20px;
+            background:green;
+            float:left;
+            float: left;
+            margin: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <div class="div2"></div>
+    <div class="div2"></div>
+</div>
+</body>
+<script>
+    console.log(window.top.document.compatMode);
+</script>
+
+</html>

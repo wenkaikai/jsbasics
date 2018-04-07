@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <style>
+        /*列子
+        border-image: source slice width outset repeat|initial|inherit;
+         border-image-source 用于指定要用于绘制边框的图像的位置
+         border-image-slice  图像边界向内偏移
+         border-image-width   	图像边界的宽度
+         border-image-outset   用于指定在边框外部绘制 border-image-area 的量
+         border-image-repeat   用于设置图像边界是否应重复（repeat）、拉伸（stretch）或铺满（round）。
+        */
+        /*
+
+            border-image-width 属性的四个之规定将边框图像分割为九个部分的偏移。number|%|auto;
+            它们代表了从区域的上、右、下、左侧向内的距离。如果忽略第四个值，
+            则与第二个值相同。如果省略第三个值，则与第一个值相同。
+            如果省略第二个值，则与第一个值相同。不允许任何负值作为 border-image-width 值。
+
+             border-image-outset用于指定在边框外部绘制 border-image-area 的量。包括上下部和左右部分。
+             如果第四个值被省略，它和第二个是相同的。如果也省略了第三个，它和第一个是相同的。如果也省略了第二个，
+             它和第一个是相同的。不允许border-im-outset拥有负值。
+
+             border-image-repeat 属性规定图像边框是否应该被重复（repeated）、拉伸（stretched）或铺满（rounded）。
+
+        */
+        div
+        {
+            /*border:15px solid transparent;*/
+            border:30px solid red;/*这个时候transparent和red是没什么区别的*/
+            width:250px;
+            padding:10px 20px;
+        }
+
+        #round
+        {
+            /*-webkit-border-image:url(border.png) 30 30 repeat; !* Safari 5 and older *!*/
+            /*-o-border-image:url(border.png) 30 30 round; !* Opera *!*/
+            /*border-image:url(border.png) 10 10 10 round;*/
+            border-image-source:url(border1.png);
+            border-image-slice:30;
+            /*border-image-width:30px 30px 30px;*/
+            /*meiyou*/
+            /*border-image-slice:fill;*/
+            /*border 向外偏移的量，*/
+            /*border-image-outset:10px 5px 2px;*/
+            /*border-image-repeat:repeat*/
+
+        }
+
+        #stretch
+        {
+            -webkit-border-image:url(border.png) 30 30 stretch; /* Safari 5 and older */
+            -o-border-image:url(border.png) 30 30 stretch; /* Opera */
+            border-image:url(border.png) 30 30 stretch;
+        }
+    </style>
+</head>
+<body>
+
+<p><b>注意: </b> Internet Explorer 不支持 border-image 属性。</p>
+<p> border-image 属性用于设置图片的边框。</p>
+
+<div id="round">这里，图像平铺（重复）来填充该区域。</div>
+<br>
+<!--<div id="stretch">这里，图像被拉伸以填充该区域。</div>-->
+
+<p>这是我们使用的图片素材：</p>
+<img src="border1.png" />
+
+</body>
+</html>

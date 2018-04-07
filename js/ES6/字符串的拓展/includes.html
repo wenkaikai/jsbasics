@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串的查找</title>
+</head>
+<body>
+<script>
+    var str  = "hello world";
+    console.log(str.includes("w",2));//true
+    /*表示的是前十位*/
+    console.log(str.endsWith("ld",8));//false
+    console.log(str.endsWith("rld"));//true
+
+    /*startsWith 包含开始的字符串 从第几位开始 直到字符串结束*/;
+    console.log(str.startsWith(" ",5))//true;
+</script>
+</body>
+</html>

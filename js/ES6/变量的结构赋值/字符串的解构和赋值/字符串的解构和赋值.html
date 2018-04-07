@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。
+//    const [a, b, c, d, e] = 'hello';
+//    console.log(a) //h
+//    console.log(b)//e
+//    console.log(c)//i
+
+//列子二 字符串还有这种操作
+    let {length : len} = 'hello';
+    console.log(len)// 直接解构字符串的长度
+</script>
+</body>
+</html>

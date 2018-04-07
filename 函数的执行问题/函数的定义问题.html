@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //1种是函数先定义
+    var foo = function bar(name) {
+        console.log("hello"+name);
+        console.log(bar);
+    };
+//    alert(typeof bar);// undefined
+//    foo("world");//helloworld,//执行上下文包括形参
+//    console.log(bar);//bar is not defined
+//    console.log(foo)//执行上下文
+//    console.log(typeof foo)//function
+//        console.log(foo.toString());//把函数变为字符串
+//        bar();//报错
+//    foo()
+    //定义了一个函数以后，如果前面加了一个var，函数名好像都不管用了。一切以var为标准
+
+
+    //2,函数先调用然后定义
+//    function aa(){
+//        console.log("b")
+//
+//    }
+//    var bb = aa();
+//    console.log(typeof aa)//function
+//    console.log(bb)//undefined 因为函数没有反回值
+
+</script>
+</html>

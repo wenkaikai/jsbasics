@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul id="myList"><li id="item1">Coffee</li><li id="item2">Tea</li><li>haode</li></ul>
+
+<p id="demo">点击按钮来获得列表元素的文本内容。</p>
+
+<button onclick="myFunction()">试一下</button>
+
+<script>
+    //textContent 属性设置或返回指定节点的文本内容，以及它的所有后代。
+    function myFunction()
+    {
+        var lst=document.getElementById("myList");
+        var x=document.getElementById("demo");
+        x.innerHTML=lst.textContent;
+    }
+</script>
+<p><b>注释：</b>Internet Explorer 8 以及更早的版本不支持此属性。</p>
+<p><b>注释：</b>文本内容包含所有子节点的文本。</p>
+</body>
+</html>
+

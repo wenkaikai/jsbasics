@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    第一题
+     */
+//    console.log(typeof a);
+//    console.log(typeof b);
+//    console.log(window);
+//
+//    var a=b=10;
+//    delete a;
+//    delete b;
+//console.log(a)
+//console.log(b)
+
+    /*
+        第二题
+       自执行函数的连等问题
+     */
+//(function(){
+//    var a=b=10;
+//})()
+//    console.log(typeof a)//undefined
+//    console.log(typeof b)//number;
+
+
+    /*
+        三 变量的赋值
+     */
+
+//    var a = {"name":"jack"}
+//    var b = a;
+//    b.name="kangkang";
+//    console.log(a);//{name: "kangkang"}
+
+
+    /*
+    四题
+    a = {n:2}
+    a.x = {n:2}
+    赋值的时候是这样的
+     */
+    var a = {n:1};
+    var b = a; // 持有a，以回查
+    a.x = a = {n:2};
+//    a.x={n:2}
+
+    console.log(a);// --> {n:2}
+    console.log(b);// --> {n: 1, x: {n:2}}
+    console.log(a.x);// --> undefined
+    console.log(b.x);// --> {n:2}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实列的方法和类的方法</title>
+</head>
+<body>
+<script>
+    function Complex(real,imaginary){
+        if(isNaN(real)||isNaN(imaginary))
+        throw new TypeError();
+        this.r = real;
+        this.i = imaginary;
+    }
+    //两个复数相加的运算
+    Complex.prototype.add = function(that){
+        return new Complex(this.r+that.r,this.i+that.i);
+    }
+    //复数的求负的运算；
+    Complex.prototype.neg = function(){
+        return new Complex(-this.r,-this.i)
+    }
+    var add1 = new Complex(2,3)
+//    console.log(add1)//Complex {r: 2, i: 3}
+    var readd = add1.add({r:1,i:1})
+//    console.log(readd)//Complex {r: 3, i: 4}
+    console.log(typeof Complex) //function
+    Complex.root={r:"er"}
+    console.log(Complex.add) //undefined
+</script>
+</body>
+</html>

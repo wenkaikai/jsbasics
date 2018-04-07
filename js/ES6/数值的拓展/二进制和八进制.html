@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二进制和八进制</title>
+</head>
+<body>
+<script>
+    // 非严格模式
+    /*列子一*/
+//    (function(){
+//        console.log(0o11 === 011);
+//    })() // true
+//    console.log(0o11);//9
+
+    // 如果要将0b和0o前缀的字符串数值转为十进制，要使用Number方法。
+//    console.log(Number('0b111'));//7
+//    console.log(Number('0o10'));//8
+    Number.isFinite(15); // true
+    Number.isFinite(0.8); // true
+    Number.isFinite(NaN); // false
+    Number.isFinite(Infinity); // false
+    Number.isFinite(-Infinity); // false
+    Number.isFinite('foo'); // false
+    Number.isFinite('15'); // false
+    Number.isFinite(true); // false
+    console.log(Number.isFinite(true));//false
+    console.log(Number.isFinite("15"));//false
+</script>
+</body>
+</html>

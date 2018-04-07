@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select name="" id="" onchange="changeFrom(this,this.value,this.blur())">
+    <option value="1234">1234</option>
+    <option value="1235" selected>1235</option>
+    <option value="1236">1236</option>
+    <option value="1237">1237</option>
+    <option value="1238">1238</option>
+
+</select>
+<script type="text/javascript">
+    function changeFrom(self,val){
+//        console.log(self)
+        var index = self.selectedIndex;//
+//        console.log(index)//从0开始
+//        console.log(self.options[index].value)//获取的选中的值
+        console.log(val);//这样也可以直接获取选中的值
+//        self.blur();//让selct 失去焦点
+
+    }
+
+    var ele  = document.querySelector("select").children[3].selected=true;
+    console.log(ele);
+    /*
+     var obj = document.getElementByIdx_x(”testSelect”); //定位id
+     var index = obj.selectedIndex; // 选中索引
+     var text = obj.options[index].text; // 选中文本
+     var value = obj.options[index].value; // 选中值
+     */
+</script>
+</body>
+</html>

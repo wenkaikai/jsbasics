@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = ../../jq/jquery-1.8.3.min.js>
+        </script>
+    <style>
+        div{
+            width:200px;
+            height:300px;
+            position:absolute;
+            left:100px;
+            top:50px;
+            background:red;
+            perspective: 1000px;
+            transform-style:preserve-3d; /* 默认flat 2D */
+            transform:rotateX(20deg) rotateY(-30deg);
+
+        }
+        .small{
+            webkit-animation:center 2s;
+            -webkit-animation:center 2s; /* Safari and Chrome */
+        }
+        @keyframes center
+        {
+            from {transform:scale(0.8,0.8)}
+            to {transform:scale(1,1)}
+        }
+        /*@-webkit-keyframes myfirst !* Safari and Chrome *!*/
+        /*{*/
+            /*from {background:red;}*/
+            /*to {background:yellow;}*/
+        /*}*/
+    </style>
+        </head>
+<body>
+      <div id="list"></div>
+      <script>
+          var lt = $("#list").offset().left;
+          var ht = $("#list").offset().top
+         $("#list").click(function(e){
+                $(this).addClass("small")
+         })
+      </script>
+</body>
+</html>

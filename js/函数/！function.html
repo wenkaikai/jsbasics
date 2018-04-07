@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>!function</title>
+</head>
+<body>
+<script>
+    window.jQuery = {};
+    window.jQuery.fn={}
+    !function($){
+        console.log($)
+        $.fn.hup = function(){
+            console.log("ok")
+        }
+        console.log("ok")
+    }(window.jQuery)
+
+
+
+</script>
+</body>
+</html>

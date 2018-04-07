@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set</title>
+</head>
+<body>
+<script>
+    let s = new Set();
+    /*
+        一 add
+    */
+    s.add("abc");
+    s.add(22)
+    /*
+    也可以用.add连续加多个s.add(100).add(200);
+     */
+
+    console.log(s)//Set(2) {"abc", 22}
+    console.log(typeof s)//object
+    console.log(s.size)//2 说明size是属性
+    console.log(s.length)//undefined
+    /*
+     二 .用has判断元素是否存在
+     */
+    console.log(s.has(22));//true
+    /*
+    三 用for of遍历
+     */
+    for(let e of s) {//相当于 循环一个对象
+        console.log(e);
+    }
+    /*
+    四 用delete删除元素
+     s.delete(100);  //返回bool结果，true表示删除成功，false表示删除失败
+     */
+    console.log(s.delete(22))//true
+    console.log(s)//Set(1) {"abc"} 删完22以后只剩下‘abc’
+    /*
+     五  s.clear();//则是清除所有的元素
+     */
+    /*
+     六 .关于keys,values和entries
+     实际上Set和Map一样，都是以KeyValue的方式存放的，只是Set的Key和Value是一样的。
+     */
+    let s1 = new Set();
+    s1.add("hao");
+    s1.add("yida");
+    console.log(s1.keys())// {"hao", "yida"}
+    console.log(s1.values())// {"hao", "yida"}
+    /*
+    七 一次性添加多个元素
+     */
+    let s2 = new Set([100,200,300]);
+    console.log(s2)//Set(3) {100, 200, 300}
+</script>
+</body>
+</html>

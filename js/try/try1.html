@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script language="JavaScript">
+       //try 的第一个列子
+
+//
+//    try
+//    {
+//        throw new Error(10,"asdasdasd")
+//    }
+//    catch (e)
+//    {
+//        alert(e.message);
+//        alert(e.description)
+//        alert(e.number)
+//        alert(e.name)
+//        throw new Error(10,"asdasdasd")
+//    }
+
+   //try 的第二个列子
+
+
+
+       try {
+//           foo.bar();//运行这个函数如果错误会有catch里面的数据
+//           console.log("ok")//如果没有错就不会再catch里面的显示
+//           console.log(aaa)
+       } catch (e) {
+           console.log(e)
+           console.log(e.name + ": " + e.message)
+       }
+
+       //try 的第三个列子 手工抛出异常的方法如下：
+
+
+
+//       try {
+//           throw new Error("Whoops!");
+//       } catch (e) {
+//           console.log(e)// Error: Whoops!(…)
+//           alert(e.name + ": " + e.message);
+//       }
+
+//       description: 错误描述 (仅IE可用).
+//               fileName: 出错的文件名 (仅Mozilla可用).
+//               lineNumber: 出错的行数 (仅Mozilla可用).
+//               message: 错误信息 (在IE下同description)
+//       name: 错误类型.
+//               number: 错误代码 (仅IE可用).
+//               stack: 像Java中的Stack Trace一样的错误堆栈信息 (仅Mozilla可用).
+
+       //弹出来的结果是Error:Whoops
+
+
+
+////try  的第四个列子
+//
+//       try {
+////           throw new Date(); // 抛出当前时间对象throw 可以抛出任何对象并且可以在catch接受这个对象（不管有没有错误会执行catch里面的语句）
+//           throw new Array();//抛出对象也能接收
+//       } catch (e) {
+//           console.log(e)
+//           alert(e.toLocaleString()); // 使用本地格式显示当前时间
+//       }
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="text" placeholder="请输入邮箱">
+<p>亲输入正确的邮箱</p>
+</body>
+    <script>
+//        var pattern = /^\w{3,16}@(\w){1,6}\.(\w){1,6}\.(com|cn)$/
+//        console.log(pattern.test("zhengkaiwen@vip.sina.com"))//true
+        var pattern =/^\w+@(\w)+(\.(\w)+)?(\.([a-zA-Z]){2,6})$/
+        console.log(pattern.test("1140073222@qq.com"))
+    </script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    闭包就是能够读取其他函数内部变量的函数。
+    在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+     */
+    function outer(){
+        var num = 1;
+        function inner(){
+            var n = 2;
+            alert(n + num);
+        }
+        return inner;
+    }
+    outer()();
+
+</script>
+</body>
+</html>

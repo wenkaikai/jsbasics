@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes fadeout {
+            0%{display: block;}
+            40% {
+                opacity: 1;
+                -webkit-transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+                transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+                -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+                animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+            }
+
+            100% {
+                opacity: 0;
+                -webkit-transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
+                transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
+                -webkit-transform-origin: center bottom;
+                transform-origin: center bottom;
+                -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+                transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+                -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+                animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+            }
+
+            60% {
+                opacity: 1;
+                -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+                transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+                -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+            }
+        }
+        div{
+            height:300px;
+            width:400px;
+            background-color:red;
+            /*display: none;*/
+        }
+        .out{
+
+            animation:fadeout 1s linear;
+            animation-fill-mode:forwards;/* 默认值是none 动画停在200px处不会再进行第二次 当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。*/
+        }
+        .in{
+            display: block;
+            animation:fadeIn 1s linear;
+            animation-fill-mode:forwards;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <button>点击div 出现和消失</button>
+</body>
+<script>
+    var a = document.querySelector("div");
+    var btn = document.querySelector("button");
+    btn.onclick=function(){
+
+        if(a.className==""){
+            a.className="in"
+        }
+        else if(a.className=="out"){
+            a.className="in"
+        }else{
+            a.className="out"
+        }
+    }
+
+</script>
+</html>
