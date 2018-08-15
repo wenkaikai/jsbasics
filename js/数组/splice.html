@@ -7,9 +7,16 @@
 <body>
 <script>
     var array = ["apple","banana","orange","mango"];
-//    var array1 = array.splice(2,2);//第一个是下标，第二个是多少个；
-//    console.log(array1);//["orange","mango"]
-//    console.log(array)//["apple","banana"]就是splice直接的是改变原数组；
+    var temp = array.splice(0,array.length,"haode")
+    console.log(array)//["haode"] 
+    console.log(temp)//这个返回的是截取的数组
+   // var array1 = temp.push("haode");//第一个是下标，第二个是多少个；好像都是包括第一个
+   // console.log(temp);//["apple", "haode"]
+   // console.log(array)//["apple","banana"]就是splice直接的是改变原数组；
+   // var obj={a:[{a1:123},{a12:456}],b:[{b1:789},{b2:900}]}
+   // obj.a.splice(0,1);
+   // obj.b.splice(1,1);
+   // console.log(obj);//
     /*
         一
      */
@@ -18,8 +25,8 @@
     /*
         二
      */
-    array.splice(2,0,"lemon");//第二个参数是0 直接把lemon加入到了array中
-    console.log(array);//["apple", "banana", "lemon", "orange", "mango"];
+    // array.splice(2,0,"lemon");//第二个参数是0 直接把lemon加入到了array中
+    // console.log(array);//["apple", "banana", "lemon", "orange", "mango"];
 </script>
 </body>
 </html>
