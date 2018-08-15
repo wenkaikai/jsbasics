@@ -11,13 +11,13 @@
         一 普通的解构
 
      */
-//    let { foo, bar } = { foo: "aaa", bar: "bbb" };
-//    console.log(foo)//aaa
-//    console.log(bar)//bbb
+   // let { foo, bar } = { foo: "aaa", bar: "bbb" };
+   // console.log(foo)//aaa
+   // console.log(bar)//bbb
 
-//    var { foo: baz } = { foo: 'aaa', bar: 'bbb' };
-//   console.log(baz)//aaa er 不是 foo 就是说明foo只是起到和后面对应的一个作用真正赋值的 baz
-////    console.log(foo)//foo 就像一个秘钥一样，起的是对照的作用，这也很好理解对于多个值的赋值必须要有个秘钥区分是哪一个
+  //  var { foo: baz } = { foo: 'aaa', bar: 'bbb' };
+  // console.log(baz)//aaa er 不是 foo 就是说明foo只是起到和后面对应的一个作用真正赋值的 baz
+  //  console.log(foo)//foo 就像一个秘钥一样，起的是对照的作用，这也很好理解对于多个值的赋值必须要有个秘钥区分是哪一个
 //    // Uncaught ReferenceError: foo is not defined
 //    var {aa:baz} = {aa:"jsfl "};
 //    console.log(baz)
@@ -76,37 +76,38 @@
     /*
     列子四 嵌套值
      */
-//    let obj = {};
-//    let arr = [];
-//
-//    ({ foo: obj.prop, bar: arr[0] } = { foo: 123, bar: true });
-//    console.log(obj);
-//    console.log(arr)
+   // let obj = {};
+   // let arr = [];
+
+   // ({ foo: obj.prop, bar: arr[0] } = { foo: 123, bar: true });
+   // console.log(obj);//{prop:123}
+   // console.log(arr)//{0:true}
 
 /*
 列子五 先定义然后在赋值
  */
 //    // 正确的写法
-//    let x;
-//    ({x} = {x: 1});//要加一个括号 因为 JavaScript 引擎会将{x}理解成一个代码块，从而发生语法错误。只有不将大括号写在行首
-//    console.log(x)//1
+   // let x;
+   // ({x} = {x: 1});//要加一个括号 因为 JavaScript 引擎会将{x}理解成一个代码块，从而发生语法错误。只有不将大括号写在行首
+   // console.log(x)//1
+
 
 /*
 
 列子 六 Math
  */
-//    let { log:log, sin, cos } = Math;
-//    console.log(log)//function log() { [native code] } 这样很好的分离了Math对象的log方法
+   // let { log:log, sin, cos } = Math;
+   // console.log(log)//function log() { [native code] } 这样很好的分离了Math对象的log方法
 
 
     /*
         列子 七 数组是对象的解构
      */
 
-//    let arr = [1, 2, 3];
-//    let {0 : first, [arr.length - 1] : last} = arr;
-//   console.log(first);//1
-//    console.log(last)//3 说明数组是这样的{0:1,1:2,2:3}
+  //  let arr = [1, 2, 3];
+  //  let {0 : first, [arr.length - 1] : last} = arr;
+  // console.log(first);//1
+  //  console.log(last)//3 说明数组是这样的{0:1,1:2,2:3}
 
 
 //
@@ -119,10 +120,9 @@
 //    console.log(x)
 //    console.log(y)\
 
-//    let [(a)] = [1]; 报错
-//    let b;
-//
-//          [(b)] = [3]; // 正确
+  // let [(a)] = [1]; //报错
+  //          let b;
+    //     [(b)] = [3]; // 正确
 //    console.log(b)//3
 //    ({ p: (d) } = {}); // 正确
 //    [(parseInt.prop)] = [3]; // 正确
