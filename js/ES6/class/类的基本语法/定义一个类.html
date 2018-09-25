@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定义一个类</title>
+</head>
+<body>
+    <script>
+        class Point{
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+            }
+            toString(){
+                return '(' + this.x + ', ' + this.y + ')';
+            }
+        }
+        console.log(Point)
+        console.log(typeof Point)// function
+        console.log(Point.prototype.constructor==Point)//true
+        /*
+            类的数据类型就是函数，类本身就指向构造函数
+        */
+       var aa =  new Point(3,5);
+       console.log(aa.toString());//(3, 5)
+       console.log(aa.constructor==Point)// true
+       console.log(aa.constructor)
+       console.log(Point.prototype)
+       console.log(aa.__proto__)
+       // 这个和把一个函数作为一个构造函数是一样的
+       /*
+            构造函数的prototype属性，在 ES6 的“类”上面继续存在。事实上，类的所有方法都定义在类的prototype属性上面
+            也就是说class 是一个语法糖 不是真正的语法
+       */
+       console.log(aa)// 只有 constructor 里面的属性才是显示在返回对象本身。
+    </script>
+</body>
+</html>

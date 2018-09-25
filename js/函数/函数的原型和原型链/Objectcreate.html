@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var o = {};
+//    console.log(o)
+//    var p = Object.create(null);
+//    p.a=100
+//    console.log(p)//就是个空对象什么也没有
+//
+//
+//    //2 创建对象
+//    function aa(){
+//        this.abc=120;
+//    }
+//    aa.prototype.nfc="小米";
+//    var cc = new aa();
+////    console.log(cc)//aa {abc: 120}
+////    console.log(cc.nfc)//小米
+//
+    // create 的第二个参数 就是Object.defineProperties() 方法的第二个参数
+    var a = Object.create(null,{
+        p:{
+            value:"123",
+            writable:false
+        },
+        o:{
+            value:"12",
+            writable:false
+        }
+    })
+    a.p=10;
+    console.log(a);//{p: "123", o: "12"}
+
+
+</script>
+</body>
+</html>

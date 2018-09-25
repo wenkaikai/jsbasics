@@ -7,11 +7,14 @@
 <body>
 <script>
     function Abc(){
-        console.log("ok");
+        console.log(this);// 这个时候点开才有的。
+        console.log(this.constructor);// 
     }
     var aa = new Abc();
-    console.log(Abc.prototype);
-    console.log(aa.constructor.prototype)
+    aa.cc = "123"
+    console.log(aa)//这个时候是有的cc这个属性
+    console.log(Abc.prototype);// 函数的prototype 属性也是一个对象额。
+    console.log(aa.constructor.prototype)// 此处是等于上边的。
     console.log(typeof aa.constructor);
 
 </script>

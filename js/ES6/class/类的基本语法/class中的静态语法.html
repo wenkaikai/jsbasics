@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class中的静态语法</title>
+</head>
+<body>
+  <script>
+      var class1 = class class2{
+        static classMethod(){
+            //加了一个static 只能是类名直接调用，实例的对象是不能调用的。
+            return "hello"
+        }
+      }
+      var aa = new class1();
+      console.log(aa.classMethod())
+      console.log(class1.classMethod())
+  </script>  
+</body>
+</html>

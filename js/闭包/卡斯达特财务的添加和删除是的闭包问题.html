@@ -14,14 +14,15 @@
 
 //                 第一种方式：
 //                debugger;
-                 function fn01(i){
-                  liList[i].onclick = function(){
-                      alert(i);
-                  }
-                 }
-                 var resu = fn01(i);
-                 console.log(resu)//undefined
-//                console.log(i)
+               //   function fn01(i){
+               //    liList[i].onclick = function(){
+               //        alert(i);
+               //    }
+               //    // 写闭包的最好的方法就是二话不说先来一个函数。
+               //   }
+               //   var resu = fn01(i);
+               //   console.log(resu)//undefined
+               // console.log(i)
 
 
                 // 第二种方式：
@@ -33,11 +34,11 @@
 
 
                 // 第三种方式：
-//                liList[i].onclick = (function(i){
-//                    return function(){
-//                        alert(i);
-//                    }
-//                })(i);
+               liList[i].onclick = (function(i){
+                   return function(){
+                       alert(i);
+                   }
+               })(i);
             }
         }
     </script>

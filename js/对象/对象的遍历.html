@@ -9,9 +9,9 @@
 </body>
 <script>
         var obj = {"a":"1","b":"2","c":"3"};
-        var str = JSON.stringify(obj);
-        var obj1 = JSON.parse(str);
-        console.log(obj1);
+        //var str = JSON.stringify(obj);
+        //var obj1 = JSON.parse(str);
+        //console.log(obj1);
 
         /*
 
@@ -19,11 +19,12 @@
          */
 
 
-    //for(prop in obj){// in 前面的prop 可以随便起
-//        console.log(prop)// a b c
-//        console.log(obj[prop])//1 2 3
-  //      console.log(obj)
-    //}
+    for( var prop in obj){// in 前面的prop 可以随便起
+       console.log(prop)// a b c
+       console.log(obj[prop])//1 2 3
+       console.log(obj)
+        console.log(obj.prop)//这样就不行是undefined
+    }
 //    console.log(Object.keys(obj))//把对象的属性变成数组["a","b","c"]
 //    console.log(Object.values(obj))//把对象的属性的值变成一个数组["1","2","3"]
 

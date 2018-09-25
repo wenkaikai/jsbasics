@@ -32,13 +32,16 @@
      */
 
     // 列子一 如果没有赋值就会执行函数 函数的返回值就是x的默认值
-        function f() {
-            console.log('aaa');
-            return 89
+        // function f() {
+        //     console.log('aaa');
+        //     return 89
+        // }
+        // let [x = f()] = [];
+        //     console.log(x)//89
+        function abc(...abc){
+            console.log(abc);
         }
-        let [x = f()] = [];
-            console.log(x)//89
-
+        abc(1,2,3,4,5,6,7);
 
 </script>
 </body>

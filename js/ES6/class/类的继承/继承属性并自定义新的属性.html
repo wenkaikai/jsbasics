@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义属性并继承新的属性</title>
+</head>
+<body>
+    <script>
+        class Point{
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+            }
+            method1(){
+                alert("这是父组件的方法一")
+            }
+        }
+        class ColorPoint extends Point{
+            constructor(x,y,z){
+                super(x,y);
+                this.z = z;
+            }
+            method2(){
+                // 继承的类他的this 指向还是指的是父元素。console.log(this)
+                // 那么怎么让this 指向他自己呢
+                //类自己的this对象，必须先通过父类的构造函数完成塑造，得到与父类同样的实例属性和方法，然后再对其进行加工，加上子类自己的实例属性和方法。如果不调用super方法，子类就得不到this对象。
+                alert("这是子组件的方法二");
+                super.method1();// 在子类中调用父类的方法用super 关键字
+            }
+        }
+        var aa =  new ColorPoint("hello","coding","world");
+        console.log(aa.y);
+        aa.method2();
+    </script>
+</body>
+</html>

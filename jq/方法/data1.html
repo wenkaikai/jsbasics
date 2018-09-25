@@ -1,0 +1,18 @@
+<html>
+<head>
+    <script src="../jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            <button id="btn1" data-key="1234">把数据添加到 div 元素</button><br />
+            var cc = $("#btn1").data("key");//1234
+            console.log(cc)
+        });
+    </script>
+</head>
+<body>
+<button id="btn1" data-key="1234">把数据添加到 div 元素</button><br />
+<button id="btn2">获取已添加到 div 元素的数据</button>
+<div></div>
+</body>
+</html>
+

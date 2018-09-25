@@ -23,7 +23,7 @@
 </div>
 <script>
     $(function () {//通过data()函数存取的数据都是临时数据，一旦页面刷新，之前存放的数据都将被移除。
-        var div = $( "div" )[ 0 ];
+        var div = $( "div" )[ 0 ]; //记住此处的element 是dom对象不是jq 对象。 
         jQuery.data( div, "test", {//存储在哪，以及存储的值
             first: 16,
             last: "pizza!"

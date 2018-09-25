@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>trim</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+
+    <div>
+        <img src="1234" alt="">
+        <img src="879" alt="">
+        <img src="596" alt="">
+    </div>
+    <script>
+        var src = $("div img").attr("src");
+        console.log(src)// 1234 取出来的是第一个
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承属性</title>
+</head>
+<body>
+    <script>
+        class Point{
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+            }
+        }
+        class ColorPoint extends Point{
+            /*
+            如果子类没有定义constructor方法，这个方法会被默认添加，代码如下。也就是说，不管有没有显式定义，任何一个子类都有constructor方法。
+            */
+
+        }
+        // var zz = new Point("hello","world");
+        var aa = new ColorPoint("你好","世界");
+        // console.log(zz.y)
+        console.log(aa.x);//你好
+        //这是可以继承的呀
+        console.log(aa instanceof Point)// 说明实列是属于Point 类型的
+        console.log(aa instanceof ColorPoint)// 说明实列是属于ColorPoint 类型的
+        // instanceof  是判断实例是属于某种类型的
+    </script>
+</body>
+</html>

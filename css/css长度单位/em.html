@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>em 是相对于当前的字体还是相对于父亲元素的字体</title>
+</head>
+<style>
+   /* .div1{
+        font-size:30px;
+    }*/
+    /*.div2{*/
+        /*font-size:15px;*/
+       /* width:4em;
+        height:4em;
+        background-color:#f00;
+    }*/
+    body>div{
+        font-size:30px;
+    }
+    body>div>div{
+        width:4em;
+        height:4em;
+        background-color:#f00;
+    }
+</style>
+<body>
+   <div class="div1">
+       <div class="div2">
+           好的
+       </div>
+   </div>
+</body>
+</html>

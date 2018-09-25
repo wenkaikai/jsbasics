@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    try{
+        alert("ok");
+       check();
+    }
+    catch(ex){
+        //如果try 里面的函数错误了报错的内容就是ex
+        //但是如果try里面的不报错就不会执行catch里面的函数
+       console.log(ex)
+    }
+    finally{
+        //不管try 有没有错 这个总是执行
+        console.log("这个总是执行")
+    }
+</script>
+</body>
+</html>

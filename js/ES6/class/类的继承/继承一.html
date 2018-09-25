@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类的继承一</title>
+</head>
+<body>
+    <script>
+        class Point{
+            method1(){
+                console.log("这是第一个方法")
+            }
+        }
+        class ColorPoint extends Point{
+            method2(){
+                console.log("这是第二个方法")
+            }
+        }
+        var method = new ColorPoint();
+        method.method1();//这样就可以实现继承了 这只是继承了方法。
+    </script>
+</body>
+</html>

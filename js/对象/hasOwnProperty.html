@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hasOwnProperty</title>
+</head>
+<body>
+判断对象是否是自己的属性
+<script>
+    var a = {
+        name:"zkw"
+    }
+    // a.prototype.aa = function(){
+    //     console.log("we")
+    // };
+    console.log(a.prototype)//undefined
+    console.log(a.hasOwnProperty("name"))
+    console.log(a.hasOwnProperty("aa"))
+</script>
+</body>
+</html>

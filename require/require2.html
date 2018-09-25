@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>require2</title>
+    <!-- require会定义三个变量：define,require,requirejs，其中require === requirejs，一般使用require更简短 -->
+    <script src="./require.js"></script>
+</head>
+<body>
+    <script>
+        require.config({//require 配置
+            paths:{
+                "jquery":["js/jquery-1.8.3.min"],
+                // "jquery":["http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min","js/jquery-1.8.3.min"],
+                "a":"js/A"//这个配置的路径不需要加中括号。
+            }
+        })
+        require(["jquery","a"],function($,_){
+            // console.log("12345");
+            //  console.log($);
+            // var aa = jQuery("body");//这样也能获取body $ 就是jQuery 的简写。
+            var aa = $("body");
+            var bb = $("body");
+            console.log(bb);
+            console.log(aa);
+
+            // 为什么一用_ 就报错了呢。
+        })
+    </script>
+</body>
+</html>

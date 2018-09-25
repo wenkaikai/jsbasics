@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>trim</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <script>
+        var aa = "haha  "
+       var str = $.trim(aa);
+        console.log(aa.replace(/\s/g,"#"))//  haha##  * 表示的是0个或者多个
+         console.log(str.replace(/\s/g,"#"))//  haha  说明$.trim 是真的去除了空格。
+    </script>
+</body>
+</html>

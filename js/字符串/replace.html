@@ -15,6 +15,10 @@
         var n=str.replace(/blue/gi,"red");//是替换的意思
         document.getElementById("demo").innerHTML=n;
     }
+    var aa = "支气管"
+    var str = "300例不同年龄支气管哮喘儿童中医体质调查支气管";
+    var str1 = str.replace(new RegExp(aa,'g'),"<text>支气管</text>")
+    console.log(str1)//300例不同年龄<text>支气管</text>哮喘儿童中医体质调查
 </script>
 
 </body>

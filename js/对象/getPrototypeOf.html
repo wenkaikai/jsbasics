@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getPrototypof 返回的是对象的原型</title>
+</head>
+<body>
+    <script>
+        var aa = Object.create({"name":"zkw"});
+        aa.bb = "flf";
+        console.log(aa)
+        console.log(Object.getPrototypeOf(aa))
+        //Object.getPrototypeOf(obj) 是获取obj 的原型 
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合并多个对象</title>
+</head>
+<body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>
+        var obj = {
+            "a":"123",
+            "b":"456",
+            "c":"789"
+        }
+        var obj1 = {
+            "c":"abv"
+        }
+        var obj2 = $.extend(obj,obj1);// 如果有相同的对象对象后面会替换前面的值
+        console.log(obj)//此时他两是相等的
+        console.log(obj2)//此时他两是相等的
+    </script>
+</body>
+</html>

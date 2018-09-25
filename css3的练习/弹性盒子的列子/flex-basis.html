@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<style>
+#main {
+    width: 350px;
+    height: 100px;
+    border: 1px solid #c3c3c3;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-direction: column
+}
+
+#main div {
+    -webkit-flex-grow: 0; /* Safari 6.1+ */
+    -webkit-flex-shrink: 0; /* Safari 6.1+ */
+    /*-webkit-flex-basis: 40px; */
+    /* Safari 6.1+ */
+    flex:0 1 50px;
+    /*flex-basis: 40px;*/
+    /*
+        就是第一个值是 flex-grow 第二个值是flex-shrink 第三个值是flex-basis
+        flex:auto;
+        flex-grow为1，则存在剩余空间也不放大
+        flex-shrink为1，则空间不足该项目缩小
+        flex-basis为auto，则该项目本来的大小
+
+    */
+}
+
+#main div:nth-of-type(2) {
+    /*-webkit-flex-basis: 80px; */
+    /* Safari 6.1+ */
+    /*flex-basis: 80px;*/
+}
+</style>
+</head>
+<body>
+
+<div id="main">
+  <div style="background-color:coral;"></div>
+  <div style="background-color:lightblue;"></div>
+  <div style="background-color:khaki;"></div>
+  <div style="background-color:pink;"></div>
+  <div style="background-color:lightgrey;"></div>
+</div>
+
+<p><b>注意:</b> Internet Explorer 10 及更早版本浏览器不支持 flex-basis 属性。</p>
+<p><b>注意:</b> Safari 6.1 及更新版本通过 -webkit-flex-basis 属性支持该属性。</p>
+
+</body>
+</html>

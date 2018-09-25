@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test(a,b,c,d) 
+   { 
+      var arg = Array.prototype.slice.call(arguments,1); 
+      console.log(arg); //['b','c','d'] 变成了真正的数组。
+   } 
+   test("a","b","c","d"); //b,c,d 从1截取了数组。
+    </script>
+</body>
+</html>

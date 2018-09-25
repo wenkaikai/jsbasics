@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title1</title>
+</head>
+<body>
+<script>
+    function check (){};
+    var b = new check();
+    b.constructor.prototype.time = 10;
+    var d = new check();
+    d.constructor.prototype.time = 12;
+    console.log(b)
+    console.log(b.time)
+</script>
+</body>
+</html>

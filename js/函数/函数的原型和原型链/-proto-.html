@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function a(){};
+        //console.log(a.prototype);//Object {}
+        // prototype 是函数才有的属性
+        //console.log(a._proto_)// _proto_是对象才有的属性
+
+            // var b = function(){}
+            function b(){}
+            var b1 = new b();
+
+            console.log(b);//function b() {}
+            console.log(b.prototype);  //Object {}
+            console.log(b.__proto__);  //function() {}
+            //b1._proto_ // 是对象的原型
+            //b.portotype
+            console.log(b1.__proto__,b.prototype)//相等
+            // 对象的__proto__ 属性 指向的是对象的原型
+            console.log(b1.constructor)//function b() {} 这个是构造器
+            console.log(b.prototype.constructor) // 这个是构造器
+            /*
+                b1.constructor 和 b.prototype.constructor  他两个相等的原因是b1的原型是b.prototype b1 本身是没有constructor 但是b1有原型。
+            */
+    </script>
+</body>
+</html>

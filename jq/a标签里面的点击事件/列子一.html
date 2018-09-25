@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>  
+        <a href="javascript:;" target="_blank" onclick="window.open('http://www.baidu.com','_blank') ">
+            <div onclick="aa()">hao</div>
+        </a>
+        <script>
+           function aa(e){
+                console.log("okkjkj")
+                var e = e||event
+                e.stopPropagation();
+           }
+        </script>
+</body>
+</html>

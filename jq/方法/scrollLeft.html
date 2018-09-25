@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.8.3.min.js"></script>
+    <style>
+        #n1{
+            width:600px;
+            height:400px;
+            background:#f60;
+            overflow:scroll;
+        }
+        .n2{
+            width:1000px;
+            height: 40px;
+            background: #222;
+        }
+    </style>
+</head>
+<body>
+<div id="n1">
+    <div class="n2"></div>
+</div>
+
+<script>
+    //$(".n2").scrollLeft("110px");   
+   //var aa =  document.getElementsByClassName("n2")[0];
+  //console.log(aa.scrollLeft=-500)
+  // $("#n1").scroll(function(){
+  //   console.log($(this).scrollLeft("100"))
+  // })
+  $("#n1").scrollLeft("1000")// 此时设置成功 这个时候滚动不是想当然的里面的小元素而是外面的大元素
+</script>
+
+</body>
+</html>

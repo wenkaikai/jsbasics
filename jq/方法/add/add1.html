@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+</script>
+</head>
+<body>
+<h1>欢迎</h1>
+<p>一个P元素。</p>
+<p>另一个P元素。</p>
+<span>一个span元素。</span>
+<span>一个span元素。</span><br><br>
+<div>本示例为现有的H1元素添加相同的CSS样式为p和span元素。</div>
+
+</body>
+<script>
+    $("p").clone().add("<span>Again</span>").appendTo(document.body);
+    // add 还是和的意思。
+</script>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>extend 里面传一个值</title>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <script>
+        $.extend({
+            "abc":123
+        })
+        console.log($.abc)//123
+        //其实加方法也是这样加了一个全局的属性而已
+    </script>
+</body>
+</html>

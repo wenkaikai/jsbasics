@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "2018-08-31 11:05:23+00:00"
+        var str1 = str.replace(/\+.*/g,"");
+        console.log(str1);
+        var time = new Date(str1);
+        console.log(time);
+        console.log(new Date())
+    </script>
+</body>
+</html>

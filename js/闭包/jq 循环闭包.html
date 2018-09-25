@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq循环闭包</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        // $("ul li").click(function(){
+        //     console.log($(this).index()) 0,1
+        // })
+
+$("ul li").each(function(i,j,k){
+    console.log($(j).index())//mei 没有闭包的
+})
+
+    </script>
+</body>
+</html>

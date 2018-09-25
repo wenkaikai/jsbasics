@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一个立即执行的类</title>
+</head>
+<body>
+    <script>
+        let person = new class{
+            constructor(name){
+                this.name = name;
+            }
+            sayname(){
+                console.log(this.name);
+            }
+        }("张三");
+        person.sayname();
+    </script>
+</body>
+</html>

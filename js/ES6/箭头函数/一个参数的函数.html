@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
     <title>Title</title>
 </head>
 <body>
@@ -38,6 +39,10 @@
 //    console.dir(f)//返回对象的所有属性
 //    console.log(f)
 
+var f = res=>{//这个res就是一个形参。
+    console.log(res)
+}
+f(123);
 /*
     箭头函数返回一个对象
  由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号，否则会报错

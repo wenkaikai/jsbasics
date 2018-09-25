@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>replace 没有正则</title>
+</head>
+<body>
+    <script>
+        var str = "preview-corp_name-preview-";
+        var str1 = str.replace("preview-","edit_");
+        console.log(str1);//edit_corp_name-preview- 这样也能替换
+        //但是只能替换第一次出现的
+    </script>
+</body>
+</html>

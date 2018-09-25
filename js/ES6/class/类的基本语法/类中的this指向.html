@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类中的this指向问题</title>
+</head>
+<body>
+    类中的this指向问题
+    <script>
+        
+  class Logger {
+    constructor(){
+      // this.printName = this.printName.bind(this);
+    }
+  printName(name = 'there') {
+    //console.log(this); 如果没有上边的this 此时的this 指向是undefined
+    this.print(`Hello ${name}`);
+  }
+
+  print(text) {
+    console.log(text);
+  }
+}
+
+const logger = new Logger();
+const { printName } = logger;// 变量的解构还带这样玩的呀，就连原型中的也能解构的出来
+// console.log(printName)
+printName("world"); // TypeError: Cannot read property 'print' of undefined
+    </script>
+</body>
+</html>

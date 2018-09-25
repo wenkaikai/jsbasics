@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+//    debugger;
+    var abj = {r:30};
+    var obj = Object.create(abj);
+    obj.r = 20;
+    console.log(obj.r)
+    console.log(abj.r)//30
+    var a = (3>2)&&(a = 1);
+    console.log(a)
+    Object.prototype = 0//修改一个只读的属性在严格模式下会报错
+</script>
+</body>
+</html>

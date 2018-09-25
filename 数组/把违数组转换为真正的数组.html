@@ -11,8 +11,10 @@
     function log(){
         var args = Array.prototype.slice.call(arguments);  //为了使用unshift数组方法，将argument转化为真正的数组
         args.unshift('(app)');
-        console.log.apply(console, args);
+        console.log(args)//["(app)", "hellow"]
+        console.log.apply(console, args);//(app) hellow
     };
 log("hellow");
+
 </script>
 </html>

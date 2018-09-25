@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contructor 返回一个自定义的对象</title>
+</head>
+<body>
+    <script>
+        class Square {
+            constructor(){
+                return {
+                    a:123
+                    // 若果此时有返回的话下面的toStrin() 就没有用了
+                }
+            }
+            toString(){
+                console.log("这是一个toSting方法");
+            }
+        }
+        var square  = new Square();
+        console.log(square);//Object {a: 123}
+        // 说明constructor 可以直接返回一个自定义的对象
+    </script>
+</body>
+</html>

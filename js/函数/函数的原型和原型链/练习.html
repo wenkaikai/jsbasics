@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var A = function(){
+            console.log("okk")
+        }
+        var obj = new A();
+        // console.log(obj.constructor)//是一个函数
+        // console.log(A.prototype)// 是一个对象
+        console.log("__________________1111________________")
+        console.log(obj.__proto__)// 对象的原型 原型是一个对象的有构造函数吧
+        console.log("__________________2222________________")
+        console.log(obj.__proto__.constructor)//
+        console.log("__________________3333________________")
+        console.log(obj.__proto__.constructor.prototype)
+        // obj 原型对象的构造函数 原型对象的构造函数是 A
+        //那么 原型的原型是什么呢 是对象Object 的prototype 属性
+        console.log("__________________4444________________")
+
+        console.log(obj.__proto__.__proto__,Object.prototype)
+
+        console.log("__________________5555________________")
+
+        console.log(obj.__proto__.__proto__.constructor)//ƒ Object() { [native code] }
+        console.log("__________________5555666________________")
+        console.log(obj.__proto__.__proto__.constructor.prototype,Object)
+        //我们在来看
+        console.log("__________________6666________________")
+        console.log(obj.__proto__.__proto__.__proto__)//null;
+        console.log("__________________7777________________")
+        console.log(obj.__proto__.__proto__.__proto__.constructor)// null 是没有构造器（构造函数）的。
+    </script>
+</body>
+</html>

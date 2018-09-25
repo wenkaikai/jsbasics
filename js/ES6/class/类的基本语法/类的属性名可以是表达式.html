@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类的属性名字可以是表达式</title>
+</head>
+<body>
+    <script>
+        let methodName = 'getArea';
+        class Square {
+          constructor(length) {
+            // ...
+          }
+
+          [methodName]() {
+            console.log("类的属性名字可以是表达式")
+          }
+        }
+        var square = new Square();
+        square.getArea()//注意此时的函数名字是变量的值而不是变量的名字。
+    </script>
+</body>
+</html>

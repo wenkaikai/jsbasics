@@ -1,0 +1,29 @@
+<html>
+<head>
+ <script src="../jquery-1.8.3.min.js"></script>
+
+<script type="text/javascript">
+
+    /**
+        error() 方法在 jQuery 版本 1.8 中被废弃。
+        当元素遇到错误时（当元素没有正确载入时），发生 error 事件。
+        error() 方法触发 error 事件，或规定当发生 error 事件时运行的函数。
+        提示：该方法是 bind('error', handler) 的简写方式。
+        如果没有文字的说明就相当于无源之水，无本之木。没有理论基础是走不长远的。
+    */
+    $(document).ready(function(){
+      $("img").error(function(){
+        $("img").replaceWith("<p><b>图片未加载！</b></p>");
+      });
+      $("button").click(function(){
+        $("img").error();
+      });
+    });
+</script>
+</head>
+<body>
+<img src="/i/eg_tulip.jpg" />
+<p>如果上面的图像没有正确地加载，会被替换为一段 "图片未加载" 的文本。</p>
+<button>触发图像的 error 事件</button>
+</body>
+</html>

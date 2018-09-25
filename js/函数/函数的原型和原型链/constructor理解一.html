@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>constructor</title>
+</head>
+<body>
+    <script>
+        // 函数原型的构造函数和对象的构造函数
+        var aa = function(){
+            console.log("abc");
+        }
+        aa.prototype={
+            "abc":123
+        }
+        var bb = new aa();
+        console.log(bb)//aa {}
+        console.log(bb.constructor);//ƒ Object() { [native code] }
+        console.log(aa.prototype)//{abc: 123}
+        console.log(bb.__proto__)//{abc: 123}
+        console.log(aa.prototype.constructor) //ƒ Object() { [native code] }
+        console.log(bb.__proto__.constructor)//ƒ Object() { [native code] }
+        //  所以有如下结论
+        // 1,对象的构造函数不能仅仅认为是定义的函数，对象的构造函数首先要找原型，原型的构造函数即是对象的构造函数。
+    </script>
+</body>
+</html>

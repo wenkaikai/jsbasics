@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>静态方法一</title>
+</head>
+<body>
+    <script>
+        var txt = "12334"
+        var A = function(){
+            console.log(txt);
+        }
+        A.cc = function(){
+            console.log("这是一个静态的方法")
+        }
+        A.cc.ccc = function(aaa){
+            txt = aaa;
+            console.log("这是一个静态的方法的方法");
+
+        }
+        A.cc.ccc("hfoaj");
+        A();
+    </script>
+</body>
+</html>

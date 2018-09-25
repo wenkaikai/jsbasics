@@ -28,46 +28,47 @@
      */
 
 
-//
-//    let { p: [x, { y }] } = {
-//        p: [
-//            'Hello',
-//            { y: 'World' }
-//        ]
-//    };
-//    x // "Hello"
-//    y // "World"
+
+   // let { p: [x, { y }] } = {
+   //     p: [
+   //         'Hello',
+   //         { y: 'World' }
+   //     ]
+   // };
+   //x // "Hello"
+   //y // "World"
 //此时的 p 只是模式 起到的只是一个标识的作用
 
     //给 p 也附一个值
-//    let{p,p:[x,{y}]} = {
-//        p:[
-//                'Hello',
-//            {y:'World'}
-//        ]
-//    }
-//    console.log(x)//x
-//    console.log(y);//y
-//    console.log(p);//["Hello", {y:'World'}]
+   // let{p,p:[x,{y}]} = {
+   //     p:[
+   //             'Hello',
+   //         {y:'World'}
+   //     ]
+   // }
+   // console.log(x)//x
+   // console.log(y);//y
+   // console.log(p);//["Hello", {y:'World'}]
 
 
 
 
     /*
         列子三
+        如此一来变量的结构又很好找就是找对应的关系就好了。
 
      */
-//    var { loc, loc: { start }, loc: { start: { line }} } = {
-//        loc: {
-//            start: {
-//                line: 1,
-//                column: 5
-//            }
-//        }
-//    };
-//    console.log(line)//1
-//    console.log(loc)
-//    console.log(start)
+   // var { loc, loc: { start }, loc: { start: { line }} } = {
+   //     loc: {
+   //         start: {
+   //             line: 1,
+   //             column: 5
+   //         }
+   //     }
+   // };
+   // console.log(line)//1
+   // console.log(loc)
+   // console.log(start)
 
 
 
@@ -90,8 +91,6 @@
    // let x;
    // ({x} = {x: 1});//要加一个括号 因为 JavaScript 引擎会将{x}理解成一个代码块，从而发生语法错误。只有不将大括号写在行首
    // console.log(x)//1
-
-
 /*
 
 列子 六 Math
@@ -116,9 +115,9 @@
 //    console.log(a)//1
 
     // not defined
-//    let {}={x:0,y:1}
-//    console.log(x)
-//    console.log(y)\
+   let {}={x:0,y:1}
+   // console.log(x)
+   // console.log(y)
 
   // let [(a)] = [1]; //报错
   //          let b;
