@@ -1,0 +1,24 @@
+<!DOCTYPE html>          
+<html>          
+<head>          
+    <meta charset="UTF-8">      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">    
+    <title>translate3d(x,y,z)的用法</title>        
+    <style type="text/css">  
+        body{margin: 0}
+        div{width: 60px;height: 60px;background-color: skyblue;}
+        .moved{transform: perspective(500px) translate3d(20px, 0px, 0px);background-color: pink;transition: 0.3s;  }
+        
+        .moved:hover{transform: perspective(500px) translate3d(20px, 0px, 174px);}          
+    </style>        
+</head>          
+<body>  
+    <div>Static</div>
+    <div class="moved">Moved</div>
+    <div>Static</div>
+ 
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>   
+    <script type="text/javascript">
+    </script>
+</body>          
+</html>

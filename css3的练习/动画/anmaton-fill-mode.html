@@ -13,11 +13,19 @@
             animation:mymove 3s;
             animation-iteration-count:2;
             animation-fill-mode:forwards;/*动画停在200px处不会再进行第二次*/
+            animation-fill-mode:backwards;/*明确设置动画结束之后回到初始状态。*/
+            animation-fill-mode:both;/*这个时候也是回到了初始化的状态*/
 
             /* Safari 和 Chrome */
+
+            /*
+                animation-fill-mode 属性规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。
+
+                加了这个属性animation-fill-mode:forwards:// 
+            */
             -webkit-animation:mymove 3s;
             -webkit-animation-iteration-count:2;
-            -webkit-animation-fill-mode:forwards;
+            /*-webkit-animation-fill-mode:forwards;*/
         }
 
         @keyframes mymove

@@ -53,11 +53,12 @@
 
     /*
         箭头函数修改call 不管事呀
+        由于箭头函数不绑定this， 它会捕获其所在（即定义的位置）上下文的this值， 作为自己的this值，
      */
-//    var foo = ()=>{
-//        console.log(this);
-//    }
-//    foo.call({"id":30});
+   // var foo = ()=>{
+   //     console.log(this); // 此时的this 是window
+   // }
+   // foo.call({"id":30});
 
     /*
         箭头函数的bind方法
@@ -66,13 +67,33 @@
 
      */
 
-   var re=  (function() {
-        return [
-            (() => this.x).bind({ x: 'inner' })()
-        ];
-    }).call({ x: 'outer' });
-    console.info(re)//['outer']
-    // ['outer']
+   // var re=  (function() {
+   //      return [
+   //          (() => this.x).bind({ x: 'inner' })()
+   //      ];
+   //  }).call({ x: 'outer' });
+   //  console.info(re)//['outer']
+   //  // ['outer']
+
+   /** this 的指向问题*/
+        var adder = {
+          base : 1,
+          add : function(a) {
+            var f = v => v + this.base;  // 再一次的证明 此处的this就是 他的上下文的this
+            return f(a);
+          },
+          addThruCall: function inFun(a) {
+            var f = v => v + this.base;// 此时的this 仍然指向的是adder 这个对象。
+            var b = {
+              base : 2
+            };
+            return f.call(b, a);
+          }
+        };
+
+        console.log(adder.add(1));         // 输出 2
+        console.log(adder.addThruCall(1)); // 仍然输出 2（而不是3，其内部的this并没有因为call() 而改变，其this值仍然为函数inFun的this值，指向对象adder
+
 </script>
 </body>
 </html>

@@ -8,9 +8,19 @@
 
 </body>
 <script>
-    var pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{6,20}$/
+    //var pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{6,20}$/
 
-    var pattern = /中国(?=人|家)/
-    console.log(pattern.test("中国心"))//false
+    //var pattern = /中国(?=人|家)/
+    //console.log(pattern.test("中国心"))//false
+
+
+
+
+    //temp
+    // var str = "-1.6732096920319017E10";
+    var str = "118.63915772969118"
+
+    var filter = /^\d{1,4}\.\d{3,}$/g
+    console.log(filter.test(str),filter.test(str))// true ,false  这是什么原因呢
 </script>
 </html>

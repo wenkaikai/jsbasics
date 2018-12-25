@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入排序</title>
+</head>
+<body>
+  <script>
+
+    /**
+        插入排序真的向打扑克一样的诶
+        当你看的那张牌要和前面的牌做比较小的放前面
+    */
+ function insertionSort(arr) {
+    var len = arr.length;
+    var preIndex, current;
+    for (var i = 1; i < len; i++) {
+        preIndex = i - 1;
+        current = arr[i];// 开始的时候把第二张牌作为当前的牌
+        while(preIndex >= 0 && arr[preIndex] > current) {
+            debugger;
+            arr[preIndex+1] = arr[preIndex];
+            preIndex--;
+        }
+        arr[preIndex+1] = current;
+        console.log(arr)
+    }
+    return arr;
+}
+
+
+ // var a = [9,5,4,3,7,2,9,1]
+ var a = [3, 4, 5, 7, 9, 2, 9, 1]
+ console.log(a)
+    var b = insertionSort(a);
+    console.log(b)
+  </script>  
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深度拷贝二</title>
+</head>
+<body>
+    <script>
+        
+        function clone(obj) {
+    // Handle the 3 simple types, and null or undefined or function
+    if (null == obj || "object" != typeof obj) return obj;
+
+    // Handle Date
+    if (obj instanceof Date) {
+        var copy = new Date();
+        copy.setTime(obj.getTime());
+        return copy;
+    }
+    // Handle Array or Object
+    if (obj instanceof Array | obj instanceof Object) {
+        var copy = (obj instanceof Array)?[]:{};
+        for (var attr in obj) {
+            if (obj.hasOwnProperty(attr))
+              copy[attr] = clone(obj[attr]);
+        }
+        return copy;
+    }
+    throw new Error("Unable to clone obj! Its type isn't supported.");
+}
+
+ var a = {
+                "1FA59195382872A52F2C5A4CBA24C625"
+            :[
+               {
+                 dataType:"text",
+                fieldId:"ID_META_E_27CC41A5",
+                key:"妊娠高血压综合征",
+                name:"名称",
+                object_name:"name",
+            }, {
+                 dataType:"text",
+                fieldId:"ID_META_E_27CC41A5",
+                key:"妊娠高血压综合征",
+                name:"名称",
+                object_name:"name"
+               }, {
+                 dataType:"text",
+                fieldId:"ID_META_E_27CC41A5",
+                key:"妊娠高血压综合征",
+                name:"名称",
+                object_name:"name"
+               }
+                ],
+                obj2:[
+                    {
+                        name:456
+                    }
+                ]
+            }
+
+            var newObj = clone(a);
+            console.log(newObj)
+             newObj['1FA59195382872A52F2C5A4CBA24C625'][0].key = "12345"
+            console.log(a)
+
+    </script>
+</body>
+</html>

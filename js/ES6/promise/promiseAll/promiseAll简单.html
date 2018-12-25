@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise</title>
+</head>
+<body>
+  <script>
+      
+Promise.all([
+ new Promise(function(resolve, reject) {
+  resolve(1)
+ }),
+ new Promise(function(resolve, reject) {
+  resolve(2)
+ }),
+ new Promise(function(resolve, reject) {
+  resolve(3)
+ })
+]).then(arr => {
+ console.log(arr) // [1, 2, 3] 不用传resolve 函数直接就返回了值
+})
+  </script>  
+</body>
+</html>

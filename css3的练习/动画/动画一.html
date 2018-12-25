@@ -10,20 +10,25 @@
             height:100px;
             background:red;
             animation:myfirst 5s;
-            -webkit-animation:myfirst 5s; /* Safari and Chrome */
+            -webkit-animation:myfirst 5s reverse; /* Safari and Chrome */
         }
 
         @keyframes myfirst
         {
             from {background:red;}
             to {background:yellow;}
+            /*
+                就是当动画执行完了以后 就是从red-yellow 
+                以后又会重新的回到red 会是一下回到red
+                如果加了reverse 就是缓慢的回到red
+            */
         }
 
-        @-webkit-keyframes myfirst /* Safari and Chrome */
+       /* @-webkit-keyframes myfirst 
         {
             from {background:red;}
             to {background:yellow;}
-        }
+        }*/
     </style>
 </head>
 <body>

@@ -8,12 +8,61 @@
 
 </body>
 <script>
-//    var str = "123&qq";
-//    var arry = str.split("+");//若果按照没有的分就是整个字符串
-//    console.log(arry)
-    var str = "";
-    var arry = str.split("|");//[""]
-    console.log(arry)
-    console.log()
+   var str = "123&qq";
+   var arry = str.split("+");//若果按照没有的分就是整个字符串
+   // console.log(arry)
+
+
+    // var str = "";
+    // var arry = str.split("|");//[""]
+    // console.log(arry)
+    // console.log()
+
+
+  // var arry = str.split(":");//若果按照没有的分就是整个字符串
+   // console.log(arry)
+   // function aa(a,str){
+   //      var temp = str.match(/\|/);
+   //      let newStr = "";
+   //      if(a=="value"){
+   //          if(temp){
+   //              newStr = str.split("|")[0].split(':')[1]
+
+   //          }else{
+   //              newStr = str.split(":")[1]
+   //          }
+   //      }else{
+   //           if(temp){
+   //              newStr = str.split("|")[1].split(':')[1]
+   //          }
+   //      }
+   //      return newStr
+   // }
+
+
+    var str = "部分匹配:辅导费:不好|不包含:9999";
+    var str1 = "部分匹配:辅导费1"
+    str3 = ""
+    var str4 = "大于等于:2018-11-09 00:00:00"
+ 
+ function aa(a,str){
+    let newStr = ""
+      if(a=="value"){
+        let index = str.indexOf(":");
+        newStr = slice
+      }
+   }
+
+
+
+
+   // var re1 = aa("value",str);
+   //  var re2 = aa("not",str);
+   //  var re3 = aa("value",str1);
+   //  var re4 = aa("not",str1);
+   //  var re5 = aa("not",str3);
+   // console.log(re1,re2,re3,re4,re5)
+
+   console.log("".split("**")[1])
 </script>
 </html>

@@ -19,12 +19,15 @@
     Object.defineProperty(o,"x",{//这是的x必须要加引号
         value:1,
         writable:true,
-        enumerable:false,
-        configurable:true
+        enumerable:false,// 不能枚举
+        configurable:false
+        //当且仅当该属性的 configurable 为 true 时，该属性描述符才能够被改变，同时该属性也能从对应的对象上被删除。默认为 false。
     })
- for(var c in o){
-     console.log(o[c])
- }
+     for(var c in o){
+         console.log(o[c])
+     }
+ delete o.x // 当 configurable 为false的时候就不能执行删除操作了。
+ console.log(o);
 //    console.log(o)//{x: 1}
 
 

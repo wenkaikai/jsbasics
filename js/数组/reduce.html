@@ -9,11 +9,11 @@
     /*
      列子 一
      */
-//    var a1 = ["abc","bcd",123,456].reduce(function(preval,curval){
-//        return preval+"::"+curval;
-//    })
-//    console.log(a1)//abc::bcd::123::456
-//    console.log(["abc","bcd",123,456].join("::"))//abc::bcd::123::456
+   var a1 = ["abc","bcd",123,456].reduce(function(preval,curval){
+       return preval+"::"+curval;
+   })
+   console.log(a1)//abc::bcd::123::456
+   console.log(["abc","bcd",123,456].join("::"))//abc::bcd::123::456
 
     /*
     列子 二
@@ -29,20 +29,20 @@
     /*
     列子 三 currentIndex 返回当前的index
      */
-    function addDigitValue(previousValue, currentDigit, currentIndex, array) {
-        var exponent = (array.length - 1) - currentIndex;
-        var digitValue = currentDigit * Math.pow(10, exponent);
-        console.log(currentIndex)//0 1 2 3
-        console.log(digitValue);
-        return previousValue + digitValue;
-    }
+    // function addDigitValue(previousValue, currentDigit, currentIndex, array) {
+    //     var exponent = (array.length - 1) - currentIndex;
+    //     var digitValue = currentDigit * Math.pow(10, exponent);
+    //     console.log(currentIndex)//0 1 2 3
+    //     console.log(digitValue);
+    //     return previousValue + digitValue;
+    // }
 
-    var digits = [4, 1, 2, 5];
+    // var digits = [4, 1, 2, 5];
 
-    // Determine an integer that is computed from values in the array.
-    var result = digits.reduce(addDigitValue, 0);
+    // // Determine an integer that is computed from values in the array.
+    // var result = digits.reduce(addDigitValue, 0);
 
-    document.write (result);
+    // document.write (result);
     // Output: 4125
 </script>
 </body>

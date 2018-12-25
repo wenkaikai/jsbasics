@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>希尔排序</title>
+</head>
+<body>
+    <script>
+        var arr = [9,5,4,3,7,2,9,1,0];
+
+        /**
+                fraction  n. 分数；部分；小部分；稍微
+        */
+var len = arr.length;
+console.log(Math.floor(len/2))
+for (var fraction = Math.floor(len / 2); fraction > 0; fraction = Math.floor(fraction / 2)) {
+    debugger;
+    for (var i = fraction; i < len; i++) {
+        for (var j = i - fraction; j >= 0 && arr[j] > arr[fraction + j]; j -= fraction) {
+            var temp = arr[j];
+            arr[j] = arr[fraction + j];
+            arr[fraction + j] = temp;
+        }
+    }
+}
+console.log(arr);
+    </script>
+</body>
+</html>

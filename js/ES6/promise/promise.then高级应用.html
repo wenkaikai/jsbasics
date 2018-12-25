@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise.then 高级应用</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <script>
+        function ajax(url, data, callback) {
+          var p = new Promise(function (resolve, reject) {
+            $.ajax({
+              url: url,
+              type: data == null ? 'GET' : 'POST',
+              dataType: "json",
+              data: data == null ? '' : JSON.stringify(data),
+              async: true,
+              contentType: "application/json",
+              success: function (resp) {
+                callback(resp);
+                resolve();
+              },
+              error: function (XMLHttpRequest, textStatus, errorThrown) {
+                reject();
+              }
+            });
+          });
+        return p;
+    }
+    ajax('https://www.easy-mock.com/mock/5b3981c7c4dcd03fb7171981/example/test',
+        {type:"post"},
+        function(resp){console.log(resp)}
+        )
+       .then(
+           ajax('https://www.easy-mock.com/mock/5b3981c7c4dcd03fb7171981/example/test3',{type:"post"},function(resp){
+             console.log(resp)
+           }).then(
+                 ajax('https://www.easy-mock.com/mock/5b3981c7c4dcd03fb7171981/example/test5',{type:"post"},function(resp){
+                    console.log(resp)
+                })
+           )
+          ) 
+
+       /*
+         这种方法是实现多个ajax 嵌套很清晰
+       */
+    </script>
+</body>
+</html>

@@ -8,7 +8,8 @@
 
 </body>
 <script>
-        var obj = {"a":"1","b":"2","c":"3"};
+        // var obj = {"a":"1","b":"2","c":"3"};
+        var obj = ['a','b','c'];
         //var str = JSON.stringify(obj);
         //var obj1 = JSON.parse(str);
         //console.log(obj1);
@@ -20,10 +21,10 @@
 
 
     for( var prop in obj){// in 前面的prop 可以随便起
-       console.log(prop)// a b c
-       console.log(obj[prop])//1 2 3
-       console.log(obj)
-        console.log(obj.prop)//这样就不行是undefined
+       //console.log(prop)// a b c
+       // console.log(obj[prop])//1 2 3
+       //console.log(obj)
+        //console.log(obj.prop)//这样就不行是undefined
     }
 //    console.log(Object.keys(obj))//把对象的属性变成数组["a","b","c"]
 //    console.log(Object.values(obj))//把对象的属性的值变成一个数组["1","2","3"]
@@ -60,6 +61,19 @@
 //        console.log(chr);
 //    }
 
+    /*四 for of 便利数组错误*/
 
+   // var str = {"a":123,"b":345} // for of 遍历对象
+   // for(var chr of str){
+   //     console.log(chr);//str is not iterable
+   // }
+
+
+
+
+    var str = {"a":123,"b":345} // for of 遍历对象
+   for(var chr in str){
+       console.log(str[chr]);// str.chr 是取不出来值的 只能用个中括号
+   }
 </script>
 </html>

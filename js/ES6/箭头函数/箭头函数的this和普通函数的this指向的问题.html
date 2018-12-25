@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数和普通函数的this指向问题</title>
+</head>
+<body>
+    <script>
+
+        /** 列子一 */
+
+        //普通的函数
+            // var x=11;
+            // var obj={
+            //   x:22,
+            //   say:function(){
+            //     console.log(this.x) // 22
+            //   }
+            // }
+            // obj.say();
+
+
+          // 箭头函数
+            //  var x=11;
+            //     var obj={
+            //       x:22,
+            //       say:()=>{
+            //         console.log(this.x)// 11 此时的this 指向的window
+            //       }
+            //     }
+            // obj.say();
+        
+
+
+        /** 列子二 */
+
+        // 普通函数
+
+        /**
+            为什么会输出11？因为普通函数中的this指向的是调用它的对象，如果没有直接调用对象，会指向undefined或者window，一般都会指向window，在严格模式下才会指向undefined。上述的例子中，并没有明确的调用对象，而普通函数中的this并不会向上继续找对象，所以直接返回window。
+        */
+            var a=11
+            function test1(){
+              this.a=22;
+              console.log(this) //{a:22}
+              let b=function(){
+                console.log(this)// window
+                console.log(this.a);// 11
+              };
+              b();
+            }
+            var x=new test1();
+  // 箭头的函数
+      /*
+        箭头函数中会往上寻找this，直到找到所代表的this为止。例子中，构造函数被实例化成为一个对象x，那x中的this指代的就是对象x本身，所以箭头函数this就代表x对象，x对象内部的a值为22，所以输出22。
+        这里是找上下文的this 并不是调用他它的this。
+      */
+        // var a=11;
+        // function test2(){
+        //   this.a=22;
+        //   console.log(this)//test2 {a: 22}
+        //   var b=()=>{        
+        //   console.log(this);//test2 {a: 22}
+        //   console.log(this.a)}// 22
+        //   b();
+        // }
+        // var x=new test2();
+    </script>
+</body>
+</html>

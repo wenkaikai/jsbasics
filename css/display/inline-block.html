@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inline-block</title>
+</head>
+<body>
+    <div>
+        <div>
+            <p>hao</p>
+            <p>de</p>
+        </div>
+        <div></div>
+    </div>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    div:first-child{
+           display:flex;
+           width:80%;
+           margin:auto;
+            padding:0 30px;
+               white-space:nowrap;
+        }
+        div>div{
+            width:50%!important;
+            display:block!important;
+            flex-shrink:0;
+            overflow:scroll;
+
+        }
+
+        div:last-child{
+         
+            overflow:scroll;
+           
+        }
+        p:first-child{
+            background:#f00;
+            width:400px;
+            display:inline-block;
+        }
+         p:last-child{
+            background:#ff0;
+            width:400px;
+            display:inline-block;
+        }
+    </style>
+</body>
+</html>

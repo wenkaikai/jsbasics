@@ -38,9 +38,9 @@
     模板字符串调用函数*/
 
 //如果大括号中的值不是字符串，将按照一般的规则转为字符串。比如，大括号中是一个对象，将默认调用对象的toString方法。
-    function gg(){
-        alert("模板字符串调用的方法");
-    }
+    // function gg(){
+    //     alert("模板字符串调用的方法");
+    // }
 //    `${gg()}`
 
 /*说明一
@@ -85,6 +85,12 @@
    // let func = eval.call(null,str);//eval.call里面必须要有null;
    // let re = func('Jack') // "Hello Jack!"
    // console.log(re);
+
+
+   var str = "gg&6";
+   var aa = 0
+   console.log(`${str.split("&")[aa?0:1]}`)
+    console.log(`${aa?'haoe':'fsdf '}`)
 </script>
 </body>
 </html>

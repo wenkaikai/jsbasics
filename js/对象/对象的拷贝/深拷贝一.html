@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的深拷贝</title>
+</head>
+<body>
+    <script>
+        function deepCopy(p, c) {
+        　　　　var c = c || {};
+        　　　　for (var i in p) {
+        　　　　　　if (typeof p[i] === 'object') {
+        　　　　　　　　c[i] = (p[i].constructor === Array) ? [] : {};
+        　　　　　　　　deepCopy(p[i], c[i]);
+        　　　　　　} else {
+        　　　　　　　　　c[i] = p[i];
+        　　　　　　}
+        　　　　}
+        　　　　return c;
+        　　}
+
+
+         var a = {
+                "1FA59195382872A52F2C5A4CBA24C625"
+            :[
+               {
+                 dataType:"text",
+                fieldId:"ID_META_E_27CC41A5",
+                key:"妊娠高血压综合征",
+                name:"名称",
+                object_name:"name",
+            }, {
+                 dataType:"text",
+                fieldId:"ID_META_E_27CC41A5",
+                key:"妊娠高血压综合征",
+                name:"名称",
+                object_name:"name"
+               }, {
+                 dataType:"text",
+                fieldId:"ID_META_E_27CC41A5",
+                key:"妊娠高血压综合征",
+                name:"名称",
+                object_name:"name"
+               }
+                ],
+                obj2:[
+                    {
+                        name:456
+                    }
+                ]
+            }
+
+            var newObj = deepCopy(a);
+            newObj['1FA59195382872A52F2C5A4CBA24C625'][0].key = "12345"
+            console.log(newObj)
+            console.log(a)
+
+    </script>
+</body>
+</html>

@@ -9,17 +9,19 @@
     /*
      caller返回一个函数的引用，这个函数调用了当前的函数;
      */
-//        var a = function() {
-//            console.log(a.caller); //b context
-//            console.log(typeof a.caller); //function
-//        }
-//        var b = function() {
-//            a();
-//            console.log(b.caller)//null
-//
-//        }
-//        b();
-//        a();//null 直接调用a 他的caller就是null
+       // var a = function() {
+       //     console.log(a.caller); //b context
+       //     console.log(typeof a.caller); //function
+       // }
+       // var b = function() {
+       //     a();
+       //     console.log(b.caller)//null
+
+       // }
+
+       
+       // b();
+       // a();//null 直接调用a 他的caller就是null
 
 
 
@@ -33,25 +35,24 @@
      2 它有一个length属性，可以用来获得形参的个数，
      因此可以用来比较形参和实参个数是否一致，即比较arguments.length是否等于arguments.callee.length
      */
-//    var a = function(e,r,t) {
-//       console.log(arguments.callee); //是本身
-//        /*
-//        * ƒ (e,r,t) {
-//         console.log(arguments.callee); //是本身
-//         console.log(arguments.callee.length);//3 形参的个数
-//         console.log(arguments.length)
-//
-//
-//         }*/
-//        console.log(arguments.callee.length);//3 形参的个数
-//        console.log(arguments.length)//0 实参
-//
-//
-//    }
-//    var b = function() {
-//        a();
-//    }
-//    b();
+
+   // var a = function(e,r,t) {
+   //    console.log(arguments.callee); //是本身
+       /*
+       * ƒ (e,r,t) {
+        console.log(arguments.callee); //是本身
+        console.log(arguments.callee.length);//3 形参的个数
+        console.log(arguments.length)
+        }*/
+   //     console.log(arguments.callee.length);//3 形参的个数
+   //     console.log(arguments.length)//0 实参
+
+
+   // }
+   // var b = function() {
+   //     a();
+   // }
+   // b();
 
 
 
@@ -59,36 +60,27 @@
     /*
     三  函数的参数
      */
-var b = false;
-function a(obj){
-    if(b){
-        for(var c in obj){
-            console.log(obj[c])
-        }
-//        console.log(Object.keys(obj))
-        console.log(obj)
-        /*
-         a
-         :
-         10
-         b
-         :
-         100
-         c 为什么c会出现
-         :
-         170
-         */
-      console.log(obj.propertyIsEnumerable('c'))//false
-       console.log(obj.propertyIsEnumerable('a'))//true
-        obj.c=170;
-    }else{
-        setTimeout(function(){
-            b=true;
-            a({"a":10,"b":100})
-        },1000)
-    }
-}
-a();
+
+     
+// var b = false;
+// function a(obj){
+//     if(b){
+//         for(var c in obj){
+//             console.log(obj[c])
+//         }
+// //        console.log(Object.keys(obj))
+//         console.log(obj)
+//       console.log(obj.propertyIsEnumerable('c'))//false
+//        console.log(obj.propertyIsEnumerable('a'))//true
+//         obj.c=170;
+//     }else{
+//         setTimeout(function(){
+//             b=true;
+//             a({"a":10,"b":100})
+//         },1000)
+//     }
+// }
+// a();
 
 </script>
 </body>

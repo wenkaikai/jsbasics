@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>递归一到一百</title>
+</head>
+<body>
+    <script>
+        let n = 100;
+        let fn = function(n){
+            if(n==1){
+                return 1;
+            }
+            return n+fn(n-1)
+        }
+        console.log(fn(n))//5050
+    </script>
+</body>
+</html>

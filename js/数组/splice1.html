@@ -7,17 +7,19 @@
 <body>
 	<script>
 	var aa1 = [1,2,3,4]
-	var aa = aa1 ;
-	// var bb = aa.splice(0,1);
-	aa[1]=5;
-	// console.log(bb)
-	console.log(aa1);//[1, 5, 3, 4]
-	console.log(aa)//[1, 5, 3, 4]
+	aa1.splice(1,1,5);
+	console.log(aa1)//[1, 5, 3, 4]
+	// var aa = aa1 ;
+	// // var bb = aa.splice(0,1);
+	// aa[1]=5;
+	// // console.log(bb)
+	// console.log(aa1);//[1, 5, 3, 4]
+	// console.log(aa)//[1, 5, 3, 4]
 
-	var aa2 = [1,2,3,4];
-	var aa3 = aa2.slice(0,10)
+	// var aa2 = [1,2,3,4];
+	// var aa3 = aa2.slice(0,10)
 
-	console.log(aa3)		
+	// console.log(aa3)		
 
 
 // var arr = {"a":"1","b":"2"};

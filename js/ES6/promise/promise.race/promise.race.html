@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promiseRace</title>
+</head>
+<body>
+    <script>
+        /**
+        语法和all()一样，但是返回值有所不同，race根据传入的多个Promise实例，只要有一个实例resolve或者reject，就只返回该结果，其他实例不再执行。
+        */
+        
+        Promise.race([
+             new Promise(function(resolve, reject) {
+              setTimeout(() => resolve(1), 1000)
+             }),
+             new Promise(function(resolve, reject) {
+              setTimeout(() => resolve(2), 100)
+             }),
+             new Promise(function(resolve, reject) {
+              setTimeout(() => resolve(3), 10)
+             })
+            ]).then(value => {
+             console.log(value) // 3
+        })
+    </script>
+</body>
+</html>

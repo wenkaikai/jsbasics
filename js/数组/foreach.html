@@ -19,15 +19,34 @@
 //    })
 
     /*forEach 里面的循环return*/
-    var arry = [1,2,3,4];
-    var list = [];
-    arry.forEach(function(c,v,b){
-    	console.log(c);//值
-    	console.log(v);//index
-    	console.log(b)//整个值
-        return list.push(c);
-    })
-    console.log(list);
+    // var arry = [1,2,3,4];
+    // var list = [];
+    // arry.forEach(function(c,v,b){
+    // 	console.log(c);//值
+    // 	console.log(v);//index
+    // 	console.log(b)//整个值
+    //     return list.push(c);
+    // })
+    // console.log(list);
+
+
+    /**三 forEach一个参数*/
+    // var arry = [1,2,3,4]
+
+    // arry.forEach(function(aa){
+    //     console.log(aa)
+    // })
+
+    /** forEach 改变里面的this 指向*/
+    var nn = []
+    var arry = [1,2,3,4]
+    arry.forEach(function(aa){
+        console.log(aa)
+        if(aa == 4){
+             this.push(aa)
+        }
+    },nn)
+    console.log(nn)//[4]
 </script>
 </body>
 </html>

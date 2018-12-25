@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象里面的函数的this 指向问题</title>
+</head>
+<body>
+    <script>
+        
+        let obj = {
+            aa:function(){
+                // 这个时候this 指向的 obj 对象
+                console.log(this)
+            },
+            bb(){
+               // 这个时候this 指向的 obj 对象
+               console.log(this) 
+            },
+            cc:()=>{
+                // 这个时候的this 指向的是 window;
+                console.log(this)
+            },
+            b:12
+        }
+
+        obj.aa();
+         obj.bb();
+         obj.cc();
+    </script>
+    
+</body>
+</html>

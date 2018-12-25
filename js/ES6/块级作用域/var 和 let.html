@@ -5,22 +5,80 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    var tmp = 123;
 
-    if (true) {
+    <ul id="test">
+        <li>temp</li>
+        <li>temptemp</li>
+        <li>temp</li>
+        <li>temp</li>
+        <li>temp</li>
+        <li>temp</li>
+        <li>temp</li>
+        <li>temp</li>
+    </ul>
+<script>
+    // var tmp = 123;
+
+    // if (true) {
         /*
          只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。
          */
-        tmp = 'abc'; // ReferenceError          ReferenceError: tmp is not defined
-        let tmp;
-    }
+        //tmp = 'abc'; // ReferenceError          ReferenceError: tmp is not defined
+        //let tmp;
+    //}
 
     /*
 
      ES6明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错
 
      */
+
+/** var let 区别一 
+        var的作用域是会提升的，var声明的变量只能是全局的或者是整个函数块的。
+        let则允许声明一个作用域被限制在块级中的变量、语句或者表达式。
+*/
+
+
+// if(true){
+//     let a = 10;
+// }
+// console.log(a)//a is not defined 说明if 里面是块级作用域
+
+// if(true){
+//     var  a = 10;
+// }
+// console.log(a)//10
+
+
+/** var let 区别二
+    需要注意的是，在程序的顶层，let并不会像var那样将声明的变量加到全局对象上去：
+*/
+
+// let a = 10;
+// console.log(this.a)// undefined
+// var b = 10;
+// console.log(this.b)//10
+
+
+/** 经典的点击问题 区别三*/
+
+var oLi =document.getElementById('test').getElementsByTagName('li'); 
+
+for(var i = 0; i < oLi.length; i++) { 
+    console.log(i)// i 是 0-7
+
+    oLi[i].onclick = function(event) { 
+
+        console.log(i);// 他为什么是8 呢
+    // 此时都是8
+} }
+
+
+console.log(i)//  当i循环的时候等于7的时候7是小于li的长度8的循环继续i++ 此时的i等于8了 8 等于8 不进去循环体了。但是i 的值还是8;
+
+ // 如果把var 改为let
+  // var oLi =document.getElementById('test').getElementsByTagName('li'); for(let i = 0; i < oLi.length; i++) { oLi[i].onclick =function(event) { console.log(i); // 0-7} }
+
 </script>
 </body>
 </html>

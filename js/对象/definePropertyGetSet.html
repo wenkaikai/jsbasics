@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>definePropertyGetSet</title>
+</head>
+<body>
+  <script>
+    var o = {}; // 创建一个新对象
+
+        // 在对象中添加一个属性与数据描述符的示例
+        Object.defineProperty(o, "a", {
+          value : 37,
+          writable : true,
+          enumerable : true,
+          configurable : true
+        });
+
+        // 对象o拥有了属性a，值为37
+
+        // 在对象中添加一个属性与存取描述符的示例
+
+        // var bValue;
+        Object.defineProperty(o, "b", {
+          get : function(){
+            console.log(bValue)//38 这个时候 bValue 是哪里来的
+            console.log(this)  ///{a:37,b:38}
+            return bValue;
+          },
+          set : function(newValue){
+            //console.log(newValue)//38
+            bValue = newValue;
+          },
+          enumerable : true,
+          configurable : true
+        });
+
+        o.b = 38;
+        console.log(o.b)//38
+        //console.log(Object.getOwnPropertyNames(o))//["a","b"]
+        //console.log(o.hasOwnProperty("a"))// true
+        //console.log(o.hasOwnProperty("b"))// true
+        // 对象o拥有了属性b，值为38
+
+        // o.b的值现在总是与bValue相同，除非重新定义o.b
+
+        // 数据描述符和存取描述符不能混合使用
+          // 数据描述符和存储描叙符不能混用
+          // Object.defineProperty(o, "conflict", {
+          //   value: 0x9f91102, 
+          //   get: function() { 
+          //     return 0xdeadbeef; 
+          //   } 
+          // });
+  </script>
+</body>
+</html>

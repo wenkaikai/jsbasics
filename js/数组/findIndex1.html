@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p>点击按钮获取数组中年龄大于 18 的第一个元素索引位置。</p>
+
+<button onclick="myFunction()">点我</button>
+
+<p id="demo"></p>
+
+<p><strong>注意:</strong> IE 11 及更早版本不支持 findIndex() 方法。</p>
+
+<script>
+var ages = [3, 10, 18, 20];
+
+function checkAdult(age) {
+    return age >= 18;
+}
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = ages.findIndex(checkAdult);
+}
+</script>
+
+</body>
+</html>

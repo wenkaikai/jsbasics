@@ -77,12 +77,12 @@
     /*
     列子四 嵌套值
      */
-   // let obj = {};
-   // let arr = [];
+   let obj = {};
+   let arr = [];
 
-   // ({ foo: obj.prop, bar: arr[0] } = { foo: 123, bar: true });
-   // console.log(obj);//{prop:123}
-   // console.log(arr)//{0:true}
+   ({ foo: obj.prop, bar: arr[0] } = { foo: 123, bar: true });
+   console.log(obj);//{prop:123}
+   console.log(arr)//{0:true}
 
 /*
 列子五 先定义然后在赋值
@@ -115,7 +115,7 @@
 //    console.log(a)//1
 
     // not defined
-   let {}={x:0,y:1}
+   // let {}={x:0,y:1}
    // console.log(x)
    // console.log(y)
 

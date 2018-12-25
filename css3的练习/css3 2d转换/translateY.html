@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <style>
+        div
+        {
+            width:100px;
+            height:75px;
+            background-color:red;
+            border:1px solid black;
+            
+        }
+        div#div2:hover
+        {
+            transform:translateY(100px);/*相对于自己的位置平移的距离y轴默认是向下的*/
+            /*-ms-transform:translate(50px,100px); !* IE 9 *!*/
+            /*-webkit-transform:translate(50px,10px); !* Safari and Chrome *!*/
+            transition: all .5s;
+        }
+    </style>
+</head>
+<body>
+
+<div>Hello. This is a DIV element.</div>
+<div id="div2">Hello. This is a DIV element.</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+ // var re = /\d/;
+    //console.log( re.test("1") );// true
+    //console.log( re.test("1") );// true
+    //console.log( re.test("1") );// true
+    //console.log( re.test("1") );// true
+
+ //var re = /\d/g;
+   // console.log( re.test("1") );// true
+    //console.log( re.test("1") );// false
+    //console.log( re.test("1") );// true
+    //console.log( re.test("1") );// false
+
+
+
+
+
+/**
+    什么原因造成上面的现象呢的呢
+    正则里有一个 lastIndex 的属性，是下一次匹配的开始位置。
+    可以看到 第一次匹配结果为 true 表示匹配成功，此时 lastIndex 记录下一次匹配的起始位置为 1。
+    于是第二次匹配的时候 从 "1" 字符串索引 1 的位置匹配，当然就匹配失败了，因为这个字符串只有一个字符，他的索引是 0。
+*/
+
+
+
+var re = /\d/;
+    console.log( re.test("1") );// true
+    re.lastIndex = 0;
+    console.log( re.test("1") );// true
+     re.lastIndex = 0;
+    console.log( re.test("1") );// true
+     re.lastIndex = 0;
+    console.log( re.test("1") );// true
+
+</script>
+</html>

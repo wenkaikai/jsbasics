@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object.assgin 深拷贝的问题</title>
+</head>
+<body>
+        <script>
+            var a = {
+                obj1:[
+                    {
+                        name:123
+                    }
+                ]
+            }
+
+            var b = Object.assign({},a);
+            b['obj1'][0].name = 1;
+            console.log(a)//改了 b a也跟着改了 说明Object.assign 不能对对象进行深拷贝
+        </script>
+</body>
+</html>

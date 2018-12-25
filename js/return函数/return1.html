@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+        z写在函数里面的循环和函数外面的循环不一样 如果在循环里面写return 他会直接的终止函数下面的执行
+
+    */
+
+//         var selectArr=[1,2,4,6,7];
+
+// function checkSelArr(selected){
+//    var len=selectArr.length+1;
+//    for(var i=0;i<len;i++){
+//       if(selected == selectArr[i]){
+//          // selectArr.splice(i,1);
+//          return false;//利用函数的返回功能中断push操作
+//       }
+//    };
+//    console.log(11)
+//    selectArr.push(selected)
+
+// }
+// checkSelArr(6);
+// console.log(selectArr)
+
+
+
+
+
+
+
+//         var selectArr=[1,2,4,6,7];
+
+
+//    var len=selectArr.length+1;
+//    for(var i=0;i<len;i++){
+//       if(6 == selectArr[i]){
+//          selectArr.splice(i,1);
+//          return false;//Uncaught SyntaxError: Illegal return statement
+//       }
+//    };
+//    console.log(11)
+//    selectArr.push(6)
+
+// console.log(selectArr)
+
+
+
+
+/**三*/
+
+
+        var selectArr=[1,2,4,6,7];
+
+function checkSelArr(selected){
+   selectArr.forEach(function(i){
+            if(selected == selectArr[i]){
+             selectArr.splice(i,1);
+             return false;// 记住return false 只是作用于函数里面的
+            }
+        })
+   selectArr.push(selected)
+
+}
+checkSelArr(6);
+console.log(selectArr)
+
+    </script>
+</body>
+</html>

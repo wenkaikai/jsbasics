@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cssVar</title>
+</head>
+<body>
+    <script>
+        
+    </script>
+    <style>
+
+    /**
+
+
+        CSS中原生的变量定义语法是：--*，变量使用语法是：var(--*)，其中*表示我们的变量名称。关于命名这个东西，各种语言都有些显示，例如CSS选择器不能是数字开头，JS中的变量是不能直接数值的，但是，在CSS变量中，这些限制通通没有，例如：
+
+    **/
+        :root {
+              --1: #f60;
+            }
+body {
+  background-color: var(--1);
+}
+
+body {
+  --size: 20;   
+  font-size: var(--size)px;
+}
+    </style>
+</body>
+</html>

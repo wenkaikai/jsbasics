@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    /**
+     * 二
+     */
+    let promise = new Promise(function(resolve, reject) {
+            console.log('Promise');// 最先执行的
+             resolve(1);
+            // reject();
+    });
+  console.log(promise)
+
+// promise.then(function() {
+//   console.log('resolved.');
+// },function(){
+//     console.log('失败了');
+// }
+
+// );
+
+console.log('Hi!');
+
+//结果是Promise Hi!
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断两个对象的相等</title>
+</head>
+<body>
+    <script>
+        function isObjectValueEqual(a, b) {
+    // Of course, we can do it use for in 
+    // Create arrays of property names
+    var aProps = Object.getOwnPropertyNames(a);
+    var bProps = Object.getOwnPropertyNames(b);
+ 
+    // If number of properties is different,
+    // objects are not equivalent
+    if (aProps.length != bProps.length) {
+        return false;
+    }
+ 
+    for (var i = 0; i < aProps.length; i++) {
+        var propName = aProps[i];
+ 
+        // If values of same property are not equal,
+        // objects are not equivalent
+        if (a[propName] !== b[propName]) {
+            return false;
+        }
+    }
+ 
+    // If we made it this far, objects
+    // are considered equivalent
+    return true;
+}
+ 
+var obj1 = {
+    name: "Benjamin",
+    sex : "male"
+};
+ 
+var obj2 = {
+    name: "Benjamin",
+    sex : "male"
+};
+ 
+//Outputs: true
+console.log(isObjectValueEqual(obj1, obj2));
+        
+    </script>
+</body>
+</html>

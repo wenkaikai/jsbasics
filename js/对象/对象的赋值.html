@@ -6,10 +6,61 @@
 </head>
 <body>
 	<script>
-	var type = "全国";
-	var obj = {[type]:"好的"};
-	console.log(obj);
-	console.log([type])
+
+        /**例子一*/
+	// var type = "全国";
+	// var obj = {[type]:"好的"};
+	// console.log(obj);
+	// console.log([type])
+
+    /**列子二*/
+
+    // var a = {// 
+    //     name:"张三",
+    //     age:"12"
+    // }
+    // var b = a;
+    // var c = a;
+    // c.name="lisi"
+    // console.log(a,b,c)//  c改完了以后统统改
+
+
+    /**例子三*/
+
+    // var a = {
+    //     name:"张三"
+    // }
+    // function bb(obj){
+    //     obj.name="lisi"
+    // }
+    // bb(a);
+    // console.log(a) // 函数的形参也会改变传过来的值
+
+
+
+    /**例子四 */
+
+    //   var a = {
+    //     name:"张三"
+    // }
+    // var b = Object.assign({},a);
+    // b.name = "lise"
+    // console.log(a) // 张三 这样不会变呀
+
+
+    /**例子五*/
+
+      var a = {
+        name:"张三"
+    }
+    function bb(obj){
+        let aa = Object.assign({},obj);
+        aa.name="lisi"
+        return aa;
+    }
+   var d = bb(a);
+    console.log(d) // lisi
+    console.log(a) // 张三
 	</script>
 </body>
 </html>

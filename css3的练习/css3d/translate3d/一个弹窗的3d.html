@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>translate3d弹窗</title>
+</head>
+<body>
+    <button onclick="aa()">点我弹窗</button>
+    <div class="alert"  id="">
+        我是弹窗
+    </div>
+    <script>
+        function aa(){
+            var dom = document.getElementsByClassName("alert")[0];
+            var test = dom.getAttribute("id")
+            if(test){
+                 dom.setAttribute("id","")
+            }else{
+                 dom.setAttribute("id","dialog")
+              
+            }
+            
+        }
+    </script>
+    <style>
+        
+        .alert{
+            display:none;
+            width:200px;
+            height:200px;
+            position:absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            margin:auto;
+            background:#f60;
+           animation:alert .1s linear 0s;
+           
+        }
+        #dialog{
+            display:block;
+        }
+        @keyframes alert{
+            from{
+                /*background:#f44;*/
+                transform: perspective(500px) translate3d(0,100px,-300px);
+            }
+            to{
+                /*background:#223dd2;*/
+                transform:perspective(500px) translate3d(0,0,0px);
+            }
+        }
+
+    </style>
+</body>
+</html>

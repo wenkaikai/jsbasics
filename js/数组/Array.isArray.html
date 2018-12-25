@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array.isArray()</title>
+</head>
+<body>
+    <script>
+        /**
+            以下的都为true
+        */
+
+        Array.isArray([]);
+        Array.isArray([1]);
+        Array.isArray(new Array());
+        // 鲜为人知的事实：其实 Array.prototype 也是一个数组。
+        Array.isArray(Array.prototype); 
+
+         /**
+                    以下的都为false
+                */
+
+                Array.isArray();
+                Array.isArray({});
+                Array.isArray(null);
+                Array.isArray(undefined);
+                Array.isArray(17);
+                Array.isArray('Array');
+                Array.isArray(true);
+                Array.isArray(false);
+                Array.isArray({ __proto__: Array.prototype });
+
+    </script>
+</body>
+</html>

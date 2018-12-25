@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <title>菜鸟教程(runoob.com)</title>
 <style>
+/*flex-basis 属性用于设置或检索弹性盒伸缩基准值
+    设置弹性子盒子的伸缩比列
+
+*/
 #main {
     width: 350px;
     height: 100px;
@@ -18,7 +22,7 @@
     -webkit-flex-shrink: 0; /* Safari 6.1+ */
     /*-webkit-flex-basis: 40px; */
     /* Safari 6.1+ */
-    flex:0 1 50px;
+    flex:0 1 1000px;
     /*flex-basis: 40px;*/
     /*
         就是第一个值是 flex-grow 第二个值是flex-shrink 第三个值是flex-basis
@@ -33,7 +37,7 @@
 #main div:nth-of-type(2) {
     /*-webkit-flex-basis: 80px; */
     /* Safari 6.1+ */
-    /*flex-basis: 80px;*/
+    flex-basis: 80000px;
 }
 </style>
 </head>
