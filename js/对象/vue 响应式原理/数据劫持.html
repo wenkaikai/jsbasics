@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <div class="app">
+        <input type="demo" h-model="demo" spellcheck="true">
+        <p h-text="demo"></p>
+    </div>
+</body>
+<script>
+(function(window, undefined) {
+
+    var addEvent = (function() {
+        if (window.addEventListener) {
+            return function(el, type, fn) {
+                if (el && el.nodeName || el === window) {
+                    el.addEventListener(type, fn, false)
+                } else if (el.length) {
+                    for (var item of el) {
+                        addEvent(item, type, fn);
+                    }
+                }
+            }
+        } else {
+            return function(el, type, fn) {
+                if (el && el.nodeName || el === window) {
+                    el.attachEvent('on' + type, function() {
+                        return fn.call(el, event);
+                    })
+                } else if (el.length) {
+                    for (var item of el) {
+                        addEvent(item, type, fn);
+                    }
+                }
+            }
+        }
+    })();
+
+    var Hue = function(opt) {
+        var el = document.querySelector(opt.el);
+        var data = opt.data || {};
+
+        this.el = el;
+        this.data = data;
+
+        this.bindText();
+        this.bindModel();
+
+        return this;
+    };
+
+    Hue.prototype = {
+        constructor: Hue,
+        // **前端数据劫持**
+        defineObj: function(obj, prop, value) {
+            var _value = value || '',
+                _this = this;
+
+            try {
+                Object.defineProperty(obj, prop, {
+                    get: function() {
+                        return _value;
+                    },
+                    set: function(newVal) {
+                        _value = newVal;
+                        _this.bindText();
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+            } catch (error) {
+
+                // IE8+ 才开始支持defineProperty,这也是Vue.js不支持IE8的原因
+                console.log("Browser must be IE8+ !");
+            }
+        },
+        bindModel: function() {
+            var modelDOMs = this.el.querySelectorAll('[h-model]'),
+                lenModel = modelDOMs.length;
+
+            var _this = this,
+                i, propModel;
+
+            for (i = 0; i < lenModel; i++) {
+                propModel = modelDOMs[i].getAttribute('h-model');
+
+                //init value
+                modelDOMs[i].value = this.data[propModel] || '';
+
+                // 前端数据劫持
+                this.defineObj(this.data, propModel);
+            }
+
+            addEvent(modelDOMs, 'keyup', function(e) {
+                _this.data[propModel] = e.target.value;
+            })
+
+        },
+        bindText: function() {
+            var textDOMs = this.el.querySelectorAll('[h-text]'),
+                lenText = textDOMs.length,
+                prppText,
+                j;
+
+            for (j = 0; j < lenText; j++) {
+                propText = textDOMs[j].getAttribute('h-text');
+
+                textDOMs[j].innerHTML = this.data[propText] || '';
+            }
+        }
+    };
+
+    window.Hue = Hue;
+
+})(window);
+
+// test...
+new Hue({
+    el: '.app',
+    data: {
+        demo: 'Kenny'
+    }
+});
+</script>
+
+</html>

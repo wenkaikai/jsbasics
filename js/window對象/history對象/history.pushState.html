@@ -11,7 +11,16 @@
     /**
         HTML5为history对象添加了两个新方法，history.pushState()和history.replaceState()，用来在浏览历史中添加和修改记录。
 
-        參數
+        state：一个与指定网址相关的状态对象，popstate事件触发时，该对象会传入回调函数。如果不需要这个对象，此处可以填null。
+        title：新页面的标题，但是所有浏览器目前都忽略这个值，因此这里可以填null。
+        url：新的网址，必须与当前页面处在同一个域。浏览器的地址栏将显示这个网址。
     */
+    var stateObj = { foo: 'bar' };
+
+    /**
+        上面代码中，pushState想要插入一个跨域的网址，导致报错。这样设计的目的是，防止恶意代码让用户以为他们是在另一个网站上
+    */
+    history.pushState(null, null, 'https://twitter.com/hello');
+    history.pushState(stateObj, 'page 2', 'file:///E:/project/jsbasics/js/window對象/history對象/history.pushState1.html');
 </script>
 </html>

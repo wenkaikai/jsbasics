@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+
+        /**
+            es5新增了Object.defineProperty这个api，它可以允许我们为对象的属性来设定getter和setter,从而我们可以劫持用户对对象属性的取值和赋值。
+            我们通过Object.defineProperty劫持了obj[name]的取值和赋值操作，因此我们就可以在这里做一些手脚啦，比如说，我们可以在obj[name]被赋值的时候触发更新页面操作。
+
+            个人理解 所谓劫持就是我取值的时候你能监听的到
+        */
+    const obj = {};
+
+    let val = 'cjg';
+    Object.defineProperty(obj, 'name', {
+        get() {
+            console.log('劫持了你的取值操作啦');
+            return val;
+        },
+        set(newVal) {
+            console.log('劫持了你的赋值操作啦');
+            val = newVal;
+        }
+    });
+
+    console.log(obj.name);
+    obj.name = 'cwc';
+    console.log(obj.name);
+    </script>
+</body>
+
+</html>

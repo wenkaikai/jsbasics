@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+    /**
+            发布订阅模式
+            发布订阅模式是设计模式中比较常见的一种，其中有两个角色：发布者和订阅者。多个订阅者可以向同一发布者订阅一个事件，当事件发生的时候，发布者通知所有订阅该事件的订阅者。我们来看一个例子了解下。
+        */
+
+    class Dep {
+        constructor() {
+            this.subs = [];
+        }
+        // 增加订阅者
+        addSub(sub) {
+            if (this.subs.indexOf(sub) < 0) {
+                this.subs.push(sub);
+            }
+        }
+        // 通知订阅者
+        notify() {
+            this.subs.forEach((sub) => {
+                sub.update();
+            })
+        }
+    }
+
+    const dep = new Dep();
+
+    const sub = {
+        update() {
+            console.log('sub1 update')
+        }
+    }
+
+    const sub1 = {
+        update() {
+            console.log('sub2 update');
+        }
+    }
+
+    dep.addSub(sub);
+    dep.addSub(sub1);
+    dep.notify(); // 通知订阅者事件发生，触发他们的更新函数
+    </script>
+</body>
+
+</html>

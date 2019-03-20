@@ -6,20 +6,19 @@
 </head>
 <body>
     <script>
-        var txt = "12334"
+        
         var A = function(){
-            console.log(txt);
         }
+        // 我们定义一个静态方法cc;
         A.cc = function(){
             console.log("这是一个静态的方法")
         }
-        A.cc.ccc = function(aaa){
-            txt = aaa;
-            console.log("这是一个静态的方法的方法");
 
-        }
-        A.cc.ccc("hfoaj");
-        A();
+        //实列话一个对象
+        var test = new A();
+        A.cc();//这是一个静态的方法  只能通过类来访问
+        test.cc();
+       
     </script>
 </body>
 </html>

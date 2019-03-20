@@ -20,10 +20,13 @@
 //    console.log(typeof c)
     var a =[1,2,{"a":245}];
     var b = {}
-    var s = a.toString();
+    var s = a.toString();//1,2,[object Object]
     var n = a.valueOf();//还是a
     console.log(s)
     console.log(n)
     console.log(Object.prototype.toString.call(a))//[object Array]
+
+    var c = {"a":245,"b":789};
+    console.log(c.valueOf())
 </script>
 </html>

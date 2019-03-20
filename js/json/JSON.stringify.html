@@ -10,22 +10,26 @@
        1，JSON.stringify 把数组转换为字符串
      */
 
-    var str = JSON.stringify([1, "false", false]);
-    console.log(str);// '[1,"false",false]'
+    //var str = JSON.stringify([1, "false", false]);
+    //console.log(str);// '[1,"false",false]'
 
     /*
     2，replacer 是函数
      */
-//    var foo = {foundation: "Mozilla", model: "box", week: 45, transport: "car", month: 7};
-//    var jsonString = JSON.stringify(foo, replacer);
-//    console.log(jsonString);
-//    function replacer(key,value){
-//        if(typeof value==="string"){//string s 小写
-//            return undefined;
-//        }else{
-//            return value;//{"week":45,"month":7}
-//        }
-//    }
+
+
+   // var foo = {foundation: "Mozilla", model: "box", week: 45, transport: "car", month: 7};
+   // var jsonString = JSON.stringify(foo, replacer);
+   // console.log(jsonString);// 他是一个string
+   // function replacer(key,value){
+   //  //console.log(key); 对象的键值
+   //  //console.log(value) 对象的值
+   //     if(typeof value==="string"){//string s 小写
+   //         return undefined;
+   //     }else{
+   //         return value;//{"week":45,"month":7}
+   //     }
+   // }
 
     /*
        3, replacer 是数组
@@ -48,9 +52,11 @@
      "month": 7
      }
      */
-        var foo = {foundation:"Mozilla",model:"box",week:45,transport:"car",month:7};
-        var jsonStringarray=JSON.stringify(foo,null,"\t");
-        console.log(jsonStringarray);
+
+     //  stringify 第三个参数是格式化的参数就是前面有几个空格
+        // var foo = {foundation:"Mozilla",model:"box",week:45,transport:"car",month:7};
+        // var jsonStringarray=JSON.stringify(foo,null,"\t");
+        // console.log(jsonStringarray);
 
 </script>
 </body>

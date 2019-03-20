@@ -2,6 +2,24 @@
  * Created by ZMJ.Wr on 2017/10/12.
  */
 
+
+
+
+
+ /*
+	一 $.fn 
+ */
+
+ console.log($.fn)
+ console.log($.prototype)
+ console.log(jQuery.prototype)
+// 上面三个结果是相等的$.fn.method()=function(){}的调用把方法扩展到了对象的prototype上，
+//所以实例化一个jQuery对象的时候，它就具有了这些方法
+
+ console.log($.fn.prototype)// undefined
+
+ console.log($) /*==*/console.log(jQuery)
+
 /*
  $.fn是指jquery的命名空间，加上fn上的方法及属性，会对jquery实例每一个有效。
  如扩展$.fn.abc(),即$.fn.abc()是对jquery扩展了一个abc方法,那么后面你的每一个jquery实例都可以引用这个方法了.

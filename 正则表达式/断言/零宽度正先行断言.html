@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+  <script>
+      //(?=pattern)// 零宽度正先行断言
+      //匹配指定内容的前面位置
+
+      /*
+            列子一
+      */
+
+      // reg = /(?=\d{3})/;
+      // content = 'abc123';
+      // res = content.match(reg)
+      // console.log(res)// 是一个数组
+
+      /*
+            列子二
+      */
+
+
+      //reg = /([a-z]+)(?=\d+)/g;
+      //content = 'abc123';
+      //res = content.match(reg)
+      //console.log(res)// 是一个数组["abc"]
+      // (?=\d+) 表示校验的位置后接着的是数字
+
+      //断言的作用就是指定一个位置，该位置的前后内容需要满足exp规则
+
+      /*
+        列子二
+      */
+  reg = /(?=^.{5}$)(.*)/g;
+      content = 'abcde';
+      res = content.match(reg)
+      console.log(res)// 是一个数组["abc"]
+      // (?=\d+) 表示校验的位置后接着的是数字
+  </script>  
+</body>
+</html>

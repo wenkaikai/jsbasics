@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        function A(array){
+            var arr1 = array;
+            var arr2 = [];
+            var temp = false;
+            for(var i = 0;i<arr1.length;i++){
+                temp = false;
+                for(var j = 0;j<arr2.length;j++){
+                    if(arr1[i]==arr2[j]){
+                        temp = true;
+                        // return false;// 这样是直接结束函数了
+                        break;
+                    }
+                }
+                if(!temp){
+                    arr2.push(arr1[i])
+                }
+            }
+            console.log(arr2)
+            return arr2;
+        }
+
+
+        var a = [1,2,3,4,2,1,35,6,3,2];
+        var b = A(a);
+        console.log(b)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>constructor</title>
+</head>
+<body>
+    <script>
+    /**
+        列子一是构造函数不写prototype 属性 
+    */
+        // function Aa(){
+        //     console.log("abc");
+        // }
+        // // Aa.prototype={
+        // //     "abc":123
+        // // }
+        // var bb = new Aa();
+        
+        // console.log(bb.__proto__)// 新对象b的原型就是构造函数的prototype属性
+        // console.log(Aa.prototype)// 
+        // console.log(bb.constructor)//ƒ Aa(){console.log("abc"); } 
+
+
+
+         /**
+        列子一是构造函数写prototype 属性 
+    */
+        // function Aa(){
+        //     console.log("abc");
+        // }
+        // Aa.prototype={
+        //     "abc":123
+        // }
+        // var bb = new Aa();
+        
+        // console.log(bb.__proto__)// 新对象b的原型就是构造函数的prototype属性{abc: 123}
+        // console.log(Aa.prototype)// {abc: 123}
+        // console.log(bb.constructor)//ƒ Object() { [native code] }
+
+
+        // 总结这个时候的constructor 和 不写prototype 的constructor不一样。
+
+        let a = new Object();
+
+        console.log(a.__proto__)
+        console.log(Object.prototype)
+
+        console.log("===============")
+
+        console.log(Object.prototype.constructor)//ƒ Object() { [native code] }
+
+        console.log(Object.prototype.constructor.constructor)//ƒ Function() { [native code] }
+
+
+         console.log("===============")
+          console.log(Object.prototype.constructor.prototype)//
+           console.log(Object.prototype)//
+
+           // 说明对象的原型的构造函数还是他自己
+    </script>
+</body>
+</html>

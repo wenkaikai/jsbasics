@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>in 关键字</title>
+</head>
+
+<body>
+    <script>
+    // in 关键字两种用法
+    // 第一种是用来迭代
+    // 第二种用法是判断对象是否为数组/对象的元素/属性
+    //当“对象”为数组时，“变量”指的是数组的“索引”；
+
+    //当“对象”为对象是，“变量”指的是对象的“属性”。
+    var arr = ["a", "b", "2", "3", "str"];
+    var result = ("b" in arr);
+    var result1 = (4 in arr);
+    console.log(result)// false 这里的in 并不是值 而是指的是索引
+    console.log(result1)// true 4 表示的是
+    var obj = {
+        w: "wen",
+        j: "jian",
+        b: "bao"
+
+    }
+
+    var result2 = (2 in obj);
+    var result3 = ("j" in obj);
+    console.log(result2)// false
+    console.log(result3)// true
+    </script>
+</body>
+
+</html>

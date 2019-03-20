@@ -7,17 +7,19 @@
 <body>
 <script>
     var str = "abcdefg";
-    var str1 = str.slice(4);
+    var str1 = str.slice(1);
     var str2 = str.slice(4,1);
     var str3 = str.slice(4,-1);
+     var str4 = str.slice(-4,-1);
     console.log(str1)//efg
     console.log(str2)//kong
     console.log(str3)//ef 相当于（4,6）//6=-1+字符串的长度
+ console.log(str4)//ef 相当于（4,6）//6=-1+字符串的长度
 
 
     var stmp = "rcinn.cn";
-    alert(stmp.slice(2,-5));//返回"i"
-    alert(stmp.substring(2,-5));//返回"rc"
+   // alert(stmp.slice(2,-5));//返回"i"
+    //alert(stmp.substring(2,-5));//返回"rc"
 /*
 //从上面两个例子可以看出slice(2,-5)实际上是slice(2,3)
 //负5加上字符串长度8转换成正3(若第一位数字等于或大于第二位数字,则返回空字符串);

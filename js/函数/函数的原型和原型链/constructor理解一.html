@@ -7,19 +7,46 @@
 <body>
     <script>
         // 函数原型的构造函数和对象的构造函数
-        var aa = function(){
+        // var aa = function(){
+        //     console.log("abc");
+        // }
+        //对象的constructor属性用于返回创建该对象的函数，也就是我们常说的构造函数
+        function Aa(){
             console.log("abc");
         }
-        aa.prototype={
-            "abc":123
-        }
-        var bb = new aa();
-        console.log(bb)//aa {}
-        console.log(bb.constructor);//ƒ Object() { [native code] }
-        console.log(aa.prototype)//{abc: 123}
-        console.log(bb.__proto__)//{abc: 123}
-        console.log(aa.prototype.constructor) //ƒ Object() { [native code] }
-        console.log(bb.__proto__.constructor)//ƒ Object() { [native code] }
+        // Aa.prototype={
+        //     "abc":123
+        // }
+        var bb = new Aa();
+        
+        //console.log(bb.__proto__)// 新对象b的原型就是构造函数的prototype属性
+        //console.log(Aa.prototype)// 
+        //console.log(bb.constructor)//ƒ Aa(){console.log("abc"); } // typeof 是function,function可以全等
+        //console.log(bb.constructor===Aa)// true
+       
+         //console.log(typeof bb.__proto__)// object 原型也是对象 
+         //console.log(bb.__proto__.constructor)//ƒ Aa(){console.log("abc");} 对象原型的构造函数怎么还是等于开始的构造函数
+
+         // 下面两个式子不相等说明 原型的构造函数的prototype 属性不等于原型的原型
+         //console.log(bb.__proto__.constructor.prototype)// Aa.prototype
+         //console.log(bb.__proto__.__proto__)
+
+        // 那么对象原型的原型等于什么呢 对象原型的原型等于Object.prototype
+
+        console.log(bb.__proto__.__proto__)
+
+        //console.log(Object.prototype)
+
+        //console.log(Object.prototype.constructor)//ƒ Object() { [native code] }
+
+          //console.log(bb.__proto__.__proto__.__proto__)//null 就是说Object.prototype 没有原型了为null
+
+       // console.log(bb.constructor);//ƒ Object() { [native code] }
+        //console.log(bb.__proto__.constructor)
+        //console.log(Aa.prototype)//{abc: 123}
+        //console.log(bb.__proto__)//{abc: 123}
+        //console.log(Aa.prototype.constructor) //ƒ Object() { [native code] }
+        //console.log(bb.__proto__.constructor)//ƒ Object() { [native code] }
         //  所以有如下结论
         // 1,对象的构造函数不能仅仅认为是定义的函数，对象的构造函数首先要找原型，原型的构造函数即是对象的构造函数。
     </script>

@@ -8,6 +8,10 @@
 <script>
     /*
      caller返回一个函数的引用，这个函数调用了当前的函数;
+
+    使用这个属性要注意:
+    1 这个属性只有当函数在执行时才有用
+    2 如果在javascript程序中，函数是由顶层调用的，则返回null
      */
        // var a = function() {
        //     console.log(a.caller); //b context
@@ -36,23 +40,23 @@
      因此可以用来比较形参和实参个数是否一致，即比较arguments.length是否等于arguments.callee.length
      */
 
-   // var a = function(e,r,t) {
-   //    console.log(arguments.callee); //是本身
+   var a = function(e,r,t) {
+      console.log(arguments.callee); //是本身
        /*
        * ƒ (e,r,t) {
         console.log(arguments.callee); //是本身
         console.log(arguments.callee.length);//3 形参的个数
         console.log(arguments.length)
         }*/
-   //     console.log(arguments.callee.length);//3 形参的个数
-   //     console.log(arguments.length)//0 实参
+       console.log(arguments.callee.length);//3 形参的个数
+       console.log(arguments.length)//0 实参
 
 
-   // }
-   // var b = function() {
-   //     a();
-   // }
-   // b();
+   }
+   var b = function() {
+       a();
+   }
+   b();
 
 
 

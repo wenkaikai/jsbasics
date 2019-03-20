@@ -50,10 +50,10 @@
 
 
         //变量是否会提升 变量不会提升;
-//        {
-//            console.log(a);
-//            let a = 100;
-//        }
+       {
+           console.log(a);//uncaught ReferenceError :a is not defined;
+           let a = 100;
+       }
 
         // {
         //     let num = 2;
@@ -72,16 +72,16 @@
         // }
          /**例子六*/
 
-           if(true){
-            let a = 10;
-            if(true){
-                if(true){
-                    let b = 20
-                     console.log(a)// 10 这里面是能获取的到的
-                }
-               console.log(b)// 这样是获取不到的。
-            }
-        }
+        //    if(true){
+        //     let a = 10;
+        //     if(true){
+        //         if(true){
+        //             let b = 20
+        //              console.log(a)// 10 这里面是能获取的到的
+        //         }
+        //        console.log(b)// 这样是获取不到的。
+        //     }
+        // }
     </script>
 </body>
 </html>

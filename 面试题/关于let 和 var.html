@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        (function(){
+            console.log(a,b,c())//b is not defined  只要有一个错了所有的都不执行了。 面试题还傻乎乎的认为自己很对。
+            var a = 1;
+            let b = 345;
+            function c(){
+                return a+2
+            }
+        })()
+    </script>
+</body>
+</html>

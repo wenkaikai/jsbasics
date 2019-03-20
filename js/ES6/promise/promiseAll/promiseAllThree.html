@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+      //用sleep来模仿浏览器的AJAX请求
+function sleep(wait) {
+    return new Promise((res,rej) => {
+        setTimeout(() => {
+            res(wait);
+        },wait);
+    });
+}
+
+let p1 = sleep(500);
+let p2 = sleep(500);
+let p3 = sleep(1000);
+
+Promise.all([p1,p2,p3]).then(result => {
+    console.log(result);
+
+    // 也就是说输出的结果也是一个数组
+    //.....
+    //loading
+});
+    </script>
+</body>
+</html>

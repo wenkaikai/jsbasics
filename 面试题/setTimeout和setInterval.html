@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+
+        // 他两是谁在前先执行谁
+        window.setTimeout(function(){
+            console.log(1)
+        },1000)
+         window.setInterval(function(){
+            console.log(2)
+        },1000)
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+
+        /**
+            open()方法的第一个参数是数据库名称，格式为字符串，不可省略；第二个参数是数据库版本，是一个大于0的正整数（0将报错），如果该参数大于当前版本，会触发数据库升级。第二个参数可省略，如果数据库已存在，将打开当前版本的数据库；如果数据库不存在，将创建该版本的数据库，默认版本为1。
+            打开数据库是异步操作，通过各种事件通知客户端。下面是有可能触发的4种事件。
+
+            有如下几种事件
+            success：打开成功。
+            error：打开失败。
+            upgradeneeded：第一次打开该数据库，或者数据库版本发生变化。
+            blocked：上一次的数据库连接还未关闭。
+            第一次打开数据库时，会先触发upgradeneeded事件，然后触发success事件。
+        */
+        var openRequest = window.indexedDB.open('test',1);
+        // console.log(openRequest);
+
+        openRequest.upgradeneeded = function(e){
+            console.log(e)
+            console.log("upgrading...")
+        }
+          openRequest.onsuccess = function(e){
+            console.log(e)
+            console.log("onsuccess");
+            /**
+                从openRequest.result属性可以拿到已经打开的IndexedDB数据库对象。
+            */
+            var db = openRequest.result;
+            console.log(db)
+        }
+
+
+    </script>
+</body>
+</html>

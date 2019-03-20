@@ -19,18 +19,18 @@
        而原型又是个对象所以，原型也有构造函数。
 
     */
-//    console.log(b.constructor.prototype)//b.constructor==check
-    //console.log(b.__proto__)//{constructor: ƒ}是一个对象
-    //console.log(check.prototype)//{constructor: ƒ}是一个对象
+   console.log(b.constructor.prototype)//b.constructor==check
+    console.log(b.__proto__)//{constructor: ƒ}是一个对象
+    console.log(check.prototype)//{constructor: ƒ}是一个对象
 /*
 console.log(check.prototype)
 //相等
 console.log(b.__proto__)
 */
-console.log(Object.prototype)//Object
-console.log(check.prototype.__proto__)//指向的构造函数的prototype属性
-console.log(check.prototype.__proto__.__proto__)//null
-console.log(check.prototype.__proto__.constructor)//ƒ Object() { [native code] }
+//console.log(Object.prototype)//Object
+//console.log(check.prototype.__proto__)//指向的构造函数的prototype属性
+//console.log(check.prototype.__proto__.__proto__)//null
+//console.log(check.prototype.__proto__.constructor)//ƒ Object() { [native code] }
 
 //    console.log(b.constructor)//ƒ check(){}
 //    console.log(check.prototype.constructor)//ƒ check(){}

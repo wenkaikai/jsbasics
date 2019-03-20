@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div class="triangle"></div>
+</body>
+<script>
+    
+</script>
+<style>
+    .triangle{
+    width: 200px;
+    height: 100px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    position: relative;
+ }
+ .triangle:after{
+    content: "";
+    position: absolute;
+    left: 200px;
+    top:12px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+ }
+ .triangle:before{
+    content: "";
+    left: 200px;
+    top:10px;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-left: 12px solid #000;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+  }
+</style>
+</html>

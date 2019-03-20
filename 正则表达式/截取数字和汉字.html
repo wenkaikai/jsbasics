@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var str = "12.229卡发了多少"; 
+        str = "45225万元"
+        str = "45225.000444444400000999"
+        str = null
+        //var num =Number(str);//NaN
+        //var num =parseFloat(str);//1251454.2222
+         let str1,str2,str3,str4,num;
+         let number = 4;
+         if(!str){
+            return str
+         }
+
+        str = str+''
+        let index = str.search(/[^\d.]/g);
+        
+        if(index>0){
+        str1 = str.substring(0,index);
+        num = parseFloat(str1)
+        if(Number.isInteger(num)){
+             str2 = num;
+        }else{
+            str2 = num.toFixed(number);
+        }
+        str3 = str.substring(index);
+        str4 = str2+str3;
+        }else{
+             str1 = str.substring(0);
+              num = parseFloat(str1)
+               if(Number.isInteger(num)){
+             str2 = num;
+        }else{
+            str2 = num.toFixed(number);
+        }
+        str4 = str2
+        }
+       
+        console.log(str4)
+    </script>
+</body>
+</html>

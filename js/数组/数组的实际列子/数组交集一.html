@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+    function arrayIntersection(a, b) {
+        var ai = 0,
+            bi = 0;
+        var result = new Array();
+        while (ai < a.length && bi < b.length) {
+            if (a[ai] < b[bi]) {
+                ai++;
+            } else if (a[ai] > b[bi]) {
+                bi++;
+            } else /* they're equal */ {
+                result.push(a[ai]);
+                ai++;
+                bi++;
+            }
+        }
+        return result;
+    }
+    console.log(arrayIntersection([1, 2, 3], [2, 3, 4, 5, 6])); //[2,3]
+    </script>
+</body>
+
+</html>

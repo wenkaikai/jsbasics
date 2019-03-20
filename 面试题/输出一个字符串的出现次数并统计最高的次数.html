@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var str = "https://home.firefoxchina.cn/";
+        var obj = {};
+        for(var i = 0;i<str.length;i++){
+            if(obj[str.charAt(i)]>=1){
+               obj[str.charAt(i)]++
+            }else{
+                obj[str.charAt(i)]=1;
+            }
+        }
+        console.log("https://home.firefoxchina.cn/")
+        console.log(obj);
+
+        // 然后挑最大的
+
+            var temp = 0;
+            var temp1 = ""
+        for(var prop in obj){
+            if(obj[prop]>temp){
+                temp = obj[prop];
+                temp1 = prop;
+            }
+        }
+        console.log(`${temp1}的最大值是${temp}`)
+    </script>
+</body>
+</html>

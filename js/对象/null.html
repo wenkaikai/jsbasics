@@ -5,21 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-
-</body>
-<script>
-
-    var aa =null;
-    console.log(Boolean(aa))//false
-
-    /*
-        出现null 的时候
-        目前只有通过id获取元素获取不到的时候回出现null;
-        但是通过其他的返回的是长度为零的集合
-     */
-    var b = document.getElementById("id");
-    var c = document.getElementsByTagName("span");
-    console.log(b)//null
-    console.log(c)//HTMLCollection(0)
+<script type="text/javascript">
+    console.log(""==null)
+    var dom = document.getElementById("title");//null
+    console.log(dom);
 </script>
+</body>
 </html>

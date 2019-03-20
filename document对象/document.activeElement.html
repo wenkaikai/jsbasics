@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body onclick = "myFunction()">
+       <p >fdsfdsfsd</p>
+    <p id="demo"></p>
+    <input type="text">
+    <button>haode</button>
+</body>
+<script>
+    function myFunction(){
+        console.log("afds")
+        var a = document.activeElement.tagName;
+        document.getElementById("demo").innerHTML = a;
+    }
+
+    /*
+        为什么点击p 标签显示的body,
+        但是点击input 和 button 确实可以获取到input 和 button
+    */
+</script>
+</html>

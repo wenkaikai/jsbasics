@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        // isPrototypeOf 判断当前的对象是不是继承某一个对象
+
+
+        function A(){}// 这是构造函数
+        var obj = {a:123}
+
+        A.prototype = obj;
+
+        var a = new A();
+        let temp = obj.isPrototypeOf(a);// 判断obj 是不是 a 的原型
+        console.log(temp);
+        console.log(Object.getPrototypeOf(a))// 获取对象的原型
+
+    </script>
+    
+</body>
+</html>

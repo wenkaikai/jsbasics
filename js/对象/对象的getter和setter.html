@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
 
+<body>
 </body>
 <script>
-
 //    demo1
-//    var serialnum={
-//        $n:0,
-//        get next(){return this.$n++},//此时$n的值就已经加一了
-//        set next(n){
-//            if(n>=this.$n) this.$n = n;
-//            else throw "序列号的值不能小于当前的值"
-//        }
-//    }
-//    serialnum.next=81
-//    console.log(serialnum.next)//Uncaught 序列号的值不能小于当前的值
-//    console.log(serialnum.$n)//Uncaught 序列号的值不能小于当前的值
+// var serialnum={
+//     $n:0,
+//     get next(){return this.$n++},//此时$n的值就已经加一了
+//     set next(n){
+//         if(n>=this.$n) this.$n = n;
+//         else throw "序列号的值不能小于当前的值"
+//     }
+// }
+// serialnum.next=81
+// console.log(serialnum.next)//Uncaught 序列号的值不能小于当前的值
+// console.log(serialnum.$n)//Uncaught 序列号的值不能小于当前的值
+
+
+
+// demo 2
+
+
+// (function() {
+//     var o = {
+//         a: 7,
+//         get b() { return this.a + 1; }, //通过 get,set的 b,c方法间接性修改 a 属性
+//         set c(x) { 
+//             console.log(x);// 50
+//          this.a = x / 2 }
+//     };
+//     console.log(o.a);//7
+//     console.log(o.b);//8
+//     o.c = 50;
+//     console.log(o.a);//25
+// })();
 //demo3
 
-    var obj = {//存储器属性有两个方法是 getter/setter.只有两个都有才能读和取
+var obj = {//存储器属性有两个方法是 getter/setter.只有两个都有才能读和取
 
-        val:100,
-        get getval(){
-            return this.val;
-        },
-        set setval(x){
-            this.val = x;
-        }
+    val:100,
+    get getval(){
+        return this.val;
+    },
+    set setval(x){
+        this.val = x;
     }
-    console.log(obj.getval);
-    obj.setval = 101;
-    console.log(obj.getval);
+}
+console.log(obj)// 想这种显示是100 打开是 101 的就是取值在前赋值在后的情况
+console.log(obj.getval);//100
+obj.setval = 101;
+console.log(obj.getval);
 
-    //demo3
+//demo3
 
 
 //    var obj={
@@ -47,4 +67,5 @@
 //    }
 //    obj.aa(80)
 </script>
+
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        
+        function C(){
+            this.Name="张三"
+        };
+        var c = new C();
+        C.prototype.say=function(){
+            console.log("我是c函数里面的say");
+        }
+
+        function B(){
+           console.log(this)
+           C.call(this) ;
+
+        }
+
+        var b = new B();
+        console.log(b.Name)
+        console.log(b.say)// undefined 这个时候确实是没有say函数的。面试的时候就不经过大脑，
+        // 总结以后的经验就是遇到问题要学会冷静的分析，哪怕是错了也要说出理由不要凭感觉。
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+    /**
+
+            indexedDB.deleteDatabase()方法用于删除一个数据库，参数为数据库的名字。它会立刻返回一个IDBOpenDBRequest对象，然后对数据库执行异步删除。删除操作的结果会通过事件通知，IDBOpenDBRequest对象可以监听以下事件。
+
+            success：删除成功
+            error：删除报错
+
+
+            调用deleteDatabase()方法以后，当前数据库的其他已经打开的连接都会接收到versionchange事件。
+        */
+    var DBDeleteRequest = window.indexedDB.deleteDatabase("demo");
+    DBDeleteRequest.onerror = function(event) {
+        console.log('Error');
+    };
+
+    DBDeleteRequest.onsuccess = function(event) {
+
+        // 就是删除一个没有的数据库也不会报错 仍然执行onsuccess 操作
+        console.log('success');// success 删除成功
+    };
+    </script>
+</body>
+
+</html>

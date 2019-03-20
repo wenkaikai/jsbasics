@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta  name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        /*@media only screen and (min-device-width: 320px){*/
+            /*div{*/
+              /*width:300px;*/
+                /*height:300px;*/
+                /*background:red;*/
+            /*}*/
+        /*}*/
+        /*@media only screen and (min-device-width: 375px){*/
+            /*div{*/
+              /*width:400px;*/
+                /*height:400px;*/
+                /*background:blue;*/
+            /*}*/
+        /*}*/
+        /*@media only screen and (min-device-width: 414px){*/
+            /*div{*/
+                /*width:500px;*/
+                /*height:500px;*/
+                /*background:yellow;*/
+            /*}*/
+        /*}*/
+        /*@media only screen and (min-device-width: 500px){*/
+            /*div{*/
+                /*width:600px;*/
+                /*height:600px;*/
+                /*background:green;*/
+            /*}*/
+        /*}*/
+        /*3.14 更改点击问号的弹出框看起来更像原生*/
+        *{
+            margin:0;
+            padding:0;
+        }
+        .shade{
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            background-color:#000;
+            opacity: 0.5;
+            display:flex;
+        }
+        .shade .cashPledgeExplain{
+          width:750px;
+          height:200px;
+          background:#fff;
+        }
+        .shade .cashPledgeExplain h5{
+            height:40px;
+            box-sizing: border-box;
+            border-bottom:1px solid #ccc;
+            line-height:40px;
+            text-align:center;
+            width:100%;
+        }
+        .shade .cashPledgeExplain p{
+            font-size:0.8rem;
+            margin:20px 8px;
+
+        }
+        .shade .cashPledgeExplain button{
+            border-radius: 5px;
+            background-color:blue;
+            color:#fff;
+            width:80%;
+            height:40px;
+            line-height:40px;
+            outline: none;
+            border:none;
+            -webkit-appearance: none;
+            margin-bottom:30px;
+
+        }
+    </style>
+</head>
+<body>
+<section class="shade">
+    <div class="cashPledgeExplain">
+        <h5>关于押金的说明</h5>
+        <p>
+            租车需要根据车型支付押金，
+            支付后将转到账户余额，
+            在车辆使用完成后
+            可在余额申请返还
+        </p>
+        <button>我知道了</button>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+    //Proxy 对象用于定义基本操作的自定义行为（如属性查找，赋值，枚举，函数调用等）。
+//let p = new Proxy(target, handler);
+        let target = {};
+        let p = new Proxy(target, {});
+        console.log(p)//空对象
+        p.a = 37; // 操作转发到目标
+        console.log(target.a); // 37. 操作已经被正确地转发
+        // p 相当于一个代理 来处理目标的对象
+    </script>
+</body>
+
+</html>

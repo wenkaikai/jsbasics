@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+
+        /*第一题*/
+        // var obj1 = {
+        //     a:123,
+        //     b:function(){
+        //         console.log(this.a)
+        //     }
+        // }
+        // obj1.b();//123
+
+        /*第二题*/
+
+
+        var fullname = 'a';
+        var obj = {
+            fullname:'b',
+            prop:{
+                fullname:'c',
+                getFullname:function(){
+                    return this.fullname;
+                }
+            }
+        }
+        console.log(obj.prop.getFullname())
+
+        var test  = obj.prop.getFullname;//c
+        console.log(test())//a 这个时候我写的答案是b
+    </script>
+</body>
+</html>
