@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        body{
-            background:#ddd;
+    body {
+        background: #ddd;
 
-        }
-        div{
-            background:#fff;
-            height:500px;
-            position:relative;
+    }
 
-        }
-        img{
-            position:absolute;
-            margin:auto;
-            left:0;
-            top:0;
-            right:0;
-            bottom:0;
-        }
+    div {
+        background: #fff;
+        height: 500px;
+        position: relative;
+
+    }
+
+    img {
+        /*position: absolute;*/
+        margin: auto;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
     </style>
 </head>
+
 <body>
-<div>
-    <img src="img/a1.jpg" alt="">
-</div>
+    <div>
+        <img src="img/a1.jpg" alt="fsd">
+    </div>
+    <script>
+
+    function getNatural(DOMelement) {
+        var img = new Image();
+        img.src = DOMelement.src;
+        return { width: img.width, height: img.height };
+    }
+
+    var
+        natural = getNatural(document.getElementsByTagName("img")[0]),
+        nWidth = natural.width,
+        nHeight = natural.height;
+        console.log(natural)
+    </script>
 </body>
+
 </html>

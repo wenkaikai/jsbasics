@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+    var str = "<div style='font-size:20px;width: 300px;height: 100PX;'></div>";
+    // var str = `"<!--HTML--><p style="white-space: normal; text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 36px;"><strong>本次报名为预报名&nbsp;</strong></span></p><p style="white-space: normal; text-align: center;"><span style="background-color: rgb(255, 192, 0); font-size: 36px;"><strong><span style="background-color: rgb(255, 192, 0); font-size: 20px;">实际课程费用为：600元13次课。<strong>（小主持人教材40元，自愿购买！）</strong></span></strong></span></p><p style="white-space: normal;"><span style="background-color: rgb(255, 192, 0);"><strong><span style="font-size: 20px;"></span></strong></span></p><p style="text-indent:32px"><span style="font-family: 黑体; font-size: 24px;">课程简介：</span></p><p style="text-indent:28px"><span style="font-size: 24px;"><span style="font-size: 20px; font-family: 宋体;">小主持人班课程旨在培养孩子良好的语言表达能力，开发孩子在众人面前敢于说话、主动与人交流等多方面的综合素质。解放天性、播音发声、斧正发音、诗歌朗诵、即兴演讲、戏剧表演、模拟主持</span><span style="font-family: 宋体; font-size: 14px;"><span style="font-size: 20px; font-family: 宋体;">，锻炼孩子们的语言艺术综合能力，培养孩子们的创造性思维与个性</span>……</span><span style="font-size: 20px; font-family: 宋体;">使孩子既能成为舞台上的主持人和小演员，也是生活中爱学习、会思考、懂创新的好孩子。</span></span></p><p style="text-indent:32px"><span style="font-family: 黑体; font-size: 24px;">教学目标：</span></p><p style="text-indent:28px"><span style="font-size: 20px; font-family: 宋体, SimSun;"><span style="font-size: 20px;">课程通过正规、系统的语言专业训练，提高孩子的普通话水平和语言表达能力，使学生掌握标准的普通话语音，流畅的语言表达能力，从而全面掌握说话的艺术，在上课过程中启蒙孩子对文、史、哲方面的认知，培养艺术才能，同时增强自信、积累文化修养，全面提高孩子的综合素质，为孩子们的成才打下良好的基础。</span>让孩子喜欢上语言，提高自信心，语言组织能力，表达能力，记忆能力，注意力，反应力，模仿能力，态势语，音律节奏等等！</span></p><p style="text-indent:28px"><span style="font-family: 宋体; font-size: 24px;"></span><br/></p><p style="text-indent:32px"><span style="font-family: 黑体; font-size: 24px;">教学内容：</span></p><p style="text-indent:28px"><span style="font-size: 20px; font-family: 宋体;">课程内容主要由</span><span style="font-family: 宋体, SimSun; font-size: 20px;">课堂纪律、科学发声、气息练习、贯口练习、快板、故事大王、国学弟子规、基本礼仪、表情训练、观察力训练、想象力训练、临场表达能力训练、汇演</span><span style="font-family: 宋体; font-size: 20px;">等部分组成，其中最基础的教学内容有：普通话基础与正音练习、朗读与朗诵、形体与礼仪的训练、主持技能与话剧表演。</span></p><p>
+    // <img src="https://kehouyi.oss-cn-shenzhen.aliyuncs.com/images/1108572885248868352.png" style="" title="1108572885248868352.png"/>
+    // </p><p><img src="https://kehouyi.oss-cn-shenzhen.aliyuncs.com/images/1108572943042183168.png" style="" title="1108572943042183168.png"/></p><p>
+    // <img src="https://kehouyi.oss-cn-shenzhen.aliyuncs.com/images/1108572986323206144.png" style="" title="1108572986323206144.png"/></p><p><img src="https://kehouyi.oss-cn-shenzhen.aliyuncs.com/images/1108573039351791616.png" style="" title="1108573039351791616.png"/></p><p>
+    // <img src="https://kehouyi.oss-cn-shenzhen.aliyuncs.com/images/1108573104858431488.png" style="" title="1108573104858431488.png"/></p><p><img src="https://kehouyi.oss-cn-shenzhen.aliyuncs.com/images/1108573152774160384.png" style="" title="1108573152774160384.png"/></p><p>
+    // <img src="https://kehouyi.oss-cn-shenzhen.aliyuncs.com/images/1108573197393166336.png" style="" title="1108573197393166336.png"/></p><p></p><p></p><p></p><p></p><p><span style="background-color: rgb(255, 192, 0);"><strong><span style="font-size: 20px;"></span></strong></span></p>"`
+
+
+    function pxToRem(_s) {
+        //匹配:20px或: 20px不区分大小写
+        var reg = /(\:|: )+(\d)+(px)/gi;
+        let newStr = _s.replace(reg, function(_x) {
+            console.log(_x)
+            _x = _x.replace(/(\:|: )/, '').replace(/px/i, '');
+            return ':' + parseFloat(_x) / 100 + 'rem';
+        });
+        return newStr;
+    }
+
+    var str1  = pxToRem(str);
+    console.log(str1);
+    </script>
+</body>
+
+</html>

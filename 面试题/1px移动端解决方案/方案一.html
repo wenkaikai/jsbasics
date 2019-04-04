@@ -20,5 +20,30 @@ height:200px;
 </head>
 <body>
     <div class="box-shadow-1px"></div>
+
+    <script>
+        /**
+
+            由于最小的物理像素差异，一条直线的显示，iphone5它能显示的最小宽度其实是理论上说的0.5px。
+
+　　　　不是所有手机浏览器都能识别border: 0.5px;，ios7以下，android等其他系统里，0.5px会被当成为0px处理
+
+　　　　通常是给元素order-bottom: 1px solid #ddd;，然后通过transform: scaleY(.5)缩小0.5倍来达到0.5px的效果，
+
+.scale{
+    position: relative;
+}
+.scale:after{
+    content:"";
+    position: absolute;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    border-bottom:1px solid #ddd;
+    -webkit-transform:scaleY(.5);
+    -webkit-transform-origin:0 0;
+}
+        */
+    </script>
 </body>
 </html>
