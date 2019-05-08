@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+    /**
+
+            列子一 证明 async 返回的是一个promise 对象
+        */
+    // 
+
+    // async function timeout() {
+    //     return 'hello world'
+    // }
+    // var aa = timeout();
+    // console.log('虽然在后面，但是我先执行');
+    // console.log(aa)// 返回的是promise 对象
+
+    // aa.then(result=>{
+    //     console.log(result)// hellow world
+    // })
+
+
+    /**
+        列子二我们加上await
+    */
+
+    // 2s 之后返回双倍的值
+    // function doubleAfter2seconds(num) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve(2 * num)
+    //         }, 2000);
+    //     })
+    // }
+
+    // async function testResult() {
+    //     // await 的作用就像暂停了一样等待
+    //     let result = await doubleAfter2seconds(30);
+    //     console.log(result);
+    // }
+    // testResult();// 两秒后控制台输出60
+
+
+
+
+
+    /**
+        列子三 当我们用多个await 的时候
+
+    */
+
+
+
+    function doubleAfter2seconds(num) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(2 * num)
+            }, 2000);
+        })
+    }
+    async function testResult() {
+        let first = await doubleAfter2seconds(30);
+        let second = await doubleAfter2seconds(50);
+        let third = await doubleAfter2seconds(30);
+        console.log(first + second + third);
+    }
+
+    testResult()// 六秒后计算出值 这时候我们写异步就像写同步一样很爽歪歪的
+    </script>
+</body>
+
+</html>

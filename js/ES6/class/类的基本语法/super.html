@@ -36,8 +36,9 @@
     class Square extends Polygon {
         constructor(length) {
           
-            super(length, length);
-          
+            super(length, length);// 会调调用父类的构造函数
+            // super()// 要想在constructor 中調用this 必须要调用super
+            // console.log(this)
             this.name = 'Square';
         }
         get area() {
