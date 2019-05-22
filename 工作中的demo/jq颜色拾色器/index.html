@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq颜色拾色器</title>
+    <link rel="stylesheet" href="colpick.css">
+</head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="colpick.js"></script>
+<body>
+    <div id="pick">点击拾色器</div>
+    <div style="margin-top:500px">点击拾色器占位符</div>
+    <script>
+        var dom = $('#pick').colpick({
+                flat: false,
+                layout: 'hex',
+                submit: 0,
+                colorScheme: 'dark',
+                onChange: function(hsb, hex, rgb, el, bySetColor) {
+                    // console.log(el.colpickHide())
+                    // console.log(hex);
+                    $('.gb').css({
+                        'background': '#' + hex
+                    });
+                    BGcolor = '#' + hex;
+                    // console.log(1);
+                }
+            });
+
+        $("body").click(function(e){
+            //console.log(this) 只的是绑定的对象
+            console.log(e.target)
+            var that = $(e.target);
+            console.log(that.hasClass(".colpick"))
+            console.log(that.parents(".colpick").length)
+            
+            if(that.hasClass(".colpick")||that.parents(".colpick").length){
+                 
+             }else{
+                 dom.colpickHide()// 这个是隐藏拾色器
+             }
+           
+        })
+    </script>
+</body>
+</html>

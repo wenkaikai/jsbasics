@@ -18,7 +18,8 @@
 
  console.log($.fn.prototype)// undefined
 
- console.log($) /*==*/console.log(jQuery)
+ console.log($) /*==*/
+ console.log(jQuery)
 
 /*
  $.fn是指jquery的命名空间，加上fn上的方法及属性，会对jquery实例每一个有效。
@@ -32,11 +33,11 @@ $.fn.abc=function(){//为每一个jquery 对象添加方法
  jQuery.extend(object);　为jQuery类添加添加类方法，可以理解为添加静态方法。如：
  */
 
-jQuery.extend({
-    adddd:function(a,b){
-        console.log("ok");
-    }
-});
+// jQuery.extend({
+//     adddd:function(a,b){
+//         console.log("ok");
+//     }
+// });
 
 
 

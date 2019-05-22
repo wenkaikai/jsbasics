@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script>
+function myFunction(){
+    var w=window.outerWidth;
+    var h=window.outerHeight;
+    var txt="窗口大小: 宽度=" + w + ", 高度=" + h;
+    document.getElementById("demo").innerHTML=txt;
+}
+</script>
+</head>
+
+<body onresize="myFunction()">
+<p>尝试调整浏览器的窗口</p>
+<p id="demo">&nbsp;</p>
+<p>注意:该例子在IE8 或更早版本下可能不工作，IE8 或更早的版本不支持window对象的outerWidth/outerHeight属性</p>
+
+</body>
+</html>

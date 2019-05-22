@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var arr = new Array();         //先声明一维
+       for(var i=0;i<5;i++){          //一维长度为5
+          arr[i]=new Array(i);    //在声明二维
+          for(var j=0;j<5;j++){      //二维长度为5
+             arr[i][j]=i;
+       }
+    } 
+
+    console.log(arr[1])
+    </script>
+</body>
+</html>
