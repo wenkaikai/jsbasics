@@ -6,11 +6,34 @@
 </head>
 <body>
     <script>
-        var data = new Date("2018-09-04");
-        console.log(data.getTime())
-        console.log(typeof data.valueOf())
-        console.log(Number(data))
+
+        /**
+                列子一 这两个是不一样的
+
+                 var data = new Date("2018-09-04");
+        var date1 = new Date("2018-9-04");
+
+        */
+        var data = new Date("2018-9-04");
+        var date1 = new Date("2018-9-4");
+
+        //console.log(typeof data.getTime())  // 转换出来的是number
+
+console.log(data,date1)// 不一样
+
+
+        // console.log(data.getTime())
+
+
+        // console.log(typeof data.valueOf())
+        // console.log(Number(data))
         //这三种都是转换时间戳的。
+        // let style="html{'font-size': 19px !important}";
+        // document.getElementById("id").style.cssText = "font-size:100px!important;width:100px;"
+
+        document.getElementsByTagName("html")[0].style.cssText="font-size: 19px !important"
+        document.getElementsByTagName("html")[0].setAttribute("style","font-size: 19px !important")
+        
     </script>
 </body>
 </html>

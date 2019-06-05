@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+</head>
+
+<body>
+    <script>
+    var aa = {
+        "msg": "success",
+        "code": 0,
+        "map": [{
+                "children": [{
+                    "children": [{
+                        "children": [{
+                            "children": [],
+                            "label": "中国舞蹈教练",
+                            "value": 13
+                        }, {
+                            "children": [],
+                            "label": "芭蕾舞教练",
+                            "value": 14
+                        }],
+                        "label": "舞蹈团团长",
+                        "value": 9
+                    }, {
+                        "children": [],
+                        "label": "校区副总",
+                        "value": 10
+                    }, {
+                        "children": [],
+                        "label": "财务副总",
+                        "value": 11
+                    }, {
+                        "children": [],
+                        "label": "总裁办公室主任",
+                        "value": 12
+                    }],
+                    "label": "副董事长",
+                    "value": 8
+                }],
+                "label": "董事长",
+                "value": 1
+            },
+            {
+                "children": [{
+                    "children": [],
+                    "label": "秘书",
+                    "value": 6
+                }],
+                "label": "总裁",
+                "value": 5
+            }
+        ]
+    }
+
+    // 如果我们要找 value==10 de label 的值
+    function bb(id, children) {
+        if (array[i].value == id) {
+            return array[i].label;
+        } else {
+
+        }
+    }
+    function getLabel(id, array) {
+
+        for (let i = 0; i < array.length; i++) {
+            bb(id, array[i].children)
+        }
+    }
+
+    getLabel(10, aa.map)
+    </script>
+</body>
+
+</html>
