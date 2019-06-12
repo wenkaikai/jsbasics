@@ -8,6 +8,11 @@
 <input type="text" id="text">
 <input type="button" id="but">
 <script>
+
+
+    /**
+        匹配一个单词的边界，也就是指单词和空格间的位置（即正则表达式的“匹配”有两种概念，一种是匹配字符，一种是匹配位置，这里的\b就是匹配位置的）。例如，“er\b”可以匹配“never”中的“er”，但不能匹配“verb”中的“er”；“\b1_”可以匹配“1_23”中的“1_”，但不能匹配“21_3”中的“1_”。
+    */
 //    var pattern = /^\d+$/g
 //    var pattern = /[a-z]+/g;
 //var pattern = /^[a-zA-Z0-9]{6,10}$/;

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    // 节流函数的封装
+    const throttle = (func, wait,a) => {
+        let timer = a;
+        return () => {
+            if (timer) {
+                return false;
+            }
+            timer = setTimeout(() => {
+                func();
+                timer = null;
+            }, wait);
+        };
+    };
+
+    setInterval(function() {
+        throttle(function() { console.log("1234") }, 5000,1)();
+    }, 1000)
+
+
+
+
+    // function throttle(fn, wait = 500) {
+    //     let timer;
+    //     return function(...args) {
+    //         if (timer == null) {
+    //          // undefined == null // true undefined === null //false 这里不要写成 严格相等 不然永远执行不进去
+    //             timer = setTimeout(() => timer = null, wait) 
+    //             return fn.apply(this, args);
+    //         }
+    //     }
+    // } 
+    // //限制button在500ms内只能被点击一次://快速连续不停的点击，按钮只会有规律的每500ms点击有效
+    // // button.addEventListener('click', throttle(() => {    console.log('hhh') })) 
+
+    //   setInterval(function() {
+    //     throttle(function() { console.log("1234") }, 5000)();
+    // }, 1000)
+
+    // o = 1; // o.aa = 22;}var obj = {    aa: 11}
+    // a(obj);
+    // console.log(obj);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<h2>字符串转换为 Date 对象</h2>
+
+<p id="demo"></p>
+
+<script>
+
+//我们可以启用 JSON.parse 的第二个参数 reviver，一个转换结果的函数，对象的每个成员调用此函数。
+
+var text = '{ "name":"Runoob", "initDate":"2013-12-14", "site":"www.runoob.com"}';
+var text = "{'康德乐大药房': 'http://d-test.39.net/c.htm?pv=1&sp=0,82279,65991,19270,0,90,728&target=https%3a%2f%2fwww.baiji.com.cn%2f', '健客大药房': 'http://d-test.39.net/c.htm?pv=1&sp=0,50519,38798,13500,0,90,728&target=https%3a%2f%2fwww.jianke.com'}"
+
+
+var aa = text.replace(/\'/g,"\"");
+var obj = JSON.parse(aa, function (key, value) {
+	console.log(key,value)
+    if (key == "initDate") {
+        return new Date(value);
+    } else {
+        return value;
+}});
+
+document.getElementById("demo").innerHTML = obj.name + "创建日期：" + obj.initDate;
+
+</script>
+
+</body>
+</html>

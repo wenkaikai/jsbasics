@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <a href="#">
+            <div>
+                <img src="images/top1.jpg" width="80" height="79" class="to_top" />
+            </div>
+        </a>
+        <a href="index.html">
+            <div style="border-top:1px solid #f7efd5;border-bottom:1px solid #f7efd5; ">
+                <img src="images/top2.jpg" width="80" height="79" id="dd" />
+            </div>
+        </a>
+        <a>
+            <div>
+                <img src="images/top3.jpg" width="80" height="79" />
+            </div>
+        </a>
+    </div>
+
+</body>
+<style>
+    
+    .dd {
+    animation: shake 1s;
+    -o-animation: shake 1s;
+    -webkit-animation: shake 1s;
+    -moz-animation: shake 1s;
+}
+@keyframes shake {
+   /* 0%, 100% {
+        -webkit-transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translateX(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translateX(5px);
+    }*/
+
+
+
+
+     0%,
+            100% {
+            -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+            -webkit-transform-origin: 50% 50%;
+                    transform-origin: 50% 50%;
+            }
+            5% {
+            -webkit-transform: rotate(2deg);
+                    transform: rotate(2deg);
+            }
+            10%,
+            20%,
+            30% {
+            -webkit-transform: rotate(-4deg);
+                    transform: rotate(-4deg);
+            }
+            15%,
+            25%,
+            35% {
+            -webkit-transform: rotate(4deg);
+                    transform: rotate(4deg);
+            }
+            40% {
+            -webkit-transform: rotate(-2deg);
+                    transform: rotate(-2deg);
+            }
+            45% {
+            -webkit-transform: rotate(2deg);
+                    transform: rotate(2deg);
+            }
+            50% {
+            -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+            }
+}
+
+</style>
+
+<script type="text/javascript">
+        $("#dd").mouseenter(function () {
+            $(this).addClass("dd");
+        });
+        $("#dd").mouseleave(function () {
+            $(this).removeClass("dd");
+        });
+    </script>
+</html>

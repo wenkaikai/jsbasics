@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>函数防抖的封装</title>
+</head>
+
+<body>
+    <script>
+    /**
+     * 防抖函数
+     * @param method 事件触发的操作
+     * @param delay 多少毫秒内连续触发事件，不会执行
+     * @returns {Function}
+     */
+    function debounce(method, delay) {
+        let timer = null;
+        return function() {
+            let self = this,
+                args = arguments;
+            timer && clearTimeout(timer);
+            timer = setTimeout(function() {
+                method.apply(self, args);
+            }, delay);
+        }
+    }
+
+    window.onscroll = debounce(function() {
+        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        console.log('滚动条位置：' + scrollTop);
+    }, 200)
+    </script>
+</body>
+
+</html>

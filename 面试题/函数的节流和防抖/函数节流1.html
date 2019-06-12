@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+    /**
+                函数节流 是指一定时间内js方法只跑一次。比如人的眨眼睛，就是一定时间内眨一次。这是函数节流最形象的解释。
+
+                函数防抖是指频繁触发的情况下，只有足够的空闲时间，才执行代码一次。比如生活中的坐公交，就是一定时间内，如果有人陆续刷卡上车，司机就不会开车。只有别人没刷卡了，司机才开车。（比如只有有输入就不请求）
+        */
+
+    /**
+        函数节流的应用场景
+        函数节流应用的实际场景，多数在监听页面元素滚动事件的时候会用到。因为滚动事件，是一个高频触发的事件。以下是监听页面元素滚动的示例代码：
+    */
+
+
+    // 函数节流
+    var canRun = true;
+    document.getElementById("throttle").onscroll = function() {
+        if (!canRun) {
+            // 判断是否已空闲，如果在执行中，则直接return
+            return;
+        }
+
+        canRun = false;
+        setTimeout(function() {
+            console.log("函数节流");
+            canRun = true;
+        }, 300);
+    };
+    </script>
+</body>
+
+</html>
