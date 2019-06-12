@@ -6,14 +6,19 @@
 </head>
 <body>
     <script>
-        let n = 100;
+        // 理解递归
+        // 一 是调用的部分 二是返回的部分。拆开来看来理解
+        let n = 10;
         let fn = function(n){
+            debugger;
             if(n==1){
                 return 1;
             }
             return n+fn(n-1)
         }
         console.log(fn(n))//5050
+
+        
     </script>
 </body>
 </html>

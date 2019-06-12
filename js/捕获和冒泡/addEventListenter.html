@@ -24,20 +24,33 @@
 
 
 //true 事件捕获先弹出来的是父亲；
-    fu.addEventListener('click',function(){alert("我是父亲")},true);//
-    zi.addEventListener('click',function(){alert("我是儿子")},true);
+    fu.addEventListener('click',function(e){alert("我是父亲")
+
+        /**
+
+
+        return false 不仅阻止了事件往上冒泡，而且阻止了事件本身。event.stopPropagation() 则只阻止事件往上冒泡，不阻止事件本身。
+        
+                stopPropagation()方法既可以阻止事件冒泡，也可以阻止事件捕获，也可以阻止处于目标阶段。
+        */
+
+ e.stopPropagation();
+
+    },true);//
+    zi.addEventListener('click',function(e){
+        alert("我是儿子");
+       
+    },true);
 
 
 
 
 
-    var btn1=document.getElementById("btn1");/*实名函数*/
-    var count=0;
-    var handle1=function() {
-        alert(count++);
-        if (count == 3) {
-            alert("事件结束")
-            /*
+
+
+
+
+ /*
             element.addEventListener(type，handler，false/true)
 
             type:事件类型
@@ -52,19 +65,27 @@
 
             一般的绑定事件，都是采用冒泡方式，也就是使用false
              */
-            btn1.removeEventListener("click",handle1,false);
-        }
-    }
-    btn1.addEventListener('click',handle1,false);
+
+    // var btn1=document.getElementById("btn1");/*实名函数*/
+    // var count=0;
+    // var handle1=function() {
+    //     alert(count++);
+    //     if (count == 3) {
+    //         alert("事件结束")
+           
+    //         btn1.removeEventListener("click",handle1,false);
+    //     }
+    // }
+    // btn1.addEventListener('click',handle1,false);
 
 
-    var btn2=document.getElementById("btn2");/*匿名函数*/
-    btn2.addEventListener("click",function(){
-        alert(123);
-        removeEventListener("click",function(){
-            alert(123)
-        },false)
-    },false)
+    // var btn2=document.getElementById("btn2");/*匿名函数*/
+    // btn2.addEventListener("click",function(){
+    //     alert(123);
+    //     removeEventListener("click",function(){
+    //         alert(123)
+    //     },false)
+    // },false)
 </script>
 </body>
 </html>

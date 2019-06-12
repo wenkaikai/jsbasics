@@ -23,15 +23,16 @@
 		/*
 			第二方法
 		 */ 
-		// function f(a, b, c, x, y, z) {  
-  // 			return a + b + c + x + y + z;  
-		// }  
-		// var args = [1, 2, 3];
-		// console.log(f(...args, 4, ...[5, 6]));//21  
-		// console.log(...[5, 6])
-		// console.log(...args)
-		// console.log(args)//[1, 2, 3]
-		// console.log(5,6)//[1, 2, 3]打印多个可以用逗号。
+		function f(a, b, c, x, y, z) {  
+  			return a + b + c + x + y + z;  
+		}  
+		var args = [1, 2, 3];
+		console.log(f(...args, 4, ...[5, 6]));//21  
+		console.log(...[5, 6])
+		console.log(...args)
+		console.log(args)//[1, 2, 3]
+		console.log(5,6)//[1, 2, 3]打印多个可以用逗号。
+		
 		/*
 			第三种方法
 		 */
@@ -51,9 +52,9 @@
   // 		var c= f(args);  
 		// console.log(c);
 		
-		var obj = {"d":[1,2,3]};
-		var obj = [1,2,3]
-		console.log(...obj)
+		// var obj = {"d":[1,2,3]};
+		// var obj = [1,2,3]
+		// console.log(...obj)
 	</script>
 </body>
 </html>

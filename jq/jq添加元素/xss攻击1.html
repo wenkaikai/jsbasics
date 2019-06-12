@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="../jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+
+
+// 注入script 标签
+        
+
+       let aa =  `<div>
+            <div>haode</div>
+
+            &lt;script&gt;for(;;){console.log(alert(1))}&lt;/script&gt
+
+          <script> for(;;){console.log(alert(1))} <\/script>
+            
+            <div>
+                如果遇到用户输入的时候我们要进行转义
+            </div>
+
+        </div>
+        `
+        $(document).ready(function(){
+            $("button").click(function(){
+                console.log($("p"));
+                $("p").append(aa);
+            });
+        });
+    </script>
+</head>
+<body>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<button>在每个 p 元素的结尾添加内容</button>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>contructor 返回一个自定义的对象</title>
+</head>
+
+<body>
+    <script>
+    'use strict';
+    class Polygon {
+        constructor(height, width) {
+            console.log(height);
+            console.log(width)
+            this.name = 'Polygon';
+            this.height = height;
+            this.width = width;
+        }
+
+        // Simple class instance methods using short-hand method
+        // declaration
+        sayName() {
+            ChromeSamples.log('Hi, I am a ', this.name + '.');
+        }
+
+        sayHistory() {
+            ChromeSamples.log('"Polygon" is derived from the Greek polus (many) ' +
+                'and gonia (angle).');
+        }
+
+        // We will look at static and subclassed methods shortly
+    }
+
+  
+    class Square extends Polygon {
+        constructor(length) {
+          
+            super(length, length);// 会调调用父类的构造函数
+            // super()// 要想在constructor 中調用this 必须要调用super
+            // console.log(this)
+            this.name = 'Square';
+        }
+        get area() {
+            return this.height * this.width;
+        }
+
+        set area(value) {
+            this.area = value;
+        }
+    }
+
+    let s = new Square(5);
+    </script>
+</body>
+
+</html>

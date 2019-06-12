@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>replace 取值</title>
+</head>
+
+<body>
+    <script>
+    var str = '123-mm';
+    var strReg = str.replace(/(\d+)-([A-Za-z]+)/g, '$2');
+    console.log(strReg) //mm  上面那段$2这个就是表示正则第二组个匹配到的内容 // 取到的值是mm 
+    </script>
+</body>
+
+</html>
