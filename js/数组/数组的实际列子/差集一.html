@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+    Array.prototype.diff = function(a) {
+        console.log(this)
+        return this.filter(function(i) { return a.indexOf(i) < 0; });
+    };
+    console.log([1, 2].diff([1]))
+    
+    </script>
+</body>
+
+</html>

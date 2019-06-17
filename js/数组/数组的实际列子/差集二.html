@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+    // 数组求差值
+    var arr1 = [{
+            label: "何先生2",
+            value: 2
+        },
+        {
+            label: "何先生3",
+            value: 3
+        },
+
+    ];
+    var arr2 = [{
+            label: "何先生2",
+            value: 2
+        },
+        {
+            label: "何先生3",
+            value: 3
+        },
+        {
+            label: "何先生3",
+            value: 4
+        },
+        {
+            label: "何先生3",
+            value: 3
+        },
+
+    ];
+
+    var difference = function(arr1, arr2, key) {
+        var diff = [];
+        var tmp = arr2;
+        let switch1;
+        let index;
+        arr1.forEach(function(val1, i) {
+            // arr2.indexOf(val1) < 0  如何替换着一句话
+            switch1 = true
+            arr2.forEach((m, n) => {
+                if (m[key] == val1[key]) {
+                    switch1 = false
+                    return false;
+                }
+            })
+
+            if (switch1) {
+                diff.push(val1);
+            } else {
+                //tmp.indexOf(val1) 如何替换这一句话
+                tmp.forEach((x, y) => {
+                    if (x[key] == val1[key]) {
+                        index = y;
+                       return false;
+                    }
+                })
+                tmp.splice(index, 1);
+            }
+        });
+
+        return diff.concat(tmp);
+    }
+
+    console.log(difference(arr1, arr2, "value"))
+    </script>
+</body>
+
+</html>
