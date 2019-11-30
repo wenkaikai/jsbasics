@@ -1,0 +1,25 @@
+<html>
+<head>
+<script type="text/javascript">
+function removeOption()
+  {
+  var x=document.getElementById("mySelect")
+  x.remove(x.selectedIndex) //必需。规定要删除的选项的索引号
+  }
+</script>
+</head>
+<body>
+
+<form>
+<select id="mySelect">
+  <option>Apple</option>
+  <option>Pear</option>
+  <option>Banana</option>
+  <option>Orange</option>
+</select>
+<input type="button" onclick="removeOption()"
+value="Remove option">
+</form>
+
+</body>
+</html>

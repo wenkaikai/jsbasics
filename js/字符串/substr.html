@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js">
-        
+
     </script>
-    
-<script>
-    console.log(wx)
-    /*
-    取字符串的三个函数:slice(start,[end]),substring(start,[end])和substr(start,[length])//相辅相成
-     */
-    var str = "";
-    var str1 = str.substr(4);
-    var str2 = str.substr(4,1);
-    var str3 = str.substr(4,-1);
-    console.log(str);//abcdefg
-    console.log(str1)//efg
-    console.log(str2)//e
-    console.log(str3)//空
-    console.log(str.substring(0,78))
+
+    <script>
+        console.log(wx)
+        /*
+        取字符串的三个函数:slice(start,[end]),substring(start,[end])和substr(start,[length])//相辅相成
+
+        接着，当接收的参数是负数时，slice会将它字符串的长度与对应的负数相加，结果作为参数；
+        substr则仅仅是将第一个参数与字符串长度相加后的结果作为第一个参数；substring则干脆将负参数都直接转换为0。测试代码如下：
+         */
+        var str = "abcdefg";
+        var str1 = str.substr(4);
+        var str2 = str.substr(4, 1);
+        var str3 = str.substr(4, -1);
+        var str4 = str.substr(10)
+        var str5 = str.substr(4, -10)
+        var str6 = str.substr(-1, -1)//  当substr 有负数的时候仅仅是把第一个数加上字符串的长度。当第二数为负数的时候所有的都是空，当第二数字为正数的时候不管第二个数字（结果取决于第一个数字）
+        console.log(str);//abcdefg
+        console.log(str1)//efg
+        console.log(str2)//e
+        console.log(str3)//空
+        console.log(str4)// 空
+        console.log(str5)// 空
+        console.log(str6)// 空
 
 
-</script>
+
+    </script>
 </body>
+
 </html>

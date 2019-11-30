@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<script>
-    var str = "abcdefg";
-    var str1 = str.substring(1);
-    var str2 = str.substring(4,1);
-    var str3 = str.substring(4,-1);
-     var str4 = str.substring(1,4);
-    console.log(str1)//bcdefg
-    console.log(str2)//bcd
-    console.log(str3)//abcd
- console.log(str4)//bcd
-  
-/*
-//从上面两个例子可以看出slice(2,-5)实际上是slice(2,3)
-//负5加上字符串长度8转换成正3(若第一位数字等于或大于第二位数字,则返回空字符串);
-//而substring(2,-5)实际上是substring(2,0),负数转换为0,substring总是把较小的数作为起始位置。
- */
-</script>
+    <script>
+        var str = "abcdefg";
+        var str1 = str.substring(1);
+        var str2 = str.substring(4, 1);
+        var str3 = str.substring(4, -1);
+        var str4 = str.substring(1, 4);
+        var str5 = str.substring(-4, -3);
+        var str6 = str.substring(-4, 2);
+        console.log(str1)//bcdefg
+        console.log(str2)//bcd // 相当于str.substring(1,4);
+        console.log(str3)//abcd
+        console.log(str4)//bcd
+        console.log(str5)//空 两个小于0 的值都作为了0 相当于 str.substring(0,0) 所以为空
+        console.log(str6)//ab 小于0 的值被直接作当做为了0 相当于 str.substring(0,2)
+
+
+        /*
+           取字符串的三个函数:slice(start,[end]),substring(start,[end])和substr(start,[length])//相辅相成
+           substring是以两个参数中较小一个作为起始位置，较大的参数作为结束位置
+        //从上面两个例子可以看出slice(2,-5)实际上是slice(2,3)
+        //负5加上字符串长度8转换成正3(若第一位数字等于或大于第二位数字,则返回空字符串);
+        //而substring(2,-5)实际上是substring(2,0),负数转换为0,substring总是把较小的数作为起始位置。
+         */
+    </script>
 </body>
+
 </html>

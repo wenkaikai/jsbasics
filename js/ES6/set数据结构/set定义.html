@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>set定义</title>
+</head>
+
+<body>
+    <script>
+        /**
+            对象允许你存储任何类型的唯一值，无论是原始值或者是对象引用。
+
+            new Set([iterable]);
+            如果传递一个可迭代对象，它的所有元素将不重复地被添加到新的 Set中。如果不指定此参数或其值为null，则新的 Set为空。
+
+            方法有
+            add
+            delete
+            clear
+            has
+            forEach
+            keys
+            values
+
+        */
+        // const set1 = new Set([1, 2, 3, 4, 5]);
+
+        /**
+            const set1 = new Set({
+            key1:123,
+            key2:456,
+            key3:789
+        });
+
+            object is not iterable
+        */
+        const set1 = new Set([{
+            key1:123
+        },
+        {
+            key2:3456
+        },
+        {
+            key3:789
+        }
+        ]);
+
+        console.log(set1)
+        console.log(set1.keys())
+        console.log(set1.values())
+        console.log(set1.has(1));
+        // expected output: true
+
+        console.log(set1.has(5));
+        // expected output: true
+
+        console.log(set1.has(6));
+// expected output: false
+
+    </script>
+</body>
+
+</html>

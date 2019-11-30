@@ -21,10 +21,10 @@
 //    document.write(objStr.replace(re,"$1$2********"));//处于隐私对字符串按照正则表达式的内容进行替换
     //如果第二个子匹配结果，即手机号码中的第三位数字小于等于3则该手机号为联通号码，否则为其他运营商的号码
     console.log(objStr.match(re));// ["13100000000", "13", "1", "00000000", index: 7, input: "这是我的手机号13100000000"]
-    console.log(re.exec(objStr));// ["13100000000", "13", "1", "00000000", index: 7, input: "这是我的手机号13100000000"]
-    console.log(RegExp.$1);//13
-    console.log(RegExp.$2);//1
-    console.log(RegExp.$3)//00000000
+    // console.log(re.exec(objStr));// ["13100000000", "13", "1", "00000000", index: 7, input: "这是我的手机号13100000000"]
+    // console.log(RegExp.$1);//13
+    // console.log(RegExp.$2);//1
+    // console.log(RegExp.$3)//00000000
 
 //        if(RegExp.$2<=3){
 //            document.write("这是联通手机号");

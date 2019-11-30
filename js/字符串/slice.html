@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<script>
-    var str = "abcdefg";
-    var str1 = str.slice(1);
-    var str2 = str.slice(4,1);
-    var str3 = str.slice(4,-1);
-     var str4 = str.slice(-4,-1);
-     var str5 = str.slice(-2);
-    console.log(str1)//efg
-    console.log(str2)//kong
-    console.log(str3)//ef 相当于（4,6）//6=-1+字符串的长度
- console.log(str4)//ef 相当于（4,6）//6=-1+字符串的长度
- console.log(str5)//fg 就相当于slice(length-2,length)
+    <script>
+        var str = "abcdefg";
+        var str1 = str.slice(1);
+        var str2 = str.slice(4, 1);
+        var str3 = str.slice(4, -1);
+        var str4 = str.slice(-4, -1);
+        var str5 = str.slice(-2);
+        var str6 = str.slice(-10, -1);
+        var str7 = str.slice(-10, -9);
+        console.log(str1)//bcdefg
+        console.log(str2)//空
+        console.log(str3)//ef 相当于（4,6）//6=-1+字符串的长度
+        console.log(str4)//def 相当于（2,6）//6=-1+字符串的长度
+        console.log(str5)//fg 就相当于slice(length-2,length)
+        console.log(str6)//abcdef 就相当于slice(length-2,length)
+        console.log(str7)//空
 
 
-    var stmp = "rcinn.cn";
-   // alert(stmp.slice(2,-5));//返回"i"
-    //alert(stmp.substring(2,-5));//返回"rc"
-/*
-//从上面两个例子可以看出slice(2,-5)实际上是slice(2,3)
-//负5加上字符串长度8转换成正3(若第一位数字等于或大于第二位数字,则返回空字符串);
-//而substring(2,-5)实际上是substring(2,0),负数转换为0,substring总是把较小的数作为起始位置。
- */
-</script>
+        var stmp = "rcinn.cn";
+        // alert(stmp.slice(2,-5));//返回"i"
+        //alert(stmp.substring(2,-5));//返回"rc"
+        /*
+        //从上面两个例子可以看出slice(2,-5)实际上是slice(2,3)
+        //负5加上字符串长度8转换成正3(若第一位数字等于或大于第二位数字,则返回空字符串);
+        //而substring(2,-5)实际上是substring(2,0),负数转换为0,substring总是把较小的数作为起始位置。
+         */
+
+        var test = 'hello world';
+
+        alert(test.slice(-3));         //rld
+        alert(test.substring(-3));     //hello world
+        alert(test.substr(-3));        //rld
+    </script>
 </body>
+
 </html>

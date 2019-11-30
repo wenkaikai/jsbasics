@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,9 @@
      */
     function debounce(method, delay) {
         let timer = null;
+        //console.log("sdf") 执行一次
         return function() {
+           console.log(timer) //这个是执行多次
             let self = this,
                 args = arguments;
             timer && clearTimeout(timer);
@@ -25,11 +27,12 @@
             }, delay);
         }
     }
-
-    window.onscroll = debounce(function() {
+    window.addEventListener("resize", debounce(function() {
         let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
         console.log('滚动条位置：' + scrollTop);
-    }, 200)
+    }, 1000), false);
+
+  
     </script>
 </body>
 

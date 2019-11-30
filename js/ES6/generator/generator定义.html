@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>generator 定义</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+        generator 函数的定义
+
+        generator和函数不同的是，generator由function*定义（注意多出的*号），并且，除了return语句，还可以用yield返回多次。
+
+        既然有多次返回那么返回的数字哪一个才是最终的返回呢
+            只有调用next()函数时才会返回值，每调用一次next()函数就返回一个对象{value: xxx, done: false}，
+            直到没有对应的yield了就返回done状态为true的对象{value: undefined, done: true}。
+
+    */
+    function* foo(x) {
+        yield x + 1;
+        yield x + 2;
+        return x + 3;
+    }
+    const k = foo(1);
+    console.log(k.next())//{value: 2, done: false}
+    console.log(k.next())//{value: 3, done: false}
+    console.log(k.next())//{value: 4, done: true}
+    console.log(k.next())//{value: undefined, done: true}
+
+
+
+// 我们用for of 循环 foo(1)
+
+for(let x of foo(1)){
+    console.log(x)//2,3
+    // 为什么没有4 呢 因为 for...of...循环只输出yield；也就是done是false的语句；return done就是true了，对应上文return 的时候 done 为true所以不输出这个。
+}
+</script>
+
+</html>

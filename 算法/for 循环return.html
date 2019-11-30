@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+
+    <script>
+
+        // 如果没有函数体就不能用return  return语句只能出现在函数体内
+
+        // for(let i = 1;i<10;i++){
+        //     for(let j = 10;j<20;j++){
+        //         if(j==12){
+        //             continue;
+        //         }
+        //         console.log(j+"j") 
+        //     }
+        //     console.log(i+"i")
+        // }
+
+
+
+
+
+
+        /**
+            实验结果
+            return false 
+            return true
+            return 
+
+            都会所有结束循环
+            并且循环体外的代码也不会执行。
+        */
+        function aa() {
+            for (let i = 1; i < 10; i++) {
+                for (let j = 10; j < 20; j++) {
+                    if (j == 12) {
+                        return;
+                    }
+                    console.log(j + "j")
+                }
+                console.log(i + "i")
+            }
+            console.log("fdsf")
+        }
+
+        aa();
+    </script>
+</head>
+
+<body>
+
+
+        <label><input type="radio"  name="radio2">这是radioA</label>
+        <label><input type="radio"  name="radio2">这是radioB</label>
+        
+        
+</body>
+
+</html>

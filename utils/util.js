@@ -52,7 +52,7 @@ function saveNumber(str, number) {
 /**
   方法三  对象的深拷贝
 */
-const cloneDeep = function(obj) {
+const cloneDeep = function (obj) {
     // Handle the 3 simple types, and null or undefined or function
     if (null == obj || "object" != typeof obj) return obj;
 
@@ -75,7 +75,7 @@ const cloneDeep = function(obj) {
 };
 
 /**
-    方法三 判断是不是pc
+    方法四 判断是不是pc
 */
 
 function IsPC() {
@@ -91,3 +91,17 @@ function IsPC() {
     }
     return flag;
 }
+
+/**
+    方法四 判断是否是数组
+*/
+function isArray(obj) {
+    return Object.prototype.toString.call(obj) == '[object Array]';
+}
+
+/**
+方法四 判断是否是对象
+*/
+function isObject(obj) {
+    return Object.prototype.toString.call(obj) == '[object Object]';
+} 

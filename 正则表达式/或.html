@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script>
+
+        /*列子一*/
+        let str = "1111111111111111111112" //正则表达式 
+        // let reg = /11|1|2/g //使用replace函数 
+        let reg = /[(1112)]/g //在以上代码中， 你会发现永远都不会 匹配到11, 只会匹配1 和2。想了想在正则表达式中[]方括号中的元素， 
+        //没有优先级， 所以有1就会匹配1, 11就永远被1拦截了。
+        str.replace(reg, function (match) {
+            //操作 
+            console.log(match)//能匹配11就打印11,否则才打印1 
+        })
+
+        /*列子二
+            以下这三种或都是正确的
+        */
+
+        // var reg = new RegExp('(\\d)|[A-z]{3,4}','g');// true;
+        // var reg = new RegExp('[A-z\\d]{3,4}','g');// true;
+        // var reg = new RegExp('[A-z|\\d]{3,4}','g');// true;
+
+        console.log(reg.test("3A33"))
+
+
+        let style = /\.(c|sc)ss/g;
+        console.log(style.test(".scss"))
+
+
+        /**
+            列子 三
+        */
+
+
+        // let strMatch = "proid".match(/date|proid/g);// 这样date 和 proid 会作为一个整体来匹配
+        let strMatch = "proid".match(/[do]/g);// 这样do 会作为单个的字符来匹配。[] 里面的值都是单个的匹配。
+        console.log(strMatch)
+
+        if(9){
+            let i=0,j=1;
+        }
+       
+        console.log(i,j)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

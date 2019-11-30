@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>getBoundingClientRect</title>
 	<style>
-		body{background-color:#f00;margin:100px;}
+		body {
+			/* background-color: #f00; */
+			margin: 100px;
+			/* overflow: hidden; */
+			/* border:1px solid red; */
+			/* padding:1px; */
+			/* float:left; */
+		}
 	</style>
 </head>
+
 <body>
 	<div style="width:50px; height:50px;background-color:#f60;margin-top:40px;margin-left:30px;">
 	</div>
-	<div style="width:50px; height:50px;background-color:#f90;margin-top:50px;margin-left:60px;"></div>
+	<!-- <div style="width:50px; height:50px;background-color:#f90;margin-top:50px;margin-left:60px;"></div> -->
 	<script>
 		var div = document.querySelector("div");
 		console.log(div)
-        var rect = div.getBoundingClientRect();//事实证明这个方法是相对于窗口的。
-        console.log(rect);
-        /*
+		var rect = div.getBoundingClientRect();//事实证明这个方法是相对于窗口的。
+		console.log(rect);
+		/*
+		top 100px 
+		left:130px;
+		为什么top 不是140px 这是高度塌陷
+		如何解决高度塌陷 1， 触发bfc;2,父元素border;3,父元素padding;(如何触发bfc 1,float不为none;2,display为table-cell,table-caption,inline-block;3,position不为relative,static)
+
+		DOMRect 对象包含了一组用于描述边框的只读属性——left、top、right和bottom，单位为像素。除了 width 和 height 外的属性都是相对于视口的左上角位置而言的。
            所有的位置都是相对于上边和左边的
            right 也是div的最右边的区域相对于窗口左边的距离。
            同理bottom 也是div的最底部的区域相对于窗口的top距离。
         */
 	</script>
 </body>
+
 </html>

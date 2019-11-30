@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+
+</head>
+
+<body>
+    <script>
+        /**
+            fetch 请求完返回以后就是一个promise 对象
+            这个对象不是一个纯的数据
+            要用res.json() 方法获取一下数据这个返回的也是promise 对象
+        */
+        var url = 'https://www.easy-mock.com/mock/5b3981c7c4dcd03fb7171981/example/medicineSearch';
+        var data = { username: 'example' };
+        let original = fetch(url, {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        })
+
+        console.log(original);// 返回的是一个对象
+        original.catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', response));// 如果状态吗是404 500 会是resolve 而不是 reject
+    </script>
+</body>
+
+</html>

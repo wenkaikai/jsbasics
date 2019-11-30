@@ -18,8 +18,8 @@
             height:40px;
             background:#f60;
             margin:30px;
-            animation:test 1s ease 0s 1 normal;
-            animation-fill-mode:forwards;/*动画停在200px处不会再进行第二次 保持原始的状态*/
+            animation:test 1s ease 0s 1 normal forwards;
+            /*动画停在200px处不会再进行第二次 保持原始的状态 animation-fill-mode:forwards;  可以单独写也可以合并的写*/
         }
         @keyframes test{
                 from{ width:0px; }

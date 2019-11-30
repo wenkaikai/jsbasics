@@ -50,17 +50,24 @@
 
     /**例子五*/
 
-      var a = {
-        name:"张三"
-    }
-    function bb(obj){
-        let aa = Object.assign({},obj);
-        aa.name="lisi"
-        return aa;
-    }
-   var d = bb(a);
-    console.log(d) // lisi
-    console.log(a) // 张三
+//       var a = {
+//         name:"张三"
+//     }
+//     function bb(obj){
+//         let aa = Object.assign({},obj);
+//         aa.name="lisi"
+//         return aa;
+//     }
+//    var d = bb(a);
+//     console.log(d) // lisi
+//     console.log(a) // 张三
+
+
+    /**列子六*/
+    var a = 123;
+    var b = 467;
+    var obj = {a,b}
+    console.log(obj)//{a:123,b:467}
 	</script>
 </body>
 </html>

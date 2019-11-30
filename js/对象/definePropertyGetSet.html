@@ -8,7 +8,7 @@
   <script>
     var o = {}; // 创建一个新对象
 
-        // 在对象中添加一个属性与数据描述符的示例
+      // 在对象中添加一个属性与数据描述符的示例
         Object.defineProperty(o, "a", {
           value : 37,
           writable : true,
@@ -23,7 +23,7 @@
         // var bValue;
         Object.defineProperty(o, "b", {
           get : function(){
-            console.log(bValue)//38 这个时候 bValue 是哪里来的
+            console.log(bValue)//38 这个时候 bValue 是哪里来的 set ,get 里面的变量是公用的吗。
             console.log(this)  ///{a:37,b:38}
             return bValue;
           },
@@ -37,6 +37,9 @@
 
         o.b = 38;
         console.log(o.b)//38
+
+
+
         //console.log(Object.getOwnPropertyNames(o))//["a","b"]
         //console.log(o.hasOwnProperty("a"))// true
         //console.log(o.hasOwnProperty("b"))// true
@@ -52,6 +55,14 @@
           //     return 0xdeadbeef; 
           //   } 
           // });
+
+
+          /**
+           *  总结一 Object.defineProperty() 是定义一个对象属性的方法
+           * 给这个属性赋值的时候会触发set 方法，当我们获取这个属性的值得时候就会触发get 方法
+           * 
+           * 
+          */
   </script>
 </body>
 </html>
