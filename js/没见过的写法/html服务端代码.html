@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script>
+    const isEnvProduction = "product"
+    const shouldUseSourceMap = true
+    const  devtool = isEnvProduction
+      ? shouldUseSourceMap ? 'source-map': false: isEnvDevelopment && 'cheap-module-source-map'
+      console.log(devtool)// "source-map"
+      // 总结 不管有多少个? : 咱们要总是第一个和最后一个配对即可
+      /*
+        这样写更有层次分明
+      devtool: isEnvProduction
+      ? shouldUseSourceMap
+        ? 'source-map'
+        : false
+      : isEnvDevelopment && 'cheap-module-source-map',
+      */
+    </script>
+</head>
+
+<body>
+
+    // 如果 这个页面经过服务器的话就会输出一个变量 就是页面能取到服务端的代码。
+   
+  <%= 
+  process.env.NODE_ENV
+%>
+
+</body>
+
+</html>

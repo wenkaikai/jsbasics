@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>test</title>
+		<style>
+			.box-item {
+				width: 400px;
+				height: 50px;
+				margin: 100px;
+				background: #999;
+			}
+			.sui-cell {
+				display: flex;
+			    flex-direction: row;
+			    width: 100%;
+			}
+			.sui-cell-left {
+				width: 90px;
+				flex-grow: 0;
+				flex-shrink: 0;
+				text-align: right;
+			}
+			.sui-cell-content {
+				position: relative;/*注意这里 ！*/
+			    height: 28px;
+			    line-height: 28px;
+				
+				flex-grow: 1;
+			    text-align: left;
+			    flex: 1;
+			}
+			
+			.sui-box-a {
+				box-sizing: border-box !important;
+				width: 100%;
+				height: 28px !important;
+				border: 4px;
+				background: #fff !important;
+				border-color: #d9d9d9 !important;
+				border: 1px solid #d9d9d9 !important;
+				position: absolute;/*注意这里 ！*/
+			}
+			.sui-box-b {
+			    width: 100%;
+			    height: 100%;
+			    
+			}
+			
+			.sui-box-c {
+			    width: 70% !important;
+			    height: 26px;
+			    line-height: 26px;
+			    padding: 0 10px !important;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+			    
+			}
+		</style>
+ 
+	</head>
+ 
+	<body>
+		<div class="box-item">
+			<div class="sui-cell">
+				<div class="sui-cell-left">
+					标题：
+				</div>
+				
+				<div class="sui-cell-content">
+					<div class="sui-box-a">
+						<div class="sui-box-b">
+							<div class="sui-box-c">
+								效热对前从社每水今道六验法非则走争三百团效热对前从社每水今道六验法非则走争三百团效热对前从社每水今道六验法非则走争三百团效热对前从社每水今道六验法非则走争三百团效热对前从社每水今道六验法非则走争三百团
+					
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+ 
+</html>

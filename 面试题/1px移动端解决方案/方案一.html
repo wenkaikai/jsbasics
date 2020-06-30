@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
+
 <head>
     <meta charset="UTF-8">
-       <meta  name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <style>
-
-
         .box-shadow-1px {
 
-/*box-shadow: inset 0px -1px 1px -1px #c8c7cc;*/
-border:0.5px solid #ccc;
+            /*box-shadow: inset 0px -1px 1px -1px #c8c7cc;*/
+            border: 0.5px solid #ccc;
 
-width:200px;
-height:200px;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
 
-}
+        }
+
+        .scale {
+            position: relative;
+        }
+
+        .scale:after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            border-bottom: 1px solid #ddd;
+            -webkit-transform: scaleY(.5);
+            -webkit-transform-origin: 0 0;
+        }
     </style>
 </head>
+
 <body>
     <div class="box-shadow-1px"></div>
+
+    <div class="scale"></div>
 
     <script>
         /**
@@ -46,4 +64,5 @@ height:200px;
         */
     </script>
 </body>
+
 </html>

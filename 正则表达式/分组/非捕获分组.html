@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>非捕获分组</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        ()表示捕获分组，()会把每个分组里的匹配的值保存起来，使用$n(n是一个数字，表示第n个捕获组的内容)
+        (?:)表示非捕获分组，和捕获分组唯一的区别在于，非捕获分组匹配的值不会保存起来
+        */
+
+        var str1 = "bedroom";
+        var str2 = "bedding";
+        var reBed = /^\/nokeep1(?:\/(?=$))?$/i//在我们捕获bed这个字符串时，抢先去看接下来的字符串是不是room
+        console.log(str1.match(reBed));
+
+        /*
+             列子二
+        */
+
+        var str = "program,a good project";
+        var reg = /pro(?:gram|ject)/g;
+        var arr = reg.exec(str);
+        console.log(arr+"成功匹配");
+    </script>
+
+<script type="text/javascript">
+    
+    var str = "program,a good project";
+    var reg = /pro(?:gram|ject)/g;
+    var arr = reg.exec(str);
+    var msg;
+    if(arr){
+        msg = arr+"成功匹配<br>";
+    }else{
+        msg = "匹配失败<br>";
+    }
+    document.write(msg);
+    // arr = reg.exec(str);
+    // if(arr){
+    //     msg = arr+"成功匹配";
+    // }else{
+    //     msg = "匹配失败";
+    // }
+    // document.write(msg);
+  
+    </script>
+ 
+</body>
+
+</html>

@@ -36,7 +36,7 @@
     var str2 = "bedding";
     var reBed = /(bed(?=room))///在我们捕获bed这个字符串时，抢先去看接下来的字符串是不是room
    //alert(reBed.test(str1));//true
-   //console.log(reBed.exec(str1));//["bed","bed",index:0,input:"bedroom"]
+   //console.log(reBed.exec(str1));//["bed","bed",index:0,input:"bedroom"] 第一个bed 是全匹配出来的第二个是分组的
     console.log(str1.match(reBed));
     console.log(RegExp)
     console.log(RegExp.$1)//bed
@@ -48,8 +48,7 @@
    var str1 = "bedroom";
    var str2 = "bedding";
    var reBed = /(bed(?!room))/  //要来它后面不能是room
-   alert(reBed.test(str1))//false
-   alert(reBed.test(str2))//true
+  
 
     /*列子三*/ //提取room中的bed 和bad
 //    var str = "bedroom badroom";

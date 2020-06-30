@@ -1,0 +1,27 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>动画</title>
+        <style>
+            .div{
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                background: #C94E00;
+                opacity: 1;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                animation: change 5s;
+                -moz-animation: change 5s;    
+                -webkit-animation: change 5s;    
+                -o-animation: change 5s;
+            }
+            @keyframes change{
+                from {width: 100px;height: 100px;opacity: 1;}
+                to {width: 500px;height: 500px;opacity: 0;}
+            }
+        </style>
+    </head>
+</html>

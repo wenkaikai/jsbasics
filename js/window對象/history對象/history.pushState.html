@@ -9,9 +9,15 @@
 </body>
 <script>
     /**
+    https://www.jianshu.com/p/ddb7fcdf5962 参考
+
+        1， 浏览器不会向服务端请求数据，直接改变url地址，
+        可以类似的理解为变相版的hash；但不像hash一样，浏览器会记录pushState的历史记录，可以使用浏览器的前进、后退功能作用
+
+
         HTML5为history对象添加了两个新方法，history.pushState()和history.replaceState()，用来在浏览历史中添加和修改记录。
 
-        state：一个与指定网址相关的状态对象，popstate事件触发时，该对象会传入回调函数。如果不需要这个对象，此处可以填null。
+        state：一个与指定网址相关的状态对象，popstate事件触发时，该对象会传入回调函数。如果不需要这个对象，此处可以填null。 可以通过history.state读取
         title：新页面的标题，但是所有浏览器目前都忽略这个值，因此这里可以填null。
         url：新的网址，必须与当前页面处在同一个域。浏览器的地址栏将显示这个网址。
     */
@@ -22,5 +28,8 @@
     */
     history.pushState(null, null, 'https://twitter.com/hello');
     history.pushState(stateObj, 'page 2', 'file:///E:/project/jsbasics/js/window對象/history對象/history.pushState1.html');
+    // replaceState 和 pushSatate 的区别是  replaceState  不会新增新的历史纪录只是替换当前的历史纪录有历史纪录就可以点击浏览器前进和后退
+    history.replaceState(stateObj, 'page 2', 'file:///E:/project/jsbasics/js/window對象/history對象/history.pushState1.html');
+    
 </script>
 </html>

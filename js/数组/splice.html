@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,9 +8,9 @@
 <script>
     var array = ["apple","banana","orange","mango"];
     // var temp = array.splice(0,array.length,"haode")
-    var temp = array.splice(0,2,"hhaode")
-    console.log(array)//
-    console.log(temp)//这个返回的是截取的数组
+    // var temp = array.splice(0,2,"hhaode")
+    // console.log(array)//
+    // console.log(temp)//这个返回的是截取的数组
    // var array1 = temp.push("haode");//第一个是下标，第二个是多少个；好像都是包括第一个
    // console.log(temp);//["apple", "haode"]
    // console.log(array)//["apple","banana"]就是splice直接的是改变原数组；
@@ -32,8 +32,26 @@
     /*
         三
     */
-    array.splice(undefined,1) // 这个时候undefined 转换为0。
-    console.log(array)//["orange", "mango"]
+    // array.splice(undefined,1) // 这个时候undefined 转换为0。
+    // console.log(array)//["orange", "mango"]
+
+
+
+
+
+    /*
+         列子四 splice 如果是个复数
+    */
+    // console.log(array.splice(-1,1))
+
+    //console.log(array.splice(-1))// ['mango'] 其实就是相当于 array.splice(-1+array.length,array.length);
+
+    /*
+        列子五 splice
+    */
+
+
+        //console.log(array.splice(-3,1))// banana 
 </script>
 </body>
 </html>

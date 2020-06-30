@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script>
+        var o, d;
+
+        o = { get foo() { return 17; } };
+        d = Object.getOwnPropertyDescriptor(o, "foo");
+
+        console.log(d)
+        
+        // d {
+        //   configurable: true,
+        //   enumerable: true,
+        //   get: /*the getter function*/,
+        //   set: undefined
+        // }
+
+        o = { bar: 42 };
+        d = Object.getOwnPropertyDescriptor(o, "bar");
+        console.log(d)
+        // d {
+        //   configurable: true,
+        //   enumerable: true,
+        //   value: 42,
+        //   writable: true
+        // }
+
+        o = {};
+        Object.defineProperty(o, "baz", {
+            value: 8675309,
+            writable: false,
+            enumerable: false
+        });
+        d = Object.getOwnPropertyDescriptor(o, "baz");
+        console.log(d)
+// d {
+//   value: 8675309,
+//   writable: false,
+//   enumerable: false,
+//   configurable: false
+// }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

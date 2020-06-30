@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+
+    </script>
+
+    <script>
+
+        var str = "Hello world, welcome to the Runoob.";
+        var n = str.valueOf();//赋值12次str 返回给 
+        console.log(typeof n)
+        let n1 = String.prototype.valueOf.call(str);
+        console.log(n1)
+
+        /**
+             	返回某个字符串对象的原始值。
+
+                 为什么字符串对象会有valueOf这样没有用的方法 主要是字符串也是一个对象这个方法是集成过来的我理解
+        */
+
+        let obj = {
+            a:123,
+            b:456
+        }
+
+        console.log(obj.valueOf())
+
+        let str1 = new String("1234655129");
+        console.log(str1)// 这是一个string 对象
+        console.log(str1.valueOf())// 返回字符串的原始值
+        console.log(str1.toString())// 返回字符串的原始值
+
+        
+    </script>
+</body>
+
+</html>

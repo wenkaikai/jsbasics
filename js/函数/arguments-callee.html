@@ -7,13 +7,13 @@
 <body>
 <script>
     //callee可以打印其本身
-//     function calleeDemo(q,b,t) {
-//         console.log(arguments.callee);//返回正被执行的 Function 对象，也就是所指定的 Function 对象的正文。(包括函数里面所有的东西)
-//         console.log(arguments.callee.length)// 形参的长度
-//         console.log(arguments);//[3,4]//实参
-//     }
-// //    calleeDemo(3,4)//如果传入的不是数组返回的就是一个类数组
-//     calleeDemo({"str":"ok","str1":"ok2"})//如果传入的是对象返回的也是类似的数组
+    function calleeDemo(q,b,t) {
+        console.log(arguments.callee);//返回正被执行的 Function 对象，也就是所指定的 Function 对象的正文。(包括函数里面所有的东西)
+        console.log(arguments.callee.length)// 形参的长度
+        console.log(arguments);//[3,4]//实参
+    }
+//    calleeDemo(3,4)//如果传入的不是数组返回的就是一个类数组
+    calleeDemo({"str":"ok","str1":"ok2"},12)//如果传入的是对象返回的也是类似的数组
 //    calleeDemo(1)//如果传入的是对象返回的也是对象
 
 
@@ -35,14 +35,14 @@
 
 //    //递归计算
 
-   var sum = function (n) {
-       if (n <= 0)
-           return 0;
-       else
-           return n+arguments.callee(n - 1)
-  }
-   var num = sum(5);
-   console.log(num);//16
+//    var sum = function (n) {
+//        if (n <= 0)
+//            return 0;
+//        else
+//            return n+arguments.callee(n - 1)
+//   }
+//    var num = sum(5);
+//    console.log(num);//16
 
 </script>
 </body>

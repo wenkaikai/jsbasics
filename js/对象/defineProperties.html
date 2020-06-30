@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script>
+        var obj = {};
+        Object.defineProperties(obj, {
+            'property1': {
+                value: true,
+                writable: true
+            },
+            'property2': {
+                value: 'Hello',
+                writable: false
+            }
+            // etc. etc.
+        });
+
+        console.log(obj)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

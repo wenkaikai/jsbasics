@@ -1,44 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
+
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+  <meta charset="UTF-8">
+  <title></title>
 </head>
+
 <body>
   <script>
-      //(?=pattern)// 零宽度正先行断言
-      //匹配指定内容的前面位置
 
-      /*
-            列子一
-      */
+    /**
+      零宽断言正如它的名字一样，是一种零宽度的匹配，它匹配到的内容不会保存到匹配结果中去，最终匹配结果只是一个位置而已
+      作用是给指定位置添加一个限定条件，用来规定此位置之前或者之后的字符必须满足限定条件才能使正则中的字表达式匹配成功
 
-      // reg = /(?=\d{3})/;
-      // content = 'abc123';
-      // res = content.match(reg)
-      // console.log(res)// 是一个数组
+      javascript只支持零宽先行断言而零宽先行断言又可以分为正向零宽先行断言，和负向零宽先行断言
+    */
+    //(?=pattern)// 零宽度正先行断言
+    //匹配指定内容的前面位置
 
-      /*
-            列子二
-      */
+    /*
+          列子一
+    */
+
+    reg = /(?=\d{3})/;
+    content = 'abc123';
+    res = content.match(reg)
+    console.log(res)// 是一个数组
+
+    /*
+          列子二
+    */
 
 
-      //reg = /([a-z]+)(?=\d+)/g;
-      //content = 'abc123';
-      //res = content.match(reg)
-      //console.log(res)// 是一个数组["abc"]
-      // (?=\d+) 表示校验的位置后接着的是数字
+    reg = /([a-z]+)(?=\d+)/g;
+    content = 'abc123';
+    res = content.match(reg)
+    console.log(res)// 是一个数组["abc"]
+    // (?=\d+) 表示校验的位置后接着的是数字
 
-      //断言的作用就是指定一个位置，该位置的前后内容需要满足exp规则
+    //断言的作用就是指定一个位置，该位置的前后内容需要满足exp规则
 
-      /*
-        列子二
-      */
-  reg = /(?=^.{5}$)(.*)/g;
-      content = 'abcde';
-      res = content.match(reg)
-      console.log(res)// 是一个数组["abc"]
-      // (?=\d+) 表示校验的位置后接着的是数字
-  </script>  
+
+
+
+
+
+    /*
+      列子三
+
+
+    */
+    reg = /(?=^.{5}$)(.*)/g;
+        content = 'abcde';
+        res = content.match(reg)
+
+        console.log("列子三")
+        console.log(res)// 是一个数组["abcde"]
+
+    // (?=\d+) 表示校验的位置后接着的是数字
+
+
+    /*
+      列子四
+正则表达式的语义是:匹配后面跟随任意一个大写字母的字符串"ab"。最终匹配结果是"ab"，因为零宽断言"(?=[A-Z])"并不匹配任何字符，只是用来规定当前位置的后面必须是一个大写字母
+
+    */
+
+    var str = "abZW863";
+    var reg = /ab(?=[A-Z])/;
+    console.log("列子四")
+    console.log(str.match(reg));//["ab"]
+
+
+    /*
+      列子五
+    */
+
+    var str = "<div>antzone";
+    var reg = /^(?=<)<[^>]+>\w+/;
+    console.log("列子五")
+    console.log(str.match(reg));
+  </script>
 </body>
+
 </html>

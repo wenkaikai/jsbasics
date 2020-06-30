@@ -40,15 +40,24 @@
         */
 
 
-        // let strMatch = "proid".match(/date|proid/g);// 这样date 和 proid 会作为一个整体来匹配
+        let strMatch = "proid".match(/date|proid/g);// 这样date 和 proid 会作为一个整体来匹配
         let strMatch = "proid".match(/[do]/g);// 这样do 会作为单个的字符来匹配。[] 里面的值都是单个的匹配。
         console.log(strMatch)
 
-        if(9){
-            let i=0,j=1;
-        }
+        // if(9){
+        //     let i=0,j=1;
+        // }
        
-        console.log(i,j)
+        // console.log(i,j)
+
+
+          /**
+            列子 四
+        */
+
+
+        console.log(!/^[\u4E00-\u9FA5a-zA-z]+$/g.test("ju中國勝多負少"))
+       
     </script>
 </head>
 
