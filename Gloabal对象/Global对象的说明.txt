@@ -1,58 +1,58 @@
-	1£¬Global¶ÔÏóÊÇECMAScriptÖÐ×îÌØ±ðµÄ¶ÔÏó£¬ÒòÎªÊµ¼ÊÉÏËü¸ù±¾²»´æÔÚ¡£
-	2£¬ÕâÀïÐèÒªÀí½âµÄÖ÷Òª¸ÅÄîÊÇ£¬ÔÚECMAScriptÖÐ£¬²»´æÔÚ¶ÀÁ¢µÄº¯Êý£¬ËùÓÐº¯Êý¶¼±ØÐëÊÇÄ³¸ö¶ÔÏóµÄ·½·¨¡£
-	3£¬ÈçisNaN()¡¢isFinite()¡¢parseInt()ºÍparseFloat()µÈ£¬¿´ÆðÀ´¶¼Ïñ¶ÀÁ¢µÄº¯Êý¡£Êµ¼ÊÉÏ£¬ËüÃÇ¶¼ÊÇGlobal¶ÔÏóµÄ·½·¨¡£
-	4£¬Global¶ÔÏó²»Ö»ÓÐ·½·¨£¬Ëü»¹ÓÐÊôÐÔ¡£»¹¼ÇµÃÄÇÐ©ÌØÊâÖµundefined¡¢NaNºÍInfinityÂð£¿ËüÃÇ¶¼ÊÇGlobal¶ÔÏóµÄÊôÐÔ¡£
-	´ËÍâ£¬ËùÓÐ±¾µØ¶ÔÏóµÄ¹¹Ôìº¯ÊýÒ²¶¼ÊÇGlobal¶ÔÏóµÄÊôÐÔ¡£
-	5£¬undefined UndefinedÀàÐÍµÄ×ÖÃæÁ¿
-6 NaN ·ÇÊýµÄ×¨ÓÃÊýÖµ
+ï»¿	1ï¼ŒGlobalå¯¹è±¡æ˜¯ECMAScriptä¸­æœ€ç‰¹åˆ«çš„å¯¹è±¡ï¼Œå› ä¸ºå®žé™…ä¸Šå®ƒæ ¹æœ¬ä¸å­˜åœ¨ã€‚
+	2ï¼Œè¿™é‡Œéœ€è¦ç†è§£çš„ä¸»è¦æ¦‚å¿µæ˜¯ï¼Œåœ¨ECMAScriptä¸­ï¼Œä¸å­˜åœ¨ç‹¬ç«‹çš„å‡½æ•°ï¼Œæ‰€æœ‰å‡½æ•°éƒ½å¿…é¡»æ˜¯æŸä¸ªå¯¹è±¡çš„æ–¹æ³•ã€‚
+	3ï¼Œå¦‚isNaN()ã€isFinite()ã€parseInt()å’ŒparseFloat()ç­‰ï¼Œçœ‹èµ·æ¥éƒ½åƒç‹¬ç«‹çš„å‡½æ•°ã€‚å®žé™…ä¸Šï¼Œå®ƒä»¬éƒ½æ˜¯Globalå¯¹è±¡çš„æ–¹æ³•ã€‚
+	4ï¼ŒGlobalå¯¹è±¡ä¸åªæœ‰æ–¹æ³•ï¼Œå®ƒè¿˜æœ‰å±žæ€§ã€‚è¿˜è®°å¾—é‚£äº›ç‰¹æ®Šå€¼undefinedã€NaNå’ŒInfinityå—ï¼Ÿå®ƒä»¬éƒ½æ˜¯Globalå¯¹è±¡çš„å±žæ€§ã€‚
+	æ­¤å¤–ï¼Œæ‰€æœ‰æœ¬åœ°å¯¹è±¡çš„æž„é€ å‡½æ•°ä¹Ÿéƒ½æ˜¯Globalå¯¹è±¡çš„å±žæ€§ã€‚
+	5ï¼Œundefined Undefinedç±»åž‹çš„å­—é¢é‡
+6 NaN éžæ•°çš„ä¸“ç”¨æ•°å€¼
 7		
 Infinity	
-ÎÞÇî´óÖµµÄ×¨ÓÃÊýÖµ
+æ— ç©·å¤§å€¼çš„ä¸“ç”¨æ•°å€¼
 
 Object	
-ObjectµÄ¹¹Ôìº¯Êý
+Objectçš„æž„é€ å‡½æ•°
 
 Array	
-ArrayµÄ¹¹Ôìº¯Êý
+Arrayçš„æž„é€ å‡½æ•°
 
 Function
-FunctionµÄ¹¹Ôìº¯Êý
+Functionçš„æž„é€ å‡½æ•°
 
 Boolean	
-BooleanµÄ¹¹Ôìº¯Êý
+Booleançš„æž„é€ å‡½æ•°
 
 String	
-StringµÄ¹¹Ôìº¯Êý
+Stringçš„æž„é€ å‡½æ•°
 
 Number	
-NumberµÄ¹¹Ôìº¯Êý
+Numberçš„æž„é€ å‡½æ•°
 
 Date	
-DateµÄ¹¹Ôìº¯Êý
+Dateçš„æž„é€ å‡½æ•°
 
 RegExp	
-RegExpµÄ¹¹Ôìº¯Êý
+RegExpçš„æž„é€ å‡½æ•°
 
 Error	
-ErrorµÄ¹¹Ôìº¯Êý
+Errorçš„æž„é€ å‡½æ•°
 
 EvalError	
-EvalErrorµÄ¹¹Ôìº¯Êý
+EvalErrorçš„æž„é€ å‡½æ•°
 
 RangeError	
-RangeErrorµÄ¹¹Ôìº¯Êý
+RangeErrorçš„æž„é€ å‡½æ•°
 
 ReferenceError	
-ReferenceErrorµÄ¹¹Ôìº¯Êý
+ReferenceErrorçš„æž„é€ å‡½æ•°
 
 SyntaxError	
-SyntaxErrorµÄ¹¹Ôìº¯Êý
+SyntaxErrorçš„æž„é€ å‡½æ•°
 
 TypeError	
-TypeErrorµÄ¹¹Ôìº¯Êý
+TypeErrorçš„æž„é€ å‡½æ•°
 
 URIError
-URIErrorµÄ¹¹Ôìº¯
+URIErrorçš„æž„é€ å‡½
 
 
 
@@ -65,4 +65,4 @@ URIErrorµÄ¹¹Ôìº¯
 
 	
 
-URIErrorµÄ¹¹Ôìº¯
+URIErrorçš„æž„é€ å‡½
