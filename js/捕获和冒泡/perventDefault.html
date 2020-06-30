@@ -14,7 +14,6 @@
             return false 是阻止所有的js
             而 preventDefault只是阻止部分的行为比如说跳转页面
              */
-
         }
     </script>
 </head>
@@ -24,7 +23,6 @@
     var test = document.getElementById('testLink');
     test.onclick = function(e) {
         stopDefault(e);
-
         alert('我的链接地址是：' + this.href + ', 但是我不会跳转。');
     }
 </script>

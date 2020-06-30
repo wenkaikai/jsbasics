@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
+
 <body>
-<input type="button" value="test1" id="btn1">
-<input type="button" value="test2" id="btn2">
-<div class="div1">
-    <div class="div2">好好</div>
-</div>
-<script>
+    <input type="button" value="test1" id="btn1">
+    <input type="button" value="test2" id="btn2">
+    <div class="div1">
+        <div class="div2">好好</div>
+    </div>
+    <script>
+        var fu = document.getElementsByClassName("div1")[0];
+        var zi = document.getElementsByClassName("div2")[0];
 
-    var fu = document.getElementsByClassName("div1")[0];
-    var zi = document.getElementsByClassName("div2")[0];
-
-//    fu.addEventListener('click',function(){alert("我是父亲")},false);//false 是事件冒泡就是先弹出来的是儿子
+        //    fu.addEventListener('click',function(){alert("我是父亲")},false);//false 是事件冒泡就是先弹出来的是儿子
 
         // 最后一个参数不写就是默认的是false
-//    zi.addEventListener('click',function(){alert("我是儿子")},false);
+        //    zi.addEventListener('click',function(){alert("我是儿子")},false);
 
 
 
 
-//true 事件捕获先弹出来的是父亲；
-    fu.addEventListener('click',function(e){alert("我是父亲")
+        //true 事件捕获先弹出来的是父亲；
+        fu.addEventListener('click', function (e) {
+            alert("我是父亲")
+            /**
+            return false 不仅阻止了事件往上冒泡，而且阻止了事件本身。event.stopPropagation() 则只阻止事件往上冒泡，不阻止事件本身。
+            
+             stopPropagation()方法既可以阻止事件冒泡，也可以阻止事件捕获，也可以阻止处于目标阶段。
+            */
+            e.stopPropagation();
 
-        /**
+        }, true);//
 
 
-        return false 不仅阻止了事件往上冒泡，而且阻止了事件本身。event.stopPropagation() 则只阻止事件往上冒泡，不阻止事件本身。
-        
-                stopPropagation()方法既可以阻止事件冒泡，也可以阻止事件捕获，也可以阻止处于目标阶段。
-        */
+        zi.addEventListener('click', function (e) {
+            alert("我是儿子");
 
- e.stopPropagation();
-
-    },true);//
-    zi.addEventListener('click',function(e){
-        alert("我是儿子");
-       
-    },true);
+        }, true);
 
 
 
@@ -72,7 +72,7 @@
     //     alert(count++);
     //     if (count == 3) {
     //         alert("事件结束")
-           
+
     //         btn1.removeEventListener("click",handle1,false);
     //     }
     // }
@@ -86,6 +86,8 @@
     //         alert(123)
     //     },false)
     // },false)
-</script>
+
+    </script>
 </body>
+
 </html>
