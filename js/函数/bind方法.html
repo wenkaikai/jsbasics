@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<script>
-    /*
-        bind 方法 同call apply 一样改变函数体内的this指向
 
-     MDN的解释是：bind()方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，
-     绑定函数会以创建它时传入 bind()方法的第一个参数作为 this，
-     传入 bind() 方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。
-     */
-    function f(y) { console.log(this);return this.x +y}
-    var o = {x :1};
-    var g = f.bind(o);//bind 方法会创建一个新的函数 同原来的函数一样就是this指向改变了
-    console.log(g)//ƒ f(y) { console.log(this);return this.x +y}
-    g();//{x:1}
-//    var c = o.f//这样获取不到对象的里面的o.f（f函数就是能取到对象里面的值，但是不会显示下o 对象里面）
-//    console.log(c)
-    console.log(g(4))//5
-</script>
+<body>
+    <script>
+        // /*
+        //     bind 方法 同call apply 一样改变函数体内的this指向
+    
+        //  MDN的解释是：bind()方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，
+        //  绑定函数会以创建它时传入 bind()方法的第一个参数作为 this，
+        //  传入 bind() 方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。
+        //  */
+        // function f(y) { console.log(this); return this.x + y }
+        // var o = { x: 1 };
+        // var g = f.bind(o);//bind 方法会创建一个新的函数 同原来的函数一样就是this指向改变了
+        // console.log(g)//ƒ f(y) { console.log(this);return this.x +y}
+        // g();//{x:1}
+        // //    var c = o.f//这样获取不到对象的里面的o.f（f函数就是能取到对象里面的值，但是不会显示下o 对象里面）
+        // //    console.log(c)
+        // console.log(g(4))//5
+
+
+
+
+        /**
+            bind 的第二个参数
+        */
+
+        function fn(a, b, c) {
+            return a + b + c;
+        }
+
+        var _fn = fn.bind(null, 10);
+        var ans = _fn(20, 30); // 60
+        console.log(ans)//60
+    </script>
 </body>
+
 </html>

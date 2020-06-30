@@ -8,24 +8,55 @@
 
 <body>
     <script>
-    function arrayIntersection(a, b) {
-        var ai = 0,
-            bi = 0;
-        var result = new Array();
-        while (ai < a.length && bi < b.length) {
-            if (a[ai] < b[bi]) {
-                ai++;
-            } else if (a[ai] > b[bi]) {
-                bi++;
-            } else /* they're equal */ {
-                result.push(a[ai]);
-                ai++;
-                bi++;
-            }
+
+    /* 方法一*/
+    // function arrayIntersection(a, b) {
+    //     var ai = 0,
+    //         bi = 0;
+    //     var result = new Array();
+    //     while (ai < a.length && bi < b.length) {
+    //         if (a[ai] < b[bi]) {
+    //             ai++;
+    //         } else if (a[ai] > b[bi]) {
+    //             bi++;
+    //         } else /* they're equal */ {
+    //             result.push(a[ai]);
+    //             ai++;
+    //             bi++;
+    //         }
+    //     }
+    //     return result;
+    // }
+    // console.log(arrayIntersection([1, 2, 'tg'], [2, 3, 4, 5, 6,'t'])); //[2,3]
+
+
+
+        /*
+            方法二 
+        */
+    Array.intersect = function () {
+        console.log(arguments)
+            var result = new Array();
+            var obj = {};
+            for (var i = 0; i < arguments.length; i++) {
+                for (var j = 0; j < arguments[i].length; j++) {
+                    var str = arguments[i][j];
+                    if (!obj[str]) {
+                        obj[str] = 1;
+                    }
+                    else {
+                        obj[str]++;
+                        if (obj[str] == arguments.length)
+                        {
+                            result.push(str);
+                        }
+                    }//end else
+                }//end for j
+            }//end for i
+            return result;
         }
-        return result;
-    }
-    console.log(arrayIntersection([1, 2, 3], [2, 3, 4, 5, 6])); //[2,3]
+        console.log(Array.intersect(["1", "2", "t"], ["2", "3", "4", "5", "6","t"]));//[2,t]
+   
     </script>
 </body>
 

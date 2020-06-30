@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ol>
+    <li>基本表格</li>
+    <table border="2" bordercolor="black" width="300" cellspacing="4" cellpadding="5">
+        <tr>
+            <td>1.1</td>
+            <td>1.2</td>
+            <td>1.3</td>
+        </tr>
+        <tr>
+            <td>2.1</td>
+            <td>2.2</td>
+            <td>2.3</td>
+        </tr>
+        <tr>
+            <td>3.1</td>
+            <td>3.2</td>
+            <td>3.3</td>
+        </tr>
+    </table>
+    <br/>
+    <li>表格合并列</li>
+    <table border="2" bordercolor="black" width="300" cellspacing="0" cellpadding="5">
+        <tr>
+            <td colspan="3" >1.1</td>
+            <!--<td>1.2</td>-->
+            <!--<td>1.3</td>-->
+        </tr>
+        <tr>
+            <td>2.1</td>
+            <td>2.2</td>
+            <td>2.3</td>
+        </tr>
+        <tr>
+            <td>3.1</td>
+            <td>3.2</td>
+            <td>3.3</td>
+        </tr>
+    </table>
+    <br/>
+    <li>表格合并行</li>
+    <table border="2" bordercolor="black" width="300" cellspacing="0" cellpadding="5">
+        <tr>
+            <td  rowspan="3">1.1</td>
+            <td>1.2</td>
+            <td>1.3</td>
+        </tr>
+        <tr>
+            <!--<td>2.1</td>-->
+            <td>2.2</td>
+            <td>2.3</td>
+        </tr>
+        <tr>
+            <!--<td>3.1</td>-->
+            <td>3.2</td>
+            <td>3.3</td>
+        </tr>
+    </table>
+    <br/>
+    <li>复杂表格</li>
+    <table border="2" bordercolor="black" width="300" cellspacing="0" cellpadding="5">
+        <tr>
+            <td >1.1</td>
+            <td colspan="2">1.2</td>
+            <!--<td>1.3</td>-->
+        </tr>
+        <tr>
+            <td >2.1</td>
+            <td rowspan="2">
+                2.2
+                <br/>
+                3.2
+            </td>
+            <td>2.3</td>
+        </tr>
+        <tr>
+            <td>3.1</td>
+            <!--<td>3.2</td>-->
+            <td>3.3</td>
+        </tr>
+    </table>
+    <br/>
+</ol>
+</body>
+</html>

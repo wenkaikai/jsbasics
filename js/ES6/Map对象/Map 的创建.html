@@ -13,8 +13,13 @@
  */
     var map = new Map([["key1","毛尖"],["key2","益达"]]);
 //    console.log(map)//Map(2) {"key1" => "毛尖", "key2" => "益达"}
-    console.log([...map]);//(2) [Array(2), Array(2)]0: (2) ["key1", "毛尖"]0: "key1"1: "毛尖"length: 2__proto__: Array(0)1: (2) ["key2", "益达"]length: 2__proto__: Array(0)
-    console.log([...map.keys()])//(2) ["key1", "key2"]
+
+var obj = {
+    "毛尖":"信阳毛尖甲天下"
+}
+    console.log(obj[map.get("key1")])
+    // console.log([...map]);//(2) [Array(2), Array(2)]0: (2) ["key1", "毛尖"]0: "key1"1: "毛尖"length: 2__proto__: Array(0)1: (2) ["key2", "益达"]length: 2__proto__: Array(0)
+    // console.log([...map.keys()])//(2) ["key1", "key2"]
 
 </script>
 </body>

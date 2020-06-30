@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script>
+        function difference(arr1, arr2, key1) {
+            let arry = arr1.concat(arr2);
+            console.log(arry)
+            var arr3 = [];
+            var temp = false;
+            for (var i = 0; i < arry.length; i++) {
+                temp = false;
+                for (var j = 0; j < arr3.length; j++) {
+                    if (arry[i][key1] == arr3[j][key1]) {
+                        temp = true;
+                        // return false;// 这样是直接结束函数了
+                        break;
+                    }
+                }
+                if (!temp) {
+                    arr3.push(arry[i])
+                }
+            }
+            return arr3
+        }
+
+
+
+
+
+
+
+
+
+        var arry1 = [
+            {
+                key: 123,
+                value: 123
+            },
+            {
+                key: 123,
+                value: 125
+            }
+
+        ];
+        var arry2 = [
+
+            {
+                key: 123,
+                value: 124
+            },
+            {
+                key: 123,
+                value: 123
+            },
+            {
+                key: 123,
+                value: 129
+            }
+
+        ];
+
+        console.log(difference(arry1, arry2, "value"))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+
+<body>
+    <div class="div"></div>
+</body>
+<script>
+    /*
+        parentNode.append()可以同时传入多个节点或字符串，没有返回值；
+        而parentNode.appendChild()只能传一个节点，
+        且不直接支持传字符串(需要parentNode.appendChild(document.createTextElement('字符串'))代替)，返回追加的Node节点
+    */
+    let dom = document.getElementsByClassName("div")[0];
+    console.log(dom)
+    dom.append("<div>123</div>")// 不是能添加一个字符串的吗，为什么不行呢。
+</script>
+</html>

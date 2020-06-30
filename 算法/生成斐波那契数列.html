@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script>
+        // function fib(max) {
+        //     var
+        //         t,
+        //         a = 0,
+        //         b = 1,
+        //         arr = [0, 1];
+        //     while (arr.length < max) {
+        //         [a, b] = [b, a + b];
+        //         arr.push(b);
+        //     }
+        //     return arr;
+        // }
+
+        // // 测试:
+        // console.log(fib(5)); // [0, 1, 1, 2, 3]
+        // console.log(fib(10)); // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+
+
+/*列子二 */
+
+        'use strict'
+
+        function* fib(max) {
+            var
+                t,
+                a = 0,
+                b = 1,
+                n = 0;
+            while (n < max) {
+                yield a;
+                [a, b] = [b, a + b];
+                n++;
+            }
+            return;
+        }
+
+        console.log(fib(10))
+        for (var x of fib(10)) {
+            console.log(x); // 依次输出0, 1, 1, 2, 3, ... for...of...循环只输出yield；也就是done是false的语句；
+            //return done就是true了，所以不输出这个。
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

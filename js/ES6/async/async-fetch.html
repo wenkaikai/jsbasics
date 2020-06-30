@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script>
+        async function getData(){
+            // fetch("https://www.easy-mock.com/mock/5b3981c7c4dcd03fb7171981/example/medicineSearch",{
+            //     method:"post"
+            // }).then((res)=>{
+            //     console.log(res)
+            //     return res
+            // })
+
+           const aa = await fetch("https://www.easy-mock.com/mock/5b3981c7c4dcd03fb7171981/example/medicineSearch",{
+                method:"post"
+            }).then(function(res){
+                return res.json()
+            },function(){})
+            return aa
+        }
+
+        async function fun1(){
+           let data =  await getData();
+           console.log(data)
+        }
+
+        let aa  = fun1();
+        
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

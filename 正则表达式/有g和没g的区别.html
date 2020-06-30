@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+
+    <script>
+        var str = "fsdfsdfsdf.js";
+        var re = /\.js$/g;
+        var re1 = /\.js$/;
+        console.log(re.test(str))
+        console.log(re1.test(str))
+        /*
+                以上是没有区别的为什么在这里面有区别，难道这个不是正则
+                  {
+                test: /\.(js|jsx)$/g,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            },
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

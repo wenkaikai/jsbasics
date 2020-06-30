@@ -41,7 +41,8 @@
              *     }
              *   },
              * };
-             * 我们先对data最外层的name和obj进行数据劫持，之后再对obj对象的子属性obj.name,obj.age, obj.obj进行数据劫持，层层递归下去，直到所有的数据都完成了数据劫持工作。
+             * 我们先对data最外层的name和obj进行数据劫持，之后再对obj对象的子属性obj.name,obj.age, obj.obj进行数据劫持，
+             * 层层递归下去，直到所有的数据都完成了数据劫持工作。
              */
             new Observer(val);
             Object.defineProperty(obj, key, {

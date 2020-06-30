@@ -11,10 +11,21 @@
         // var obj1 = {
         //     a:123,
         //     b:function(){
-        //         console.log(this.a)
+        //         console.log(this)// {a: 123, b: ƒ}
+        //         console.log(this.a)//123
         //     }
         // }
-        // obj1.b();//123
+        // obj1.b();
+
+        var obj1 = {
+            a:123,
+            b:function(){
+                console.log(this)// window
+                console.log(this.a)// undefined
+            }
+        }
+        let fn = obj1.b;
+        fn() // 这个时候就是window 调用b函数了 而不是obj1 调用b 函数的
 
         /*第二题*/
 

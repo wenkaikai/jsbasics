@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>main - 51windows.net</title>
+</head>
+
+<body>
+<SCRIPT LANGUAGE="javascript">
+    <!--
+    function shtop(){
+        if (parent.full.rows.indexOf("0,*,")!=-1){
+            parent.full.rows="64,*,"+parent.full.rows.split(",")[2]
+            document.getElementById("shtop").value="隐藏上部";
+        }
+        else{
+            parent.full.rows="0,*,"+parent.full.rows.split(",")[2]
+            document.getElementById("shtop").value="显示上部";
+        }
+    }
+    function shleft(){
+        if (parent.cen.cols=="0,*"){
+            parent.cen.cols="25%,*,"
+            document.getElementById("shleft").value="隐藏左部";
+        }
+        else{
+            parent.cen.cols="0,*"
+            document.getElementById("shleft").value="显示左部";
+        }
+    }
+    function shbottom(){
+        if (parent.full.rows.indexOf(",*,0")!=-1){
+            parent.full.rows=parent.full.rows.split(",")[0]+",*,64"
+            document.getElementById("shbottom").value="隐藏下部";
+        }
+        else{
+            parent.full.rows=parent.full.rows.split(",")[0]+",*,0"
+            document.getElementById("shbottom").value="显示下部";
+        }
+    }
+    function maxmain(){
+        if (parent.full.rows=="0,*,0"){
+            parent.full.rows="64,*,64"
+            parent.cen.cols="25%,*"
+            document.getElementById("maxmain").value="隐藏左上下";
+            document.getElementById("shtop").value="隐藏上部";
+            document.getElementById("shleft").value="隐藏左部";
+            document.getElementById("shbottom").value="隐藏下部";
+        }
+        else{
+            parent.full.rows="0,*,0";
+            parent.cen.cols="0,*";
+            document.getElementById("maxmain").value="显示左上下";
+            document.getElementById("shtop").value="显示上部";
+            document.getElementById("shleft").value="显示左部";
+            document.getElementById("shbottom").value="显示下部";
+        }
+    }
+    //-->
+</SCRIPT>
+<input type="button" name="maxmain" id="maxmain" onclick="maxmain();" value="隐藏左上下">
+<input type="button" name="shtop" id="shtop" onclick="shtop();" value="隐藏上部">
+<input type="button" name="shleft" id="shleft" onclick="shleft();" value="隐藏左部">
+<input type="button" name="shbottom" id="shbottom" onclick="shbottom();" value="隐藏下部">
+
+</body>
+
+</html>

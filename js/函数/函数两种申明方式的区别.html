@@ -1,79 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<script>
-    // 函数表达式的方法
+    <script>
+        // 函数表达式的方法
 
-//    console.log(aa)
-//    var aa;
-//    console.log(vv)
-//     aa = function vv(){
-//        console.log("cc")
-//        vv();
-//    }
-//    console.log(vv)//Uncaught ReferenceError: vv is not defined
-//    console.log(aa)
-
-
-
-
-    //函数申明
-
-//    console.log(bb)//上下文
-//    function bb(){
-//        console.log("bb")
-//    }
-//
-
-    //函数对象的方式
-
-    var sum3 = new Function("num1","num2","return num1+num2");
-    var sum = sum3(2,4);
-    console.log(sum)//6
-
-
-
-//这说明，if块级作用域里面的变量同样会被申明提前包括函数语句定义的函数同样被申明提前但都是申明在前赋值在后
-//    console.log(sayHey)//undefined
-//    console.log(sayHello)//undefined
-//    console.log(sayHey2)//undefined
-//    console.log(sayHello2)//undefined
-//    console.log(cc) //函数cc的执行上下文
-//    if (true) {
-//        function sayHey() {
-//            console.log("sayHey");
-//        }
-//        var sayHello = function sayHo() {
-//            console.log("sayHello");
-//        }
-//    } else {
-//        function sayHey2() {
-//            console.log("sayHey2");
-//        }
-//        var sayHello2 = function sayHo() {
-//            console.log("sayHello2");
-//        }
-//    }
-//    function cc(){
-//        console.log('ok')
-//    }
-////    sayHey();// => sayHey
-////    sayHello();// => sayHello
-//
-//    //if 块里的预编译是申明确实提前了
-//    console.log(sayHey)//sayHey 的上下文
-//    console.log(sayHello)//sayHello 的上下文
-//    console.log(sayHey2)//undefined
-//    console.log(sayHello2)//undefined
-//    console.log(cc) //函数cc的执行上下文
+        console.log(aa)
+        var aa;
+        //    console.log(vv)
+        aa = function () {
+            console.log("cc")
+            //    vv();
+        }
+        //    console.log(vv)//Uncaught ReferenceError: vv is not defined
+        console.log(aa)
 
 
 
 
-</script>
+        //函数申明
+
+        //    console.log(bb)//上下文
+        //    function bb(){
+        //        console.log("bb")
+        //    }
+        //
+
+        //函数对象的方式
+
+        // var sum3 = new Function("num1","num2","return num1+num2");
+        // var sum = sum3(2,4);
+        // console.log(sum)//6
+
+
+
+        //这说明，if块级作用域里面的变量同样会被申明提前包括函数语句定义的函数同样被申明提前但都是申明在前赋值在后
+        //    console.log(sayHey)//undefined
+        //    console.log(sayHello)//undefined
+        //    console.log(sayHey2)//undefined
+        //    console.log(sayHello2)//undefined
+        //    console.log(cc) //函数cc的执行上下文
+        //    if (true) {
+        //        function sayHey() {
+        //            console.log("sayHey");
+        //        }
+        //        var sayHello = function sayHo() {
+        //            console.log("sayHello");
+        //        }
+        //    } else {
+        //        function sayHey2() {
+        //            console.log("sayHey2");
+        //        }
+        //        var sayHello2 = function sayHo() {
+        //            console.log("sayHello2");
+        //        }
+        //    }
+        //    function cc(){
+        //        console.log('ok')
+        //    }
+        ////    sayHey();// => sayHey
+        ////    sayHello();// => sayHello
+        //
+        //    //if 块里的预编译是申明确实提前了
+        //    console.log(sayHey)//sayHey 的上下文
+        //    console.log(sayHello)//sayHello 的上下文
+        //    console.log(sayHey2)//undefined
+        //    console.log(sayHello2)//undefined
+        //    console.log(cc) //函数cc的执行上下文
+
+
+
+
+        /**
+         *  如果函數表達式和函數申明方式一樣的時候
+         * 
+         * 第一种声明方式也就是var声明方式, 函数只有在var语句声明之后才能被调用
+        
+        第二种生命方式也就是function声明方式, 函数可以在function声明之前被调用
+        
+        这是因为,
+        
+        对第一种情况, 函数表达式是在函数运行阶段才赋值给变量h
+        
+        对第二种情况, 函数表达式是在代码运行阶段之前, 也就是代码解析阶段才赋值给标识符h
+        值得注意的是，当同时使用这两种方式声明同一个函数名，最终执行的是函数表达式声明的函数。
+         * 
+        */
+            var cc = function () {
+                console.log("ccvar")
+            }
+
+            function cc() {
+                console.log("ccfuncont")
+            }
+            cc();// ccvar
+            this.cc()// ccvar
+    </script>
 </body>
+
 </html>

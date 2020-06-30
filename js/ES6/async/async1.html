@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
@@ -12,15 +12,18 @@
 
         /**
 
-            当调用一个 async 函数时，会返回一个 Promise 对象。当这个 async 函数返回一个值时，Promise 的 resolve 方法会负责传递这个值；当 async 函数抛出异常时，Promise 的 reject 方法也会传递这个异常值。
+            当调用一个 async 函数时，会返回一个 Promise 对象。当这个 async 函数返回一个值时，Promise 的 resolve 
+            方法会负责传递这个值；当 async 函数抛出异常时，Promise 的 reject 方法也会传递这个异常值。
 
-async 函数中可能会有 await 表达式，这会使 async 函数暂停执行，等待 Promise  的结果出来，然后恢复async函数的执行并返回解析值（resolved）。
+async 函数中可能会有 await 表达式，这会使 async 函数暂停执行，等待 Promise  的结果出来，
+然后恢复async函数的执行并返回解析值（resolved）。
 
     注意， await 关键字仅仅在 async function中有效。如果在 async function函数体外使用 await ，你只会得到一个语法错误（SyntaxError）。
         */
     function resolveAfter2Seconds() {
-        return new Promise(resolve => {
+        return new Promise((resolve,reject) => {
             setTimeout(() => {
+                // reject("rejec")
                 resolve('resolved');
             }, 2000);
         });
@@ -28,8 +31,12 @@ async 函数中可能会有 await 表达式，这会使 async 函数暂停执行
 
     async function asyncCall() {
         console.log('calling');
-        var result = await resolveAfter2Seconds();
-        console.log(result);
+        // var result = resolveAfter2Seconds();// 如果没有await result 返回的是Promiese 对象
+        // result.then(function(a){console.log(a)},function(b){console.log(b)})// resolved
+        // console.log(result)
+        var result = await resolveAfter2Seconds();// 有了await 就不用写then了 await函数没有执行完后面的代码就不执行了
+        // 如果有await await返回的就是resolve 里面的值 相当于执行了then
+        console.log(result);// resolved
         // expected output: 'resolved'
     }
 

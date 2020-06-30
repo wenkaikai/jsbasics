@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+.mystyle {
+    width: 300px;
+    height: 50px;
+    background-color: coral;
+    color: white;
+    font-size: 25px;
+}
+</style>
+</head>
+<body>
+
+<p>点击按钮为 DIV 元素添加 "mystyle" 类。</p>
+<button onclick="myFunction()">点我</button>
+<p><strong>注意：</strong> Internet Explorer 9 及更早 IE 版本浏览器不支持 classList 属性。</p>
+<div id="myDIV">
+我是一个 DIV 元素。
+</div>
+<script>
+
+
+/**
+ * element classList 的方法有  https://www.runoob.com/jsref/prop-element-classlist.html
+ * 
+ * add(class1, class2, ...)
+ * contains(class)
+ * item(index)
+ * remove(class1, class2, ...)
+ * toggle(class, true|false)
+ * 
+*/
+function myFunction() {
+    document.getElementById("myDIV").classList.add("mystyle");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<div id="div1">
+    <p id="p1">这是一个段落。</p>
+    <p id="p2">这是另一个段落。</p>
+</div>
+<script>
+/*
+    一 第一种方法
+*/
+// var parent=document.getElementById("div1");
+// var child=document.getElementById("p1");
+// parent.removeChild(child);
+
+/**
+    第二种删除自己
+*/
+
+var box=document.getElementById("p2");
+box.remove(); // 删除自己的方法
+</script>
+
+</body>
+</html>

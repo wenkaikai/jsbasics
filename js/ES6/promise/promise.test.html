@@ -12,13 +12,14 @@
      */
     let promise = new Promise(function(resolve, reject) {
             console.log('Promise');// 最先执行的
-             resolve(1);
+            //  resolve(1);// resolve就是执行then 里面的回调函数
             // reject();
+            return 123
     });
-  // console.log(promise)
+  console.log(promise)
 
-promise.then(function() {
-  console.log('resolved.');
+promise.then(function(a) {
+  console.log(a);
 },function(){
     console.log('失败了');
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用generator遍历对象</title>
+    <link rel="stylesheet" href="">
+    <script>
+        /*
+            let obj = {
+            name:'zhangsan',
+            age:18,
+            sex:'man'
+            }
+            for(var value of obj){
+            console.log(value);//报错 obj is not iterable
+            }
+            console.log([...obj]);//报错 obj is not iterable
+
+        */
+
+        let obj = {
+            name: 'zhangsan',
+            age: 18,
+            sex: 'man'
+        }
+        obj[Symbol.iterator] = function* () {
+            for (var key in obj) {
+                yield obj[key];
+            }
+        }
+        for (let value of obj) {
+            console.log(value);//zhangsan 18 man
+        }
+        console.log([...obj]);//["zhangsan", 18, "man"]
+
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

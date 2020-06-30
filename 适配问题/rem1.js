@@ -38,7 +38,7 @@
 
     win.addEventListener("resize", function() {
         clearTimeout(tid); //防止执行两次
-        tid = setT imeout(refreshRem, 300);
+        tid = setTimeout(refreshRem, 300);
     }, false);
 
     win.addEventListener("pageshow", function(e) {

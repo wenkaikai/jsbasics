@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            a:123,
+            b:456
+        }
+
+        let obj1 = {
+            a:obj.a,
+            b:obj.b
+        }
+
+        obj1.a = 985;
+        console.log(obj)
+        console.log(obj1)
+        
+    </script>
+
+</body>
+
+</html>

@@ -14,12 +14,12 @@
 
 <body>
     <script>
-    console.log(document.body.scrollHeight) //网页正文这个是body的高度
-    console.log(window.innerHeight) //网页的可视区域
+    console.log(document.body.scrollHeight) //网页正文这个是body的高度754
+    console.log(window.innerHeight) //网页的可视区域754
     console.log(window.outerHeight) //浏览器的高度非常的重要的概念，比如浏览小窗口他就是显示小窗口的大小
-    console.log(document.documentElement.clientHeight) //网页的可视区域的高度这个是兼容ie的
+    console.log(document.documentElement.clientHeight) //网页的可视区域的高度这个是兼容ie的754
     console.log(window.screen.height) //硬件屏幕的高度/js 不是不能操作客服端只不过是不允许罢了，不能有这个局限性
-
+    console.log(document.documentElement.getBoundingClientRect().height) //754
    
 
     window.onresize = function() {
@@ -29,6 +29,8 @@
         console.log(document.documentElement.clientHeight) //网页的可视区域的高度这个是兼容ie的
         console.log(window.screen.height) //硬件屏幕的高度/js 不是不能操作客服端只不过是不允许罢了，不能有这个局限性
     }
+
+    console.log(typeof (22+""))
     </script>
 </body>
 

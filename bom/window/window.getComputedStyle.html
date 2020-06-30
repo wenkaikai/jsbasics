@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+
+</head>
+<style>
+    #title {
+        width: 280px;
+        height: 35px;
+        color: #000;
+        text-align: center;
+        box-shadow: 5px 5px 5px #333;
+    }
+</style>
+
+<body>
+    <h1 id="title">Hello world.</h1><br>
+</body>
+<script>
+    /**
+     * 方法返回一个对象，该对象在应用活动样式表并解析这些值可能包含的任何基本计算后报告元素的所有CSS属性的值
+     * let style = window.getComputedStyle(element, [pseudoElt])
+     * element 用于获取计算样式的Element。
+        pseudoElt  指定一个要匹配的伪元素的字符串。必须对普通元素省略（或null）
+
+
+        和 style 的区别
+        返回的对象与从元素的 style  属性返回的对象具有相同的类型;然而，两个对象具有不同的目的。从getComputedStyle返回的对象是只读的，
+        可以用于检查元素的样式（包括由一个<style>元素或一个外部样式表设置的那些样式）。elt.style对象应用于在特定元素上设置样式
+     * 
+    */
+
+    var title = document.getElementById('title'),
+
+        style = window.getComputedStyle(title, null);
+
+    console.log(style.width = "290px");//228
+    console.log(title.style.width)
+
+    // for (var i in style)
+
+    //     console.log("The property " + i + " :" + style[i]);
+
+
+</script>
+
+</html>
