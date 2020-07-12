@@ -40,24 +40,45 @@
         */
 
 
-        let strMatch = "proid".match(/date|proid/g);// 这样date 和 proid 会作为一个整体来匹配
+        console.log("=================================列子 三====================================")
+
+        let strMatch1 = "proid".match(/date|proid/g);// 这样date 和 proid 会作为一个整体来匹配
         let strMatch = "proid".match(/[do]/g);// 这样do 会作为单个的字符来匹配。[] 里面的值都是单个的匹配。
+        console.log(strMatch1)
         console.log(strMatch)
 
         // if(9){
         //     let i=0,j=1;
         // }
-       
+
         // console.log(i,j)
 
 
-          /**
-            列子 四
+        /**
+          列子 四
+      */
+
+        console.log("=================================列子 四====================================")
+        console.log(!/^[\u4E00-\u9FA5a-zA-z]+$/g.test("ju中國勝多負少"))
+
+
+
+
+
+        /**
+                列子 五
         */
 
+        console.log("================================= 列子 五====================================")
 
-        console.log(!/^[\u4E00-\u9FA5a-zA-z]+$/g.test("ju中國勝多負少"))
+        console.log('/^(123\d{2})|(67\d{3})$/.test("12345")')
+
+        console.log(/^(123\d{2})|(67\d{3})$/.test("1234545"))// true 按理说是false
+
+
+        console.log(/^(123\d{2}|67\d{3})$/.test("1234545"))// false | 是把前面作为一个整体的吗
        
+
     </script>
 </head>
 

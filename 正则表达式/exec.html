@@ -13,7 +13,7 @@
 var str = "Visit W3School, W3School is a place to study web technology.";
 var patt = new RegExp("W3School","g");
 var result;
-console.log(patt.exec(str));//第一次 0："W3School"; index: 6;
+console.log(patt.exec(str));//第一次 0："W3School"; index: 6; 只找到第一个就返回
 console.log(str.match(patt))// ["W3School", "W3School"];
 
 //console.log(patt.exec(str)[1]);//undefined 所以说index 是属性不是值

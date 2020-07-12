@@ -22,16 +22,17 @@
           列子一
     */
 
+    console.log("列子一")
     reg = /(?=\d{3})/;
     content = 'abc123';
     res = content.match(reg)
-    console.log(res)// 是一个数组
+    console.log(res)// 是一个数组[0:""]
 
     /*
           列子二
     */
 
-
+    console.log("列子二")
     reg = /([a-z]+)(?=\d+)/g;
     content = 'abc123';
     res = content.match(reg)

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <title>^and$</title>
@@ -45,6 +45,31 @@
         console.log(pattern.test(str))
     }
 
+        /**
+                列子 五
+        */
+
+        console.log("================================= 列子 五====================================")
+
+        console.log(/^\d+$/.test("114"))
+        console.log(/^\d{4}|w$/.test("114"))//false
+        console.log(/^\d{4}|w$/.test("1143"))//true 
+        console.log(/^\d{4}|w$/.test("114wwwwwwwwwww"))//true 
+
+   /**
+                列子 六
+        */
+
+        console.log("================================= 列子 六====================================")
+
+    // 为什么是ture 呢是因为(123\d{2}) 被作为了一个整体作为开头
+
+        // 123 和 67 是或的关系 表示的是以123开头或者67 结尾两者满足一个即可
+
+        console.log(/^(123\d{2})|(67\d{3})$/.test("1232432"))// true 
+        console.log(/^(123\d{2})|(67\d{3})$/.test("673333"))// false
+        console.log(/^(123)\d{2}|(67)\d{3}$/.test("12334"))// true
+        console.log(/^(123\d{2}|67\d{3})$/.test("77555"))// true
 
 </script>
 </body>

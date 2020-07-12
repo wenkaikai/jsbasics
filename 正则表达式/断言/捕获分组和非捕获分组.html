@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        // 理解捕获分组和非捕获分组的概念
+
+        /**
+         ()表示捕获分组，()会把每个分组里的匹配的值保存起来，使用$n(n是一个数字，表示第n个捕获组的内容)
+        (?:)表示非捕获分组，和捕获分组唯一的区别在于，非捕获分组匹配的值不会保存起来
+
+        “industr(?:y|ies)”就是一个比“industry|industries”更简略的表达式。
+
+        \B 匹配非字母和数字边界
+        */
+
+        console.log("列子一")
+
+        console.log("1234567890".replace(/\B(?=(?:\d{3})+)/g,","))//1,2,3,4,5,6,7,890
+
+        console.log("1234567890".replace(/\B/g,","))//,0
+
+        console.log("1234567890".replace(/((\d{3})+)/g,","))//,0
+
+        console.log("1234567890".replace(/\B((\d{3})+)/g,","))//1,
+
+        
+        console.log("1234567890".replace(/\B(?=(?:\d{3})+(?!\d))/g,","))//1,234,567,890
+
+
+    </script>
+</body>
+
+</html>
