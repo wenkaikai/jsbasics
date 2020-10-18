@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <title>^and$</title>
 </head>
+
 <body>
-<input type="text" id="text">
-<input type="button" id="but">
-<script>
+    <input type="text" id="text">
+    <input type="button" id="but">
+    <script>
 
 
-    /**
-        匹配一个单词的边界，也就是指单词和空格间的位置（即正则表达式的“匹配”有两种概念，一种是匹配字符，一种是匹配位置，这里的\b就是匹配位置的）。例如，“er\b”可以匹配“never”中的“er”，但不能匹配“verb”中的“er”；“\b1_”可以匹配“1_23”中的“1_”，但不能匹配“21_3”中的“1_”。
-    */
-//    var pattern = /^\d+$/g
-//    var pattern = /[a-z]+/g;
-//var pattern = /^[a-zA-Z0-9]{6,10}$/;
+        /**
+            匹配一个单词的边界，也就是指单词和空格间的位置（即正则表达式的“匹配”有两种概念，一种是匹配字符，一种是匹配位置，这里的\b就是匹配位置的）。例如，“er\b”可以匹配“never”中的“er”，但不能匹配“verb”中的“er”；“\b1_”可以匹配“1_23”中的“1_”，但不能匹配“21_3”中的“1_”。
+        */
+        //    var pattern = /^\d+$/g
+        //    var pattern = /[a-z]+/g;
+        //var pattern = /^[a-zA-Z0-9]{6,10}$/;
 
 
-//一种情况
-//var pattern = /[A-Z]+/;
-//    var str = "33";
-//    console.log(pattern.test(str))//false
+        //一种情况
+        //var pattern = /[A-Z]+/;
+        //    var str = "33";
+        //    console.log(pattern.test(str))//false
 
 
 
 
-//    第二种情况
-//    var pattern = /^[A-Za-z0-3_\*\$\@]+$/g;
-//    var str = "AAAdd333fff*$";
-//    console.log(pattern.test(str))//true
+        //    第二种情况
+        //    var pattern = /^[A-Za-z0-3_\*\$\@]+$/g;
+        //    var str = "AAAdd333fff*$";
+        //    console.log(pattern.test(str))//true
 
 
-    /*以$结尾的是匹配整个字符串的*/
-    // 以$结尾的例子
-    var str= 'enter';
-    var str1 = 'eat';
-    var pattern = /t$/;
-    console.log(pattern.test(str));//false
-    console.log(pattern.test(str1));//true
-    document.querySelector("#but").onclick=function(){
-        var str = document.querySelector("#text").value;
-        var pattern = /^[0-9]{1,3}\.[0-9]+$/;
-        console.log(pattern.test(str))
-    }
+        /*以$结尾的是匹配整个字符串的*/
+        // 以$结尾的例子
+        var str = 'enter';
+        var str1 = 'eat';
+        var pattern = /t$/;
+        console.log(pattern.test(str));//false
+        console.log(pattern.test(str1));//true
+        document.querySelector("#but").onclick = function () {
+            var str = document.querySelector("#text").value;
+            var pattern = /^[0-9]{1,3}\.[0-9]+$/;
+            console.log(pattern.test(str))
+        }
 
         /**
                 列子 五
@@ -51,26 +53,56 @@
 
         console.log("================================= 列子 五====================================")
 
-        console.log(/^\d+$/.test("114"))
+        console.log(/^\d+$/.test("114"))// true
         console.log(/^\d{4}|w$/.test("114"))//false
         console.log(/^\d{4}|w$/.test("1143"))//true 
         console.log(/^\d{4}|w$/.test("114wwwwwwwwwww"))//true 
 
-   /**
-                列子 六
-        */
+        /**
+                     列子 六
+             */
 
         console.log("================================= 列子 六====================================")
 
-    // 为什么是ture 呢是因为(123\d{2}) 被作为了一个整体作为开头
+        // 为什么是ture 呢是因为(123\d{2}) 被作为了一个整体作为开头
 
         // 123 和 67 是或的关系 表示的是以123开头或者67 结尾两者满足一个即可
 
         console.log(/^(123\d{2})|(67\d{3})$/.test("1232432"))// true 
         console.log(/^(123\d{2})|(67\d{3})$/.test("673333"))// false
         console.log(/^(123)\d{2}|(67)\d{3}$/.test("12334"))// true
-        console.log(/^(123\d{2}|67\d{3})$/.test("77555"))// true
+        console.log(/^(123\d{2}|67\d{3})$/.test("77555"))// false
+        console.log(/^(123\d{2}|67\d{3})$/.test("67755"))// false
 
-</script>
+
+
+        let testReg = /^([1-9]\d*|[1-9]\d*\.\d{1,10}|0\.\d{1,10})$/
+
+        console.warn(testReg.test("123.23423"))//true
+        testReg.lastIndex = 0
+        console.warn(testReg.test("123.2342"))// true
+        testReg.lastIndex = 0
+        console.warn(testReg.test("0.3334"))// true
+        testReg.lastIndex = 0
+        console.warn(testReg.test("00.99"))// false
+        testReg.lastIndex = 0
+        console.warn(testReg.test("10000.232"))// true
+        testReg.lastIndex = 0
+        console.warn(testReg.test("02"))// false
+        testReg.lastIndex = 0
+        console.warn(testReg.test("02"))// false
+        testReg.lastIndex = 0
+        console.warn(testReg.test("000001000"))// false
+        testReg.lastIndex = 0
+        console.warn(testReg.test("121314141.00"))// true
+        testReg.lastIndex = 0
+        console.warn(testReg.test("121314140."))// true
+        testReg.lastIndex = 0
+        console.warn(testReg.test("3"))// true
+        testReg.lastIndex = 0
+
+
+    </script>
 </body>
+
 </html>
