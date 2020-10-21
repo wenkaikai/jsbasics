@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script>
 
-    var str1 = "bedroom";
-    var str2 = "bedding";
-    var reBed =  /^\/nokeep1(?:\/(?=$))?$/i//在我们捕获bed这个字符串时，抢先去看接下来的字符串是不是room
-    console.log(str1.match(reBed));
+        // 表示非捕获分组
+        var str1 = "bedroom";
+        var str2 = "bedding";
+        var reBed = /^\/nokeep1(?:\/(?=$))?$/i//在我们捕获bed这个字符串时，抢先去看接下来的字符串是不是room
+        console.log(str1.match(reBed));
+
+        // reg(?!exp) 	负向前瞻 | 零宽度负先行断言	reg匹配的内容后面内容不满足exp规则  零宽度负前向断言
+
+
+       
+
     </script>
 </body>
+
 </html>

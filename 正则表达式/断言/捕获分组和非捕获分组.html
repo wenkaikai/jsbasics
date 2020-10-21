@@ -21,18 +21,59 @@
         */
 
         console.log("列子一")
+        console.log("1234567890".replace(/\B(?=(?:\d{3})+)/g, ","))//1,2,3,4,5,6,7,890
+        console.log("1234567890".replace(/\B/g, ","))//,0
+        console.log("1234567890".replace(/((\d{3})+)/g, ","))//,0
+        console.log("1234567890".replace(/\B((\d{3})+)/g, ","))//1,
+        console.log("1234567890".replace(/\B(?=(?:\d{3})+(?!\d))/g, ","))//1,234,567,890
 
-        console.log("1234567890".replace(/\B(?=(?:\d{3})+)/g,","))//1,2,3,4,5,6,7,890
+        console.log("列子二")
 
-        console.log("1234567890".replace(/\B/g,","))//,0
+        /*
+            正则表达式 (regular expression)是一个描述字符模式的对象。 ECMAScript 的 RegExp 类
+            表示正则表达式，而 String 和 RegExp 都定义了使用正则表达式进行强大的模式匹配和文本 检索与替换的函数。
+            捕获组：把正则表达式中子表达式匹配的内容，保存到内存中以数字编号或显式命名的组里，方便后面引用
+        */
 
-        console.log("1234567890".replace(/((\d{3})+)/g,","))//,0
+        // var str = "2019-10-28";
+        // var reg = /(\d{4})-(\d{2})-(\d{2})/;
+        // var result = reg.exec(str)
+        // console.log(result[0])//2019-10-28
+        // console.log(result[1]) //2019
+        // console.log(result[2])// 10
+        // console.log(result[3])// 28
 
-        console.log("1234567890".replace(/\B((\d{3})+)/g,","))//1,
 
-        
-        console.log("1234567890".replace(/\B(?=(?:\d{3})+(?!\d))/g,","))//1,234,567,890
+        console.log("列子三")
 
+        /**
+        非捕获分组： 分组匹配之后，不需要的用?: 语法过滤子表达式内容。也就是代码匹配，但是不保存
+            代码如下：
+        */
+
+
+        var str = "2019-10-28";
+        var reg = /(\d{4})-(\d{2})-(?:\d{2})/;
+        var result = reg.exec(str)
+        console.log(result[0])//2019-10-28
+        console.log(result[1]) //2019
+        console.log(result[2])//10
+        console.log(result[3])//undefined
+
+
+
+        console.log("列子四")
+
+        // 在jQuery源码中，曾用到非捕获组的方法，获取字符串、标签、id选择器来做选择器表达式，如：
+
+        var quickExpr = /^(?:[^#<]*(<[\w\W]+>)[^>]*$|#([\w\-]*)$)/
+
+        quickExpr.exec('#target');   // ["#target", undefined, "target"]
+        quickExpr.exec('<div>');      // ["<div>", "<div>", undefined]
+        quickExpr.exec('abc<div>');   // ["abc<div>", "<div>", undefined]
+        quickExpr.exec('abc<div>abc#id');   // ["abc<div>abc#id", "<div>", undefined]
+        quickExpr.exec('div');   // null
+        quickExpr.exec('<div><img></div>'); // ["<div><img></div>", "<div><img>
 
     </script>
 </body>

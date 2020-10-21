@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hasOwnProperty</title>
+</head>
+<body>
+判断对象是否是自己的属性
+<script>
+
+    /**
+     toLocaleString() 返回一个字符串表示数组中的元素。数组中的元素将使用各自的 toLocaleString 方法转成字符串，这些字符串将使用一个特定语言环境的字符串（例如一个逗号 ","）隔开。
+
+     Object toLocaleString 返回调用 toString() 的结果。
+    */
+
+console.log("-----------------------列子一----------------------------------------")
+    var prices = [500, 8123, 12];
+    console.log( prices.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }));
+
+    
+console.log("-----------------------列子二----------------------------------------")
+    var obj2 = ["teete","qwer"];
+    console.log( obj2.toLocaleString());// 
+
+
+</script>
+</body>
+</html>

@@ -7,15 +7,21 @@
 <body>
 判断对象是否是自己的属性
 <script>
+
+    /**
+     方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性（也就是，是否有指定的键）。 不包含继承的属性
+    */
     var a = {
         name:"zkw"
     }
     // a.prototype.aa = function(){
     //     console.log("we")
     // };
-    console.log(a.prototype)//undefined
-    console.log(a.hasOwnProperty("name"))
-    console.log(a.hasOwnProperty("aa"))
+    console.log(a)//undefined
+    console.log(a.hasOwnProperty("name"))// true
+    console.log(a.hasOwnProperty("aa"))// false
+    console.log(a.hasOwnProperty("toString"))// false
+
 </script>
 </body>
 </html>

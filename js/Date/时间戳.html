@@ -14,9 +14,22 @@
         var date1 = new Date("2018-9-04");
 
         */
-        var data = new Date("2018-9-04");
-        var date1 = new Date("2018-9-4");
+        // var data = new Date("2018-9-04");
+        // var date1 = new Date("2018-9-4");
 
+        var data = new Date("2018-09-04").getTime();
+        var date1 = new Date("2018-9-04").getTime();
+
+
+        console.log((data-date1)/1000/3600)
+        console.log(new Date(data).getFullYear())
+        console.log(new Date(date1).getFullYear())
+        console.log(new Date(data).getMonth())
+        console.log(new Date(date1).getMonth())
+        console.log(new Date(data).getDate())
+        console.log(new Date(date1).getDate())
+        console.log(new Date(data).toUTCString())
+        console.log(new Date(date1).toUTCString())
         //console.log(typeof data.getTime())  // 转换出来的是number
 
 console.log(data,date1)// 不一样

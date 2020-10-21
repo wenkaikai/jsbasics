@@ -6,12 +6,16 @@
 </head>
 <body>
     <script>
+
+        /**
+            Object.getPrototypeOf() 方法返回指定对象的原型（内部[[Prototype]]属性的值）。
+        */
         var aa = Object.create({"name":"zkw"});
         aa.bb = "flf";
         console.log(aa)
         console.log(Object.getPrototypeOf(aa))
         //Object.getPrototypeOf(obj) 是获取obj 的原型 
-        console.log(Object.prototype)
+        console.log(aa.__proto__)
     </script>
 </body>
 </html>

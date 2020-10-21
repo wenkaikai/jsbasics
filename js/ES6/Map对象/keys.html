@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>keys</title>
 </head>
+
 <body>
-<script>
-    let map = new Map();//新建一个Map对象
-    /*
-     keys() 返回一个迭代器，迭代器按照插入的顺序返回每一个key元素；
-     */
-    map.set("key1","小东");
-    map.set("key2","小郭");
-    console.log(map.keys());//key1 key2
-    console.log(map)//Map(2) {"key1" => "小东", "key2" => "小郭"}
-</script>
+    <script>
+        let map = new Map();//新建一个Map对象
+        /*
+         keys() 返回一个迭代器，迭代器按照插入的顺序返回每一个key元素；
+
+         keys() 返回的也不是数组
+         */
+        map.set("key1", "小东");
+        map.set("key2", "小郭");
+        map.set({ test: 123 }, { test: 456 })
+        //console.log(map)//Map(2) {"key1" => "小东", "key2" => "小郭"}
+        let keys = map.keys();
+        console.log([...keys][2].test); 
+        console.log([...map])
+        for (var key of map.keys()) {
+            console.log(key);
+        }
+    </script>
 </body>
+
 </html>

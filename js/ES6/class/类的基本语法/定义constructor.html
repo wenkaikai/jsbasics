@@ -28,15 +28,19 @@
             }
     */
     class Polygon {
-        constructor() {
-            console.log(this)
-            this.name = "Polygon";
+        constructor(obj) {
+            console.log(this);
+            console.log(obj)
+            this.name = obj.name;
         }
     }
 
-    var poly1 = new Polygon();
-
+    var poly1 = new Polygon({
+        name:123,
+        index:124
+    });
     console.log(poly1.name);
+    console.log(poly1);
    
     // expected output: "Polygon"
     </script>

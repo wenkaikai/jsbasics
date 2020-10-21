@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>enumerable</title>
 </head>
+
 <body>
-<script type="text/javascript">
-    const object={
-        "a":1,
-        "b":2
-    }
-    console.log(Object.getOwnPropertyNames(object))// ["a","b"] 用来获取自身的可枚举的和不可枚举的属性。不包括继承的。
-</script>
+    <script type="text/javascript">
+        /**
+            Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。
+        */
+        const object = {
+            "a": 1,
+            "b": 2
+        }
+        console.log(Object.getOwnPropertyNames(object))// ["a","b"] 用来获取自身的可枚举的和不可枚举的属性。不包括继承的。
+
+        console.log("---------------------列子二--------------------------");
+
+        //不可枚举属性
+        var my_obj = Object.create({}, {
+            getFoo: {
+                value: function () { return this.foo; },
+                enumerable: false
+            }
+        });
+        my_obj.foo = 1;
+
+        console.log(Object.getOwnPropertyNames(my_obj).sort()); // ["foo", "getFoo"]
+    </script>
 </body>
+
 </html>

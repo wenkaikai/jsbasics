@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>values</title>
+</head>
+<body>
+<script>
+    let map = new Map();//新建一个Map对象
+    /*
+     keys() 返回一个迭代器，迭代器按照插入的顺序返回每一个key元素；
+     */
+    map.set("key1","小东");
+    map.set("key2","小郭");
+    console.log(map.values());//"小东"  "小郭"
+    console.log(map)//Map(2) {"key1" => "小东", "key2" => "小郭"}
+</script>
+</body>
+</html>

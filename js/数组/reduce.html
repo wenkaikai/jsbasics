@@ -10,20 +10,22 @@
     <script>
         /*
          列子 一
-         @param total
-         @param currentValue
-         @param currentIndex
-         @param arry
+         @param total  必需。初始值, 或者计算结束后的返回值
+         @param currentValue  必需。当前元素
+         @param currentIndex 可选。当前元素的索引
+         @param arry  可选。当前元素所属的数组对象。
          @param initialValue 初始化值
          reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
 
 
          */
            var a1 = ["abc","bcd",123,456].reduce(function(preval,curval){
+
+               // initiaValue  默认的第一个值
                console.log(preval)//abc::bcd preval 就是return 返回的上一次的值
             //    console.log(curval)
                return preval+"::"+curval;
-           })
+           },"默认的第一个值")
            console.log(a1)//abc::bcd::123::456
            //console.log(["abc","bcd",123,456].join("::"))//abc::bcd::123::456
 

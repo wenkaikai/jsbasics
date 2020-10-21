@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <title>promise</title>
@@ -7,9 +7,9 @@
 <body>
   <script>
       
-Promise.all([
+Promise.all([ 
  new Promise(function(resolve, reject) {
-  resolve(1)
+  resolve(1,3333)
  }),
  new Promise(function(resolve, reject) {
   resolve(2)
@@ -17,8 +17,10 @@ Promise.all([
  new Promise(function(resolve, reject) {
   resolve(3)
  })
-]).then(arr => {
+]).then(arr => {  
  console.log(arr) // [1, 2, 3] 不用传resolve 函数直接就返回了值
+},reason=>{
+  console.warn(reason)// reject 走了这里     
 })
   </script>  
 </body>

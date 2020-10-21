@@ -23,19 +23,25 @@ async 函数中可能会有 await 表达式，这会使 async 函数暂停执行
     function resolveAfter2Seconds() {
         return new Promise((resolve,reject) => {
             setTimeout(() => {
-                resolve();
+                resolve(1);
             }, 2000);
         });
     }
 
     async function asyncCall() {
         console.log('calling');
+
+        // 这个时候是先执行 fsdfds
         // var result = resolveAfter2Seconds();// 如果没有await result 返回的是Promiese 对象
         // result.then(function(a){console.log(a)},function(b){console.log(b)})// resolved
         // console.log(result)
+
+
+
+        //  这个时候先执行的是 1
         var result = await resolveAfter2Seconds();// 有了await 就不用写then了 await函数没有执行完后面的代码就不执行了
-        // 如果有await await返回的就是resolve 里面的值 相当于执行了then
-        // console.log(result);// resolved
+        //如果有await await返回的就是resolve 里面的值 相当于执行了then
+        console.log(result);// resolved
         console.log("fsdfds");// resolved
         // expected output: 'resolved'
     }

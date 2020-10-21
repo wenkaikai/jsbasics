@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>offsetHeight</title>
+
+
+    <style>
+        body{
+            height:700px;
+        }
+        div{
+            padding:100px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    发射点发射点 第三方第三方第三方第三方打撒撒旦 士大夫
+</div>
+</body>
+<script>
+
+    /**
+        Element.getBoundingClientRect() 方法返回元素的大小及其相对于视口的位置。
+
+如果是标准盒子模型，元素的尺寸等于width/height + padding + border-width的总和。如果box-sizing: border-box，元素的的尺寸等于 width/height。
+    */
+   let selector = document.querySelector("div");// 获取的是文档中第一个div
+   console.log(selector)
+   console.log(selector.offsetHeight)// 221
+   console.log(selector.getBoundingClientRect().height)// ""
+   console.log(selector.offsetWidth)// ""
+
+</script>
+</html>
