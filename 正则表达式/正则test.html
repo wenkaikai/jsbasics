@@ -14,12 +14,15 @@
     //console.log( re.test("1") );// true
     //console.log( re.test("1") );// true
 
- //var re = /\d/g;
-   // console.log( re.test("1") );// true
-    //console.log( re.test("1") );// false
-    //console.log( re.test("1") );// true
-    //console.log( re.test("1") );// false
-
+ var re = /\d/g;
+   console.log( re.test("1") );// true
+   console.log( re.lastIndex)
+    console.log( re.test("1") );// false
+    console.log( re.lastIndex)
+    console.log( re.test("1") );// true
+    console.log( re.lastIndex)
+    console.log( re.test("1") );// false
+    console.log( re.lastIndex)
 
 
 
@@ -33,14 +36,14 @@
 
 
 
-var re = /\d/;
-    console.log( re.test("1") );// true
-    re.lastIndex = 0;
-    console.log( re.test("1") );// true
-     re.lastIndex = 0;
-    console.log( re.test("1") );// true
-     re.lastIndex = 0;
-    console.log( re.test("1") );// true
+// var re = /\d/g;
+//     console.log( re.test("1") );// true
+//     re.lastIndex = 0;
+//     console.log( re.test("1") );// true
+//      re.lastIndex = 0;
+//     console.log( re.test("1") );// true
+//      re.lastIndex = 0;
+//     console.log( re.test("1") );// true
 
 </script>
 </html>
