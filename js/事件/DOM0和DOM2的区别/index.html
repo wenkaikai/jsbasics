@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /**
+            一
+            注册事件有两种方式，分别是DOM0级和DOM2级
+            DOM0级就是通过事件绑定的形式dom元素只能有(绑定)一个事件处理函数，他的特点是同一个元素绑定相同事件， 后面函数会覆盖前面的
+             dom.on+type = 事件处理函数 dom.onclick = function(){} 函数里面是要执行的功能
+            解除解绑：dom.onclick = null
+
+            二
+            DOM2级是通过事件监听的形式绑定， dom元素可以有(绑定)多个事件处理函数
+            dom.addEventListener(事件字符串,回调函数,布尔值)
+            IE8以上： dom.addEventListener(type,fn,false)  　　this指向dom本身
+            IE8及以下：dom.attachEvent('on'+type,fn)      　　    this指向window
+            解除绑定：
+           dom.removeEventListener(type,fn,false) 　　IE8以上
+          dom.detachEvent(‘on’+type,fn) 　　　　　　IE8及以下
+        */
+
+        /**
+            一级事件
+            btn.onclick = function() {
+            alert('hehe');
+        }
+        btn.onclick = function() {
+            alert('hihi');
+        }
+
+
+        // 绑定事件兼容处理
+        function addEventListener(ele,eventName,callback) {
+            if (ele.addEventListener) {
+                ele.addEventListener(eventName,callback);
+            } else if (ele.attachEvent) {
+                ele.attachEvent('on' + eventName, callback);
+            } else {
+                // ele.onclick = function() {}
+                ele['on'+eventName] = callback;
+            }
+        }
+        addEventListener(btn,'click',function() {
+            alert('ok');
+        });
+        */
+
+
+        /**
+            二级事件
+
+            // 第一个参数是字符串 表示事件类型 不带on 
+        // 第二个参数是事件处理函数
+        // 特点 同一个元素可以绑定相同的事件 不会冲突
+        btn.addEventListener('click',function() {
+            alert('123');
+        });
+        btn.addEventListener('click',function() {
+            alert('456');
+        });
+
+        btn.attachEvent('onclick',function() {
+            console.log(123);
+        });
+
+
+
+
+        function fn() {
+            alert('good');
+        }
+
+        btn.addEventListener('click',fn);
+        
+        document.querySelectorAll('button')[1].onclick = function() {
+            btn.removeEventListener('click',fn)
+        }
+
+        btn.attachEvent('onclick',function() {
+            console.log(123);
+        });
+        document.querySelectorAll('button')[1].onclick = function() {
+            btn.detachEvent('onclick',fn)
+        }
+
+
+
+        // 删除事件兼容处理
+        function removeEventListener(ele,eventName,callback) {
+            if (ele.removeEventListener) {
+                ele.removeEventListener(eventName,callback);
+            } else if (ele.detachEvent) {
+                ele.detachEvent('on' + eventName, callback);
+            } else {
+                ele['on'+eventName] = null;
+            }
+        }
+
+        DOM0于DOM2事件绑定的区别
+DOM0事件绑定的原理
+给当前元素的某一私有属性（onXXX）赋值的过程；（之前属性默认值是null，如果我们赋值了一个函数，就相当于绑定了一个方法）
+当我们赋值成功（赋值一个函数），此时浏览器会把DOM元素和赋值的的函数建立关联，以及建立DOM元素的行为监听，当某一行为被用户触发，浏览器会把赋值的函数执行；
+DOM0事件绑定的特点：
+只有DOM元素天生拥有这个私有属性（onxxx事件私有属性），我们赋值的方法才叫事件绑定，否则属于设置自定义属性
+移除事件绑定的时候，我们只需要赋值为null；
+在DOM0事件绑定中，只能给当前元素的某一个事件行为绑定一个方法，绑定多个方法，最后一次的绑定的会替换前面绑定的
+DOM2事件绑定的原理
+DOM2事件绑定使用的 addEventListener/attachEvent方法都是在eventTarget这个内置类的原型上定义的，我们调用的时候，首先要通过原型链找到这个方法，然后执行完成事件绑定的效果
+浏览器会给当前元素的某个事件行为开辟一个事件池（事件队列）【浏览器有一个统一的事件池，每个元素绑定的行为都放在这里，通过相关标志区分】，当我们通过 addEventListener/attachEvent进行事件绑定的时候，会把绑定的方法放在事件池中；
+当元素的某一行为被触发，浏览器回到对应事件池中，把当前放在事件池的所有方法按序依次执行
+        */
+    </script>
+</body>
+
+</html>

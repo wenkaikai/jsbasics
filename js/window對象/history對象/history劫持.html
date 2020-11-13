@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+
+        // history 劫持就相当于调了两次方法，一次重写的，一次是原生的
+        (function (history) {
+            var pushState = history.pushState;
+            console.log(pushState);
+            history.pushState = function (state) {
+                if (typeof history.onpushstate == "function") {
+                    history.onpushstate({ state: state });
+                }
+                // ... whatever else you want to do
+                // maybe call onhashchange e.handler
+                console.log(arguments)
+                return pushState.apply(history, arguments);
+            };
+            console.log(history.pushState)
+        })(window.history);
+
+        history.onpushstate = function (e) {   
+            console.log('pushed');
+        }
+
+
+        
+        window.setTimeout(()=>{
+            // vue params 是不是就是这个state呢。
+            history.pushState({state:"测试"},null,location.href+"#235");
+        },2000)
+    </script>
+</body>
+
+</html>
