@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的结构赋值</title>
+</head>
+<body>
+   <script>
+
+       // 列子一是可以的不会报错
+       let {
+           class:classes={},
+           style={},
+        } = {
+           class:{
+               a:123
+           },
+           style:{
+               text:123
+           }
+       };
+       console.log(classes);//{a: 123}
+       console.log(style);//{text: 123}
+       
+       
+       // 这个就是报错的
+       let {
+           class={},
+           style={},
+        } = {
+           class:{
+               a:123
+           },
+           style:{
+               text:123
+           }
+       };
+       console.log(classes);
+       console.log(style);
+   </script> 
+</body>
+</html>

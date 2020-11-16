@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onhashchange</title>
+</head>
+
+<body>
+    <script>
+        console.log(document.documentMode);
+        /**
+        documentMode 属性返回浏览器渲染文档的模式。
+            5 - 页面在 IE5 模式下展示
+            7 - 页面在 IE7 模式下展示
+            8 - 页面在 IE8 模式下展示
+            9 - 页面在 IE9 模式下展示
+        IE8 使用不同方式渲染页面，基于 !DOCTYPE 或者某些存在的HTML元素。
+        */
+        if (("onhashchange" in window) && ((typeof document.documentMode === "undefined") || document.documentMode == 8)) {
+            // 浏览器支持onhashchange事件
+            window.onhashchange = hashChangeFire;  // TODO，对应新的hash执行的操作函数
+        } else {
+            // 不支持则用定时器检测的办法
+            setInterval(function () {
+                var ischanged = isHashChanged();  // TODO，检测hash值或其中某一段是否更改的函数
+                if (ischanged) {
+                    hashChangeFire();  // TODO，对应新的hash执行的操作函数
+                }
+            }, 150);
+        }
+
+        // 定义函数的关键子
+        function hashChangeFire() {
+            // 手动改浏览器的hash 就会触发
+            // 如果开始没有hash 值然后再加上hash 也会变化
+            alert("URL产生了变化")
+        }
+    </script>
+</body>
+
+</html>

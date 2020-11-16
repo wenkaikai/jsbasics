@@ -9,15 +9,13 @@
 <body>
   类中的this指向问题
   <script>
-
     class Logger {
       constructor() {
-        //console.log(this) constructor 里面是有this 的。
-        // this.printName = this.printName.bind(this);
+        this.printName = this.printName.bind(this);
       }
       printName(name = 'there') {
         console.log(this); //如果没有上边的this 此时的this 指向是undefined
-        // this.print(`Hello ${name}`);
+        this.print(`Hello ${name}`);        
         // console.log(name)
       }
 
@@ -25,11 +23,13 @@
         console.log(text);
       }
     }
-
     const logger = new Logger();
+    // logger.printName("1234");
+
+
     // console.log(logger)
-    const { printName } = logger;// 变量的解构还带这样玩的呀，就连原型中的也能解构的出来
-    // console.log(printName)
+    const { printName } = logger;// 
+    //n    console.log(printName)
     printName("world"); // TypeError: Cannot read property 'print' of undefined
   </script>
 </body>

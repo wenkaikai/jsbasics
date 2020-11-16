@@ -8,6 +8,7 @@
     <script>
         // 获取随机数，toFixed为四舍五入保留小数，0为保留整数，范围～1000
 const getRandom = () => +(Math.random()*1000).toFixed(0);
+
 const asyncTask = (taskID) => new Promise( (resolve) => {
   // 随机获取一次0~1000的随机数
   let timeout = getRandom();

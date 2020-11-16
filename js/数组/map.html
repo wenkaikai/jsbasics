@@ -11,7 +11,10 @@
     */
     var arry = [1,2,3,4,5]
     var newarry= arry.map(function(x,i){//其中i 表示的下标 放回的也是一个数组
-        return x*x;
+        if(i>3){
+            return x*x;
+        }
+        
     })
     console.log(newarry)
     console.log(arry)

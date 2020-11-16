@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+            作et和get方法，表面是针对同一个键，但实际上这是两个不同的数组实例，内存地址是不一样的，因此get方法无法读取该键，返回undefined
+        */
+
+        // 列子一
+
+        // const map = new Map();
+        // map.set(['a'], 555);
+
+        // console.log(map.get(['a']))// undefined   因为 ['a'] !== ['a']
+
+
+        // 列子二
+
+        /**
+            面代码中，变量k1和k2的值是一样的，但是它们在 Map 结构中被视为两个键。
+            由上可知，Map 的键实际上是跟内存地址绑定的，只要内存地址不一样，就视为两个键。这就解决了同名属性碰撞（clash）的问题，我们扩展别人的库的时候，如果使用对象作为键名，就不用担心自己的属性与原作者的属性同名。
+        */
+        const map = new Map();
+        const k1 = ['a'];
+        const k2 = ['a'];
+        // 连续写法称为链式写法
+        map
+            .set(k1, 111)
+            .set(k2, 222)
+            .set("test", 223)
+            .set("test", 344)
+
+        map.get(k1) // 111
+        map.get(k2) // 222
+        console.warn(map.get("test")) // 344 后面的会个前面的冲掉
+    </script>
+</body>
+
+</html>

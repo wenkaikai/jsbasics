@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+
+        // 匹配任何可见字符。等价于[^ \f\n\r\t\v]。
+        let str = "广东省深圳市福田区"
+        str = str.match(/[省市](\S*)市/);
+        console.log(str[1]);//结果bbbcccdddeee
+
+        let str1 = "北京市北京市福田区"
+        str1 = str1.match(/[省市](\S*)市/);
+        console.log(str1[1]);//结果bbbcccdddeee
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const map0 = new Map()
+            .set(1, 'a')
+            .set(2, 'b')
+            .set(3, 'c');
+
+
+        //console.warn([...map0]) 这样其实是个二维数组
+                /**
+                    0: (2) [1, "a"]
+                    1: (2) [2, "b"]
+                    2: (2) [3, "c"]
+                */
+
+               // let arry = [...map0].filter(([k, v]) => k < 3)
+                 /**
+                    0: (2) [1, "a"]
+                    1: (2) [2, "b"]
+                */
+                
+        const map1 = new Map(
+            [...map0].filter(([k, v]) => k < 3)
+        );
+        console.warn(map1);
+    </script>
+</body>
+
+</html>

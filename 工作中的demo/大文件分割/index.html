@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type='file' id='fileSelector' />
+    <div onclick="sliceFile()">分割</div>
+    <script>
+    let SLICE_SIZE = 1024 * 1024;
+    function sliceFile() {
+        let fileSelector = document.querySelector('#fileSelector');
+        if (fileSelector.value == '') {
+            alert('请选择要分割的文件');
+            return;
+        }
+        
+        // 这个file继承自Blob对象
+        let file = fileSelector.files[0];
+        let fileSize = file.size;
+        console.log(fileSize)
+        if (fileSize > SLICE_SIZE){
+            // 计算需要分几份
+            let sliceCount = Math.ceil(fileSize / SLICE_SIZE);
+            for (let i = 0; i < sliceCount; ++i) {
+                // 计算分片起始位置
+                let start = i * SLICE_SIZE;
+                // 计算分片结束位置
+                let end = start + SLICE_SIZE;
+                // 最后一片特殊处理
+                if (end > fileSize) {
+                    end = fileSize;
+                }
+                let newBlob = file.slice(start, end);
+                console.log(newBlob)
+                   // balabala 业务代码
+            }
+            return;
+        }
+        // 不需要分割
+        // balabala 业务代码
+    }
+    </script>
+</body>
+</html>

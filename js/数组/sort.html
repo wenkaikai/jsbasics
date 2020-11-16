@@ -9,6 +9,11 @@
     /*
         一 数组的升序排序
         sort 接受的函数后面大的返回负值
+
+        //若返回值>0,数组元素将按升序排列
+	    //若返回值<0,数组元素将按降序排列
+
+
      */
     //    sort()方法改变的是原数组的顺序
 //    function compare(value1,value2){
@@ -32,9 +37,10 @@
      */
 
     function compare1(value1,value2){
-        return value2 - value1;
+        return value1 - value2; // 升序排列
+        // return value2 - value1; // 降序排
     }
-    var arr2 = [19,30,66,55,88,99];
+    var arr2 = [19,30,66,55,88,99,2];
     arr2.sort(compare1);
     console.log(arr2);
 </script>

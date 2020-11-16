@@ -14,14 +14,16 @@
      */
 
 
-    var a = ['red', 'blue', 'green', 'blue'];
+    var a = ['red', 'blue', 'green', 'blue',{test:123}];
     var myFirstIndex = a.indexOf( "blue");
     // View the results: "1"
-    alert("myFirstIndex: " + myFirstIndex);
+    //alert("myFirstIndex: " + myFirstIndex);
 //    var mySecondIndex = Array.indexOf(a, "blue", (myFirstIndex + 1) ); //这样不能用
-        var mySecondIndex =a.indexOf( "blue", (myFirstIndex + 1) );
+        //var mySecondIndex =a.indexOf( "blue", (myFirstIndex + 1) );
     // View the results: "3"
-    alert("mySecondIndex: " + mySecondIndex);
+    //alert("mySecondIndex: " + mySecondIndex);
+
+    console.log(a.indexOf({test:123}))
 </script>
 </body>
 </html>a

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>contructor 返回一个自定义的对象</title>
+    <title>super</title>
 </head>
 
 <body>
@@ -11,8 +11,8 @@
     'use strict';
     class Polygon {
         constructor(height, width) {
-            console.log(height);
-            console.log(width)
+            // console.log(height);
+            // console.log(width)
             this.name = 'Polygon';
             this.height = height;
             this.width = width;
@@ -38,13 +38,13 @@
           
             super(length, length);// 会调调用父类的构造函数
             // super()// 要想在constructor 中調用this 必须要调用super
-            // console.log(this)
+
+            console.log(this)
             this.name = 'Square';
         }
         get area() {
             return this.height * this.width;
         }
-
         set area(value) {
             this.area = value;
         }

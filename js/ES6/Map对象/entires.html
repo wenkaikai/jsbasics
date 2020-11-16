@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<script>
-    let map = new Map();//新建一个Map对象
 
-    map.set("key1","小东");
-    map.set("key2","小郭");
-    /*
-     　entries()返回一个迭代器， 迭代器按照对象的插入顺序返回[key, value]；
-     */
-    console.log(map.entries());//MapIterator
-</script>
+<body>
+    <script>
+        let map = new Map();//新建一个Map对象
+
+        map.set("key1", "小东");
+        map.set("key2", "小郭");
+        /*
+          entries()返回一个迭代器， 迭代器按照对象的插入顺序返回[key, value]；
+         */
+        console.log(map.entries());//MapIterator
+
+        for (var [key, value] of map.entries()) {
+            console.log(key + " = " + value);
+        }
+    </script>
 </body>
+
 </html>

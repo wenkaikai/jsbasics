@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tostring</title>
+</head>
+<body>
+判断对象是否是自己的属性
+<script>
+
+    /**
+  
+    */
+
+console.log("-----------------------列子一----------------------------------------")
+var obj2 = ["teete","qwer"];
+    console.log( obj2.toLocaleString());// teete,qwer
+
+    
+console.log("-----------------------列子二----------------------------------------")
+var obj2 = ["teete","qwer"];
+    console.log(obj2.__proto__.__proto__.toString());// [object Object]
+
+    console.log("-----------------------列子三----------------------------------------")
+    var o = new Object();
+    console.log(o.toString()); // returns [object Object]
+</script>
+</body>
+</html>

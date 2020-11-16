@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let map = new Map([[{key:1}, "小东1"],[{key:2}, "小东2"],[{key:3}, "小东3"]]);
+        //新建一个Map对象
+        /*
+           forEach(callback , context) 循环执行函数并把键/值对作为参数； context为执行函数的上下文this；
+         */
+        map.forEach(function (i, j) {
+            console.log(i);//小东3   
+            console.log(j)//key1
+        });
+
+    </script>
+</body>
+</html>

@@ -18,15 +18,36 @@
     //(?=pattern)// 零宽度正先行断言
     //匹配指定内容的前面位置
 
+
+
+    
+
+// (?=reg_pattern)：正前向断言
+
+// 只有当字符串右侧出现匹配reg_pattern的字符时才匹配正则表达式。
+
+// str = "img1.jpg,img2.jpg,img3.bmp";
+
+// reg = /(\w*)(?=\.gif)/;
+
+// arr_m = str.match(reg);//arr_m = ["img1","img2"]
+
+ 
+
+// (?!reg_pattern)：负前向断言
+
+// 只有当字符串右侧不出现匹配reg_pattern的字符串时才匹配正则表达式。
+
+
     /*
           列子一
     */
 
     console.log("列子一")
-    reg = /(?=\d{3})/;
-    content = 'abc123';
+    reg = /.{2}(?=\d{3})/;
+    content = 'abc123dddddd';
     res = content.match(reg)
-    console.log(res)// 是一个数组[0:""]
+    console.log(res)// 是一个数组["bc", index: 1, input: "abc123", groups: undefined]
 
     /*
           列子二
@@ -81,6 +102,20 @@
     var reg = /^(?=<)<[^>]+>\w+/;
     console.log("列子五")
     console.log(str.match(reg));
+
+
+
+     /*
+          列子六
+    */
+
+    console.log("列子一")
+    reg = /(?=\d{3}).{6}/;
+    content = 'abc123dddddd';
+    res = content.match(reg)
+    console.log(res)// 是一个数组["123ddd", index: 1, input: "abc123", groups: undefined]
+
+    // 正先行断言是不区分左右的都能匹配。
   </script>
 </body>
 

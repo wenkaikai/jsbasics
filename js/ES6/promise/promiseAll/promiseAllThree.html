@@ -10,6 +10,7 @@
 function sleep(wait) {
     return new Promise((res,rej) => {
         setTimeout(() => {
+            console.log("fsfs")
             res(wait);
         },wait);
     });
@@ -17,7 +18,7 @@ function sleep(wait) {
 
 let p1 = sleep(500);
 let p2 = sleep(500);
-let p3 = sleep(1000);
+let p3 = sleep(5000);
 
 Promise.all([p1,p2,p3]).then(result => {
     console.log(result);
