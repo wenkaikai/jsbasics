@@ -8,16 +8,21 @@
     <script>
         class Point{
             method1(){
-                console.log("这是第一个方法")
+                console.log("这是第一个方法");
+                console.log("父类里面的this");
+                console.log(this);
             }
         }
         class ColorPoint extends Point{
             method2(){
-                console.log("这是第二个方法")
+                console.log("这是第二个方法");
+                console.log("子类里面的this");
+                console.log(this);
             }
         }
         var method = new ColorPoint();
-        method.method1();//这样就可以实现继承了 这只是继承了方法。
+        method.method1();// 这是第一个方法 这样就可以实现继承了 这只是继承了方法。
+        method.method2();// 这是第一个方法 这样就可以实现继承了 这只是继承了方法。
     </script>
 </body>
 </html>

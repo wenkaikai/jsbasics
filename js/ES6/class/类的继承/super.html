@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /**
+            子类的super 关键子
+
+            子类必须在constructor方法中调用super方法，否则新建实例时会报错。
+            这是因为子类自己的this对象，必须先通过父类的构造函数完成塑造，
+            得到与父类同样的实例属性和方法
+            ，然后再对其进行加工，加上子类自己的实例属性和方法。
+            如果不调用super方法，子类就得不到this对象
+
+
+
+               class Point {  }
+
+                class ColorPoint extends Point {
+                    constructor() {
+                    }
+                }
+
+                let cp = new ColorPoint(); // ncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+
+        */
+
+        class Point {
+            constructor(x, y) {
+                console.log("父类 this")
+                console.log(this)
+                this.x = x;
+                this.y = y;
+            }
+
+            toString() {
+                return '(' + this.x + ', ' + this.y + ')';
+            }
+        }
+
+
+
+        class ColorPoint extends Point {
+            constructor(x, y, color) {
+                super(x, y); // 调用父类的constructor(x, y)
+                console.log("子类 this")
+                console.log(this)
+                this.color = color;
+            }
+
+            toString() {
+                return this.color + ' ' + super.toString(); // 调用父类的toString()
+            }
+        }
+        new ColorPoint("1", "2", "3")
+
+
+     
+    </script>
+</body>
+
+</html>

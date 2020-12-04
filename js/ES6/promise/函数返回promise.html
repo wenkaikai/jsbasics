@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        //  promise then返回的任然是一个 promise对象。
+        const fn1 = function () {
+            return new Promise((resolve, reject) => {
+                resolve({
+                    test: 123
+                })
+            })
+        }
+        const fn2 = function () {
+            let promise = fn1();
+            return promise.then((result) => { 
+                return {
+                    test:124
+                }
+            });
+        }
+        console.log(fn2().then((result)=>{}))
+    </script>
+</body>
+
+</html>

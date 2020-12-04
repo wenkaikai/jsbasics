@@ -6,6 +6,16 @@
 </head>
 <body>
     <script>
+        /**
+            constructor方法默认返回实例对象（即this），完全可以指定返回另外一个对象。
+            class Foo {
+                constructor() {
+                    return Object.create(null);
+                }
+            }
+            new Foo() instanceof Foo   // false
+        */
+        
         class Square {
             constructor(){
                 return {
