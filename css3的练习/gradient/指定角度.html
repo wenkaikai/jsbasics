@@ -5,7 +5,12 @@
     <title>linear-gradient 指定角度</title>
     <style>
         /* linear-gradient() 函数用于创建一个表示两种或多种颜色线性渐变的图片。
-        创建一个线性渐变，需要指定两种颜色，还可以实现不同方向（指定为一个角度）的渐变效果，如果不指定方向，默认从下到上渐变。 */
+        创建一个线性渐变，需要指定两种颜色，还可以实现不同方向（指定为一个角度）的渐变效果，如果不指定方向，默认从下到上渐变。
+        渐变线首先通过元素中心点并且与顶点垂直相交，与中心点垂直线构成的夹角才是渐变角度
+         https://www.w3cplus.com/css3/do-you-really-understand-css-linear-gradients.html 
+
+            0deg 就是to top 这样就好理解了
+         */
         
         #grad2 {
           height: 100px;

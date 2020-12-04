@@ -8,44 +8,65 @@
 
 <body>
     <script type="text/javascript">
-    /*
-	then方法可以接受两个回调函数作为参数。第一个回调函数是Promise对象的状态变为resolved时调用，第二个回调函数是Promise对象的状态变为rejected时调用。其中，第二个函数是可选的，不一定要提供。这两个函数都接受Promise对象传出的值作为参数。
-	 */
-    // 	function timeout(ms) {
-    //   return new Promise((resolve, reject) => {
-    //     setTimeout(resolve, ms, 'done');
-    //     console.log(resolve)//ƒ () { [native code] }
-    //   });
-    // }
+        /*
+        then方法可以接受两个回调函数作为参数。第一个回调函数是Promise对象的状态变为resolved时调用，第二个回调函数是Promise对象的状态变为rejected时调用。其中，第二个函数是可选的，不一定要提供。这两个函数都接受Promise对象传出的值作为参数。
+         */
+        // 	function timeout(ms) {
+        //   return new Promise((resolve, reject) => {
+        //     setTimeout(resolve, ms, 'done');
+        //     console.log(resolve)//ƒ () { [native code] }
+        //   });
+        // }
 
-    // timeout(100).then((value) => {
-    //   console.log(value);
-    // });
+        // timeout(100).then((value) => {
+        //   console.log(value);
+        // });
 
-    /*
-    	上面代码中，timeout方法返回一个Promise实例，表示一段时间以后才会发生的结果。过了指定的时间（ms参数）以后，Promise实例的状态变为resolved，就会触发then方法绑定的回调函数。
-     */
+        /*
+            上面代码中，timeout方法返回一个Promise实例，表示一段时间以后才会发生的结果。过了指定的时间（ms参数）以后，Promise实例的状态变为resolved，就会触发then方法绑定的回调函数。
+         */
 
-    /**
-     * 二
-     */
-    let promise = new Promise(function(resolve, reject) {
-        console.log('Promise'); // 最先执行的
-        // resolve();
-        // reject();
-    });
+        /**
+         * 二
+         */
+        // let promise = new Promise(function(resolve, reject) {
+        //     console.log('Promise'); // 最先执行的
+        //     // resolve();
+        //     // reject();
+        // });
 
-    promise.then(function() {
-            console.log('resolved.');
-        }, function() {
-            console.log('失败了');
+        // promise.then(function() {
+        //         console.log('resolved.');
+        //     }, function() {
+        //         console.log('失败了');
+        //     }
+
+        // );
+
+        // console.log('Hi!');
+
+        //结果是Promise Hi!
+
+        /*
+            列子三
+         */
+
+
+
+        function aa() {
+            return new Promise(function (resolve, reject) {
+                // resolve();
+                reject();
+            });
         }
 
-    );
+        aa();
+        console.log("hi")
 
-    console.log('Hi!');
+
 
     //结果是Promise Hi!
+
     </script>
 </body>
 
