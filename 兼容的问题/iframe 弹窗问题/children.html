@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mask">
+
+    </div>
+    <div class="infosWrap"> 
+        
+        <div class="content" onclick="fn()">
+            div
+        </div>    
+    
+    </div>
+
+    
+    
+    <style>
+        .mask{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color:#000;
+            opacity: 0.6;
+            z-index:13;
+        }
+        .infosWrap{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            z-index:13; 
+        }
+        .content{
+            position:absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            width:200px;
+            height:200px;
+            background-color: white;
+            margin:auto;
+        }
+    </style>
+</body>
+<script>
+    function fn(){
+        console.log(document.body.scrollHeight)
+    }
+    window.scroll
+    console.log(document.body.scrollHeight,"网页正文这个是body的高度")//网页正文这个是body的高度
+       console.log(window.innerHeight,"网页的可视区域 ratia 屏幕是物理像素。")//网页的可视区域 ratia 屏幕是物理像素。
+       console.log(window.outerHeight,"浏览器的高度非常的重要的概念，比如浏览小窗口他就是显示小窗口的大小")//浏览器的高度非常的重要的概念，比如浏览小窗口他就是显示小窗口的大小
+       console.log(document.documentElement.clientHeight,"网页的可视区域的高度这个是兼容ie的")//网页的可视区域的高度这个是兼容ie的
+       console.log(window.screen.height,"硬件屏幕的高度/js 不是不能操作客服端只不过是不允许罢")//硬件屏幕的高度/js 不是不能操作客服端只不过是不允许罢
+</script>
+</html>

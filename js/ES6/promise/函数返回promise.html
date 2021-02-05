@@ -10,7 +10,7 @@
 <body>
     <script>
         //  promise then返回的任然是一个 promise对象。
-        const fn1 = function () {
+        const fn1 = async function () {
             return new Promise((resolve, reject) => {
                 resolve({
                     test: 123
@@ -25,7 +25,15 @@
                 }
             });
         }
-        console.log(fn2().then((result)=>{}))
+
+        async function fn3(){
+            let an1 = await fn1();// 如果要写 await 就不用写then
+            console.log(an1);// {}
+        }
+
+        fn3();
+      
+        //console.log(fn2().then((result)=>{}))
     </script>
 </body>
 
