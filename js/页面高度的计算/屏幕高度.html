@@ -5,15 +5,79 @@
     <title>Title</title>
 </head>
 <body>
+    <div id="div"></div>
 <script>
-    var h1= window.screen.height;
-    var w1 = window.screen.width;
-    var h3 = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;//要写的页面内容
-    var h2 = window.screen.availHeight;//ie 5+
-    var w2 = window.screen.availWidth;
+    // var h1= window.screen.height;
+    // var w1 = window.screen.width;
+    // var h3 = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;//要写的页面内容
+    // var h2 = window.screen.availHeight;//ie 5+
+    // var w2 = window.screen.availWidth;
 
-    console.log(h1+"&&"+h2+"&&"+h3);
-    console.log(w1+"&&"+w2);
+
+    //  console.log(document.body.scrollHeight)//网页正文这个是body的高度
+    //    console.log(window.innerHeight)//网页的可视区域 ratia 屏幕是物理像素。
+    //    console.log(window.outerHeight)//浏览器的高度非常的重要的概念，比如浏览小窗口他就是显示小窗口的大小
+    //    console.log(document.documentElement.clientHeight)//网页的可视区域的高度这个是兼容ie的
+    //    console.log(window.screen.height)//硬件屏幕的高度/js 不是不能操作客服端只不过是不允许罢
+
+    
+
+
+    //  client家族，scroll家族，offset家族
+       /**
+        * clientHeight
+        * 返回元素内部的高度(单位像素)，包含内边距，但不包括水平滚动条、边框和外边距。 不包含border 的值
+        clientHeight 可以通过 CSS height + CSS padding - 水平滚动条高度 (如果存在)来计算 
+        * 
+       */
+       window.onload = function(){
+        console.log("document.documentElement.clientHeight",document.documentElement.clientHeight)
+        console.log("document.body.clientHeight",document.body.clientHeight)
+       }
+
+       /**
+        * clientTop
+        *       读写：只读
+                描述：一个元素顶部边框的宽度（以像素表示）。不包括顶部外边距或内边距。可以理解成定义border的高度
+        * 
+       */
+
+       window.onload = function(){
+         console.log("一个元素顶部边框的宽度（以像素表示）。不包括顶部外边距或内边距。可以理解成定义border的高度")
+        console.log("document.body.clientTop",document.body.clientTop)
+       }
+
+     /**读写：只读
+        描述：它返回该元素的像素高度，高度包含该元素的垂直内边距和边框，且是boder一个整数。
+        通常，元素的offsetHeight是一种衡量标准，包括元素的边框、垂直内边距和元素的水平滚动条（如果存在且渲染的画）和元素的CSS高度。
+      * 
+     */
+     window.onload = function(){
+        console.log("document.body.offsetHeight",document.body.offsetHeight)
+        console.log("document.body.clientTop",document.body.clientTop)
+        console.log("document.body.clientHeight",document.body.clientHeight)
+     }
+
+        /**offsetTop
+        它返回当前元素相对于其 offsetParent 元素的顶部的距离
+
+        HTMLElement.offsetTop 为只读属性，它返回当前元素相对于其 offsetParent 元素的顶部内边距的距离。
+      */
+      window.onload = function(){
+        console.log(" div.offsetTop",div.offsetTop)
+    
+     }
+       
 </script>
+
+<style>
+    body{
+        border:2px solid #ccc;
+        height:300px;
+    }
+    div{
+        margin-top:30px;
+    }
+</style>
 </body>
 </html>

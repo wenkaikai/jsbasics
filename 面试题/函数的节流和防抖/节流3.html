@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="button">点击</div>
+    <script>
+        // 节流函数的封装
+        // 用到了闭包
+        function throttle(fn, delay) {
+            var timerId = null;
+            var flag = true;
+            return function () {
+                console.warn(flag);
+                if (!flag) return;
+                flag = false;
+                let self = this;
+                let args = arguments;
+                timerId && clearTimeout(timerId);
+                timerId = setTimeout(function () {
+                    flag = true;
+                    fn.apply(self, args);
+                }, delay || 1000);
+            }
+        }
+        setInterval(() => {
+            throttle(function () { console.log("1234") }, 5000)();
+        }, 1000)
+    </script>
+</body>
+
+</html>

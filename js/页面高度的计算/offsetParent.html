@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offsetParent</title>
+</head>
+
+<body>
+    <div id="div">
+        <div id="div1"></div>
+    </div>
+</body>
+<style>
+    #div {
+        position: relative;
+        height: 200px;
+        background: red;
+        overflow: hidden;
+    }
+
+    #div1 {
+        margin-top:20px;
+        position: relative;
+    }
+</style>
+
+<script>
+    /**
+     * HTMLElement.offsetParent 是一个只读属性，返回一个指向最近的（指包含层级上的最近）包含该元素的定位元素或者最近的 table,td,th,body元素。当元素的 style.display 设置为 "none" 时，offsetParent 返回 null。offsetParent 很有用，因为 offsetTop 和 offsetLeft 都是相对于其内边距边界的。
+     * 
+     * 那么offsetParent就是距离该子元素最近的进行过定位的父元素（position：absolute  relative fixed），如果其父元素中不存在定位则offsetParent为：body元     素
+    */
+    //console.log(document.body.offsetParent)// null body 的 offsetParent 为null
+    console.log(div1.offsetParent)// div (如果父元素没有定位就返回的是body)
+    console.log(div1.offsetTop)// 0
+    console.log(div1.parentNode) // div
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textarea</title>
+</head>
+<body>
+
+    <div>
+        <textarea name="" id="" cols="10" rows="2" oninput="getInput()"></textarea>
+    </div>
+    <script>
+        function getInput(e){
+            let target = window.event.target;
+            console.log(target.value)
+            console.log(target.scrollHeight)
+            console.log(target.scrollTop)
+            console.log(target.clientHeight)
+            Promise.resolve().then(()=>{
+                window.setTimeout(()=>{
+                    target.style.height = target.scrollHeight+"px";
+
+                },1000)
+            })
+        }
+    </script>
+</body>
+</html>

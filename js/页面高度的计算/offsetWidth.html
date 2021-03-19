@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offsetLeft</title>
+</head>
+
+<body>
+    <div id="div">
+        <div id="div1"></div>
+    </div>
+</body>
+<style>
+    #div {
+        position: relative;
+        height: 200px;
+        background: red;
+        overflow: hidden;
+    }
+
+    #div1 {
+        height:30px;
+        margin-top:20px;
+        position: relative;
+    }
+</style>
+
+<script>
+  /**
+   *  HTMLElement.offsetWidth 是一个只读属性，返回一个元素的布局宽度。一个典型的（译者注：各浏览器的offsetWidth可能有所不同）offsetWidth是测量包含元素的边框(border)、水平线上的内边距(padding)、竖直方向滚动条(scrollbar)（如果存在的话）、以及CSS设置的宽度(width)的值。
+   * 
+  */
+
+ console.log(div1.offsetWidth)// 70px
+</script>
+
+</html>

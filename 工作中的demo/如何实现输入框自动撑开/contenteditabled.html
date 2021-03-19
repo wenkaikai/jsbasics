@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="blockcontent" contenteditable="true"></div>
+</body>
+    <style>
+        .blockcontent{
+            box-sizing: border-box;
+        min-height: 50px;
+        max-height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 3px;
+        outline: 0;
+        border: 1px solid #a0b3d6;
+        font-size: 12px;
+        word-wrap: break-word;
+        overflow-x: hidden;
+        overflow-y: auto;
+        _overflow-y: visible;
+        /* // 只是编辑text文本，只能解决webkit内核里面问题，手机端适用 */
+        -webkit-user-modify: read-write-plaintext-only; 
+         /* // 解决IOS部分手机不支持contenteditable=true属性问题 */
+        -webkit-user-select: text; 
+            
+            }
+    </style>
+
+</html>
