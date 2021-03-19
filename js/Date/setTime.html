@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+
+<p id="demo">单击按钮显示以毫秒来设置的时间：</p>
+<button onclick="myFunction()">点我</button>
+<script>
+// 注意返回的是setTime 函数返回的是还是毫秒数真正改变的是 d
+function myFunction(){
+	var d = new Date();
+	d.setTime(1332403882588);
+	var x = document.getElementById("demo");
+	x.innerHTML=d;
+}
+</script>
+
+</body>
+</html>
