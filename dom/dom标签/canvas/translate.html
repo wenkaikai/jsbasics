@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arc</title>
+</head>
+
+<body onload="draw()">
+    <canvas id="canvas" width="150" height="150"></canvas>
+</body>
+<script>
+    /**
+     这个例子显示了一些移动 canvas 原点的好处。如果不使用 translate 方法，那么所有矩形都将被绘制在相同的位置（0,0）。translate 方法同时让我们可以任意放置这些图案，而不需要在 fillRect() 方法中手工调整坐标值，既好理解也方便使用
+     * 
+    */
+    function draw() {
+        var ctx = document.getElementById('canvas').getContext('2d');
+        for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 3; j++) {
+                ctx.save();
+                ctx.fillStyle = 'rgb(' + (51 * i) + ', ' + (255 - 51 * i) + ', 255)';
+                ctx.translate(10 + j * 50, 10 + i * 50);
+                ctx.fillRect(0, 0, 25, 25);
+                ctx.restore();
+            }
+        }
+    }
+</script>
+
+</html>

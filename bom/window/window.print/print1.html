@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" moznomarginboxes mozdisallowselectionprint>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print</title>
+</head>
+
+<body>
+    <div onclick="print1(document.getElementById('print'))" id="button">打印</div>
+    <div id="print">
+        <img src="./timg.jpg" alt="">
+    </div>
+    <script>
+        /**
+         *  window.print() 方法用于打印当前窗口的内容。
+        */
+        // window.print()
+
+        function print1(obj) {
+            // var newStr = obj.outerHTML;
+            // var oldStr = document.body.innerHTML;
+
+            // document.body.innerHTML = newStr;
+            window.print();
+            // document.body.innerHTML = oldStr;
+        }
+    </script>
+
+    
+</body>
+
+<style>
+    @media print {
+        @page {
+            margin: 0;
+        }
+        body {
+            margin: 1.6cm;
+        }
+    }
+</style>
+
+</html>

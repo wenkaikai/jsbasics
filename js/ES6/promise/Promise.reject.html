@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function resolved(result) {
+            console.log('Resolved');
+        }
+
+        function rejected(result) {
+            console.error(result);
+        }
+
+        // Promise.reject(new Error('fail')).then(resolved, rejected);
+        Promise.resolve("1").then(resolved, rejected);
+    </script>
+</body>
+
+</html>

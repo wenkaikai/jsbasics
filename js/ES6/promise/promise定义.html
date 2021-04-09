@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
 	<meta charset="UTF-8">
 	<title></title>
 </head>
+
 <body>
 	<script>
-	/*
-		带有 resolve 、reject两个参数的一个函数。这个函数在创建Promise对象的时候会立即得到执行（在Promise构造函数返回Promise对象之前就会被执行），
-		并把成功回调函数（resolve）和失败回调函数（reject）作为参数传递进来。调用成功回调函数（resolve）和失败回调函数（reject）
-		会分别触发promise的成功或失败。这个函数通常被用来执行一些异步操作，操作完成以后可以选择调用成功回调函数（resolve）来触发promise的成功状态，或者
-		，在出现错误的时候调用失败回调函数（reject）来触发promise的失败。
-		resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），在异步操作成功时调用，
-		并将异步操作的结果，作为参数传递出去；reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），
-		在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。
+		/*
+			带有 resolve 、reject两个参数的一个函数。这个函数在创建Promise对象的时候会立即得到执行（在Promise构造函数返回Promise对象之前就会被执行），
+			并把成功回调函数（resolve）和失败回调函数（reject）作为参数传递进来。调用成功回调函数（resolve）和失败回调函数（reject）
+			会分别触发promise的成功或失败。这个函数通常被用来执行一些异步操作，操作完成以后可以选择调用成功回调函数（resolve）来触发promise的成功状态，或者
+			，在出现错误的时候调用失败回调函数（reject）来触发promise的失败。
+			resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），在异步操作成功时调用，
+			并将异步操作的结果，作为参数传递出去；reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），
+			在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。
+	
+	
+		 */
+		let myFirstPromise = new Promise(function (resolve, reject) {
+			//当异步代码执行成功时，我们才会调用resolve(...), 当异步代码失败时就会调用reject(...)
+			//在本例中，我们使用setTimeout(...)来模拟异步代码，实际编码时可能是XHR请求或是HTML5的一些API方法.
+			setTimeout(function () {
+				resolve("成功!"); //代码正常执行！
+			}, 250);
+		});
 
+		let result = myFirstPromise.then(function (successMessage) {
+			//successMessage的值是上面调用resolve(...)方法传入的值.
+			//successMessage参数不一定非要是字符串类型，这里只是举个例子
+			console.log("Yay! " + successMessage);
+		});
 
-	 */
-	const promise  = new Promise(function(){});
-	console.log(promise)	
+		console.log(result)
 	</script>
 </body>
+
 </html>

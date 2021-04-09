@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" value="" id="fileField1" onchange="change()">
+</body>
+
+<script>
+
+    /**
+     *      FileReader.readAsText(Blob)：将Blob转化为文本字符串FileReader.readAsArrayBuffer(Blob)： 将Blob转为ArrayBuffer格式数据   FileReader.readAsDataURL(): 将Blob转化为Base64格式的Data URL
+     * 
+    */
+
+    function change(e) {
+        let val = document.getElementById("fileField1").files[0]
+        console.log(val)
+        getBase64(val)
+    }
+
+
+
+    function getBase64(file) {
+        var reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = function () {
+            console.log(reader.result);// 可以读取 txt 里面的内容
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    }
+</script>
+
+</html>

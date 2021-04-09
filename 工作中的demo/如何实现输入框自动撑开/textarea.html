@@ -11,19 +11,10 @@
     <div>
         <textarea name="" id="" cols="10" rows="2" oninput="getInput()"></textarea>
     </div>
+    <script src="calcHeight.js"></script>
     <script>
-        function getInput(e){
-            let target = window.event.target;
-            console.log(target.value)
-            console.log(target.scrollHeight)
-            console.log(target.scrollTop)
-            console.log(target.clientHeight)
-            Promise.resolve().then(()=>{
-                window.setTimeout(()=>{
-                    target.style.height = target.scrollHeight+"px";
-
-                },1000)
-            })
+        function getInput(e){     
+            target.style.height = target.scrollHeight+"px";
         }
     </script>
 </body>

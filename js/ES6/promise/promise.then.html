@@ -11,16 +11,16 @@
         /*
         then方法可以接受两个回调函数作为参数。第一个回调函数是Promise对象的状态变为resolved时调用，第二个回调函数是Promise对象的状态变为rejected时调用。其中，第二个函数是可选的，不一定要提供。这两个函数都接受Promise对象传出的值作为参数。
          */
-        // 	function timeout(ms) {
-        //   return new Promise((resolve, reject) => {
-        //     setTimeout(resolve, ms, 'done');
-        //     console.log(resolve)//ƒ () { [native code] }
-        //   });
-        // }
+        function timeout(ms) {
+            return new Promise((resolve, reject) => {
+                setTimeout(resolve, ms, 'done');
+                console.log(resolve)//ƒ () { [native code] }
+            });
+        }
 
-        // timeout(100).then((value) => {
-        //   console.log(value);
-        // });
+        timeout(100).then((value) => {
+            console.log(value);
+        }).then(()=>{console.log("fsfs")});
 
         /*
             上面代码中，timeout方法返回一个Promise实例，表示一段时间以后才会发生的结果。过了指定的时间（ms参数）以后，Promise实例的状态变为resolved，就会触发then方法绑定的回调函数。
@@ -31,17 +31,19 @@
          */
         // let promise = new Promise(function(resolve, reject) {
         //     console.log('Promise'); // 最先执行的
-        //     // resolve();
-        //     // reject();
+        //     //resolve();
+        //     reject();
         // });
 
         // promise.then(function() {
         //         console.log('resolved.');
         //     }, function() {
-        //         console.log('失败了');
+        //         console.log('失败了'); // '失败了'
         //     }
-
-        // );
+        // )
+        // .catch(function(){
+        //     console.log("catch")  // 如果then 里面有 第二个函数就不会 走到catch
+        // })
 
         // console.log('Hi!');
 
@@ -53,15 +55,15 @@
 
 
 
-        function aa() {
-            return new Promise(function (resolve, reject) {
-                // resolve();
-                reject();
-            });
-        }
+        // function aa() {
+        //     return new Promise(function (resolve, reject) {
+        //         // resolve();
+        //         reject();
+        //     });
+        // }
 
-        aa();
-        console.log("hi")
+        // aa();
+        // console.log("hi")
 
 
 

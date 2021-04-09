@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 抛出一个错误，大多数时候将调用catch方法
+        var p1 = new Promise(function (resolve, reject) {
+            throw 'Uh-oh!';
+        });
+
+        p1.catch(function (e) {
+            console.log(e); // "Uh-oh!"
+        });
+
+        // 在异步函数中抛出的错误不会被catch捕获到
+        var p2 = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                throw 'Uncaught Exception!';
+            }, 1000);
+        });
+
+        p2.catch(function (e) {
+            console.log(e); // 不会执行
+        });
+
+        // 在resolve()后面抛出的错误会被忽略
+        var p3 = new Promise(function (resolve, reject) {
+            resolve();
+            throw 'Silenced Exception!';
+        });
+
+        p3.catch(function (e) {
+            console.log(e); // 不会执行
+        });
+    </script>
+</body>
+
+</html>
