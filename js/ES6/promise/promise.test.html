@@ -13,7 +13,7 @@
     let promise = new Promise(function(resolve, reject) {
             console.log('Promise');// 最先执行的
             resolve(1);// resolve就是执行then 里面的回调函数
-            // reject();
+            reject();
             return 123
     });
   console.log(promise)// 如果没有resolve promise 一直就是peding 的状态。
@@ -27,9 +27,9 @@ promise.then(function(a) {
 
 );
 
-console.log('Hi!');
 
-//结果是Promise Hi!  resolved.
+
+
     </script>
 </body>
 </html>

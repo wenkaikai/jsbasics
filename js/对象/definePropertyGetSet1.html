@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>definePropertyGetSet</title>
+</head>
+<body>
+  <script>
+    var o = {a:123}; // 创建一个新对象
+        // 对象o拥有了属性a，值为37
+
+        // 在对象中添加一个属性与存取描述符的示例
+
+        // var bValue;
+        Object.defineProperty(o, "a", {
+          get : function(){
+            // console.log(a)//
+            console.log(this)  //
+            try{
+              return b;
+            }catch(error){
+              return 123;
+            }
+            
+          },
+          set:function(newValue){
+            b = newValue;
+
+          }
+        });
+        console.log(o.a)//123
+        o.a="456"
+        console.log(o.a)//456
+
+        /*
+          set get 方法适用于先set 后get的场景
+        */
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>with</title>
+</head>
+<body>
+    <script>
+
+        /**
+         * with 语句用于设置代码在特定对象中的作用域。
+        */
+        let obj = {
+            a:123,
+            b:456,
+            d:789
+        }
+
+        with(obj){
+            console.log(a);// 123
+            console.log(b);// 456
+            console.log(d);// 789
+        }
+ 
+    </script>
+</body>
+</html>

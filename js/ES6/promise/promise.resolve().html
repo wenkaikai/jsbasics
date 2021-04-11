@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /**
+         *  列子一
+         *  Promise.resolve('foo')
+            // 等价于
+            new Promise(resolve => resolve('foo'))
+         * 
+        */
+        let resolve = Promise.resolve('foo');
+        resolve.then((val)=>{console.log(val)}) //  foo
+    </script>
+</body>
+</html>

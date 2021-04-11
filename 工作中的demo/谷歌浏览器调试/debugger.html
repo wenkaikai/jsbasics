@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>debugger</title>
+</head>
+
+<body>
+    <button onclick='array()'>点击</button>
+    <script type="text/javascript">
+        function array() {
+            let array = ["a", "b", "c", "d", "e", "f", "g"];
+            for (let prop in array) {
+                alert(prop)
+                console.log(prop)
+                console.log(array[prop])
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

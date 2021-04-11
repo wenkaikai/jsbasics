@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" value="" id="fileField1" onchange="change()">
+    <script>
+
+        function b64toBlob(base64, contentType, sliceSize) {
+            let b64Data = base64.split(",")[1];
+            contentType = 'application/pdf';
+            // contentType = 'image/jpeg';
+            sliceSize = 512;
+            const byteCharacters = atob(b64Data);
+            const byteArrays = [];
+
+            for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+                const slice = byteCharacters.slice(offset, offset + sliceSize);
+
+                const byteNumbers = new Array(slice.length);
+                for (let i = 0; i < slice.length; i++) {
+                    byteNumbers[i] = slice.charCodeAt(i);
+                }
+
+                const byteArray = new Uint8Array(byteNumbers);
+                byteArrays.push(byteArray);
+            }
+
+            console.log(contentType)
+            const blob = new Blob(byteArrays, { type: contentType });
+            return blob;
+        }
+
+
+        function change(e) {
+            let val = document.getElementById("fileField1").files[0]
+            console.log(val)
+            getBase64(val)
+        }
+
+
+
+        function getBase64(file) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+                console.log(reader.result);
+                let blob = b64toBlob(reader.result)
+                const blobUrl = URL.createObjectURL(blob);
+                // window.location = blobUrl
+
+                if (blob == "" || blob == undefined) {
+                    alert("Falied to open PDF.");
+                } else {
+                    //For IE using atob convert base64 encoded data to byte array
+                    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+                        alert("dsfsd")
+                        // var byteCharacters = atob(data);
+                        // var byteNumbers = new Array(byteCharacters.length);
+                        // for (var i = 0; i < byteCharacters.length; i++) {
+                        //     byteNumbers[i] = byteCharacters.charCodeAt(i);
+                        // }
+                        // var byteArray = new Uint8Array(byteNumbers);
+                        // var blob = new Blob([byteArray], {
+                        //     type: 'application/pdf'
+                        // });
+                        window.navigator.msSaveOrOpenBlob(blob, "fileName.pdf");
+
+                        
+                    } else {
+                        // Directly use base 64 encoded data for rest browsers (not IE)
+                        var base64EncodedPDF = reader.result;
+                        var dataURI = "data:application/pdf;base64," + base64EncodedPDF1;
+                        window.open(dataURI, '_blank');
+                    }
+                }
+
+
+                console.log(blobUrl + ".jpg")
+            };
+            reader.onerror = function (error) {
+                console.log('Error: ', error);
+            };
+        }
+    </script>
+</body>
+
+</html>

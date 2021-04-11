@@ -10,6 +10,9 @@ var str="Visit RUNOOB!";
 var patt1=/RUN/;
 //global 属性用于返回正则表达式是否具有 "g" 。
 //如果 g 标志被设置，则该属性为 true，否则为 false。
+console.log(typeof global) // undedined
+console.log(global) // global is not defined  说明 global 不是一个全局的对象
+
 if(patt1.global)
 {
     document.write("g 模式有设置!");

@@ -19,11 +19,13 @@
         /*
            构造函数的 prototype属性作为新对象的原型
            而原型又是个对象所以，原型也有构造函数。
+
+           构造函数是函数，原型和属性是一个对象
     
         */
         // console.log(b.constructor)//b.constructor==check
-        // console.log(b.constructor.prototype)
-        // console.log(b.__proto__)//{constructor: ƒ}是一个对象
+         //console.log(b.constructor.prototype)
+         //console.log(b.__proto__)//{constructor: ƒ}是一个对象
         // console.log(check.prototype)//{constructor: ƒ}是一个对象
 /*
                 console.log(check.prototype)
@@ -32,13 +34,37 @@
                 */
 
 
-console.log(Object.prototype)//Object 的prototype 属性
-console.log(Object.prototype.__proto__)//null
-console.log(check.prototype)// 是一个对象{constructor:f check(),__proto__:Object}
-console.log(check.prototype.__proto__)//指向的构造函数的prototype属性
-console.log(Object.prototype.constructor)//ƒ Object() { [native code] }
-console.log(check.prototype.__proto__.__proto__)//null
-console.log(check.prototype.__proto__.constructor)//ƒ Object() { [native code] }
+// console.log(Object.prototype)//Object 的prototype 属性
+// console.log(Object.prototype.__proto__)//null
+ //console.log(b.__proto__)//{constructor: ƒ}是一个对象
+//console.log(check.prototype)// 是一个对象{constructor:f check(),__proto__:Object}
+
+//console.log(check.__proto__)
+
+// 相等
+//console.log(b.constructor.prototype)
+//console.log(b.__proto__)
+
+// 相等
+// console.log(check.prototype.constructor)
+// console.log(check)
+
+
+
+// 相等
+// console.log(check.prototype.constructor.prototype.constructor.prototype.constructor.prototype.constructor.prototype)// 无限循环
+// console.log(check.prototype)
+// console.log(b.__proto__)
+
+
+console.log(b.__proto__.__proto__.__proto__)
+console.log(Object.prototype)
+
+
+
+
+//console.log(check.prototype.__proto__.__proto__)//null
+//console.log(check.prototype.__proto__.constructor)//ƒ Object() { [native code] }
 
 //    console.log(b.constructor)//ƒ check(){}
 //    console.log(check.prototype.constructor)//ƒ check(){}
