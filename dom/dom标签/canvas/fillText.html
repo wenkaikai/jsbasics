@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arc</title>
+</head>
+
+<body onload="draw()">
+    <canvas id="canvas" width="150" height="150"></canvas>
+</body>
+<script>
+    /**
+     * fillText(text, x, y [, maxWidth])
+在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的.
+     * 
+    */
+    function draw() {
+        var ctx = document.getElementById('canvas').getContext('2d');
+        ctx.font = "45px serif";
+        // ctx.fillText("Hello world", 10, 50,[100]);
+        ctx.strokeText("Hello world", 10, 50,20);
+    }
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getClientRect</title>
+</head>
+
+<body>
+    <div id="div">
+        <div id="div1"></div>
+    </div>
+</body>
+<style>
+    #div {
+        position: relative;
+        height: 200px;
+        background: red;
+        overflow: hidden;
+    }
+
+    #div1 {
+        background:green;
+        height:30px;
+        margin-top:20px;
+        position: relative;
+    }
+</style>
+
+<script>
+  /**
+   * Element.getBoundingClientRect() 方法返回元素的大小及其相对于视口的位置。
+如果是标准盒子模型，元素的尺寸等于width/height + padding + border-width的总和。如果box-sizing: border-box，元素的的尺寸等于 width/height。
+   * 
+  */
+
+ console.log(div1.getClientRects())// 
+</script>
+
+</html>

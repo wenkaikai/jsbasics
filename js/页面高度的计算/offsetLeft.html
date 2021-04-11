@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offsetLeft</title>
+</head>
+
+<body>
+    <div id="div">
+        <span>fsdfsdfds</span>
+        <span id="div1"></span>
+    </div>
+</body>
+<style>
+    #div {
+        position: relative;
+        height: 200px;
+        background: red;
+        overflow: hidden;
+    }
+
+    #div1 {
+        margin-top:20px;
+        position: relative;
+    }
+</style>
+
+<script>
+  /**
+   *  HTMLElement.offsetLeft 是一个只读属性，返回当前元素左上角相对于  HTMLElement.offsetParent 节点的左边界偏移的像素值。
+   * 
+  */
+
+ console.log(div1.offsetLeft)// 70px
+</script>
+
+</html>

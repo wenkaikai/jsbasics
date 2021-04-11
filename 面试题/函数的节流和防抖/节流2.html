@@ -7,25 +7,50 @@
 </head>
 
 <body>
+
+    <div id="button">点击</div>
     <script>
-    // 节流函数的封装
-    const throttle = (func, wait,a) => {
-        let timer = a;
-        return () => {
-            if (timer) {
-                return false;
+        // 节流函数的封装
+        // 用到了闭包
+        function throttle(fn, delay) {
+            let timerId = null;
+            let flag = true;
+            return function () {
+                console.warn(flag);
+                if (!flag) return;
+                flag = false;
+                let self = this;
+                let args = arguments;
+                timerId && clearTimeout(timerId);
+                timerId = setTimeout(function () {
+                    flag = true;
+                    fn.apply(self, args);
+                }, delay || 1000);
             }
-            timer = setTimeout(() => {
-                func();
-                timer = null;
-            }, wait);
-        };
-    };
+        }
 
-    setInterval(function() {
-        throttle(function() { console.log("1234") }, 5000,1)();
-    }, 1000)
 
+        // function throttle(fn, delay = 100) {
+        //     let timer = null
+        //     return function () {
+        //         if (timer) {
+        //             return
+        //         }
+        //         timer = setTimeout(() => {
+        //             fn.apply(this, arguments)
+        //             timer = null
+        //         }, delay);
+        //     }
+        // }
+
+        // setInterval(() => {
+        //     throttle(function () { console.log("1234") }, 5000)();
+        // }, 1000)
+
+        button.addEventListener("click",  throttle(function(){
+                console.log("fsfs")
+            },5000), false);
+    
 
 
 
@@ -47,8 +72,8 @@
     // }, 1000)
 
     // o = 1; // o.aa = 22;}var obj = {    aa: 11}
-    // a(obj);
-    // console.log(obj);
+    // // a(obj);
+    // // console.log(obj);
     </script>
 </body>
 

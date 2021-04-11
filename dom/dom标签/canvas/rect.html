@@ -1,0 +1,23 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    /**
+     * Canvas API 提供了一个通过JavaScript 和 HTML的<canvas>元素来绘制图形的方式。它可以用于动画、游戏画面、数据可视化、图片编辑以及实时视频处理等方面。
+     * 
+     * fillRect(x, y, width, height) 绘制一个填充的矩形
+     * 
+    */
+    function draw() {
+      var canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+        ctx.rect(20,20,50,50);
+        // ctx.stroke();
+        ctx.strokeStyle="orange"
+        ctx.stroke();
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="150" height="150"></canvas>
+ </body>
+</html>

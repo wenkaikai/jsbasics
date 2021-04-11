@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="draw()">
+    <canvas id="canvas" width="150" height="150"></canvas>
+</body>
+<script>
+    console.log("body");
+    function draw() {
+        var canvas = document.getElementById('canvas');
+        console.log(canvas)
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+            //strokeStyle = color 
+            ctx.fillStyle = "orange"
+            ctx.fillRect(25, 25, 100, 100);
+
+
+            /**
+             * clearRect(x, y, width, height)
+                    清除指定矩形区域，让清除部分完全透明
+             * 
+            */
+            // ctx.clearRect(45, 45, 60, 60);
+
+
+            /**
+             * strokeRect(x, y, width, height) 绘制一个矩形的边框
+             * strokeStyle = color  设置图形轮廓的颜色。
+            */
+            ctx.strokeRect(50, 50, 50, 50);
+
+            console.log(canvas.toDataURL())// 转换为base64
+            canvas.toBlob(function (blob) {
+                console.log(blob) // 可以生成 blob 对象 这样的话就可以保存了      
+                var newImg = document.createElement("img"),
+                    url = URL.createObjectURL(blob);
+
+                newImg.onload = function () {
+                    // no longer need to read the blob so it's revoked
+                    URL.revokeObjectURL(url);
+                };
+
+                newImg.src = url;
+                document.body.appendChild(newImg);
+            });
+        }
+    }
+</script>
+
+</html>

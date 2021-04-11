@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let result = Promise.resolve()
+        .then(() => console.log(2))
+        .then(() => console.log(3))
+        .then(() => console.log(4));
+        console.log(1); // 1, 2, 3,4  为什么可以一直then下去
+        console.log(result);
+        
+        /**
+         * 列子二 
+         * 
+         *  注意这里是 42
+         * Promise.resolve方法会将这个对象转为 Promise 对象，然后就立即执行thenable对象的then方法。
+        */
+        // let thenable = {
+        //     then: function (resolve, reject) {
+        //         resolve(42);
+        //     }
+        // };
+
+        // let p1 = Promise.resolve(thenable);
+        // p1.then(function (value) {
+        //     console.log(value);  // 42
+        // });
+    </script>
+</body>
+
+</html>
